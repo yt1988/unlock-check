@@ -29,6 +29,14 @@ export const READERS = {
   philo(st, text) { const j = json(text); return j && j.status ? { ok: j.status === "SUCCESS", cc: CC(j.country) } : null; },
   tvb(st, text) { const j = json(text); return j && typeof j.allow_in_this_country === "boolean" ? { ok: j.allow_in_this_country, cc: CC(j.country), ip: j.ip || "" } : null; },
   sbs(st, text) { const r = ((json(text) || {}).get || {}).response; const cc = r && CC(r.country_code); return cc ? { ok: cc === "AU", cc } : null; },
+  nbc(st, text) { const j = json(text); return j && typeof j.restricted === "boolean" ? { ok: !j.restricted, cc: CC((j.requestInfo || {}).countryCode) } : null; },
+  // DMM TV names a foreign visitor; a Japanese one gets past the region check to "not signed in"
+  dmm(st, text) { return /FOREIGN/.test(text) ? { ok: false } : /UNAUTHORIZED/.test(text) ? { ok: true, cc: "JP" } : null; },
+  shudder(st, text) { return /not (yet )?available/i.test(text) ? { ok: false } : /movies/i.test(text) ? { ok: true } : null; },
+  // beIN: 451 (unavailable for legal reasons) outside its region, 500 from its offers endpoint inside it
+  bein(st) { return st === 451 ? { ok: false } : st === 500 ? { ok: true } : null; },
+  // ZDF: 403 outside Germany, 404 inside
+  zdf(st) { return st === 403 ? { ok: false } : st === 404 ? { ok: true, cc: "DE" } : null; },
   fod(st, text) { const m = /<FLAG\s+TYPE="(true|false)"/i.exec(text); return m ? { ok: m[1] === "true", cc: m[1] === "true" ? "JP" : null } : null; },
 };
 

@@ -81,7 +81,7 @@ export async function build({ check = false } = {}) {
   const jsName = `app.${hash(js)}.js`, cssName = `app.${hash(css)}.css`;
 
   // the strings the browser needs; the page's own text is already in the HTML
-  const RUNTIME = /^(name|v_\w+|how_\w+|hd_\w+|why_\w+|note_\w+|fo_\w+|ex_\w+|tz_\w+|vh_\w+|th_\w+|egress_link|progress|done|rerun|running|hide|show|share|share_text|shared_from|test_mine|copied|join)$/;
+  const RUNTIME = /^(name|v_\w+|how_\w+|why_\w+|note_\w+|fo_\w+|ex_\w+|tz_\w+|wait_\w+|ip_\w+|vh_\w+|th_\w+|egress_link|progress|done|rerun|running|hide|show|share|share_text|shared_from|test_mine|copied|join)$/;
   const path = slug => "/" + (slug ? slug + "/" : "");
   const N = SERVICES.length;
   const pages = [], files = {};
@@ -96,8 +96,8 @@ export async function build({ check = false } = {}) {
     const alias = id => (d.alias || {})[id];
 
     // every service is in the HTML from the start, in its category (crawlers see what is checked; rows never move)
-    const row = s => `<li class="sv" id="s-${s.id}"><a class="sn" href="${href({ svc: s.id })}">${esc(s.name)}</a>` +
-      `<span class="vd"><i></i><b>–</b></span><span class="rg"></span><span class="hw"></span><span class="ip"></span></li>`;
+    const row = s => `<li class="sv" id="s-${s.id}"><span class="vd"><i></i><span class="sr"></span></span><a class="sn" href="${href({ svc: s.id })}">${esc(s.name)}</a>` +
+      `<span class="rg"></span></li>`;
     const groupsOf = first => [first, ...CATS.filter(c => c !== first)].filter(Boolean).map(c =>
       `<div class="grp" data-c="${c}"><h2><a href="${href({ cat: c })}">${esc(T("cat_" + c).nav)}</a><b class="g-n"></b></h2><ul>${SERVICES.filter(s => s.cat === c).map(row).join("")}</ul></div>`).join("\n");
     const focusOf = id => !id ? "" : `<div class="focus wait" id="focus" data-s="${id}"><div class="fo-h"><i class="st"></i><b class="fo-t">${esc(SV(id).name)}</b></div><p class="fo-d"><span class="bar"></span></p></div>`;
@@ -117,8 +117,8 @@ export async function build({ check = false } = {}) {
       const how = s.probe.api ? "m_api" : s.probe.trace ? "m_edge" : s.probe.netflix ? "m_nf" : s.probe.hops ? "m_hops" : "m_guess";
       const out = [[f(T("q_where")), where + (s.src ? ` <a href="${esc(s.src)}" target="_blank" rel="noopener">${esc(T("source"))}</a>` : "")],
         [f(T("q_how")), esc(f(T(how)))]];
-      if (s.id === "netflix") out.push([f(T("q_netflix")), esc(T("note_netflix"))]);
-      if (s.id === "gemini") out.push([f(T("q_gemini")), esc(T("note_google"))]);
+      if (s.id === "netflix") out.push([f(T("q_netflix")), esc(T("a_netflix"))]);
+      if (s.id === "gemini") out.push([f(T("q_gemini")), esc(T("a_gemini"))]);
       out.push([f(T("q_no")), esc(f(T("a_no")))]);
       return out;
     };
@@ -189,6 +189,7 @@ export async function build({ check = false } = {}) {
         .replace("{{lang}}", lang).replace("{{pathsAttr}}", esc(JSON.stringify(paths))).replace("{{rootAttr}}", root ? " data-root" : "")
         .replace("{{prepaint}}", PREPAINT).replace("{{head}}", head).replace("{{css}}", cssName).replace("{{js}}", jsName).replace("{{strings}}", sName)
         .replace("{{homeHref}}", home).replace("{{langOpts}}", langOpts).replace("{{h1}}", esc(v.h1)).replace("{{intro}}", esc(v.intro))
+        .replace("{{notesWait}}", ["wait_ex", "wait_ip", "wait_tz"].map(k => `<li class="nt wait"><i></i><span>${esc(T(k))}</span></li>`).join(""))
         .replace("{{focus}}", focusOf(p && p.svc)).replace("{{groups}}", groupsOf(cat)).replace("{{nav}}", nav).replace("{{foot}}", esc(T("foot")))
         .replace("{{helpNav}}", helpNav).replace("{{helpC}}", helpC).replaceAll("{{repo}}", REPO)
         .replace("{{themeLabel}}", esc(T("th_system"))).replaceAll("{{closeLabel}}", esc(T("close"))).replace("{{linkLabel}}", esc(T("link_label")))

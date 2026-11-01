@@ -41,6 +41,14 @@ test("readers: real answers (measured 2026-11-01)", () => {
   assert.deepEqual(READERS.sbs(200, '{"get":{"response":{"country_code":"HK"}}}'), { ok: false, cc: "HK" });
   assert.deepEqual(READERS.fod(200, '<?xml version="1.0"?><RESULT><FLAG TYPE="false" /></RESULT>'), { ok: false, cc: null });
   assert.deepEqual(READERS.dazn(200, '{"Region":{"isAllowed":true,"GeolocatedCountry":"jp"}}'), { ok: true, cc: "JP" });
+  assert.deepEqual(READERS.nbc(200, '{"restricted":true,"requestInfo":{"mediaType":"live","geoLookupType":"ip","countryCode":"JP"}}'), { ok: false, cc: "JP" });
+  assert.deepEqual(READERS.dmm(200, '{"is_blocked":true,"block_status":"FOREIGN"}'), { ok: false });
+  assert.deepEqual(READERS.dmm(401, '{"code":"UNAUTHORIZED"}'), { ok: true, cc: "JP" });
+  assert.deepEqual(READERS.shudder(403, "Sorry, we are not available in your country"), { ok: false });
+  assert.deepEqual(READERS.bein(451, "<h1>451 Unavailable For Legal Reasons</h1>"), { ok: false });
+  assert.deepEqual(READERS.bein(500, ""), { ok: true });
+  assert.deepEqual(READERS.zdf(403, "Access Denied"), { ok: false });
+  assert.deepEqual(READERS.zdf(404, ""), { ok: true, cc: "DE" });
 });
 
 test("judge: each kind of probe", () => {

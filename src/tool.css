@@ -4,7 +4,7 @@
 .hero { padding: 20px 22px 0; display: flex; flex-direction: column; gap: 16px; }
 .hero h1 { font-size: clamp(20px, 2.6vw, 26px); line-height: 1.25; letter-spacing: -.015em; font-weight: 700; text-wrap: balance; }
 .intro { color: var(--muted); font-size: 13.5px; margin-top: 6px; max-width: 820px; }
-.nt .bar, .fo-d .bar { display: inline-block; height: 10px; border-radius: 5px; background: var(--soft); vertical-align: middle; animation: blink 1.4s ease-in-out infinite; }
+.fo-d .bar { display: inline-block; height: 10px; border-radius: 5px; background: var(--soft); vertical-align: middle; animation: blink 1.4s ease-in-out infinite; }
 
 /* four totals: available, not available, reachable, no connection. Fixed-width numbers, so nothing moves */
 .sum { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
@@ -16,7 +16,6 @@
 /* notes: the countries the services see, the time zone. Two lines are reserved while running */
 .notes { display: flex; flex-direction: column; gap: 4px; }
 .nt { display: flex; align-items: flex-start; gap: 8px; min-height: 24px; font-size: 13.5px; line-height: 22px; }
-.nt.wait .bar { width: 46%; margin-top: 6px; } .nt.wait + .nt.wait .bar { width: 30%; }
 .nt i { flex: none; width: 16px; height: 16px; border-radius: 50%; margin-top: 3px; display: grid; place-items: center; font: 700 10px/1 var(--f-ui); font-style: normal; color: #fff; }
 .n-ok i { background: var(--ok); } .n-warn i { background: var(--warn); } .n-info i { background: transparent; box-shadow: inset 0 0 0 1.5px var(--line); color: var(--muted); }
 .nt b { font-weight: 600; } .nt .flag { width: 18px; height: 13px; vertical-align: -1px; margin: 0 4px; }
@@ -52,37 +51,35 @@
 .btn.pri.busy { opacity: 1; } .btn.pri.busy svg { animation: spin 1s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* the services, by category. Rows keep their size from the first paint; only the text inside changes */
-.list { padding: 16px 22px 10px; columns: 2 440px; column-gap: 32px; }
-.grp { break-inside: avoid; margin-bottom: 14px; }
-.grp h2 { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; height: 24px; display: flex; align-items: center; }
+/* the services, by category: a dense grid of one-line cells (mark, name, flag and country), five a row on a wide
+   screen, so the whole list fits on one screen. How each verdict was reached, and the address, are in the tooltip */
+.list { padding: 14px 22px 16px; display: flex; flex-direction: column; gap: 12px; }
+.grp h2 { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; height: 20px; display: flex; align-items: center; margin-bottom: 6px; }
 .grp h2 a { text-decoration: none; } .grp h2 a:hover { color: var(--fg); }
 .g-n { margin-left: auto; font: 500 12px var(--f-num); letter-spacing: 0; font-variant-numeric: tabular-nums; }
-.sv { display: grid; grid-template-columns: minmax(0, 8fr) 118px minmax(0, 8fr) 74px; align-items: center; gap: 8px; height: 38px; border-top: 1px solid var(--line); font-size: 13.5px; }
-.sn { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 500; text-decoration: none; }
+.grp ul { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 6px; }
+.sv { display: grid; grid-template-columns: 16px minmax(0, 1fr) auto; align-items: center; column-gap: 7px; height: 36px; padding: 0 10px;
+  border: 1px solid var(--line); border-radius: 9px; font-size: 13px; }
+.vd i { width: 16px; height: 16px; border-radius: 50%; display: grid; place-items: center; font: 700 10px/1 var(--f-ui); font-style: normal; color: #fff; background: var(--soft); }
+.sn { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 600; text-decoration: none; }
 .sn:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
-.vd { display: flex; align-items: center; gap: 6px; white-space: nowrap; min-width: 0; }
-.vd i { width: 16px; height: 16px; border-radius: 50%; flex: none; display: grid; place-items: center; font: 700 10px/1 var(--f-ui); font-style: normal; color: #fff; background: var(--soft); }
-.vd b { font-weight: 600; font-size: 13px; overflow: hidden; text-overflow: ellipsis; }
-.rg { display: flex; align-items: center; gap: 6px; min-width: 0; white-space: nowrap; overflow: hidden; }
+.rg { display: flex; align-items: center; gap: 5px; min-width: 0; max-width: 92px; white-space: nowrap; overflow: hidden; font-size: 12.5px; color: var(--muted); }
 .rg span { overflow: hidden; text-overflow: ellipsis; }
 .rg .flag { width: 18px; height: 13px; }
-.hw { font-size: 11.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.ip { display: none; }
-.sv.wait .vd b { color: var(--muted); font-weight: 500; animation: blink 1.2s ease-in-out infinite; }
-.sv.v-ok .vd i { background: var(--ok); } .sv.v-ok .vd b { color: var(--ok); }
-.sv.v-no .vd i { background: var(--bad); } .sv.v-no .vd b { color: var(--bad); }
-.sv.v-fail .vd i { background: var(--warn); } .sv.v-fail .vd b { color: var(--warn); }
-.sv.v-reach .vd i { background: transparent; box-shadow: inset 0 0 0 1.5px var(--line); color: var(--muted); } .sv.v-reach .vd b { color: var(--muted); }
+.sv.g .rg { opacity: .6; }                       /* a guessed country */
+.sv.wait .vd i { animation: blink 1.2s ease-in-out infinite; }
+.sv.v-ok .vd i { background: var(--ok); }
+.sv.v-no { border-color: color-mix(in srgb, var(--bad) 35%, var(--line)); background: color-mix(in srgb, var(--bad) 5%, transparent); } .sv.v-no .vd i { background: var(--bad); }
+.sv.v-fail { border-color: color-mix(in srgb, var(--warn) 40%, var(--line)); } .sv.v-fail .vd i { background: var(--warn); }
+.sv.v-reach .vd i { background: transparent; box-shadow: inset 0 0 0 1.5px var(--line); color: var(--muted); }
 .sv[title] { cursor: help; }
 :root[data-theme="dark"] .vd i, :root[data-theme="dark"] .nt i, :root[data-theme="dark"] .st { color: #111; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .vd i, :root:not([data-theme="light"]) .nt i, :root:not([data-theme="light"]) .st { color: #111; } }
-/* the IP each service saw: a fifth column on wide screens */
-@media (min-width: 1000px) {
-  .sv { grid-template-columns: minmax(0, 7fr) 112px minmax(0, 7fr) 70px minmax(0, 6fr); }
-  .ip { display: block; font: 11.5px var(--f-num); color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: right; }
-  .ip a { color: inherit; text-decoration: none; border-bottom: 1px dotted var(--muted); }
-}
+/* the addresses the services saw, in the notes */
+.nt .ipq { font: 12.5px var(--f-num); color: inherit; text-decoration: none; overflow-wrap: anywhere; }
+.nt a.ipq { border-bottom: 1px dotted var(--muted); } .nt a.ipq:hover { border-bottom-style: solid; }
+/* a note still waiting: what it waits for, in the color of something not done yet */
+.nt.wait { color: var(--muted); } .nt.wait i { background: transparent; box-shadow: inset 0 0 0 1.5px var(--line); animation: blink 1.2s ease-in-out infinite; }
 
 /* a shared result: one line above the headline. The pre-paint script sets data-shared for a #r= link */
 .shared { display: none; align-items: center; gap: 6px; font-size: 12.5px; color: var(--ink); font-weight: 500; margin-bottom: 6px; }
@@ -130,8 +127,8 @@ body.dlg-open { overflow: hidden; }
   .bar { margin: 0 -16px; padding: 12px 16px 14px; }
   .sum { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .brand-name { font-size: 17px; }
-  .sv { grid-template-columns: minmax(0, 7fr) 104px minmax(0, 7fr); }
-  .hw { display: none; }
+  .grp ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rg span { display: none; }   /* two cells a row: the flag says the country */
   .nt.wait { min-height: 46px; }   /* a note takes two lines at this width: reserve them while running */
   .dialog.help { height: calc(100vh - 32px); }
   .help-b { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); }

@@ -43,6 +43,20 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/streaming/"/>
   </url>
   <url>
+    <loc>https://unlock.1ms.dog/social/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/social/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/social/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/social/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/social/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/social/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/social/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/social/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/social/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/social/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/social/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/social/"/>
+  </url>
+  <url>
     <loc>https://unlock.1ms.dog/regional/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/regional/"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/regional/"/>
@@ -211,20 +225,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/disney-plus/"/>
   </url>
   <url>
-    <loc>https://unlock.1ms.dog/tiktok/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/tiktok/"/>
-  </url>
-  <url>
     <loc>https://unlock.1ms.dog/dazn/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/dazn/"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/dazn/"/>
@@ -279,6 +279,174 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/philo/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/philo/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/philo/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/nbc/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/nbc/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/shudder/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/shudder/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/bein-connect/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/bein-connect/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/twitch/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/twitch/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/tiktok/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/tiktok/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/youtube/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/youtube/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/x-twitter/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/x-twitter/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/instagram/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/instagram/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/telegram/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/telegram/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/whatsapp/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/whatsapp/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/discord/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/discord/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/discord/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/discord/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/discord/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/discord/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/discord/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/discord/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/discord/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/discord/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/discord/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/discord/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/reddit/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/reddit/"/>
   </url>
   <url>
     <loc>https://unlock.1ms.dog/kktv/</loc>
@@ -337,6 +505,34 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/fod/"/>
   </url>
   <url>
+    <loc>https://unlock.1ms.dog/dmm-tv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/dmm-tv/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zdf/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/zdf/"/>
+  </url>
+  <url>
     <loc>https://unlock.1ms.dog/zh-cn/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/"/>
@@ -377,6 +573,20 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/streaming/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/streaming/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/streaming/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-cn/social/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/social/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/social/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/social/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/social/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/social/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/social/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/social/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/social/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/social/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/social/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/social/"/>
   </url>
   <url>
     <loc>https://unlock.1ms.dog/zh-cn/regional/</loc>
@@ -547,20 +757,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/disney-plus/"/>
   </url>
   <url>
-    <loc>https://unlock.1ms.dog/zh-cn/tiktok/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/tiktok/"/>
-  </url>
-  <url>
     <loc>https://unlock.1ms.dog/zh-cn/dazn/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/dazn/"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/dazn/"/>
@@ -615,6 +811,174 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/philo/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/philo/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/philo/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-cn/nbc/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/nbc/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-cn/shudder/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/shudder/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-cn/bein-connect/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/bein-connect/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-cn/twitch/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/twitch/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-cn/tiktok/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/tiktok/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-cn/youtube/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/youtube/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-cn/x-twitter/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/x-twitter/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-cn/instagram/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/instagram/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-cn/telegram/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/telegram/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-cn/whatsapp/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/whatsapp/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-cn/discord/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/discord/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/discord/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/discord/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/discord/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/discord/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/discord/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/discord/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/discord/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/discord/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/discord/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/discord/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-cn/reddit/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/reddit/"/>
   </url>
   <url>
     <loc>https://unlock.1ms.dog/zh-cn/kktv/</loc>
@@ -673,6 +1037,34 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/fod/"/>
   </url>
   <url>
+    <loc>https://unlock.1ms.dog/zh-cn/dmm-tv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/dmm-tv/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-cn/zdf/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/zdf/"/>
+  </url>
+  <url>
     <loc>https://unlock.1ms.dog/zh-tw/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/"/>
@@ -713,6 +1105,20 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/streaming/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/streaming/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/streaming/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-tw/social/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/social/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/social/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/social/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/social/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/social/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/social/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/social/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/social/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/social/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/social/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/social/"/>
   </url>
   <url>
     <loc>https://unlock.1ms.dog/zh-tw/regional/</loc>
@@ -883,20 +1289,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/disney-plus/"/>
   </url>
   <url>
-    <loc>https://unlock.1ms.dog/zh-tw/tiktok/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/tiktok/"/>
-  </url>
-  <url>
     <loc>https://unlock.1ms.dog/zh-tw/dazn/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/dazn/"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/dazn/"/>
@@ -951,6 +1343,174 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/philo/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/philo/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/philo/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-tw/nbc/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/nbc/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-tw/shudder/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/shudder/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-tw/bein-connect/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/bein-connect/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-tw/twitch/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/twitch/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-tw/tiktok/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/tiktok/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-tw/youtube/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/youtube/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-tw/x-twitter/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/x-twitter/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-tw/instagram/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/instagram/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-tw/telegram/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/telegram/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-tw/whatsapp/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/whatsapp/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-tw/discord/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/discord/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/discord/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/discord/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/discord/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/discord/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/discord/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/discord/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/discord/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/discord/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/discord/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/discord/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-tw/reddit/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/reddit/"/>
   </url>
   <url>
     <loc>https://unlock.1ms.dog/zh-tw/kktv/</loc>
@@ -1009,6 +1569,34 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/fod/"/>
   </url>
   <url>
+    <loc>https://unlock.1ms.dog/zh-tw/dmm-tv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/dmm-tv/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-tw/zdf/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/zdf/"/>
+  </url>
+  <url>
     <loc>https://unlock.1ms.dog/ja/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/"/>
@@ -1049,6 +1637,20 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/streaming/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/streaming/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/streaming/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ja/social/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/social/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/social/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/social/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/social/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/social/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/social/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/social/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/social/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/social/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/social/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/social/"/>
   </url>
   <url>
     <loc>https://unlock.1ms.dog/ja/regional/</loc>
@@ -1219,20 +1821,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/disney-plus/"/>
   </url>
   <url>
-    <loc>https://unlock.1ms.dog/ja/tiktok/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/tiktok/"/>
-  </url>
-  <url>
     <loc>https://unlock.1ms.dog/ja/dazn/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/dazn/"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/dazn/"/>
@@ -1287,6 +1875,174 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/philo/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/philo/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/philo/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ja/nbc/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/nbc/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ja/shudder/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/shudder/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ja/bein-connect/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/bein-connect/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ja/twitch/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/twitch/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ja/tiktok/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/tiktok/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ja/youtube/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/youtube/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ja/x-twitter/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/x-twitter/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ja/instagram/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/instagram/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ja/telegram/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/telegram/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ja/whatsapp/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/whatsapp/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ja/discord/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/discord/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/discord/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/discord/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/discord/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/discord/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/discord/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/discord/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/discord/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/discord/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/discord/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/discord/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ja/reddit/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/reddit/"/>
   </url>
   <url>
     <loc>https://unlock.1ms.dog/ja/kktv/</loc>
@@ -1345,6 +2101,34 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/fod/"/>
   </url>
   <url>
+    <loc>https://unlock.1ms.dog/ja/dmm-tv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/dmm-tv/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ja/zdf/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/zdf/"/>
+  </url>
+  <url>
     <loc>https://unlock.1ms.dog/ko/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/"/>
@@ -1385,6 +2169,20 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/streaming/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/streaming/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/streaming/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ko/social/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/social/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/social/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/social/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/social/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/social/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/social/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/social/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/social/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/social/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/social/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/social/"/>
   </url>
   <url>
     <loc>https://unlock.1ms.dog/ko/regional/</loc>
@@ -1555,20 +2353,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/disney-plus/"/>
   </url>
   <url>
-    <loc>https://unlock.1ms.dog/ko/tiktok/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/tiktok/"/>
-  </url>
-  <url>
     <loc>https://unlock.1ms.dog/ko/dazn/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/dazn/"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/dazn/"/>
@@ -1623,6 +2407,174 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/philo/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/philo/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/philo/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ko/nbc/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/nbc/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ko/shudder/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/shudder/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ko/bein-connect/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/bein-connect/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ko/twitch/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/twitch/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ko/tiktok/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/tiktok/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ko/youtube/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/youtube/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ko/x-twitter/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/x-twitter/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ko/instagram/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/instagram/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ko/telegram/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/telegram/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ko/whatsapp/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/whatsapp/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ko/discord/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/discord/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/discord/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/discord/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/discord/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/discord/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/discord/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/discord/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/discord/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/discord/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/discord/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/discord/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ko/reddit/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/reddit/"/>
   </url>
   <url>
     <loc>https://unlock.1ms.dog/ko/kktv/</loc>
@@ -1681,6 +2633,34 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/fod/"/>
   </url>
   <url>
+    <loc>https://unlock.1ms.dog/ko/dmm-tv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/dmm-tv/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ko/zdf/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/zdf/"/>
+  </url>
+  <url>
     <loc>https://unlock.1ms.dog/es/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/"/>
@@ -1721,6 +2701,20 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/streaming/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/streaming/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/streaming/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/es/social/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/social/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/social/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/social/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/social/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/social/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/social/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/social/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/social/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/social/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/social/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/social/"/>
   </url>
   <url>
     <loc>https://unlock.1ms.dog/es/regional/</loc>
@@ -1891,20 +2885,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/disney-plus/"/>
   </url>
   <url>
-    <loc>https://unlock.1ms.dog/es/tiktok/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/tiktok/"/>
-  </url>
-  <url>
     <loc>https://unlock.1ms.dog/es/dazn/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/dazn/"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/dazn/"/>
@@ -1959,6 +2939,174 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/philo/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/philo/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/philo/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/es/nbc/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/nbc/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/es/shudder/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/shudder/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/es/bein-connect/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/bein-connect/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/es/twitch/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/twitch/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/es/tiktok/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/tiktok/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/es/youtube/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/youtube/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/es/x-twitter/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/x-twitter/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/es/instagram/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/instagram/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/es/telegram/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/telegram/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/es/whatsapp/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/whatsapp/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/es/discord/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/discord/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/discord/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/discord/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/discord/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/discord/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/discord/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/discord/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/discord/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/discord/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/discord/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/discord/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/es/reddit/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/reddit/"/>
   </url>
   <url>
     <loc>https://unlock.1ms.dog/es/kktv/</loc>
@@ -2017,6 +3165,34 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/fod/"/>
   </url>
   <url>
+    <loc>https://unlock.1ms.dog/es/dmm-tv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/dmm-tv/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/es/zdf/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/zdf/"/>
+  </url>
+  <url>
     <loc>https://unlock.1ms.dog/fr/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/"/>
@@ -2057,6 +3233,20 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/streaming/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/streaming/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/streaming/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/fr/social/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/social/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/social/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/social/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/social/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/social/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/social/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/social/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/social/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/social/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/social/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/social/"/>
   </url>
   <url>
     <loc>https://unlock.1ms.dog/fr/regional/</loc>
@@ -2227,20 +3417,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/disney-plus/"/>
   </url>
   <url>
-    <loc>https://unlock.1ms.dog/fr/tiktok/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/tiktok/"/>
-  </url>
-  <url>
     <loc>https://unlock.1ms.dog/fr/dazn/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/dazn/"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/dazn/"/>
@@ -2295,6 +3471,174 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/philo/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/philo/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/philo/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/fr/nbc/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/nbc/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/fr/shudder/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/shudder/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/fr/bein-connect/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/bein-connect/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/fr/twitch/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/twitch/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/fr/tiktok/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/tiktok/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/fr/youtube/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/youtube/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/fr/x-twitter/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/x-twitter/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/fr/instagram/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/instagram/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/fr/telegram/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/telegram/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/fr/whatsapp/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/whatsapp/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/fr/discord/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/discord/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/discord/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/discord/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/discord/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/discord/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/discord/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/discord/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/discord/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/discord/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/discord/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/discord/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/fr/reddit/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/reddit/"/>
   </url>
   <url>
     <loc>https://unlock.1ms.dog/fr/kktv/</loc>
@@ -2353,6 +3697,34 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/fod/"/>
   </url>
   <url>
+    <loc>https://unlock.1ms.dog/fr/dmm-tv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/dmm-tv/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/fr/zdf/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/zdf/"/>
+  </url>
+  <url>
     <loc>https://unlock.1ms.dog/de/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/"/>
@@ -2393,6 +3765,20 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/streaming/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/streaming/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/streaming/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/de/social/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/social/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/social/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/social/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/social/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/social/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/social/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/social/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/social/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/social/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/social/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/social/"/>
   </url>
   <url>
     <loc>https://unlock.1ms.dog/de/regional/</loc>
@@ -2563,20 +3949,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/disney-plus/"/>
   </url>
   <url>
-    <loc>https://unlock.1ms.dog/de/tiktok/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/tiktok/"/>
-  </url>
-  <url>
     <loc>https://unlock.1ms.dog/de/dazn/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/dazn/"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/dazn/"/>
@@ -2631,6 +4003,174 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/philo/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/philo/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/philo/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/de/nbc/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/nbc/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/de/shudder/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/shudder/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/de/bein-connect/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/bein-connect/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/de/twitch/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/twitch/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/de/tiktok/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/tiktok/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/de/youtube/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/youtube/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/de/x-twitter/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/x-twitter/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/de/instagram/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/instagram/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/de/telegram/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/telegram/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/de/whatsapp/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/whatsapp/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/de/discord/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/discord/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/discord/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/discord/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/discord/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/discord/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/discord/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/discord/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/discord/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/discord/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/discord/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/discord/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/de/reddit/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/reddit/"/>
   </url>
   <url>
     <loc>https://unlock.1ms.dog/de/kktv/</loc>
@@ -2689,6 +4229,34 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/fod/"/>
   </url>
   <url>
+    <loc>https://unlock.1ms.dog/de/dmm-tv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/dmm-tv/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/de/zdf/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/zdf/"/>
+  </url>
+  <url>
     <loc>https://unlock.1ms.dog/pt/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/"/>
@@ -2729,6 +4297,20 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/streaming/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/streaming/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/streaming/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/pt/social/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/social/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/social/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/social/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/social/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/social/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/social/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/social/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/social/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/social/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/social/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/social/"/>
   </url>
   <url>
     <loc>https://unlock.1ms.dog/pt/regional/</loc>
@@ -2899,20 +4481,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/disney-plus/"/>
   </url>
   <url>
-    <loc>https://unlock.1ms.dog/pt/tiktok/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/tiktok/"/>
-  </url>
-  <url>
     <loc>https://unlock.1ms.dog/pt/dazn/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/dazn/"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/dazn/"/>
@@ -2967,6 +4535,174 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/philo/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/philo/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/philo/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/pt/nbc/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/nbc/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/pt/shudder/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/shudder/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/pt/bein-connect/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/bein-connect/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/pt/twitch/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/twitch/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/pt/tiktok/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/tiktok/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/pt/youtube/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/youtube/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/pt/x-twitter/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/x-twitter/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/pt/instagram/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/instagram/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/pt/telegram/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/telegram/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/pt/whatsapp/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/whatsapp/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/pt/discord/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/discord/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/discord/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/discord/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/discord/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/discord/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/discord/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/discord/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/discord/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/discord/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/discord/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/discord/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/pt/reddit/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/reddit/"/>
   </url>
   <url>
     <loc>https://unlock.1ms.dog/pt/kktv/</loc>
@@ -3025,6 +4761,34 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/fod/"/>
   </url>
   <url>
+    <loc>https://unlock.1ms.dog/pt/dmm-tv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/dmm-tv/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/pt/zdf/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/zdf/"/>
+  </url>
+  <url>
     <loc>https://unlock.1ms.dog/ru/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/"/>
@@ -3065,6 +4829,20 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/streaming/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/streaming/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/streaming/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ru/social/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/social/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/social/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/social/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/social/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/social/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/social/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/social/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/social/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/social/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/social/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/social/"/>
   </url>
   <url>
     <loc>https://unlock.1ms.dog/ru/regional/</loc>
@@ -3235,20 +5013,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/disney-plus/"/>
   </url>
   <url>
-    <loc>https://unlock.1ms.dog/ru/tiktok/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/tiktok/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/tiktok/"/>
-  </url>
-  <url>
     <loc>https://unlock.1ms.dog/ru/dazn/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/dazn/"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/dazn/"/>
@@ -3305,6 +5069,174 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/philo/"/>
   </url>
   <url>
+    <loc>https://unlock.1ms.dog/ru/nbc/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/nbc/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/nbc/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ru/shudder/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/shudder/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/shudder/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ru/bein-connect/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/bein-connect/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/bein-connect/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ru/twitch/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/twitch/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/twitch/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ru/tiktok/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/tiktok/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/tiktok/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ru/youtube/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/youtube/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/youtube/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ru/x-twitter/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/x-twitter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/x-twitter/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ru/instagram/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/instagram/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/instagram/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ru/telegram/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/telegram/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/telegram/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ru/whatsapp/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/whatsapp/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/whatsapp/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ru/discord/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/discord/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/discord/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/discord/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/discord/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/discord/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/discord/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/discord/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/discord/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/discord/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/discord/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/discord/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ru/reddit/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/reddit/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/reddit/"/>
+  </url>
+  <url>
     <loc>https://unlock.1ms.dog/ru/kktv/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/kktv/"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/kktv/"/>
@@ -3359,5 +5291,33 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/fod/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/fod/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/fod/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ru/dmm-tv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/dmm-tv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/dmm-tv/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ru/zdf/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/zdf/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/zdf/"/>
   </url>
 </urlset>

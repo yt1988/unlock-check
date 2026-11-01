@@ -2,7 +2,7 @@
 
 **English** · [简体中文](README.zh-CN.md)
 
-Which streaming and AI services work on your IP, and which country does each one see? [Streaming & AI Unlock Check](https://unlock.1ms.dog) asks 20 services from your browser — Netflix, Disney+, TikTok, ChatGPT, Claude, Gemini and more — over the route your proxy picks for each one, and says how sure each verdict is.
+Which streaming and AI services work on your IP, and which country does each one see? [Streaming & AI Unlock Check](https://unlock.1ms.dog) asks 33 services from your browser — Netflix, Disney+, TikTok, ChatGPT, Claude, Gemini and more — over the route your proxy picks for each one, and says how sure each verdict is.
 
 **Live:** https://unlock.1ms.dog
 
@@ -12,10 +12,10 @@ The well-known unlock scripts (RegionRestrictionCheck and its forks) run `curl` 
 
 | Label | How | Services |
 |---|---|---|
-| **Own API** | The service's own region API, readable from any page (CORS). The same endpoint the command-line scripts read. | ChatGPT (`api.openai.com/compliance/cookie_requirements` + its trace), DAZN, Philo, KKTV, TVB Anywhere+, SBS On Demand, FOD |
-| **Own server** | Cloudflare's `/cdn-cgi/trace` on the service's own domain (`Access-Control-Allow-Origin: *`) gives the country that edge sees, checked against the service's published list. | Claude, Copilot, Grok, Perplexity, Le Chat, Poe, Character.AI, Crunchyroll |
-| **Redirects** | Redirect counting, below. | Netflix (region), Disney+, Peacock |
-| **Inferred** | Nothing of the service's own is readable: it is reachable over your route, and the country most services see is checked against its published list. | Gemini, TikTok |
+| **Official API** | The service's own region API, readable from any page (CORS). The same endpoint the command-line scripts read. | ChatGPT (`api.openai.com/compliance/cookie_requirements` + its trace), DAZN, Philo, NBC, Shudder, beIN CONNECT, KKTV, TVB Anywhere+, SBS On Demand, FOD, DMM TV, ZDF |
+| **Its location** | Cloudflare's `/cdn-cgi/trace` on the service's own domain (`Access-Control-Allow-Origin: *`) gives the country that edge sees, checked against the service's published list. | Claude, Copilot, Grok, Perplexity, Le Chat, Poe, Character.AI, Crunchyroll, X |
+| **Redirect test** | Redirect counting, below. | Netflix (region), Disney+, Peacock |
+| **Guess** | Nothing of the service's own is readable: it is reachable over your route, and the country most services see is checked against its published list. | Gemini, TikTok, YouTube, Instagram, Telegram, WhatsApp, Discord, Reddit, Twitch |
 
 Country lists come from the services: [OpenAI](https://developers.openai.com/api/docs/supported-countries), [Anthropic](https://www.anthropic.com/supported-countries), [Gemini app](https://support.google.com/gemini/answer/13575153) (it includes Hong Kong and Macau; the Gemini API list doesn't), [Netflix](https://help.netflix.com/en/node/14164).
 
@@ -52,7 +52,7 @@ Pages whose resource policy refuses other sites (`Cross-Origin-Resource-Policy: 
 
 ## Pages
 
-Every language (`/`, `/zh-cn/`, `/zh-tw/`, `/ja/`, `/ko/`, `/es/`, `/fr/`, `/de/`, `/pt/`, `/ru/`) has the main page, a page per category (`/ai/`, `/streaming/`, `/regional/`) and a page per service (`/netflix/`, `/chatgpt/`, `/claude/`…), each with its own title, questions and preview image; a service's page leads with its verdict and lists where it is offered.
+Every language (`/`, `/zh-cn/`, `/zh-tw/`, `/ja/`, `/ko/`, `/es/`, `/fr/`, `/de/`, `/pt/`, `/ru/`) has the main page, a page per category (`/ai/`, `/streaming/`, `/social/`, `/regional/`) and a page per service (`/netflix/`, `/chatgpt/`, `/claude/`…), each with its own title, questions and preview image; a service's page leads with its verdict and lists where it is offered.
 
 ## Self-hosting
 

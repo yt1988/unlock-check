@@ -2,7 +2,7 @@
 
 [English](README.md) · **简体中文**
 
-你的 IP 能用哪些流媒体和 AI，每个服务看到你在哪个国家？[流媒体/AI 解锁检测](https://unlock.1ms.dog) 从你的浏览器询问 20 个服务（Netflix、Disney+、TikTok、ChatGPT、Claude、Gemini 等），每个都走你的代理给它分配的线路，并标明每个结论有多可靠。
+你的 IP 能用哪些流媒体和 AI，每个服务看到你在哪个国家？[流媒体/AI 解锁检测](https://unlock.1ms.dog) 从你的浏览器询问 33 个服务（Netflix、Disney+、TikTok、ChatGPT、Claude、Gemini 等），每个都走你的代理给它分配的线路，并标明每个结论有多可靠。
 
 **在线使用：** https://unlock.1ms.dog
 
@@ -12,10 +12,10 @@
 
 | 标签 | 方法 | 服务 |
 |---|---|---|
-| **官方接口** | 服务自己的地区接口，任何网页都能读（CORS），和命令行脚本读的是同一个接口。 | ChatGPT（`api.openai.com/compliance/cookie_requirements` 加它的 trace）、DAZN、Philo、KKTV、TVB Anywhere+、SBS On Demand、FOD |
-| **服务节点** | 服务自己域名下 Cloudflare 的 `/cdn-cgi/trace`（`Access-Control-Allow-Origin: *`）给出这个节点看到的国家，再对照服务公布的列表。 | Claude、Copilot、Grok、Perplexity、Le Chat、Poe、Character.AI、Crunchyroll |
-| **跳转探测** | 数跳转次数，见下文。 | Netflix（地区）、Disney+、Peacock |
-| **推断** | 服务自己的东西一样也读不到：只确认它在你的线路上能访问，再拿多数服务看到的国家对照它公布的列表。 | Gemini、TikTok |
+| **官方接口** | 服务自己的地区接口，任何网页都能读（CORS），和命令行脚本读的是同一个接口。 | ChatGPT（`api.openai.com/compliance/cookie_requirements` 加它的 trace）、DAZN、Philo、NBC、Shudder、beIN CONNECT、KKTV、TVB Anywhere+、SBS On Demand、FOD、DMM TV、ZDF |
+| **官方定位** | 服务自己域名下 Cloudflare 的 `/cdn-cgi/trace`（`Access-Control-Allow-Origin: *`）给出这个节点看到的国家，再对照服务公布的列表。 | Claude、Copilot、Grok、Perplexity、Le Chat、Poe、Character.AI、Crunchyroll、X |
+| **跳转判断** | 数跳转次数，见下文。 | Netflix（地区）、Disney+、Peacock |
+| **推测** | 服务自己的东西一样也读不到：只确认它在你的线路上能访问，再拿多数服务看到的国家对照它公布的列表。 | Gemini、TikTok、YouTube、Instagram、Telegram、WhatsApp、Discord、Reddit、Twitch |
 
 国家列表来自各服务官方：[OpenAI](https://developers.openai.com/api/docs/supported-countries)、[Anthropic](https://www.anthropic.com/supported-countries)、[Gemini 应用](https://support.google.com/gemini/answer/13575153)（包含香港和澳门；Gemini API 的列表不含）、[Netflix](https://help.netflix.com/en/node/14164)。
 
@@ -52,7 +52,7 @@
 
 ## 页面
 
-每种语言（`/`、`/zh-cn/`、`/zh-tw/`、`/ja/`、`/ko/`、`/es/`、`/fr/`、`/de/`、`/pt/`、`/ru/`）都有主页、每个分类一页（`/ai/`、`/streaming/`、`/regional/`）和每个服务一页（`/netflix/`、`/chatgpt/`、`/claude/`…），各有自己的标题、问答和预览图；服务页首先显示这个服务的结论，并列出它在哪些国家可用。
+每种语言（`/`、`/zh-cn/`、`/zh-tw/`、`/ja/`、`/ko/`、`/es/`、`/fr/`、`/de/`、`/pt/`、`/ru/`）都有主页、每个分类一页（`/ai/`、`/streaming/`、`/social/`、`/regional/`）和每个服务一页（`/netflix/`、`/chatgpt/`、`/claude/`…），各有自己的标题、问答和预览图；服务页首先显示这个服务的结论，并列出它在哪些国家可用。
 
 ## 自己部署
 

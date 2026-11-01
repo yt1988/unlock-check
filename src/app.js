@@ -94,7 +94,8 @@
       catch (e) { r.err = e.why || "net"; }
       return r;
     }
-    r.reach = await loads(p.reach || p.hops);
+    // one retry: a proxy sometimes drops the first connection to a host
+    r.reach = await loads(p.reach || p.hops) || await loads(p.reach || p.hops);
     return r;
   }
   // the services whose answer waits for the others: the country they see (guess) and Netflix's list to try
@@ -112,26 +113,29 @@
   // A row keeps its size from the start: only the text inside changes.
   function renderRow(id) {
     const li = $("#s-" + id); if (!li) return;
-    const v = S.v[id], vd = li.querySelector(".vd"), rg = li.querySelector(".rg"), hw = li.querySelector(".hw"), ip = li.querySelector(".ip");
-    li.className = "sv" + (v ? " v-" + v.v : S.gen ? " wait" : "");
-    if (!v) { vd.innerHTML = `<i></i><b>${esc(S.gen ? t("v_wait") : "–")}</b>`; rg.innerHTML = hw.textContent = ip.innerHTML = ""; li.removeAttribute("title"); return; }
-    vd.innerHTML = `<i>${MARK[v.v]}</i><b>${esc(t("v_" + v.v))}</b>`;
-    rg.innerHTML = v.cc ? flag(v.cc) + `<span>${esc(country(v.cc))}</span>` : `<span class="m">${v.v === "fail" ? "" : "–"}</span>`;
-    hw.textContent = v.how ? t("how_" + v.how) : "";
-    ip.innerHTML = S.shared || !v.ip ? "" : IPQS && !masked() ? `<a href="${esc(IPQS)}/?ip=${encodeURIComponent(v.ip)}" target="_blank" rel="noopener">${esc(v.ip)}</a>` : esc(ipTxt(v.ip));
-    li.title = whyOf(id, v);
+    const v = S.v[id], vd = li.querySelector(".vd"), rg = li.querySelector(".rg");
+    // a guessed country is drawn fainter; how the verdict was reached and the address are in the tooltip
+    li.className = "sv" + (v ? " v-" + v.v + (v.how === "guess" ? " g" : "") : S.gen ? " wait" : "");
+    // the verdict is its mark alone (the totals above name the colors); screen readers get the word
+    if (!v) { vd.innerHTML = `<i></i><span class="sr">${esc(S.gen ? t("v_wait") : "")}</span>`; rg.innerHTML = ""; li.removeAttribute("title"); return; }
+    vd.innerHTML = `<i>${MARK[v.v]}</i><span class="sr">${esc(t("v_" + v.v))}</span>`;
+    rg.innerHTML = v.cc ? flag(v.cc) + `<span>${esc(country(v.cc))}</span>` : "";
+    li.title = (v.how ? t("how_" + v.how) + " · " : "") + whyOf(id, v) + (v.ip && !S.shared ? "\nIP " + ipTxt(v.ip) : "");
   }
-  // the one-line explanation of a verdict (row tooltip, the service page's panel)
+  // One plain sentence on what the verdict rests on (row tooltip, a service page's panel). Keys: why_<how>_<verdict>,
+  // with "list" when the service publishes where it is offered and "block" when only where it is blocked; then notes.
   function whyOf(id, v) {
-    const s = SV[id], n = s.name;
-    if (v.v === "fail") return t("why_" + (v.why === "timeout" ? "timeout" : v.why === "http" ? "http" : "net"), { name: n, n: v.n || "" });
-    // what the verdict rests on: Netflix's country page, a redirect to an "unavailable" page, an API, an edge, a guess
-    const k = v.how === "edge" && !s.allow ? (v.v === "no" ? "edge_no" : "edge_deny") : v.how !== "hops" ? v.how : id === "netflix" ? (v.cc ? "nf" : "nf_none") : "hops_" + v.v;
-    const parts = [t("hd_" + k, { name: n, c: v.cc ? country(v.cc) : "?" })];
-    if (v.v === "reach") parts.push(t(v.why === "nocc" ? "why_nocc" : "why_unknown", { name: n }));
-    if (id === "netflix" && v.v === "ok") parts.push(t("note_netflix"));
-    if (id === "gemini") parts.push(t("note_google"));
-    return parts.join(" ");
+    const s = SV[id], n = s.name, c = v.cc ? country(v.cc) : "";
+    if (v.v === "fail") return t("why_fail_" + (v.why === "timeout" ? "timeout" : v.why === "http" ? "http" : "net"), { name: n, n: v.n || "" });
+    let k;
+    if (id === "netflix") k = v.cc ? "nf_" + v.v : "nf_none";
+    else if (v.v === "reach") k = v.cc ? "reach_nolist" : "reach_nocc";
+    else if (v.how === "api" || v.how === "hops") k = v.how + "_" + v.v;
+    else k = v.how + "_" + (s.allow ? "list" : "block") + "_" + v.v;
+    const out = [t("why_" + k, { name: n, c })];
+    if (id === "netflix" && v.v === "ok") out.push(t("note_netflix"));
+    if (id === "gemini") out.push(t("note_google"));
+    return out.join(" ");
   }
   function renderGroups() {
     for (const c of CATS) {
@@ -160,7 +164,8 @@
   const place = cc => `${flag(cc)}<b>${esc(country(cc))}</b>`;
   function renderNotes() {
     const ul = $("#notes");
-    if (!S.done) { ul.innerHTML = `<li class="nt wait"><span class="bar"></span></li>`.repeat(2); return; }
+    // while running, each line says what it is waiting for, in the space its result will take
+    if (!S.done) { ul.innerHTML = ["wait_ex", "wait_ip", "wait_tz"].map(k => `<li class="nt wait"><i></i><span>${esc(t(k))}</span></li>`).join(""); return; }
     const ex = exitsByCountry(S.v), tz = S.shared ? S.shared.tz : tzCc(), out = [];
     const names = ids => esc(ids.map(id => SV[id].name).join(t("join")));
     if (!ex.length) out.push(["info", esc(t("ex_none"))]);
@@ -168,6 +173,13 @@
     // the most common country by count, the others with the services that see them
     else out.push(["warn", t("ex_split", { c: ex.map((e, i) => `${place(e.cc)} <span class="m">${i ? names(e.ids) : "×" + e.ids.length}</span>`).join(" · ") }) +
       (EGRESS ? ` <a class="xl" href="${esc(EGRESS + D.egressPath)}" target="_blank" rel="noopener">${esc(t("egress_link"))}</a>` : "")]);
+    // the addresses the services saw, most common first, each linked to the IP quality check when the host has one
+    const ips = new Map();
+    for (const v of Object.values(S.v)) if (v && v.ip) ips.set(v.ip, (ips.get(v.ip) || 0) + 1);
+    const ipLink = ip => IPQS && !masked() ? `<a class="ipq" href="${esc(IPQS)}/?ip=${encodeURIComponent(ip)}" target="_blank" rel="noopener">${esc(ip)}</a>` : `<span class="ipq">${esc(ipTxt(ip))}</span>`;
+    if (S.shared) out.push(["info", esc(t("ip_shared"))]);
+    else if (!ips.size) out.push(["info", esc(t("ip_none"))]);
+    else out.push([ips.size > 1 ? "warn" : "info", t("ip_line", { list: [...ips].sort((a, b) => b[1] - a[1]).map(([ip, n]) => `${ipLink(ip)} <span class="m">×${n}</span>`).join(" · ") })]);
     const main = ex[0] && ex[0].cc;
     if (!main || !tz) out.push(["info", esc(t("tz_none"))]);
     else if (tz === main) out.push(["ok", t("tz_ok", { a: place(tz) })]);

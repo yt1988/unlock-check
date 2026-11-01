@@ -1,14 +1,15 @@
 # Streaming & AI Unlock Check
 
 > Free browser tool that checks, over the visitor's own connection and route, whether streaming and AI services are
-> available and which country each one sees: ChatGPT, Claude, Gemini, Copilot, Grok, Perplexity, Le Chat, Poe, Character.AI, Netflix, Disney+, TikTok, DAZN, Crunchyroll, Peacock, Philo, KKTV, TVB Anywhere+, SBS On Demand, FOD. It uses each service's own
+> available and which country each one sees: ChatGPT, Claude, Gemini, Copilot, Grok, Perplexity, Le Chat, Poe, Character.AI, Netflix, Disney+, DAZN, Crunchyroll, Peacock, Philo, NBC, Shudder, beIN CONNECT, Twitch, TikTok, YouTube, X, Instagram, Telegram, WhatsApp, Discord, Reddit, KKTV, TVB Anywhere+, SBS On Demand, FOD, DMM TV, ZDF. It uses each service's own
 > region API where a page can read it, the service's own Cloudflare edge (/cdn-cgi/trace) against its published
 > country list, redirect counting (Netflix's country pages, "unavailable" redirects), and marks inferred results.
 > Everything runs client-side; no results are sent to the site.
 
 - Page: https://unlock.1ms.dog/ (also /zh-cn/, /zh-tw/, /ja/, /ko/, /es/, /fr/, /de/, /pt/, /ru/)
-- AI services: https://unlock.1ms.dog/ai/
+- AI: https://unlock.1ms.dog/ai/
 - Streaming: https://unlock.1ms.dog/streaming/
+- Social: https://unlock.1ms.dog/social/
 - Regional TV: https://unlock.1ms.dog/regional/
 - ChatGPT: https://unlock.1ms.dog/chatgpt/
 - Claude: https://unlock.1ms.dog/claude/
@@ -21,13 +22,26 @@
 - Character.AI: https://unlock.1ms.dog/character-ai/
 - Netflix: https://unlock.1ms.dog/netflix/
 - Disney+: https://unlock.1ms.dog/disney-plus/
-- TikTok: https://unlock.1ms.dog/tiktok/
 - DAZN: https://unlock.1ms.dog/dazn/
 - Crunchyroll: https://unlock.1ms.dog/crunchyroll/
 - Peacock: https://unlock.1ms.dog/peacock/
 - Philo: https://unlock.1ms.dog/philo/
+- NBC: https://unlock.1ms.dog/nbc/
+- Shudder: https://unlock.1ms.dog/shudder/
+- beIN CONNECT: https://unlock.1ms.dog/bein-connect/
+- Twitch: https://unlock.1ms.dog/twitch/
+- TikTok: https://unlock.1ms.dog/tiktok/
+- YouTube: https://unlock.1ms.dog/youtube/
+- X: https://unlock.1ms.dog/x-twitter/
+- Instagram: https://unlock.1ms.dog/instagram/
+- Telegram: https://unlock.1ms.dog/telegram/
+- WhatsApp: https://unlock.1ms.dog/whatsapp/
+- Discord: https://unlock.1ms.dog/discord/
+- Reddit: https://unlock.1ms.dog/reddit/
 - KKTV: https://unlock.1ms.dog/kktv/
 - TVB Anywhere+: https://unlock.1ms.dog/tvb-anywhere/
 - SBS On Demand: https://unlock.1ms.dog/sbs-on-demand/
 - FOD: https://unlock.1ms.dog/fod/
+- DMM TV: https://unlock.1ms.dog/dmm-tv/
+- ZDF: https://unlock.1ms.dog/zdf/
 - Source: https://github.com/yt1988/unlock-check
