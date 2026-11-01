@@ -52,32 +52,29 @@
 .btn.pri.busy { opacity: 1; } .btn.pri.busy svg { animation: spin 1s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* the services, by category: a dense grid of one-line cells (mark, name, flag and country), five a row on a wide
-   screen, so the whole list fits on one screen. How each verdict was reached, and the address, are in the tooltip */
-.list { padding: 14px 22px 16px; display: flex; flex-direction: column; gap: 12px; }
-.grp h2 { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; height: 20px; display: flex; align-items: center; margin-bottom: 6px; }
+/* the services, by category: a grid of quiet one-line cells, five a row on a wide screen, so the whole list fits on
+   one screen. One icon per cell (the service's own), no borders: a service that works shows its country in grey;
+   one that doesn't is tinted and says so in a word. How each verdict was reached, and the address, are in the tooltip */
+.list { padding: 14px 22px 16px; display: flex; flex-direction: column; gap: 14px; }
+.grp h2 { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; height: 20px; display: flex; align-items: center; margin-bottom: 4px; }
 .grp h2 a { text-decoration: none; } .grp h2 a:hover { color: var(--fg); }
 .g-n { margin-left: auto; font: 500 12px var(--f-num); letter-spacing: 0; font-variant-numeric: tabular-nums; }
-.grp ul { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 6px; }
-.sv { display: grid; grid-template-columns: 16px 16px minmax(0, 1fr) auto; align-items: center; column-gap: 7px; height: 36px; padding: 0 10px;
-  border: 1px solid var(--line); border-radius: 9px; font-size: 13px; }
-.vd i { width: 16px; height: 16px; border-radius: 50%; display: grid; place-items: center; font: 700 10px/1 var(--f-ui); font-style: normal; color: #fff; background: var(--soft); }
-/* the service's own icon, so it is recognized at a glance */
-.fi { width: 16px; height: 16px; border-radius: 4px; object-fit: contain; }
-.sn { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 600; text-decoration: none; }
+.grp ul { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 2px 12px; }
+.sv { display: grid; grid-template-columns: 18px minmax(0, 1fr) auto; align-items: center; column-gap: 8px; height: 34px; padding: 0 10px; border-radius: 8px; font-size: 13.5px; }
+.sv:hover { background: var(--soft); }
+.fi { width: 18px; height: 18px; border-radius: 4px; object-fit: contain; }
+.sn { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 500; text-decoration: none; }
 .sn:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
-.rg { display: flex; align-items: center; gap: 5px; min-width: 0; max-width: 92px; white-space: nowrap; overflow: hidden; font-size: 12.5px; color: var(--muted); }
-.rg span { overflow: hidden; text-overflow: ellipsis; }
-.rg .flag { width: 18px; height: 13px; }
-.sv.g .rg { opacity: .6; }                       /* a guessed country */
-.sv.wait .vd i { animation: blink 1.2s ease-in-out infinite; }
-.sv.v-ok .vd i { background: var(--ok); }
-.sv.v-no { border-color: color-mix(in srgb, var(--bad) 35%, var(--line)); background: color-mix(in srgb, var(--bad) 5%, transparent); } .sv.v-no .vd i { background: var(--bad); }
-.sv.v-fail { border-color: color-mix(in srgb, var(--warn) 40%, var(--line)); } .sv.v-fail .vd i { background: var(--warn); }
-.sv.v-reach .vd i { background: transparent; box-shadow: inset 0 0 0 1.5px var(--line); color: var(--muted); }
+.rg { min-width: 0; max-width: 96px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 12.5px; color: var(--muted); }
+.sv.v-ok .rg { color: color-mix(in srgb, var(--ok) 80%, var(--muted)); }   /* works: the country, in the green of the totals */
+.sv.g .rg { opacity: .65; }                       /* a guessed country */
+.sv.wait .rg { animation: blink 1.2s ease-in-out infinite; }
+.sv.v-no { background: color-mix(in srgb, var(--bad) 8%, transparent); } .sv.v-no .rg { color: var(--bad); font-weight: 600; }
+.sv.v-fail { background: color-mix(in srgb, var(--warn) 10%, transparent); } .sv.v-fail .rg { color: var(--warn); font-weight: 600; }
+.sv.v-reach .rg { font-style: italic; }
 .sv[title] { cursor: help; }
-:root[data-theme="dark"] .vd i, :root[data-theme="dark"] .nt i, :root[data-theme="dark"] .st { color: #111; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .vd i, :root:not([data-theme="light"]) .nt i, :root:not([data-theme="light"]) .st { color: #111; } }
+:root[data-theme="dark"] .nt i, :root[data-theme="dark"] .st { color: #111; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .nt i, :root:not([data-theme="light"]) .st { color: #111; } }
 /* the addresses the services saw, in the notes */
 .nt .ipq { font: 12.5px var(--f-num); color: inherit; text-decoration: none; overflow-wrap: anywhere; }
 .nt a.ipq { border-bottom: 1px dotted var(--muted); } .nt a.ipq:hover { border-bottom-style: solid; }
@@ -131,7 +128,6 @@ body.dlg-open { overflow: hidden; }
   .sum { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .brand-name { font-size: 17px; }
   .grp ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .rg span { display: none; }   /* two cells a row: the flag says the country */
   .nt.wait { min-height: 46px; }   /* a note takes two lines at this width: reserve them while running */
   .dialog.help { height: calc(100vh - 32px); }
   .help-b { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); }

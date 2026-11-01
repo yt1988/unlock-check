@@ -118,10 +118,11 @@
     const v = S.v[id], vd = li.querySelector(".vd"), rg = li.querySelector(".rg");
     // a guessed country is drawn fainter; how the verdict was reached and the address are in the tooltip
     li.className = "sv" + (v ? " v-" + v.v + (v.how === "guess" ? " g" : "") : S.gen ? " wait" : "");
-    // the verdict is its mark alone (the totals above name the colors); screen readers get the word
-    if (!v) { vd.innerHTML = `<i></i><span class="sr">${esc(S.gen ? t("v_wait") : "")}</span>`; rg.innerHTML = ""; li.removeAttribute("title"); return; }
-    vd.innerHTML = `<i>${MARK[v.v]}</i><span class="sr">${esc(t("v_" + v.v))}</span>`;
-    rg.innerHTML = v.cc ? flag(v.cc) + `<span>${esc(country(v.cc))}</span>` : "";
+    // One icon per cell, the service's own. A service that works shows the country it sees, in plain text; any other
+    // result says so in a word (and the cell is tinted). Screen readers get the verdict word either way.
+    if (!v) { vd.textContent = S.gen ? t("v_wait") : ""; rg.textContent = S.gen ? "…" : ""; li.removeAttribute("title"); return; }
+    vd.textContent = t("v_" + v.v);
+    rg.textContent = v.v === "ok" ? (v.cc ? country(v.cc) : "") : t("v_" + v.v);
     li.title = (v.how ? t("how_" + v.how) + " · " : "") + whyOf(id, v) + (v.ip && !S.shared ? "\nIP " + ipTxt(v.ip) : "");
   }
   // One plain sentence on what the verdict rests on (row tooltip, a service page's panel). Keys: why_<how>_<verdict>,
