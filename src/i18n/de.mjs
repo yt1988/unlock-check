@@ -78,7 +78,7 @@ export default {
   tz_none: "Zeitzone nicht verglichen.",
   tz_ok: "Die Zeitzone deines Browsers passt zu {a}.",
   tz_bad: "Die Zeitzone deines Browsers ist {a}, aber die Dienste verorten dich in {b}. KI-Dienste können das als Zeichen für einen Proxy werten.",
-  egress_link: "Welche IP jede Website sieht →",
+  egress_link: "Welche IP jede Website sieht",
   progress: "{d} / {n} Dienste",
   done: "{n} Dienste geprüft",
   rerun: "Erneut prüfen",

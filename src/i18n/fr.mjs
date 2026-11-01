@@ -78,7 +78,7 @@ export default {
   tz_none: "Fuseau horaire non comparé.",
   tz_ok: "Le fuseau horaire du navigateur correspond au pays détecté : {a}.",
   tz_bad: "Fuseau horaire du navigateur : {a} ; pays détecté par les services : {b}. Les services d'IA peuvent y voir le signe d'un proxy.",
-  egress_link: "Voir l'IP que voit chaque site →",
+  egress_link: "Voir l'IP que voit chaque site",
   progress: "{d} / {n} services",
   done: "{n} services vérifiés",
   rerun: "Vérifier à nouveau",

@@ -78,7 +78,7 @@ export default {
   tz_none: "无法比较时区。",
   tz_ok: "浏览器时区和{a}一致。",
   tz_bad: "浏览器时区是{a}，但服务把你定位在{b}。AI 服务可能因此认为你在用代理。",
-  egress_link: "查看每个网站看到的 IP →",
+  egress_link: "查看每个网站看到的 IP",
   progress: "{d} / {n} 个服务",
   done: "已检测 {n} 个服务",
   rerun: "重新检测",

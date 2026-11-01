@@ -108,6 +108,8 @@
   const ipTxt = ip => masked() ? maskIp(ip) : ip;
   const IPQS = (document.querySelector('meta[name="ipqs"]') || {}).content || "";
   const EGRESS = (document.querySelector('meta[name="egress"]') || {}).content || "";
+  // a link to another 1ms.dog tool ends in the external-link icon (the same on every tool, see the shell tool contract)
+  const EXT = `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2.5h4.5V7M13.5 2.5 7.5 8.5M12 10v3.5H2.5V4H6"/></svg>`;
   const MARK = { ok: "✓", no: "✕", reach: "•", fail: "!" };
 
   // A row keeps its size from the start: only the text inside changes.
@@ -172,7 +174,7 @@
     else if (ex.length === 1) out.push(["ok", t("ex_one", { c: place(ex[0].cc) })]);
     // the most common country by count, the others with the services that see them
     else out.push(["warn", t("ex_split", { c: ex.map((e, i) => `${place(e.cc)} <span class="m">${i ? names(e.ids) : "×" + e.ids.length}</span>`).join(" · ") }) +
-      (EGRESS ? ` <a class="xl" href="${esc(EGRESS + D.egressPath)}" target="_blank" rel="noopener">${esc(t("egress_link"))}</a>` : "")]);
+      (EGRESS ? ` <a class="xl" href="${esc(EGRESS + D.egressPath)}" target="_blank" rel="noopener">${esc(t("egress_link"))}${EXT}</a>` : "")]);
     // the addresses the services saw, most common first, each linked to the IP quality check when the host has one
     const ips = new Map();
     for (const v of Object.values(S.v)) if (v && v.ip) ips.set(v.ip, (ips.get(v.ip) || 0) + 1);

@@ -81,7 +81,7 @@ export default {
   tz_none: "Time zone not compared.",
   tz_ok: "Your browser's time zone matches {a}.",
   tz_bad: "Your browser's time zone is {a}, but services place you in {b}. AI services may take this as a sign of a proxy.",
-  egress_link: "See the IP each site sees →",
+  egress_link: "See the IP each site sees",
   progress: "{d} / {n} services",
   done: "{n} services checked",
   rerun: "Check again",

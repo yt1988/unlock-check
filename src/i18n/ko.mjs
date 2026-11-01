@@ -80,7 +80,7 @@ export default {
   tz_none: "시간대를 비교하지 못했습니다.",
   tz_ok: "브라우저 시간대 일치: {a}.",
   tz_bad: "브라우저 시간대는 {a}, 서비스가 판단한 위치는 {b}. AI 서비스가 프록시 사용으로 볼 수 있습니다.",
-  egress_link: "사이트마다 보이는 IP 보기 →",
+  egress_link: "사이트마다 보이는 IP 보기",
   progress: "서비스 {d} / {n}",
   done: "서비스 {n}개 확인 완료",
   rerun: "다시 확인",

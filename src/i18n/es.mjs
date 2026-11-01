@@ -78,7 +78,7 @@ export default {
   tz_none: "No se pudo comparar la zona horaria.",
   tz_ok: "La zona horaria de tu navegador coincide con {a}.",
   tz_bad: "La zona horaria de tu navegador es {a}, pero los servicios te sitúan en {b}. Los servicios de IA pueden tomarlo como señal de un proxy.",
-  egress_link: "Ver la IP que ve cada sitio →",
+  egress_link: "Ver la IP que ve cada sitio",
   progress: "{d} / {n} servicios",
   done: "{n} servicios comprobados",
   rerun: "Comprobar otra vez",
