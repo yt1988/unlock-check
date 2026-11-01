@@ -1,5 +1,5 @@
 export default {
-  name: "解鎖檢測",
+  name: "串流/AI 解鎖檢測",
   lang_label: "語言",
   seo_title: "串流與 AI 解鎖檢測：Netflix、ChatGPT、Claude、Gemini、Disney+、TikTok",
   seo_desc: "目前的 IP 能不能用 Netflix、Disney+、TikTok、ChatGPT、Claude、Gemini，各自顯示哪個地區？在瀏覽器裡檢測 {n} 個服務，走的是你代理的真實分流。",
@@ -78,7 +78,7 @@ export default {
   dl_img: "下載",
   sys_share: "分享…",
   copied: "已複製",
-  share_text: "{v} · 用解鎖檢測測的",
+  share_text: "{v} · 用串流/AI 解鎖檢測測的",
   shared_from: "別人分享的結果，檢測於 {date}",
   test_mine: "測我的",
   link_label: "結果連結",

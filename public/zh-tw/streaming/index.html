@@ -35,7 +35,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://unlock.1ms.dog/og/zh-tw/streaming.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"解鎖檢測","url":"https://unlock.1ms.dog/zh-tw/streaming/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","description":"檢測 Netflix、Disney+、TikTok、DAZN、Crunchyroll、Peacock、Philo 在目前 IP 下能否使用，以及分到哪個地區。","inLanguage":"zh-TW","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"FAQPage","inLanguage":"zh-TW","mainEntity":[{"@type":"Question","name":"為什麼在瀏覽器裡檢測？","acceptedAnswer":{"@type":"Answer","text":"帶規則的代理（Clash、Surge、Shadowrocket、sing-box 等）依網站選線路。在伺服器上跑腳本只能測到伺服器自己的 IP；這個頁面從你的瀏覽器詢問每個服務，每個請求都走你的規則分給它的線路。"}},{"@type":"Question","name":"「官方介面」「服務節點」「跳轉偵測」「推斷」是什麼意思？","acceptedAnswer":{"@type":"Answer","text":"結論有多可靠，從強到弱。官方介面：服務自己的地區介面給出了答案。服務節點：服務自己的 Cloudflare 節點說出它看到的國家，再對照它公布的清單。跳轉偵測：頁面數出了服務把你跳轉到哪裡。推斷：服務的回應完全讀不到，只確認可以連線，國家取多數服務看到的那個。"}},{"@type":"Question","name":"為什麼不同服務看到的國家不一樣？","acceptedAnswer":{"@type":"Answer","text":"你的規則可能讓它們走了不同的代理，而且每個服務用自己的資料庫為 IP 定位。國家不一致時，頁面會列出哪些服務看到哪個國家。"}},{"@type":"Question","name":"為什麼要看時區？","acceptedAnswer":{"@type":"Answer","text":"AI 服務會比較瀏覽器時區和 IP 所在國家。瀏覽器時區是 Asia/Taipei、IP 卻在美國，是典型的代理特徵，可能招來更嚴格的驗證。"}},{"@type":"Question","name":"會把資料傳給本站嗎？","acceptedAnswer":{"@type":"Answer","text":"不會。你的瀏覽器直接詢問每個服務；本站只提供靜態檔案，看不到你的結果。截圖前可以先隱藏 IP。"}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"解鎖檢測","item":"https://unlock.1ms.dog/zh-tw/"},{"@type":"ListItem","position":2,"name":"串流影音","item":"https://unlock.1ms.dog/zh-tw/streaming/"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"串流/AI 解鎖檢測","url":"https://unlock.1ms.dog/zh-tw/streaming/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","description":"檢測 Netflix、Disney+、TikTok、DAZN、Crunchyroll、Peacock、Philo 在目前 IP 下能否使用，以及分到哪個地區。","inLanguage":"zh-TW","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"FAQPage","inLanguage":"zh-TW","mainEntity":[{"@type":"Question","name":"為什麼在瀏覽器裡檢測？","acceptedAnswer":{"@type":"Answer","text":"帶規則的代理（Clash、Surge、Shadowrocket、sing-box 等）依網站選線路。在伺服器上跑腳本只能測到伺服器自己的 IP；這個頁面從你的瀏覽器詢問每個服務，每個請求都走你的規則分給它的線路。"}},{"@type":"Question","name":"「官方介面」「服務節點」「跳轉偵測」「推斷」是什麼意思？","acceptedAnswer":{"@type":"Answer","text":"結論有多可靠，從強到弱。官方介面：服務自己的地區介面給出了答案。服務節點：服務自己的 Cloudflare 節點說出它看到的國家，再對照它公布的清單。跳轉偵測：頁面數出了服務把你跳轉到哪裡。推斷：服務的回應完全讀不到，只確認可以連線，國家取多數服務看到的那個。"}},{"@type":"Question","name":"為什麼不同服務看到的國家不一樣？","acceptedAnswer":{"@type":"Answer","text":"你的規則可能讓它們走了不同的代理，而且每個服務用自己的資料庫為 IP 定位。國家不一致時，頁面會列出哪些服務看到哪個國家。"}},{"@type":"Question","name":"為什麼要看時區？","acceptedAnswer":{"@type":"Answer","text":"AI 服務會比較瀏覽器時區和 IP 所在國家。瀏覽器時區是 Asia/Taipei、IP 卻在美國，是典型的代理特徵，可能招來更嚴格的驗證。"}},{"@type":"Question","name":"會把資料傳給本站嗎？","acceptedAnswer":{"@type":"Answer","text":"不會。你的瀏覽器直接詢問每個服務；本站只提供靜態檔案，看不到你的結果。截圖前可以先隱藏 IP。"}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"串流/AI 解鎖檢測","item":"https://unlock.1ms.dog/zh-tw/"},{"@type":"ListItem","position":2,"name":"串流影音","item":"https://unlock.1ms.dog/zh-tw/streaming/"}]}]}</script>
 <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/app.27fb2f06f8.css">
 </head>
@@ -44,7 +44,7 @@
   <header class="top">
     <a class="brand" href="/zh-tw/">
       <span class="logo"><img class="logo-light" src="/assets/logo-light.svg" width="90" height="36" alt="1ms"><img class="logo-dark" src="/assets/logo-dark.svg" width="90" height="36" alt="1ms"></span>
-      <span class="brand-name" data-i="name">解鎖檢測</span>
+      <span class="brand-name" data-i="name">串流/AI 解鎖檢測</span>
     </a>
     <div class="top-acts">
       <label class="sel"><span class="sr" data-i="lang_label">語言</span>
@@ -129,7 +129,7 @@
   </div>
 </div>
 <script type="application/json" id="data">{"lang":"zh-TW","paths":{"en":"/streaming/","zh-CN":"/zh-cn/streaming/","zh-TW":"/zh-tw/streaming/","ja":"/ja/streaming/","ko":"/ko/streaming/","es":"/es/streaming/","fr":"/fr/streaming/","de":"/de/streaming/","pt":"/pt/streaming/","ru":"/ru/streaming/"},"home":{"en":"/","zh-CN":"/zh-cn/","zh-TW":"/zh-tw/","ja":"/ja/","ko":"/ko/","es":"/es/","fr":"/fr/","de":"/de/","pt":"/pt/","ru":"/ru/"},"egressPath":"/zh-tw/"}</script>
-<script src="/assets/l.zh-tw.bb1a1b05d4.js"></script>
+<script src="/assets/l.zh-tw.73e3639545.js"></script>
 <script src="/assets/app.8312d353bd.js" defer></script>
 </body>
 </html>

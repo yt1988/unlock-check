@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <script>(function(){var d=document.documentElement,th=null,s=null;try{th=localStorage.getItem("unlock:theme");s=localStorage.getItem("unlock:lang")}catch(e){}if(th==="light"||th==="dark")d.setAttribute("data-theme",th);if(/^#r=/.test(location.hash))d.setAttribute("data-shared","");if(!d.hasAttribute("data-root"))return;var P=JSON.parse(d.getAttribute("data-paths")||"{}"),l=null;try{var q=new URLSearchParams(location.search).get("lang");if(P[q])l=q}catch(e){}if(!l&&P[s])l=s;for(var ls=navigator.languages||[navigator.language||"en"],i=0;!l&&!s&&i<ls.length;i++){var x=String(ls[i]).toLowerCase(),b=x.split("-")[0];l=b==="zh"?(/tw|hk|mo|hant/.test(x)?"zh-TW":"zh-CN"):P[b]?b:null}if(l&&l!==d.lang)location.replace(P[l]+location.hash)})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Unlock Check · Test de desbloqueo: Netflix, ChatGPT, Claude, Gemini, Disney+ y TikTok con tu IP</title>
+<title>Desbloqueo de streaming/IA · Test de desbloqueo: Netflix, ChatGPT, Claude, Gemini, Disney+ y TikTok con tu IP</title>
 <meta name="description" content="¿Funcionan Netflix, Disney+, TikTok, ChatGPT, Claude o Gemini con tu IP actual, y en qué región te ve cada uno? 20 servicios comprobados desde tu navegador, por la ruta real de tu proxy.">
 <meta name="keywords" content="test desbloqueo netflix, comprobar región netflix, chatgpt país no disponible, claude no disponible en tu región, gemini no disponible en tu país, disney plus región, tiktok región, vpn streaming">
 <meta name="robots" content="index, follow">
@@ -26,7 +26,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="1ms.dog">
-<meta property="og:title" content="Unlock Check · Test de desbloqueo: Netflix, ChatGPT, Claude, Gemini, Disney+ y TikTok con tu IP">
+<meta property="og:title" content="Desbloqueo de streaming/IA · Test de desbloqueo: Netflix, ChatGPT, Claude, Gemini, Disney+ y TikTok con tu IP">
 <meta property="og:description" content="¿Funcionan Netflix, Disney+, TikTok, ChatGPT, Claude o Gemini con tu IP actual, y en qué región te ve cada uno? 20 servicios comprobados desde tu navegador, por la ruta real de tu proxy.">
 <meta property="og:url" content="https://unlock.1ms.dog/es/">
 <meta property="og:locale" content="es_ES">
@@ -35,7 +35,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://unlock.1ms.dog/og/es.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Unlock Check","url":"https://unlock.1ms.dog/es/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","description":"¿Funcionan Netflix, Disney+, TikTok, ChatGPT, Claude o Gemini con tu IP actual, y en qué región te ve cada uno? 20 servicios comprobados desde tu navegador, por la ruta real de tu proxy.","inLanguage":"es","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"FAQPage","inLanguage":"es","mainEntity":[{"@type":"Question","name":"¿Por qué comprobar desde el navegador?","acceptedAnswer":{"@type":"Answer","text":"Los proxies con reglas (Clash, Surge, Shadowrocket, sing-box…) eligen una ruta por sitio web. Un script en un servidor solo ve la IP del servidor; esta página consulta cada servicio desde tu navegador, así que cada petición va por la ruta que le dan tus reglas."}},{"@type":"Question","name":"¿Qué significan API propia, Servidor propio, Redirecciones y Deducido?","acceptedAnswer":{"@type":"Answer","text":"Lo seguro que es un veredicto, de más a menos. API propia: respondió la API de región del servicio. Servidor propio: el servidor de Cloudflare del propio servicio dice en qué país te ve, comparado con su lista publicada. Redirecciones: la página contó a dónde te envió el servicio. Deducido: el servicio no se puede leer en absoluto; es accesible y el país es el que ven la mayoría de los servicios."}},{"@type":"Question","name":"¿Por qué no todos los servicios ven el mismo país?","acceptedAnswer":{"@type":"Answer","text":"Tus reglas pueden enviarlos por proxies distintos, y cada servicio ubica las IP con su propia base de datos. Cuando los países difieren, la página indica qué servicios ven cada uno."}},{"@type":"Question","name":"¿Por qué importa la zona horaria?","acceptedAnswer":{"@type":"Answer","text":"Los servicios de IA comparan la zona horaria del navegador con el país de la IP. Un navegador en Europe/Madrid con una IP de EE. UU. es una señal típica de proxy y puede traer comprobaciones más estrictas."}},{"@type":"Question","name":"¿Se envía algo a este sitio?","acceptedAnswer":{"@type":"Answer","text":"No. Tu navegador consulta cada servicio directamente; este sitio solo sirve archivos estáticos y nunca ve tus resultados. Oculta las IP antes de una captura."}}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Desbloqueo de streaming/IA","url":"https://unlock.1ms.dog/es/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","description":"¿Funcionan Netflix, Disney+, TikTok, ChatGPT, Claude o Gemini con tu IP actual, y en qué región te ve cada uno? 20 servicios comprobados desde tu navegador, por la ruta real de tu proxy.","inLanguage":"es","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"FAQPage","inLanguage":"es","mainEntity":[{"@type":"Question","name":"¿Por qué comprobar desde el navegador?","acceptedAnswer":{"@type":"Answer","text":"Los proxies con reglas (Clash, Surge, Shadowrocket, sing-box…) eligen una ruta por sitio web. Un script en un servidor solo ve la IP del servidor; esta página consulta cada servicio desde tu navegador, así que cada petición va por la ruta que le dan tus reglas."}},{"@type":"Question","name":"¿Qué significan API propia, Servidor propio, Redirecciones y Deducido?","acceptedAnswer":{"@type":"Answer","text":"Lo seguro que es un veredicto, de más a menos. API propia: respondió la API de región del servicio. Servidor propio: el servidor de Cloudflare del propio servicio dice en qué país te ve, comparado con su lista publicada. Redirecciones: la página contó a dónde te envió el servicio. Deducido: el servicio no se puede leer en absoluto; es accesible y el país es el que ven la mayoría de los servicios."}},{"@type":"Question","name":"¿Por qué no todos los servicios ven el mismo país?","acceptedAnswer":{"@type":"Answer","text":"Tus reglas pueden enviarlos por proxies distintos, y cada servicio ubica las IP con su propia base de datos. Cuando los países difieren, la página indica qué servicios ven cada uno."}},{"@type":"Question","name":"¿Por qué importa la zona horaria?","acceptedAnswer":{"@type":"Answer","text":"Los servicios de IA comparan la zona horaria del navegador con el país de la IP. Un navegador en Europe/Madrid con una IP de EE. UU. es una señal típica de proxy y puede traer comprobaciones más estrictas."}},{"@type":"Question","name":"¿Se envía algo a este sitio?","acceptedAnswer":{"@type":"Answer","text":"No. Tu navegador consulta cada servicio directamente; este sitio solo sirve archivos estáticos y nunca ve tus resultados. Oculta las IP antes de una captura."}}]}]}</script>
 <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/app.27fb2f06f8.css">
 </head>
@@ -44,7 +44,7 @@
   <header class="top">
     <a class="brand" href="/es/">
       <span class="logo"><img class="logo-light" src="/assets/logo-light.svg" width="90" height="36" alt="1ms"><img class="logo-dark" src="/assets/logo-dark.svg" width="90" height="36" alt="1ms"></span>
-      <span class="brand-name" data-i="name">Unlock Check</span>
+      <span class="brand-name" data-i="name">Desbloqueo de streaming/IA</span>
     </a>
     <div class="top-acts">
       <label class="sel"><span class="sr" data-i="lang_label">Idioma</span>
@@ -129,7 +129,7 @@
   </div>
 </div>
 <script type="application/json" id="data">{"lang":"es","paths":{"en":"/","zh-CN":"/zh-cn/","zh-TW":"/zh-tw/","ja":"/ja/","ko":"/ko/","es":"/es/","fr":"/fr/","de":"/de/","pt":"/pt/","ru":"/ru/"},"home":{"en":"/","zh-CN":"/zh-cn/","zh-TW":"/zh-tw/","ja":"/ja/","ko":"/ko/","es":"/es/","fr":"/fr/","de":"/de/","pt":"/pt/","ru":"/ru/"},"egressPath":"/es/"}</script>
-<script src="/assets/l.es.23878db677.js"></script>
+<script src="/assets/l.es.24a678f05f.js"></script>
 <script src="/assets/app.8312d353bd.js" defer></script>
 </body>
 </html>

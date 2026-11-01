@@ -1,7 +1,7 @@
 // Korean: a particle never follows {name} or {c} directly (은/는, 이/가 depend on how the name is read), so the
 // sentences put a colon, a noun or 에서/에 (which don't change) after them.
 export default {
-  name: "언락 체크",
+  name: "스트리밍/AI 언락 체크",
   lang_label: "언어",
   seo_title: "넷플릭스·ChatGPT·Claude·Gemini·디즈니+·틱톡 우회 확인: 내 IP 지역 판정",
   seo_desc: "지금 IP로 넷플릭스, 디즈니+, 틱톡, ChatGPT, Claude, Gemini를 쓸 수 있을까? 각각 어느 나라로 보고 있을까? 서비스 {n}개를 브라우저에서, 프록시의 실제 경로로 확인합니다.",
@@ -80,7 +80,7 @@ export default {
   dl_img: "다운로드",
   sys_share: "공유…",
   copied: "복사됨",
-  share_text: "{v} · 언락 체크로 확인",
+  share_text: "{v} · 스트리밍/AI 언락 체크로 확인",
   shared_from: "공유된 결과, {date} 확인",
   test_mine: "내 것 확인",
   link_label: "결과 링크",

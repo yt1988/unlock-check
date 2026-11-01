@@ -1,4 +1,4 @@
-# Unlock Check
+# Streaming & AI Unlock Check
 
 > Free browser tool that checks, over the visitor's own connection and route, whether streaming and AI services are
 > available and which country each one sees: ChatGPT, Claude, Gemini, Copilot, Grok, Perplexity, Le Chat, Poe, Character.AI, Netflix, Disney+, TikTok, DAZN, Crunchyroll, Peacock, Philo, KKTV, TVB Anywhere+, SBS On Demand, FOD. It uses each service's own

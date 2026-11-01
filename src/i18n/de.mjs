@@ -1,5 +1,5 @@
 export default {
-  name: "Unlock Check",
+  name: "Streaming-/KI-Unlock-Check",
   lang_label: "Sprache",
   seo_title: "Unlock-Test für Netflix, ChatGPT, Claude, Gemini, Disney+ und TikTok mit deiner IP",
   seo_desc: "Funktionieren Netflix, Disney+, TikTok, ChatGPT, Claude oder Gemini mit deiner aktuellen IP, und welche Region sieht jeder Dienst? {n} Dienste, geprüft aus deinem Browser über die echte Route deines Proxys.",
@@ -78,7 +78,7 @@ export default {
   dl_img: "Herunterladen",
   sys_share: "Teilen…",
   copied: "Kopiert",
-  share_text: "{v} · geprüft mit Unlock Check",
+  share_text: "{v} · geprüft mit Streaming-/KI-Unlock-Check",
   shared_from: "Geteiltes Ergebnis, geprüft am {date}",
   test_mine: "Meins prüfen",
   link_label: "Link zum Ergebnis",

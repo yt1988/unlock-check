@@ -1,5 +1,5 @@
 export default {
-  name: "Unlock Check",
+  name: "Déblocage streaming/IA",
   lang_label: "Langue",
   seo_title: "Test de déblocage Netflix, ChatGPT, Claude, Gemini, Disney+ et TikTok pour votre IP",
   seo_desc: "Netflix, Disney+, TikTok, ChatGPT, Claude ou Gemini fonctionnent-ils avec votre IP actuelle, et dans quelle région chacun vous voit-il ? {n} services vérifiés depuis votre navigateur, par la vraie route de votre proxy.",
@@ -78,7 +78,7 @@ export default {
   dl_img: "Télécharger",
   sys_share: "Partager…",
   copied: "Copié",
-  share_text: "{v} · vérifié avec Unlock Check",
+  share_text: "{v} · vérifié avec Déblocage streaming/IA",
   shared_from: "Résultat partagé, vérifié le {date}",
   test_mine: "Vérifier le mien",
   link_label: "Lien du résultat",

@@ -1,5 +1,5 @@
 export default {
-  name: "解除チェッカー",
+  name: "動画配信/AI 解除チェック",
   lang_label: "言語",
   seo_title: "Netflix・ChatGPT・Claude・Gemini・Disney+・TikTok のリージョン判定チェック",
   seo_desc: "今の IP で Netflix、Disney+、TikTok、ChatGPT、Claude、Gemini は使える？それぞれどの国と判定されている？{n} のサービスをブラウザから、プロキシの実際の経路でチェックします。",
@@ -78,7 +78,7 @@ export default {
   dl_img: "ダウンロード",
   sys_share: "共有…",
   copied: "コピーしました",
-  share_text: "{v} · 解除チェッカーで確認",
+  share_text: "{v} · 動画配信/AI 解除チェックで確認",
   shared_from: "共有された結果（{date} に確認）",
   test_mine: "自分のを確認",
   link_label: "結果のリンク",

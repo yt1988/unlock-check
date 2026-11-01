@@ -1,5 +1,5 @@
 export default {
-  name: "Unlock Check",
+  name: "Разблокировка стриминга/ИИ",
   lang_label: "Язык",
   seo_title: "Проверка разблокировки Netflix, ChatGPT, Claude, Gemini, Disney+ и TikTok для вашего IP",
   seo_desc: "Работают ли Netflix, Disney+, TikTok, ChatGPT, Claude или Gemini с вашим текущим IP и в какой стране вас видит каждый сервис? {n} сервисов проверяются из браузера по реальному маршруту вашего прокси.",
@@ -78,7 +78,7 @@ export default {
   dl_img: "Скачать",
   sys_share: "Поделиться…",
   copied: "Скопировано",
-  share_text: "{v} · проверено в Unlock Check",
+  share_text: "{v} · проверено сервисом «Разблокировка стриминга/ИИ»",
   shared_from: "Результат из ссылки, проверен {date}",
   test_mine: "Проверить мой",
   link_label: "Ссылка на результат",

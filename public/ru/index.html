@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <script>(function(){var d=document.documentElement,th=null,s=null;try{th=localStorage.getItem("unlock:theme");s=localStorage.getItem("unlock:lang")}catch(e){}if(th==="light"||th==="dark")d.setAttribute("data-theme",th);if(/^#r=/.test(location.hash))d.setAttribute("data-shared","");if(!d.hasAttribute("data-root"))return;var P=JSON.parse(d.getAttribute("data-paths")||"{}"),l=null;try{var q=new URLSearchParams(location.search).get("lang");if(P[q])l=q}catch(e){}if(!l&&P[s])l=s;for(var ls=navigator.languages||[navigator.language||"en"],i=0;!l&&!s&&i<ls.length;i++){var x=String(ls[i]).toLowerCase(),b=x.split("-")[0];l=b==="zh"?(/tw|hk|mo|hant/.test(x)?"zh-TW":"zh-CN"):P[b]?b:null}if(l&&l!==d.lang)location.replace(P[l]+location.hash)})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Unlock Check · Проверка разблокировки Netflix, ChatGPT, Claude, Gemini, Disney+ и TikTok для вашего IP</title>
+<title>Разблокировка стриминга/ИИ · Проверка разблокировки Netflix, ChatGPT, Claude, Gemini, Disney+ и TikTok для вашего IP</title>
 <meta name="description" content="Работают ли Netflix, Disney+, TikTok, ChatGPT, Claude или Gemini с вашим текущим IP и в какой стране вас видит каждый сервис? 20 сервисов проверяются из браузера по реальному маршруту вашего прокси.">
 <meta name="keywords" content="проверка разблокировки netflix, регион netflix, chatgpt страна не поддерживается, claude недоступен в вашем регионе, gemini недоступен в вашей стране, disney plus регион, tiktok регион, vpn стриминг тест">
 <meta name="robots" content="index, follow">
@@ -26,7 +26,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="1ms.dog">
-<meta property="og:title" content="Unlock Check · Проверка разблокировки Netflix, ChatGPT, Claude, Gemini, Disney+ и TikTok для вашего IP">
+<meta property="og:title" content="Разблокировка стриминга/ИИ · Проверка разблокировки Netflix, ChatGPT, Claude, Gemini, Disney+ и TikTok для вашего IP">
 <meta property="og:description" content="Работают ли Netflix, Disney+, TikTok, ChatGPT, Claude или Gemini с вашим текущим IP и в какой стране вас видит каждый сервис? 20 сервисов проверяются из браузера по реальному маршруту вашего прокси.">
 <meta property="og:url" content="https://unlock.1ms.dog/ru/">
 <meta property="og:locale" content="ru_RU">
@@ -35,7 +35,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://unlock.1ms.dog/og/ru.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Unlock Check","url":"https://unlock.1ms.dog/ru/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","description":"Работают ли Netflix, Disney+, TikTok, ChatGPT, Claude или Gemini с вашим текущим IP и в какой стране вас видит каждый сервис? 20 сервисов проверяются из браузера по реальному маршруту вашего прокси.","inLanguage":"ru","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"FAQPage","inLanguage":"ru","mainEntity":[{"@type":"Question","name":"Зачем проверять из браузера?","acceptedAnswer":{"@type":"Answer","text":"Прокси с правилами (Clash, Surge, Shadowrocket, sing-box…) выбирают маршрут для каждого сайта. Скрипт на сервере видит только IP сервера; эта страница опрашивает каждый сервис из вашего браузера, так что каждый запрос идёт по маршруту, который ему дают ваши правила."}},{"@type":"Question","name":"Что значат «Свой API», «Свой сервер», «Редиректы» и «Вывод»?","acceptedAnswer":{"@type":"Answer","text":"Насколько надёжен вердикт, от сильного к слабому. Свой API: ответил региональный API сервиса. Свой сервер: сервер Cloudflare самого сервиса называет страну, в которой вас видит, сверено с его списком. Редиректы: страница посчитала, куда сервис вас отправил. Вывод: сервис прочитать нельзя; он открывается, а страна — та, что видит большинство сервисов."}},{"@type":"Question","name":"Почему не все сервисы видят одну страну?","acceptedAnswer":{"@type":"Answer","text":"Ваши правила могут вести их через разные прокси, а каждый сервис определяет IP по своей базе. Если страны расходятся, страница показывает, какие сервисы какую видят."}},{"@type":"Question","name":"Почему важен часовой пояс?","acceptedAnswer":{"@type":"Answer","text":"ИИ-сервисы сравнивают часовой пояс браузера со страной IP. Браузер в Europe/Moscow с американским IP — типичный признак прокси и может вызвать более строгие проверки."}},{"@type":"Question","name":"Отправляется ли что-нибудь на этот сайт?","acceptedAnswer":{"@type":"Answer","text":"Нет. Ваш браузер обращается к каждому сервису напрямую; этот сайт отдаёт только статические файлы и не видит ваших результатов. Перед скриншотом скройте IP."}}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Разблокировка стриминга/ИИ","url":"https://unlock.1ms.dog/ru/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","description":"Работают ли Netflix, Disney+, TikTok, ChatGPT, Claude или Gemini с вашим текущим IP и в какой стране вас видит каждый сервис? 20 сервисов проверяются из браузера по реальному маршруту вашего прокси.","inLanguage":"ru","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"FAQPage","inLanguage":"ru","mainEntity":[{"@type":"Question","name":"Зачем проверять из браузера?","acceptedAnswer":{"@type":"Answer","text":"Прокси с правилами (Clash, Surge, Shadowrocket, sing-box…) выбирают маршрут для каждого сайта. Скрипт на сервере видит только IP сервера; эта страница опрашивает каждый сервис из вашего браузера, так что каждый запрос идёт по маршруту, который ему дают ваши правила."}},{"@type":"Question","name":"Что значат «Свой API», «Свой сервер», «Редиректы» и «Вывод»?","acceptedAnswer":{"@type":"Answer","text":"Насколько надёжен вердикт, от сильного к слабому. Свой API: ответил региональный API сервиса. Свой сервер: сервер Cloudflare самого сервиса называет страну, в которой вас видит, сверено с его списком. Редиректы: страница посчитала, куда сервис вас отправил. Вывод: сервис прочитать нельзя; он открывается, а страна — та, что видит большинство сервисов."}},{"@type":"Question","name":"Почему не все сервисы видят одну страну?","acceptedAnswer":{"@type":"Answer","text":"Ваши правила могут вести их через разные прокси, а каждый сервис определяет IP по своей базе. Если страны расходятся, страница показывает, какие сервисы какую видят."}},{"@type":"Question","name":"Почему важен часовой пояс?","acceptedAnswer":{"@type":"Answer","text":"ИИ-сервисы сравнивают часовой пояс браузера со страной IP. Браузер в Europe/Moscow с американским IP — типичный признак прокси и может вызвать более строгие проверки."}},{"@type":"Question","name":"Отправляется ли что-нибудь на этот сайт?","acceptedAnswer":{"@type":"Answer","text":"Нет. Ваш браузер обращается к каждому сервису напрямую; этот сайт отдаёт только статические файлы и не видит ваших результатов. Перед скриншотом скройте IP."}}]}]}</script>
 <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/app.27fb2f06f8.css">
 </head>
@@ -44,7 +44,7 @@
   <header class="top">
     <a class="brand" href="/ru/">
       <span class="logo"><img class="logo-light" src="/assets/logo-light.svg" width="90" height="36" alt="1ms"><img class="logo-dark" src="/assets/logo-dark.svg" width="90" height="36" alt="1ms"></span>
-      <span class="brand-name" data-i="name">Unlock Check</span>
+      <span class="brand-name" data-i="name">Разблокировка стриминга/ИИ</span>
     </a>
     <div class="top-acts">
       <label class="sel"><span class="sr" data-i="lang_label">Язык</span>
@@ -129,7 +129,7 @@
   </div>
 </div>
 <script type="application/json" id="data">{"lang":"ru","paths":{"en":"/","zh-CN":"/zh-cn/","zh-TW":"/zh-tw/","ja":"/ja/","ko":"/ko/","es":"/es/","fr":"/fr/","de":"/de/","pt":"/pt/","ru":"/ru/"},"home":{"en":"/","zh-CN":"/zh-cn/","zh-TW":"/zh-tw/","ja":"/ja/","ko":"/ko/","es":"/es/","fr":"/fr/","de":"/de/","pt":"/pt/","ru":"/ru/"},"egressPath":"/ru/"}</script>
-<script src="/assets/l.ru.f5f2c639d1.js"></script>
+<script src="/assets/l.ru.ad75d14fb0.js"></script>
 <script src="/assets/app.8312d353bd.js" defer></script>
 </body>
 </html>

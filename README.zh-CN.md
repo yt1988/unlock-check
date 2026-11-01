@@ -1,8 +1,8 @@
-# 解锁检测（Unlock Check）
+# 流媒体/AI 解锁检测（Streaming & AI Unlock Check）
 
 [English](README.md) · **简体中文**
 
-你的 IP 能用哪些流媒体和 AI，每个服务看到你在哪个国家？[解锁检测](https://unlock.1ms.dog) 从你的浏览器询问 20 个服务（Netflix、Disney+、TikTok、ChatGPT、Claude、Gemini 等），每个都走你的代理给它分配的线路，并标明每个结论有多可靠。
+你的 IP 能用哪些流媒体和 AI，每个服务看到你在哪个国家？[流媒体/AI 解锁检测](https://unlock.1ms.dog) 从你的浏览器询问 20 个服务（Netflix、Disney+、TikTok、ChatGPT、Claude、Gemini 等），每个都走你的代理给它分配的线路，并标明每个结论有多可靠。
 
 **在线使用：** https://unlock.1ms.dog
 

@@ -77,7 +77,7 @@ test("the redirect chain: a rule per hop, the last one leaves the site", async (
 });
 
 // Visible text that is not in the strings files is a brand (the same everywhere) or a gap
-const BRANDS = new Set(["", "1ms", "GitHub", "Unlock Check", ...SERVICES.map(s => s.name)]);
+const BRANDS = new Set(["", "1ms", "GitHub", "Streaming & AI Unlock Check", ...SERVICES.map(s => s.name)]);
 test("no English left on other languages' pages (aria-label, title, alt)", async () => {
   const attrs = h => [...h.matchAll(/\s(aria-label|title|alt)="([^"]*)"/g)].map(m => m[2]);
   const en = new Set(attrs(await page("")));

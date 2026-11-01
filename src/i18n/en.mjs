@@ -1,7 +1,7 @@
 // English: the reference. Every other language has every key (the build stops on a missing one).
 // {name} a service, {c} {a} {b} a country (HTML in the notes), {n} a number, {list} a list of countries.
 export default {
-  name: "Unlock Check",
+  name: "Streaming & AI Unlock Check",
   lang_label: "Language",
   seo_title: "Netflix, ChatGPT, Claude, Gemini, Disney+, TikTok unlock test for your IP",
   seo_desc: "Is Netflix, Disney+, TikTok, ChatGPT, Claude or Gemini available on your current IP, and which region does each one see? {n} services checked from your browser, over your proxy's real route.",
@@ -80,7 +80,7 @@ export default {
   dl_img: "Download",
   sys_share: "Share…",
   copied: "Copied",
-  share_text: "{v} · checked with Unlock Check",
+  share_text: "{v} · checked with Streaming & AI Unlock Check",
   shared_from: "Shared result, checked {date}",
   test_mine: "Check mine",
   link_label: "Result link",

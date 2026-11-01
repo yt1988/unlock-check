@@ -1,8 +1,8 @@
-# Unlock Check (解锁检测)
+# Streaming & AI Unlock Check (流媒体/AI 解锁检测)
 
 **English** · [简体中文](README.zh-CN.md)
 
-Which streaming and AI services work on your IP, and which country does each one see? [Unlock Check](https://unlock.1ms.dog) asks 20 services from your browser — Netflix, Disney+, TikTok, ChatGPT, Claude, Gemini and more — over the route your proxy picks for each one, and says how sure each verdict is.
+Which streaming and AI services work on your IP, and which country does each one see? [Streaming & AI Unlock Check](https://unlock.1ms.dog) asks 20 services from your browser — Netflix, Disney+, TikTok, ChatGPT, Claude, Gemini and more — over the route your proxy picks for each one, and says how sure each verdict is.
 
 **Live:** https://unlock.1ms.dog
 

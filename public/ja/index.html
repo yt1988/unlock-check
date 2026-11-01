@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <script>(function(){var d=document.documentElement,th=null,s=null;try{th=localStorage.getItem("unlock:theme");s=localStorage.getItem("unlock:lang")}catch(e){}if(th==="light"||th==="dark")d.setAttribute("data-theme",th);if(/^#r=/.test(location.hash))d.setAttribute("data-shared","");if(!d.hasAttribute("data-root"))return;var P=JSON.parse(d.getAttribute("data-paths")||"{}"),l=null;try{var q=new URLSearchParams(location.search).get("lang");if(P[q])l=q}catch(e){}if(!l&&P[s])l=s;for(var ls=navigator.languages||[navigator.language||"en"],i=0;!l&&!s&&i<ls.length;i++){var x=String(ls[i]).toLowerCase(),b=x.split("-")[0];l=b==="zh"?(/tw|hk|mo|hant/.test(x)?"zh-TW":"zh-CN"):P[b]?b:null}if(l&&l!==d.lang)location.replace(P[l]+location.hash)})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>解除チェッカー · Netflix・ChatGPT・Claude・Gemini・Disney+・TikTok のリージョン判定チェック</title>
+<title>動画配信/AI 解除チェック · Netflix・ChatGPT・Claude・Gemini・Disney+・TikTok のリージョン判定チェック</title>
 <meta name="description" content="今の IP で Netflix、Disney+、TikTok、ChatGPT、Claude、Gemini は使える？それぞれどの国と判定されている？20 のサービスをブラウザから、プロキシの実際の経路でチェックします。">
 <meta name="keywords" content="VPN 判定チェック, Netflix リージョン確認, ChatGPT 地域, Claude 利用できない地域, Gemini 利用できない国, Disney+ 地域, TikTok 地域, プロキシ ストリーミング 判定">
 <meta name="robots" content="index, follow">
@@ -26,7 +26,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="1ms.dog">
-<meta property="og:title" content="解除チェッカー · Netflix・ChatGPT・Claude・Gemini・Disney+・TikTok のリージョン判定チェック">
+<meta property="og:title" content="動画配信/AI 解除チェック · Netflix・ChatGPT・Claude・Gemini・Disney+・TikTok のリージョン判定チェック">
 <meta property="og:description" content="今の IP で Netflix、Disney+、TikTok、ChatGPT、Claude、Gemini は使える？それぞれどの国と判定されている？20 のサービスをブラウザから、プロキシの実際の経路でチェックします。">
 <meta property="og:url" content="https://unlock.1ms.dog/ja/">
 <meta property="og:locale" content="ja_JP">
@@ -35,7 +35,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://unlock.1ms.dog/og/ja.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"解除チェッカー","url":"https://unlock.1ms.dog/ja/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","description":"今の IP で Netflix、Disney+、TikTok、ChatGPT、Claude、Gemini は使える？それぞれどの国と判定されている？20 のサービスをブラウザから、プロキシの実際の経路でチェックします。","inLanguage":"ja","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"FAQPage","inLanguage":"ja","mainEntity":[{"@type":"Question","name":"なぜブラウザから確認する？","acceptedAnswer":{"@type":"Answer","text":"ルールベースのプロキシ（Clash、Surge、Shadowrocket、sing-box など）はサイトごとに経路を選びます。サーバー上のスクリプトはサーバー自身の IP しか見られませんが、このページはあなたのブラウザから各サービスに問い合わせるので、どのリクエストもあなたのルールが決めた経路を通ります。"}},{"@type":"Question","name":"「公式 API」「自社サーバー」「リダイレクト」「推定」とは？","acceptedAnswer":{"@type":"Answer","text":"判定の確かさで、強い順です。公式 API：サービス自身の地域判定 API が答えた。自社サーバー：サービス自身の Cloudflare 拠点が見ている国を、公開リストと照合した。リダイレクト：サービスがどこへ転送したかを数えた。推定：応答はまったく読めず、接続できることだけを確認し、国はほかのサービスの多くが見ている国を使った。"}},{"@type":"Question","name":"サービスごとに国が違うのはなぜ？","acceptedAnswer":{"@type":"Answer","text":"ルールで別々のプロキシを通っているかもしれませんし、各サービスは独自のデータベースで IP の位置を決めています。国が違うときは、どのサービスがどの国を見ているかを表示します。"}},{"@type":"Question","name":"タイムゾーンはなぜ関係する？","acceptedAnswer":{"@type":"Answer","text":"AI サービスはブラウザのタイムゾーンと IP の国を比べます。ブラウザが Asia/Tokyo なのに IP が米国なら典型的なプロキシの特徴で、確認が厳しくなることがあります。"}},{"@type":"Question","name":"このサイトに何か送られる？","acceptedAnswer":{"@type":"Answer","text":"いいえ。ブラウザが各サービスに直接問い合わせます。このサイトは静的ファイルを配信するだけで、結果は見えません。スクリーンショットの前に IP を隠せます。"}}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"動画配信/AI 解除チェック","url":"https://unlock.1ms.dog/ja/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","description":"今の IP で Netflix、Disney+、TikTok、ChatGPT、Claude、Gemini は使える？それぞれどの国と判定されている？20 のサービスをブラウザから、プロキシの実際の経路でチェックします。","inLanguage":"ja","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"FAQPage","inLanguage":"ja","mainEntity":[{"@type":"Question","name":"なぜブラウザから確認する？","acceptedAnswer":{"@type":"Answer","text":"ルールベースのプロキシ（Clash、Surge、Shadowrocket、sing-box など）はサイトごとに経路を選びます。サーバー上のスクリプトはサーバー自身の IP しか見られませんが、このページはあなたのブラウザから各サービスに問い合わせるので、どのリクエストもあなたのルールが決めた経路を通ります。"}},{"@type":"Question","name":"「公式 API」「自社サーバー」「リダイレクト」「推定」とは？","acceptedAnswer":{"@type":"Answer","text":"判定の確かさで、強い順です。公式 API：サービス自身の地域判定 API が答えた。自社サーバー：サービス自身の Cloudflare 拠点が見ている国を、公開リストと照合した。リダイレクト：サービスがどこへ転送したかを数えた。推定：応答はまったく読めず、接続できることだけを確認し、国はほかのサービスの多くが見ている国を使った。"}},{"@type":"Question","name":"サービスごとに国が違うのはなぜ？","acceptedAnswer":{"@type":"Answer","text":"ルールで別々のプロキシを通っているかもしれませんし、各サービスは独自のデータベースで IP の位置を決めています。国が違うときは、どのサービスがどの国を見ているかを表示します。"}},{"@type":"Question","name":"タイムゾーンはなぜ関係する？","acceptedAnswer":{"@type":"Answer","text":"AI サービスはブラウザのタイムゾーンと IP の国を比べます。ブラウザが Asia/Tokyo なのに IP が米国なら典型的なプロキシの特徴で、確認が厳しくなることがあります。"}},{"@type":"Question","name":"このサイトに何か送られる？","acceptedAnswer":{"@type":"Answer","text":"いいえ。ブラウザが各サービスに直接問い合わせます。このサイトは静的ファイルを配信するだけで、結果は見えません。スクリーンショットの前に IP を隠せます。"}}]}]}</script>
 <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/app.27fb2f06f8.css">
 </head>
@@ -44,7 +44,7 @@
   <header class="top">
     <a class="brand" href="/ja/">
       <span class="logo"><img class="logo-light" src="/assets/logo-light.svg" width="90" height="36" alt="1ms"><img class="logo-dark" src="/assets/logo-dark.svg" width="90" height="36" alt="1ms"></span>
-      <span class="brand-name" data-i="name">解除チェッカー</span>
+      <span class="brand-name" data-i="name">動画配信/AI 解除チェック</span>
     </a>
     <div class="top-acts">
       <label class="sel"><span class="sr" data-i="lang_label">言語</span>
@@ -129,7 +129,7 @@
   </div>
 </div>
 <script type="application/json" id="data">{"lang":"ja","paths":{"en":"/","zh-CN":"/zh-cn/","zh-TW":"/zh-tw/","ja":"/ja/","ko":"/ko/","es":"/es/","fr":"/fr/","de":"/de/","pt":"/pt/","ru":"/ru/"},"home":{"en":"/","zh-CN":"/zh-cn/","zh-TW":"/zh-tw/","ja":"/ja/","ko":"/ko/","es":"/es/","fr":"/fr/","de":"/de/","pt":"/pt/","ru":"/ru/"},"egressPath":"/ja/"}</script>
-<script src="/assets/l.ja.ed7d94b4ff.js"></script>
+<script src="/assets/l.ja.44217bf282.js"></script>
 <script src="/assets/app.8312d353bd.js" defer></script>
 </body>
 </html>

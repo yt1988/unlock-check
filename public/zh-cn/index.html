@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <script>(function(){var d=document.documentElement,th=null,s=null;try{th=localStorage.getItem("unlock:theme");s=localStorage.getItem("unlock:lang")}catch(e){}if(th==="light"||th==="dark")d.setAttribute("data-theme",th);if(/^#r=/.test(location.hash))d.setAttribute("data-shared","");if(!d.hasAttribute("data-root"))return;var P=JSON.parse(d.getAttribute("data-paths")||"{}"),l=null;try{var q=new URLSearchParams(location.search).get("lang");if(P[q])l=q}catch(e){}if(!l&&P[s])l=s;for(var ls=navigator.languages||[navigator.language||"en"],i=0;!l&&!s&&i<ls.length;i++){var x=String(ls[i]).toLowerCase(),b=x.split("-")[0];l=b==="zh"?(/tw|hk|mo|hant/.test(x)?"zh-TW":"zh-CN"):P[b]?b:null}if(l&&l!==d.lang)location.replace(P[l]+location.hash)})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>解锁检测 · 流媒体和 AI 解锁检测：Netflix、ChatGPT、Claude、Gemini、Disney+、TikTok</title>
+<title>流媒体/AI 解锁检测 · 流媒体和 AI 解锁检测：Netflix、ChatGPT、Claude、Gemini、Disney+、TikTok</title>
 <meta name="description" content="当前 IP 能不能用 Netflix、Disney+、TikTok、ChatGPT、Claude、Gemini，各自显示哪个地区？在浏览器里检测 20 个服务，走的是你代理的真实分流。">
 <meta name="keywords" content="流媒体解锁检测, 奈飞解锁检测, Netflix 解锁, ChatGPT 地区检测, Claude 不支持地区, Gemini 送中, Disney+ 解锁, TikTok 地区, 节点解锁测试, IP 解锁查询">
 <meta http-equiv="Cache-Control" content="no-transform">
@@ -29,7 +29,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="1ms.dog">
-<meta property="og:title" content="解锁检测 · 流媒体和 AI 解锁检测：Netflix、ChatGPT、Claude、Gemini、Disney+、TikTok">
+<meta property="og:title" content="流媒体/AI 解锁检测 · 流媒体和 AI 解锁检测：Netflix、ChatGPT、Claude、Gemini、Disney+、TikTok">
 <meta property="og:description" content="当前 IP 能不能用 Netflix、Disney+、TikTok、ChatGPT、Claude、Gemini，各自显示哪个地区？在浏览器里检测 20 个服务，走的是你代理的真实分流。">
 <meta property="og:url" content="https://unlock.1ms.dog/zh-cn/">
 <meta property="og:locale" content="zh_CN">
@@ -38,7 +38,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://unlock.1ms.dog/og/zh-cn.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"解锁检测","url":"https://unlock.1ms.dog/zh-cn/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","description":"当前 IP 能不能用 Netflix、Disney+、TikTok、ChatGPT、Claude、Gemini，各自显示哪个地区？在浏览器里检测 20 个服务，走的是你代理的真实分流。","inLanguage":"zh-CN","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"FAQPage","inLanguage":"zh-CN","mainEntity":[{"@type":"Question","name":"为什么在浏览器里检测？","acceptedAnswer":{"@type":"Answer","text":"带规则的代理（Clash、Surge、Shadowrocket、sing-box 等）按网站选线路。在服务器上跑脚本只能测到服务器自己的 IP；这个页面从你的浏览器询问每个服务，每个请求都走你的规则分给它的线路。"}},{"@type":"Question","name":"「官方接口」「服务节点」「跳转探测」「推断」是什么意思？","acceptedAnswer":{"@type":"Answer","text":"结论有多可靠，从强到弱。官方接口：服务自己的地区接口给出了答案。服务节点：服务自己的 Cloudflare 节点说出它看到的国家，再对照它公布的列表。跳转探测：页面数出了服务把你跳转到了哪里。推断：服务的回答完全读不到，只确认能访问，国家取多数服务看到的那个。"}},{"@type":"Question","name":"为什么不同服务看到的国家不一样？","acceptedAnswer":{"@type":"Answer","text":"你的规则可能让它们走了不同的代理，而且每个服务用自己的数据库给 IP 定位。国家不一致时，页面会列出哪些服务看到哪个国家。"}},{"@type":"Question","name":"为什么要看时区？","acceptedAnswer":{"@type":"Answer","text":"AI 服务会比较浏览器时区和 IP 所在国家。浏览器时区是 Asia/Shanghai、IP 却在美国，是典型的代理特征，可能招来更严格的验证。"}},{"@type":"Question","name":"会把数据发给本站吗？","acceptedAnswer":{"@type":"Answer","text":"不会。你的浏览器直接询问每个服务；本站只提供静态文件，看不到你的结果。截图前可以先隐藏 IP。"}}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"流媒体/AI 解锁检测","url":"https://unlock.1ms.dog/zh-cn/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","description":"当前 IP 能不能用 Netflix、Disney+、TikTok、ChatGPT、Claude、Gemini，各自显示哪个地区？在浏览器里检测 20 个服务，走的是你代理的真实分流。","inLanguage":"zh-CN","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"FAQPage","inLanguage":"zh-CN","mainEntity":[{"@type":"Question","name":"为什么在浏览器里检测？","acceptedAnswer":{"@type":"Answer","text":"带规则的代理（Clash、Surge、Shadowrocket、sing-box 等）按网站选线路。在服务器上跑脚本只能测到服务器自己的 IP；这个页面从你的浏览器询问每个服务，每个请求都走你的规则分给它的线路。"}},{"@type":"Question","name":"「官方接口」「服务节点」「跳转探测」「推断」是什么意思？","acceptedAnswer":{"@type":"Answer","text":"结论有多可靠，从强到弱。官方接口：服务自己的地区接口给出了答案。服务节点：服务自己的 Cloudflare 节点说出它看到的国家，再对照它公布的列表。跳转探测：页面数出了服务把你跳转到了哪里。推断：服务的回答完全读不到，只确认能访问，国家取多数服务看到的那个。"}},{"@type":"Question","name":"为什么不同服务看到的国家不一样？","acceptedAnswer":{"@type":"Answer","text":"你的规则可能让它们走了不同的代理，而且每个服务用自己的数据库给 IP 定位。国家不一致时，页面会列出哪些服务看到哪个国家。"}},{"@type":"Question","name":"为什么要看时区？","acceptedAnswer":{"@type":"Answer","text":"AI 服务会比较浏览器时区和 IP 所在国家。浏览器时区是 Asia/Shanghai、IP 却在美国，是典型的代理特征，可能招来更严格的验证。"}},{"@type":"Question","name":"会把数据发给本站吗？","acceptedAnswer":{"@type":"Answer","text":"不会。你的浏览器直接询问每个服务；本站只提供静态文件，看不到你的结果。截图前可以先隐藏 IP。"}}]}]}</script>
 <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/app.27fb2f06f8.css">
 </head>
@@ -47,7 +47,7 @@
   <header class="top">
     <a class="brand" href="/zh-cn/">
       <span class="logo"><img class="logo-light" src="/assets/logo-light.svg" width="90" height="36" alt="1ms"><img class="logo-dark" src="/assets/logo-dark.svg" width="90" height="36" alt="1ms"></span>
-      <span class="brand-name" data-i="name">解锁检测</span>
+      <span class="brand-name" data-i="name">流媒体/AI 解锁检测</span>
     </a>
     <div class="top-acts">
       <label class="sel"><span class="sr" data-i="lang_label">语言</span>
@@ -132,7 +132,7 @@
   </div>
 </div>
 <script type="application/json" id="data">{"lang":"zh-CN","paths":{"en":"/","zh-CN":"/zh-cn/","zh-TW":"/zh-tw/","ja":"/ja/","ko":"/ko/","es":"/es/","fr":"/fr/","de":"/de/","pt":"/pt/","ru":"/ru/"},"home":{"en":"/","zh-CN":"/zh-cn/","zh-TW":"/zh-tw/","ja":"/ja/","ko":"/ko/","es":"/es/","fr":"/fr/","de":"/de/","pt":"/pt/","ru":"/ru/"},"egressPath":"/zh-cn/"}</script>
-<script src="/assets/l.zh-cn.9ccc8f88fb.js"></script>
+<script src="/assets/l.zh-cn.09f256b858.js"></script>
 <script src="/assets/app.8312d353bd.js" defer></script>
 </body>
 </html>

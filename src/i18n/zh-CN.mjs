@@ -1,5 +1,5 @@
 export default {
-  name: "解锁检测",
+  name: "流媒体/AI 解锁检测",
   lang_label: "语言",
   seo_title: "流媒体和 AI 解锁检测：Netflix、ChatGPT、Claude、Gemini、Disney+、TikTok",
   seo_desc: "当前 IP 能不能用 Netflix、Disney+、TikTok、ChatGPT、Claude、Gemini，各自显示哪个地区？在浏览器里检测 {n} 个服务，走的是你代理的真实分流。",
@@ -78,7 +78,7 @@ export default {
   dl_img: "下载",
   sys_share: "分享…",
   copied: "已复制",
-  share_text: "{v} · 用解锁检测测的",
+  share_text: "{v} · 用流媒体/AI 解锁检测测的",
   shared_from: "别人分享的结果，检测于 {date}",
   test_mine: "测我的",
   link_label: "结果链接",
