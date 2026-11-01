@@ -106,15 +106,6 @@ body.dlg-open { overflow: hidden; }
 .help-pick { display: none; gap: 8px; align-items: center; padding: 10px 14px; border-bottom: 1px solid var(--line); }
 .help-pick select { flex: 1; min-width: 0; height: 34px; padding: 0 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--fg); font: 600 16px var(--f-ui); text-overflow: ellipsis; } /* 16px: iOS zooms into smaller fields */
 .help-pick .icon-btn:disabled { opacity: .35; cursor: default; }
-/* share: the image, the link, and what to do with them */
-.dialog.share { width: 640px; }
-.share-b { padding: 16px; overflow: auto; display: flex; flex-direction: column; gap: 12px; }
-#shareImg { display: block; width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--line); background: var(--soft); aspect-ratio: 4 / 3; object-fit: contain; }
-.share-link { display: flex; gap: 8px; }
-.share-link input { flex: 1; min-width: 0; height: 36px; padding: 0 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--fg); font: 13px var(--f-num); outline: none; }
-.share-acts { display: flex; gap: 8px; flex-wrap: wrap; } .share-acts .btn { flex: 1; }
-.share-note { font-size: 12px; color: var(--muted); }
-
 /* footer: every category and service page, then the line about privacy */
 .foot { display: flex; flex-direction: column; align-items: center; gap: 10px; font-size: 12px; color: var(--muted); text-align: center; }
 .foot p { margin: 0; }

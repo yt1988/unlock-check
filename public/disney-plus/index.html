@@ -37,7 +37,7 @@
 <meta name="twitter:image" content="https://unlock.1ms.dog/og/en/disney-plus.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Does Disney+ work on your IP?","url":"https://unlock.1ms.dog/disney-plus/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","description":"Free check: does Disney+ work on your current IP, and which country does it place you in? Runs in your browser, over your proxy's real route; nothing is uploaded.","inLanguage":"en","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"FAQPage","inLanguage":"en","mainEntity":[{"@type":"Question","name":"Where can you use Disney+?","acceptedAnswer":{"@type":"Answer","text":"Disney+ doesn't publish where it is available; the page shows the country it places you in."}},{"@type":"Question","name":"How does this page tell whether Disney+ works?","acceptedAnswer":{"@type":"Answer","text":"Disney+'s answer can't be read, but whether it redirects can be seen. A browser follows at most 20 redirects, so the page first sends the request through a fixed number of redirects on this site, then to Disney+. If it still opens, Disney+ didn't redirect; if it fails, Disney+ sent you elsewhere, which is how it sends visitors from unsupported regions to its &quot;not available&quot; page."}},{"@type":"Question","name":"Disney+ says blocked, but my proxy is in a supported country?","acceptedAnswer":{"@type":"Answer","text":"Each service locates IPs with its own database, and they don't always agree: the same proxy can be in Japan for one and Hong Kong for another. Some services also turn away datacenter IPs and known VPNs. The country shown is the one Disney+ itself sees."}},{"@type":"Question","name":"Why check in the browser?","acceptedAnswer":{"@type":"Answer","text":"Proxy apps (Clash, Surge, Shadowrocket and the like) send different sites over different routes. A script on a server only tests that server's IP. This page visits each service from your browser, over the route you normally use for it."}},{"@type":"Question","name":"What do Official API, Its location, Redirect test and Guess mean?","acceptedAnswer":{"@type":"Answer","text":"How reliable a result is, most reliable first. Official API: the service's own region API says whether it works. Its location: the service's servers say which country they place you in, checked against the countries it publishes. Redirect test: whether the service sent you to its &quot;not available&quot; page. Guess: the service lets nothing be read; the page only knows it opens, and takes the country other services place you in."}},{"@type":"Question","name":"Why do services place me in different countries?","acceptedAnswer":{"@type":"Answer","text":"Your proxy rules may send them through different servers, or the services use different IP databases. When that happens, the page lists which services see which country."}},{"@type":"Question","name":"Why does the time zone matter?","acceptedAnswer":{"@type":"Answer","text":"AI services compare your browser's time zone with your IP's country. A time zone in China with an IP in the US looks like a proxy and can trigger stricter checks."}},{"@type":"Question","name":"Is my data uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. Your browser visits each service directly; this site only serves the page and never sees your results. Use Hide IPs before a screenshot."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Streaming & AI Unlock Check","item":"https://unlock.1ms.dog/"},{"@type":"ListItem","position":2,"name":"Streaming","item":"https://unlock.1ms.dog/streaming/"},{"@type":"ListItem","position":3,"name":"Disney+","item":"https://unlock.1ms.dog/disney-plus/"}]}]}</script>
 <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/app.a5c1ed45d7.css">
+<link rel="stylesheet" href="/assets/app.5092d265ee.css">
 </head>
 <body>
 <div class="app">
@@ -117,20 +117,8 @@
     </div>
   </div>
 </div>
-<div class="scrim" id="shareDlg" hidden>
-  <div class="dialog share" role="dialog" aria-modal="true" aria-labelledby="shareT">
-    <div class="dlg-h"><h2 id="shareT" data-i="share_h">Share the result</h2>
-      <button class="icon-btn" data-close type="button" aria-label="Close"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg></button></div>
-    <div class="share-b">
-      <div class="share-img"><img id="shareImg" alt="" width="1200" height="900"></div>
-      <div class="share-link"><input id="shareUrl" readonly aria-label="Result link"><button class="btn" id="copyLink" type="button" data-i="copy_link">Copy link</button></div>
-      <div class="share-acts"><button class="btn" id="copyImg" type="button" data-i="copy_img">Copy image</button><button class="btn" id="dlImg" type="button" data-i="dl_img">Download</button><button class="btn pri" id="nativeShare" type="button" data-i="sys_share" hidden>Share…</button></div>
-      <p class="share-note" data-i="share_note">The image and link are made in your browser. They contain each service's result and country, never your IP.</p>
-    </div>
-  </div>
-</div>
 <script type="application/json" id="data">{"lang":"en","paths":{"en":"/disney-plus/","zh-CN":"/zh-cn/disney-plus/","zh-TW":"/zh-tw/disney-plus/","ja":"/ja/disney-plus/","ko":"/ko/disney-plus/","es":"/es/disney-plus/","fr":"/fr/disney-plus/","de":"/de/disney-plus/","pt":"/pt/disney-plus/","ru":"/ru/disney-plus/"},"home":{"en":"/","zh-CN":"/zh-cn/","zh-TW":"/zh-tw/","ja":"/ja/","ko":"/ko/","es":"/es/","fr":"/fr/","de":"/de/","pt":"/pt/","ru":"/ru/"},"egressPath":"/"}</script>
-<script src="/assets/l.en.6eed7ec022.js"></script>
-<script src="/assets/app.06eade4eb7.js" defer></script>
+<script src="/assets/l.en.0483c50730.js"></script>
+<script src="/assets/app.25f7e7fd10.js" defer></script>
 </body>
 </html>

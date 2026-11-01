@@ -37,7 +37,7 @@
 <meta name="twitter:image" content="https://unlock.1ms.dog/og/ja/philo.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"あなたの IP で Philo は使える？","url":"https://unlock.1ms.dog/ja/philo/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","description":"Philo が今の IP で使えるか、どの国と判定されているかを無料で確認。ブラウザ内で、プロキシの実際の経路で確認し、データは送信しません。","inLanguage":"ja","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"FAQPage","inLanguage":"ja","mainEntity":[{"@type":"Question","name":"Philo はどの国で使える？","acceptedAnswer":{"@type":"Answer","text":"アメリカ合衆国だけで使えます。Philo はアクセスのたびに位置を確認します。"}},{"@type":"Question","name":"このページは Philo が使えるかをどう判断している？","acceptedAnswer":{"@type":"Answer","text":"Philo には公開の地域判定 API があり（自社サイトも使っています）、ほかのページから読むことができます。ブラウザがあなたの経路で直接問い合わせると、使えるかどうかと、あなたがどの国にいるかが返ってきます。コマンドラインの判定スクリプトも同じ API を使っています。"}},{"@type":"Question","name":"Philo が利用不可と出るのに、プロキシは対応国にある？","acceptedAnswer":{"@type":"Answer","text":"各サービスは独自の IP データベースで位置を判定するので、結果が一致するとは限りません。同じプロキシでも、日本と判定するサービスもあれば香港と判定するサービスもあります。また、データセンターの IP や既知の VPN を拒否するサービスもあります。表示される国は Philo 自身の判定です。"}},{"@type":"Question","name":"なぜブラウザで確認する？","acceptedAnswer":{"@type":"Answer","text":"プロキシアプリ（Clash、Surge、Shadowrocket など）はルールに従ってサイトごとに別の経路を使います。サーバー上で動く確認スクリプトは、そのサーバーの IP しか確認できません。このページはブラウザから各サービスに直接アクセスするので、ふだんと同じ経路で確認できます。"}},{"@type":"Question","name":"「公式 API」「公式の位置判定」「転送で判定」「推定」の違いは？","acceptedAnswer":{"@type":"Answer","text":"結果の確かさで、確かな順です。公式 API：サービス自身の地域判定 API が使えるかどうかを答えた。公式の位置判定：サービスのサーバーがあなたをどの国と判定したかを、公表された対応国と照らし合わせた。転送で判定：サービスが「利用できません」ページに転送したかを見た。推定：サービスが何も読ませないので、開けることだけを確認し、国はほかのサービスの判定を使った。"}},{"@type":"Question","name":"サービスによって判定される国が違うのはなぜ？","acceptedAnswer":{"@type":"Answer","text":"プロキシのルールで別々のサーバーを通っているか、サービスごとに使っている IP データベースが違うためです。国が違うときは、どの国をどのサービスが判定したかを表示します。"}},{"@type":"Question","name":"タイムゾーンはなぜ関係する？","acceptedAnswer":{"@type":"Answer","text":"AI サービスはブラウザのタイムゾーンと IP の国を比べます。タイムゾーンが日本なのに IP が米国だと、プロキシを使っているように見え、確認が厳しくなることがあります。"}},{"@type":"Question","name":"データはアップロードされる？","acceptedAnswer":{"@type":"Answer","text":"いいえ。ブラウザが各サービスに直接アクセスし、このサイトはページを配信するだけで、結果は見えません。スクリーンショットの前に「IP を隠す」を押せます。"}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"動画配信/AI 解除チェック","item":"https://unlock.1ms.dog/ja/"},{"@type":"ListItem","position":2,"name":"動画配信","item":"https://unlock.1ms.dog/ja/streaming/"},{"@type":"ListItem","position":3,"name":"Philo","item":"https://unlock.1ms.dog/ja/philo/"}]}]}</script>
 <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/app.a5c1ed45d7.css">
+<link rel="stylesheet" href="/assets/app.5092d265ee.css">
 </head>
 <body>
 <div class="app">
@@ -117,20 +117,8 @@
     </div>
   </div>
 </div>
-<div class="scrim" id="shareDlg" hidden>
-  <div class="dialog share" role="dialog" aria-modal="true" aria-labelledby="shareT">
-    <div class="dlg-h"><h2 id="shareT" data-i="share_h">結果を共有</h2>
-      <button class="icon-btn" data-close type="button" aria-label="閉じる"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg></button></div>
-    <div class="share-b">
-      <div class="share-img"><img id="shareImg" alt="" width="1200" height="900"></div>
-      <div class="share-link"><input id="shareUrl" readonly aria-label="結果のリンク"><button class="btn" id="copyLink" type="button" data-i="copy_link">リンクをコピー</button></div>
-      <div class="share-acts"><button class="btn" id="copyImg" type="button" data-i="copy_img">画像をコピー</button><button class="btn" id="dlImg" type="button" data-i="dl_img">ダウンロード</button><button class="btn pri" id="nativeShare" type="button" data-i="sys_share" hidden>共有…</button></div>
-      <p class="share-note" data-i="share_note">画像とリンクはブラウザ内で作られます。各サービスの結果と国だけを含み、IP は含みません。</p>
-    </div>
-  </div>
-</div>
 <script type="application/json" id="data">{"lang":"ja","paths":{"en":"/philo/","zh-CN":"/zh-cn/philo/","zh-TW":"/zh-tw/philo/","ja":"/ja/philo/","ko":"/ko/philo/","es":"/es/philo/","fr":"/fr/philo/","de":"/de/philo/","pt":"/pt/philo/","ru":"/ru/philo/"},"home":{"en":"/","zh-CN":"/zh-cn/","zh-TW":"/zh-tw/","ja":"/ja/","ko":"/ko/","es":"/es/","fr":"/fr/","de":"/de/","pt":"/pt/","ru":"/ru/"},"egressPath":"/ja/"}</script>
-<script src="/assets/l.ja.30b9fbcba0.js"></script>
-<script src="/assets/app.06eade4eb7.js" defer></script>
+<script src="/assets/l.ja.30f77cc5a3.js"></script>
+<script src="/assets/app.25f7e7fd10.js" defer></script>
 </body>
 </html>

@@ -247,7 +247,7 @@
   $("#run").onclick = () => { if (S.shared && location.pathname !== D.home[LANG]) location.href = D.paths[LANG].replace(/r\/[a-z]+\/$/, ""); else run(); };
 
   /* ---------- questions: a dialog behind the ? button (as on 1ms.dog) ---------- */
-  const scrims = { help: $("#help"), share: $("#shareDlg") };
+  const scrims = { help: $("#help") };
   let lastFocus = null;
   const openDlg = k => { lastFocus = document.activeElement; scrims[k].hidden = false; document.body.classList.add("dlg-open"); (scrims[k].querySelector("[data-close]") || scrims[k]).focus(); };
   const closeDlg = () => { for (const s of Object.values(scrims)) s.hidden = true; document.body.classList.remove("dlg-open"); if (lastFocus) lastFocus.focus(); };
@@ -283,90 +283,59 @@
     history.replaceState(null, "", location.pathname.replace(/r\/[a-z]+\/$/, ""));
   }
 
-  /* ---------- share: an image drawn here, and a link that carries the result ---------- */
-  const shortener = (document.querySelector('meta[name="shortener"]') || {}).content || "";   // on 1ms.dog; absent when self-hosted
-  let shortFor = null;
-  async function shortLink(long) {
-    if (!shortener) return long;
-    if (shortFor && shortFor[0] === long) return shortFor[1];
-    try {
-      const r = await fetch(shortener, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ url: long }), signal: AbortSignal.timeout(5000) });
-      const j = await r.json(); if (j.url) { shortFor = [long, j.url]; return j.url; }
-    } catch (e) {}
-    return long;
-  }
+  /* ---------- share: the shared 1ms.dog dialog (/assets/share/, copied verbatim from 1ms-shell) ---------- */
   // the headline a shared result's preview card states (public/r/<verdict>/, see scripts/build.mjs)
   const verdict = () => {
     const v = id => (S.v[id] || {}).v, ai = ["chatgpt", "claude", "gemini"], big = ["chatgpt", "claude", "gemini", "netflix", "disney"];
     if (ai.some(id => v(id) === "no" || v(id) === "fail")) return "noai";
     return big.every(id => v(id) === "ok") ? "all" : "part";
   };
+  // The link opens the headline's own page (/<lang>/r/<verdict>/); the result itself is in the hash (src/lib.mjs),
+  // with each service's verdict and country, never an address: so there is nothing for the visitor to choose to show.
   const shareLink = () => location.origin + D.home[LANG] + "r/" + verdict() + "/" +
     encodeShare({ ts: S.shared ? S.shared.ts : Date.now(), tz: S.shared ? S.shared.tz : tzCc(), verdicts: S.v });
-  let shareBlob = null, shareSeq = 0;
-  async function refreshShare() {
-    const seq = ++shareSeq, long = shareLink();
-    shareBlob = null; $("#copyImg").disabled = $("#dlImg").disabled = true;
-    $("#shareUrl").value = long;
-    drawCard().then(c => {
-      if (seq !== shareSeq) return;
-      $("#shareImg").src = c.toDataURL("image/png");
-      c.toBlob(b => { if (seq === shareSeq) { shareBlob = b; $("#copyImg").disabled = $("#dlImg").disabled = false; } }, "image/png");
-    }).catch(() => {});
-    const url = await shortLink(long);
-    if (seq === shareSeq) $("#shareUrl").value = url;
-  }
-  $("#share").onclick = () => { if (!S.done) return; $("#nativeShare").hidden = !navigator.share; openDlg("share"); refreshShare(); };
-  const flash = (btn, k) => { const o = btn.textContent; btn.textContent = t(k); setTimeout(() => { btn.textContent = o; }, 1500); };
-  $("#copyLink").onclick = async e => { const b = e.currentTarget; try { await navigator.clipboard.writeText($("#shareUrl").value); flash(b, "copied"); } catch (x) { $("#shareUrl").select(); } };
-  $("#copyImg").onclick = async e => { const b = e.currentTarget; try { await navigator.clipboard.write([new ClipboardItem({ "image/png": shareBlob })]); flash(b, "copied"); } catch (x) {} };
-  $("#dlImg").onclick = () => { const a = document.createElement("a"); a.href = $("#shareImg").src; a.download = "unlock-check.png"; a.click(); };
-  $("#nativeShare").onclick = async () => {
-    const text = t("share_text", { v: t("vh_" + verdict()) }), url = $("#shareUrl").value;
-    const file = shareBlob && new File([shareBlob], "unlock-check.png", { type: "image/png" });
-    try { await navigator.share(file && navigator.canShare && navigator.canShare({ files: [file] }) ? { text, url, files: [file] } : { text, url }); } catch (e) {}
-  };
-
-  // The card, in the page's theme: brand, the headline, the totals, then every service in two columns with its
-  // verdict and country. Never an address.
-  const img = src => new Promise((res, rej) => { const i = new Image(); i.onload = () => res(i); i.onerror = rej; i.src = src; });
-  const FF = "Geist, 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans', 'Malgun Gothic', sans-serif", FM = "'Geist Mono', Consolas, monospace";
-  async function drawCard() {
-    const W = 1200, P = 56, css = getComputedStyle(document.documentElement), cv = n => css.getPropertyValue("--" + n).trim(), dark = css.colorScheme === "dark";
-    const C = { bg: cv("bg"), panel: cv("panel"), line: cv("line"), fg: cv("fg"), muted: cv("muted"), ink: cv("ink"), ok: cv("ok"), no: cv("bad"), reach: cv("muted"), fail: cv("warn") };
-    const rows = SERVICES.filter(s => S.v[s.id]), half = Math.ceil(rows.length / 2), RH = 46, top = 300;
-    const H = top + half * RH + 110;
-    const c = document.createElement("canvas"); c.width = W; c.height = H;
-    const x = c.getContext("2d");
-    x.fillStyle = C.bg; x.fillRect(0, 0, W, H);
-    x.drawImage(await img(dark ? "/assets/logo-dark.svg" : "/assets/logo-light.svg"), P, 40, 150, 60);
-    x.fillStyle = C.ink; x.font = `700 30px ${FF}`; x.fillText(t("name"), P + 172, 82);
-    x.fillStyle = C.fg; x.font = `700 44px ${FF}`; x.fillText(clip(x, t("vh_" + verdict()), W - P * 2), P, 170);
+  // The card's middle, as the page shows it: the headline, the totals, then every service in two columns with its
+  // own icon and the country it sees (green) or what went wrong (red, amber).
+  const RH = 44, cardRows = () => SERVICES.filter(s => S.v[s.id]);
+  async function drawCard(x, k) {
+    const C = { fg: k.v("fg"), muted: k.v("muted"), line: k.v("line"), ok: k.v("ok"), no: k.v("bad"), fail: k.v("warn"), reach: k.v("muted") };
+    // the headline in one line: smaller type before it is cut
+    const head = t("vh_" + verdict()), hw = k.W - k.P * 2;
+    let fs = 42; do { x.font = `700 ${fs}px ${k.F}`; } while (x.measureText(head).width > hw && (fs -= 2) >= 30);
+    x.fillStyle = C.fg; x.fillText(k.clip(x, head, hw), k.P, k.top + 46);
     const n = tally(Object.values(S.v));
-    let xx = P;
-    for (const k of ["ok", "no", "reach", "fail"]) {
-      x.fillStyle = C[k]; x.font = `700 34px ${FM}`; x.fillText(String(n[k]), xx, 236); xx += x.measureText(String(n[k])).width + 10;
-      x.fillStyle = C.muted; x.font = `400 22px ${FF}`; const lb = t("v_" + k); x.fillText(lb, xx, 234); xx += x.measureText(lb).width + 36;
+    let xx = k.P;
+    for (const key of ["ok", "no", "reach", "fail"]) {
+      x.fillStyle = C[key]; x.font = `700 32px ${k.M}`; x.fillText(String(n[key]), xx, k.top + 106); xx += x.measureText(String(n[key])).width + 10;
+      x.fillStyle = C.muted; x.font = `400 21px ${k.F}`; const lb = t("v_" + key); x.fillText(lb, xx, k.top + 104); xx += x.measureText(lb).width + 34;
     }
-    const colW = (W - P * 2 - 40) / 2;
+    const rows = cardRows(), half = Math.ceil(rows.length / 2), colW = (k.W - k.P * 2 - 48) / 2, y0 = k.top + 170;
     for (let i = 0; i < rows.length; i++) {
-      const s = rows[i], v = S.v[s.id], cx = P + (i < half ? 0 : colW + 40), cy = top + (i % half) * RH;
-      x.fillStyle = C.line; x.fillRect(cx, cy - 32, colW, 1);
-      x.beginPath(); x.arc(cx + 11, cy - 8, 11, 0, Math.PI * 2); x.fillStyle = C[v.v]; x.fill();
-      x.fillStyle = dark ? "#111" : "#fff"; x.font = `700 13px ${FF}`; x.textAlign = "center"; x.fillText(MARK[v.v], cx + 11, cy - 3.5); x.textAlign = "left";
-      x.fillStyle = C.fg; x.font = `600 22px ${FF}`; x.fillText(clip(x, s.name, colW * .45), cx + 34, cy);
-      let rx = cx + colW;
-      x.textAlign = "right"; x.font = `400 20px ${FF}`; x.fillStyle = v.v === "no" ? C.no : C.muted;
-      const right = v.cc ? country(v.cc) : t("v_" + v.v); x.fillText(clip(x, right, colW * .4), rx, cy); x.textAlign = "left";
-      if (v.cc && v.cc !== "XK") { try { rx -= x.measureText(clip(x, right, colW * .4)).width + 34; x.drawImage(await img(`/flags/${v.cc.toLowerCase()}.svg`), rx, cy - 17, 26, 19); } catch (e) {} }
+      const s = rows[i], v = S.v[s.id], cx = k.P + (i < half ? 0 : colW + 48), cy = y0 + (i % half) * RH;
+      x.fillStyle = C.line; x.fillRect(cx, cy - 30, colW, 1);
+      const icon = document.querySelector(`#s-${s.id} img.fi`);
+      if (icon) { try { x.drawImage(await k.img(icon.src), cx, cy - 20, 24, 24); } catch (e) {} }
+      x.fillStyle = C.fg; x.font = `500 22px ${k.F}`; x.fillText(k.clip(x, s.name, colW * .58), cx + 36, cy);
+      const right = v.v === "ok" ? (v.cc ? country(v.cc) : "") : t("v_" + v.v);
+      x.textAlign = "right"; x.fillStyle = C[v.v]; x.font = `${v.v === "ok" ? 400 : 600} 20px ${k.F}`;
+      x.fillText(k.clip(x, right, colW * .38), cx + colW, cy); x.textAlign = "left";
     }
-    x.fillStyle = C.line; x.fillRect(P, H - 80, W - P * 2, 1);
-    x.fillStyle = C.ink; x.font = `600 26px ${FM}`; x.fillText(location.host, P, H - 32);
-    x.fillStyle = C.muted; x.font = `400 20px ${FF}`; x.textAlign = "right";
-    x.fillText(new Date(S.shared ? S.shared.ts : Date.now()).toLocaleString(LANG, { dateStyle: "medium", timeStyle: "short" }), W - P, H - 32); x.textAlign = "left";
-    return c;
   }
-  function clip(x, s, w) { if (x.measureText(s).width <= w) return s; while (s.length > 1 && x.measureText(s + "…").width > w) s = s.slice(0, -1); return s + "…"; }
+  let dialog = null;
+  $("#share").onclick = async () => {
+    if (!S.done) return;
+    const { share } = await import("/assets/share/share.js");
+    dialog = share({
+      lang: LANG, name: t("name"), file: "unlock-check", never: ["ip"],
+      link: shareLink, home: location.origin + D.home[LANG],
+      text: () => t("share_text", { v: t("vh_" + verdict()) }),
+      height: (x, k) => k.top + 170 + Math.ceil(cardRows().length / 2) * RH + 70,
+      draw: drawCard,
+      foot: () => [t("done", { n: cardRows().length })],
+      ts: S.shared ? S.shared.ts : Date.now(),
+    });
+    dialog.open();
+  };
 
   applyMask();
   const shared = parseShare(location.hash, SERVICES.map(s => s.id));

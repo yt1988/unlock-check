@@ -37,7 +37,7 @@
 <meta name="twitter:image" content="https://unlock.1ms.dog/og/ko/dmm-tv.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"내 IP로 DMM TV 사용 가능?","url":"https://unlock.1ms.dog/ko/dmm-tv/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","description":"지금 IP로 DMM TV 서비스를 쓸 수 있는지, 어느 나라로 판단하는지 무료로 확인합니다. 브라우저에서 프록시의 실제 경로로 확인하며 데이터는 보내지 않습니다.","inLanguage":"ko","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"FAQPage","inLanguage":"ko","mainEntity":[{"@type":"Question","name":"DMM TV 서비스는 어느 나라에서 쓸 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"일본에서만 쓸 수 있습니다. DMM TV 서비스는 접속할 때마다 위치를 확인합니다."}},{"@type":"Question","name":"이 페이지는 DMM TV 서비스 사용 가능 여부를 어떻게 판단하나요?","acceptedAnswer":{"@type":"Answer","text":"DMM TV 서비스에는 다른 페이지도 읽을 수 있는 공개 지역 API가 있습니다(자체 웹사이트도 사용). 브라우저가 내 경로로 직접 물으면 사용 가능 여부와 내가 있는 나라를 알려 줍니다. 명령줄 우회 확인 스크립트도 같은 API를 씁니다."}},{"@type":"Question","name":"DMM TV: 사용 불가로 나오는데 프록시는 지원 국가에 있다면?","acceptedAnswer":{"@type":"Answer","text":"서비스마다 자체 IP 데이터베이스로 위치를 판단하므로 결과가 다를 수 있습니다. 같은 프록시를 일본으로 보는 곳도, 홍콩으로 보는 곳도 있습니다. 데이터센터 IP나 알려진 VPN을 거부하는 서비스도 있습니다. 표시되는 나라는 DMM TV 서비스 자신이 판단한 나라입니다."}},{"@type":"Question","name":"왜 브라우저에서 확인하나요?","acceptedAnswer":{"@type":"Answer","text":"프록시 앱(Clash, Surge, Shadowrocket 등)은 규칙에 따라 사이트마다 다른 경로를 씁니다. 서버에서 실행되는 확인 스크립트는 그 서버의 IP만 확인합니다. 이 페이지는 브라우저에서 각 서비스에 직접 접속하므로 평소와 같은 경로로 확인합니다."}},{"@type":"Question","name":"'공식 API', '공식 위치', '리디렉션 확인', '추정'의 차이는?","acceptedAnswer":{"@type":"Answer","text":"결과가 얼마나 확실한지이며, 확실한 순서입니다. 공식 API: 서비스 자체 지역 API가 사용 가능 여부를 답했습니다. 공식 위치: 서비스 서버가 판단한 나라를 공개된 지원 국가와 비교했습니다. 리디렉션 확인: 서비스가 '이용할 수 없음' 페이지로 보냈는지 봤습니다. 추정: 서비스가 아무것도 읽지 못하게 해서 열리는지만 확인하고, 나라는 다른 서비스의 판단을 썼습니다."}},{"@type":"Question","name":"서비스마다 판단한 나라가 다른 이유는?","acceptedAnswer":{"@type":"Answer","text":"프록시 규칙 때문에 서로 다른 서버를 거치거나, 서비스마다 쓰는 IP 데이터베이스가 다르기 때문입니다. 나라가 다르면 어느 서비스가 어느 나라로 판단했는지 보여 줍니다."}},{"@type":"Question","name":"시간대는 왜 중요한가요?","acceptedAnswer":{"@type":"Answer","text":"AI 서비스는 브라우저 시간대와 IP의 나라를 비교합니다. 시간대는 한국인데 IP가 미국이면 프록시를 쓰는 것처럼 보여 더 엄격한 확인을 받을 수 있습니다."}},{"@type":"Question","name":"데이터가 업로드되나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 브라우저가 각 서비스에 직접 접속하고, 이 사이트는 페이지만 제공하며 결과를 볼 수 없습니다. 스크린샷 전에 'IP 숨기기'를 누를 수 있습니다."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"스트리밍/AI 언락 체크","item":"https://unlock.1ms.dog/ko/"},{"@type":"ListItem","position":2,"name":"지역 TV","item":"https://unlock.1ms.dog/ko/regional/"},{"@type":"ListItem","position":3,"name":"DMM TV","item":"https://unlock.1ms.dog/ko/dmm-tv/"}]}]}</script>
 <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/app.a5c1ed45d7.css">
+<link rel="stylesheet" href="/assets/app.5092d265ee.css">
 </head>
 <body>
 <div class="app">
@@ -117,20 +117,8 @@
     </div>
   </div>
 </div>
-<div class="scrim" id="shareDlg" hidden>
-  <div class="dialog share" role="dialog" aria-modal="true" aria-labelledby="shareT">
-    <div class="dlg-h"><h2 id="shareT" data-i="share_h">결과 공유</h2>
-      <button class="icon-btn" data-close type="button" aria-label="닫기"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg></button></div>
-    <div class="share-b">
-      <div class="share-img"><img id="shareImg" alt="" width="1200" height="900"></div>
-      <div class="share-link"><input id="shareUrl" readonly aria-label="결과 링크"><button class="btn" id="copyLink" type="button" data-i="copy_link">링크 복사</button></div>
-      <div class="share-acts"><button class="btn" id="copyImg" type="button" data-i="copy_img">이미지 복사</button><button class="btn" id="dlImg" type="button" data-i="dl_img">다운로드</button><button class="btn pri" id="nativeShare" type="button" data-i="sys_share" hidden>공유…</button></div>
-      <p class="share-note" data-i="share_note">이미지와 링크는 브라우저에서 만들어집니다. 서비스별 결과와 나라만 담고 IP는 담지 않습니다.</p>
-    </div>
-  </div>
-</div>
 <script type="application/json" id="data">{"lang":"ko","paths":{"en":"/dmm-tv/","zh-CN":"/zh-cn/dmm-tv/","zh-TW":"/zh-tw/dmm-tv/","ja":"/ja/dmm-tv/","ko":"/ko/dmm-tv/","es":"/es/dmm-tv/","fr":"/fr/dmm-tv/","de":"/de/dmm-tv/","pt":"/pt/dmm-tv/","ru":"/ru/dmm-tv/"},"home":{"en":"/","zh-CN":"/zh-cn/","zh-TW":"/zh-tw/","ja":"/ja/","ko":"/ko/","es":"/es/","fr":"/fr/","de":"/de/","pt":"/pt/","ru":"/ru/"},"egressPath":"/ko/"}</script>
-<script src="/assets/l.ko.45cace4bb7.js"></script>
-<script src="/assets/app.06eade4eb7.js" defer></script>
+<script src="/assets/l.ko.a80f5e82ac.js"></script>
+<script src="/assets/app.25f7e7fd10.js" defer></script>
 </body>
 </html>
