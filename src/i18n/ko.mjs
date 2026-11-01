@@ -75,6 +75,7 @@ export default {
   wait_ip: "서비스에 보이는 IP를 모으는 중…",
   wait_tz: "브라우저 시간대를 비교하는 중…",
   ip_line: "서비스에 보이는 IP: {list}",
+  ipq_title: "이 IP 품질 확인(IP 품질 테스트)",
   ip_none: "IP를 알려 준 서비스가 없습니다.",
   ip_shared: "공유된 결과에는 IP가 없습니다.",
   tz_none: "시간대를 비교하지 못했습니다.",

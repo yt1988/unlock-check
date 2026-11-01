@@ -73,6 +73,7 @@ export default {
   wait_ip: "Reunindo os IPs que os serviços veem…",
   wait_tz: "Comparando seu fuso horário…",
   ip_line: "IPs que os serviços veem: {list}",
+  ipq_title: "Ver a qualidade deste IP (teste de qualidade de IP)",
   ip_none: "Nenhum serviço mostrou o IP que vê.",
   ip_shared: "Resultados compartilhados não incluem IPs.",
   tz_none: "Fuso horário não comparado.",

@@ -73,6 +73,7 @@ export default {
   wait_ip: "Reuniendo las IP que ven los servicios…",
   wait_tz: "Comparando tu zona horaria…",
   ip_line: "IP que ven los servicios: {list}",
+  ipq_title: "Ver la calidad de esta IP (test de calidad de IP)",
   ip_none: "Ningún servicio mostró la IP que ve.",
   ip_shared: "Los resultados compartidos no incluyen IP.",
   tz_none: "No se pudo comparar la zona horaria.",

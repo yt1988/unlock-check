@@ -73,6 +73,7 @@ export default {
   wait_ip: "各サービスから見える IP を集めています…",
   wait_tz: "ブラウザのタイムゾーンを比べています…",
   ip_line: "サービスから見える IP：{list}",
+  ipq_title: "この IP の品質を調べる（IP 品質チェック）",
   ip_none: "IP を返したサービスはありません。",
   ip_shared: "共有された結果には IP は含まれません。",
   tz_none: "タイムゾーンは比較できませんでした。",

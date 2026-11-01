@@ -76,6 +76,7 @@ export default {
   wait_ip: "Collecting the IPs the services see…",
   wait_tz: "Comparing your time zone…",
   ip_line: "IPs the services see: {list}",
+  ipq_title: "Check this IP's quality (IP Quality Test)",
   ip_none: "No service showed the IP it sees.",
   ip_shared: "Shared results don't include IPs.",
   tz_none: "Time zone not compared.",

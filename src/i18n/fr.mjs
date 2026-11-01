@@ -73,6 +73,7 @@ export default {
   wait_ip: "Collecte des IP vues par les services…",
   wait_tz: "Comparaison du fuseau horaire…",
   ip_line: "IP vues par les services : {list}",
+  ipq_title: "Vérifier la qualité de cette IP (test de qualité d'IP)",
   ip_none: "Aucun service n'a indiqué l'IP qu'il voit.",
   ip_shared: "Les résultats partagés ne contiennent pas d'IP.",
   tz_none: "Fuseau horaire non comparé.",

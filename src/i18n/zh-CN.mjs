@@ -73,6 +73,7 @@ export default {
   wait_ip: "正在汇总各服务看到的 IP…",
   wait_tz: "正在比较浏览器时区…",
   ip_line: "服务看到的 IP：{list}",
+  ipq_title: "查这个 IP 干不干净（IP 质量测试）",
   ip_none: "没有服务返回它看到的 IP。",
   ip_shared: "分享的结果不包含 IP。",
   tz_none: "无法比较时区。",
