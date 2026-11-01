@@ -81,6 +81,7 @@ npm install
 npm run dev        # http://localhost:8787, with the production headers and the redirect chain
 npm run build      # regenerate public/ after changing src/ (commit public/)
 npm test           # public/ up to date, page contract, SEO, and the logic tests
+npm run icons      # download the services' icons into public/assets/svc/ after adding a service (commit them)
 npm run og         # redraw the link-preview images in public/og/ after changing a headline (commit them)
 ```
 

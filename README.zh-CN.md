@@ -81,6 +81,7 @@ npm install
 npm run dev        # http://localhost:8787，带生产环境的响应头和跳转链
 npm run build      # 改了 src/ 之后重新生成 public/（public/ 要提交）
 npm test           # public/ 是否最新、页面约定、SEO 和逻辑测试
+npm run icons      # 新增服务后下载它的图标到 public/assets/svc/（要提交）
 npm run og         # 改了标题后重画 public/og/ 里的预览图（要提交）
 ```
 

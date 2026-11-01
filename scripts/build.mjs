@@ -16,6 +16,8 @@ import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { transform } from "esbuild";
 import { SERVICES, CATS, NETFLIX_TRY, SLUG, CAT_SLUG } from "../src/services.mjs";
+// each service's icon in public/assets/svc/ (scripts/icons.mjs); a service without one shows an empty square
+const ICONS = JSON.parse(await readFile(new URL("../src/icons.json", import.meta.url), "utf8"));
 
 const SITE = (process.env.SITE_URL || "https://unlock.1ms.dog").replace(/\/+$/, "");
 export const REPO = "https://github.com/yt1988/unlock-check";
@@ -96,7 +98,8 @@ export async function build({ check = false } = {}) {
     const alias = id => (d.alias || {})[id];
 
     // every service is in the HTML from the start, in its category (crawlers see what is checked; rows never move)
-    const row = s => `<li class="sv" id="s-${s.id}"><span class="vd"><i></i><span class="sr"></span></span><a class="sn" href="${href({ svc: s.id })}">${esc(s.name)}</a>` +
+    const row = s => `<li class="sv" id="s-${s.id}"><span class="vd"><i></i><span class="sr"></span></span>` +
+      (ICONS[s.id] ? `<img class="fi" src="/assets/svc/${ICONS[s.id]}" width="16" height="16" alt="" decoding="async">` : `<span class="fi"></span>`) + `<a class="sn" href="${href({ svc: s.id })}">${esc(s.name)}</a>` +
       `<span class="rg"></span></li>`;
     const groupsOf = first => [first, ...CATS.filter(c => c !== first)].filter(Boolean).map(c =>
       `<div class="grp" data-c="${c}"><h2><a href="${href({ cat: c })}">${esc(T("cat_" + c).nav)}</a><b class="g-n"></b></h2><ul>${SERVICES.filter(s => s.cat === c).map(row).join("")}</ul></div>`).join("\n");

@@ -59,9 +59,11 @@
 .grp h2 a { text-decoration: none; } .grp h2 a:hover { color: var(--fg); }
 .g-n { margin-left: auto; font: 500 12px var(--f-num); letter-spacing: 0; font-variant-numeric: tabular-nums; }
 .grp ul { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 6px; }
-.sv { display: grid; grid-template-columns: 16px minmax(0, 1fr) auto; align-items: center; column-gap: 7px; height: 36px; padding: 0 10px;
+.sv { display: grid; grid-template-columns: 16px 16px minmax(0, 1fr) auto; align-items: center; column-gap: 7px; height: 36px; padding: 0 10px;
   border: 1px solid var(--line); border-radius: 9px; font-size: 13px; }
 .vd i { width: 16px; height: 16px; border-radius: 50%; display: grid; place-items: center; font: 700 10px/1 var(--f-ui); font-style: normal; color: #fff; background: var(--soft); }
+/* the service's own icon, so it is recognized at a glance */
+.fi { width: 16px; height: 16px; border-radius: 4px; object-fit: contain; }
 .sn { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 600; text-decoration: none; }
 .sn:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 .rg { display: flex; align-items: center; gap: 5px; min-width: 0; max-width: 92px; white-space: nowrap; overflow: hidden; font-size: 12.5px; color: var(--muted); }
