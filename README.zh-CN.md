@@ -33,7 +33,7 @@
 | `peacocktv.com/` | 1 次（→ `/unavailable`） | 0 次 |
 | `disneyplus.com/` | 0 次 | 0 次 |
 
-所以 Netflix 只直接响应你所在国家的路径：先试其他服务看到的国家，一两个请求就能找到 Netflix 地区。Netflix 对爬虫不做跳转，测试时要用正常浏览器的 UA（无头 Chrome 的 `HeadlessChrome` 在哪都是 0 次）。
+所以 Netflix 只直接响应你所在国家的路径：先试其他服务看到的国家，一两个请求就能找到 Netflix 地区。在 Cloudflare 线上（unlock.1ms.dog，2026-11-01）这些静态规则的跳转和上面一致，最后一跳会离开本站，线上实测的次数也一样。Netflix 对爬虫不做跳转，测试时要用正常浏览器的 UA（无头 Chrome 的 `HeadlessChrome` 在哪都是 0 次）。
 
 ### 浏览器看不出来的
 

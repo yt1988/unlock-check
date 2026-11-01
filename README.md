@@ -33,7 +33,7 @@ Measured in Chrome 141 on 2026-11-01 (a Japanese exit; the US numbers from a ser
 | `peacocktv.com/` | 1 (→ `/unavailable`) | 0 |
 | `disneyplus.com/` | 0 | 0 |
 
-So Netflix answers only its own country's path directly: trying the countries other services see first finds the Netflix region in one or two requests. Netflix serves crawlers without redirects, so test with a normal browser user agent (headless Chrome's `HeadlessChrome` gets 0 everywhere).
+So Netflix answers only its own country's path directly: trying the countries other services see first finds the Netflix region in one or two requests. On Cloudflare (unlock.1ms.dog, 2026-11-01) the static rules redirect as above, the last hop leaving the site, and a live run counts the same. Netflix serves crawlers without redirects, so test with a normal browser user agent (headless Chrome's `HeadlessChrome` gets 0 everywhere).
 
 ### What a browser can't tell
 
