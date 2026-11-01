@@ -1,0 +1,87 @@
+import { test } from "node:test";
+import assert from "node:assert/strict";
+import { READERS, judge, offered, guessCountry, exitsByCountry, encodeShare, parseShare, maskIp, parseTrace } from "../src/lib.mjs";
+import { SERVICES, CATS, SLUG, CAT_SLUG } from "../src/services.mjs";
+
+const S = Object.fromEntries(SERVICES.map(s => [s.id, s]));
+
+test("catalog: ids, categories, slugs and country codes are well formed", () => {
+  const ids = new Set();
+  for (const s of SERVICES) {
+    assert.ok(!ids.has(s.id), "duplicate " + s.id); ids.add(s.id);
+    assert.ok(CATS.includes(s.cat), s.id + " category");
+    assert.match(SLUG[s.id] || "", /^[a-z0-9-]+$/, s.id + " slug");
+    for (const k of ["allow", "deny"]) if (s[k]) for (const cc of s[k].split(" ")) assert.match(cc, /^[A-Z]{2}$/, `${s.id} ${k} ${cc}`);
+    const p = s.probe;
+    assert.ok(p.api || p.trace || p.hops || p.netflix || p.reach, s.id + " probe");
+    if (p.api) assert.ok(READERS[p.read], s.id + " reader");
+  }
+  assert.equal(new Set(Object.values(SLUG)).size, SERVICES.length);
+  for (const c of CATS) assert.ok(CAT_SLUG[c] && !Object.values(SLUG).includes(CAT_SLUG[c]), c);
+});
+
+test("published lists: the countries people ask about", () => {
+  for (const [id, yes, no] of [["chatgpt", "US JP SG TW KR GB DE", "CN HK MO RU IR KP"], ["claude", "US JP SG TW KR GB", "CN HK MO RU"],
+    ["gemini", "US JP SG TW HK MO", "CN RU IR KP"], ["netflix", "US JP HK SG", "CN RU"], ["tiktok", "US JP", "IN CN"]]) {
+    for (const cc of yes.split(" ")) assert.equal(offered(S[id], cc), true, `${id} ${cc}`);
+    for (const cc of no.split(" ")) assert.equal(offered(S[id], cc), false, `${id} ${cc}`);
+  }
+  assert.equal(offered(S.peacock, "US"), true); assert.equal(offered(S.peacock, "JP"), false);
+  assert.equal(offered(S.chatgpt, null), null);
+});
+
+test("readers: real answers (measured 2026-11-01)", () => {
+  assert.deepEqual(READERS.trace(200, "fl=1\nip=3.115.99.91\nloc=JP\ncolo=NRT\n"), { cc: "JP", ip: "3.115.99.91", colo: "NRT" });
+  assert.equal(READERS.trace(200, "<html>"), null);
+  assert.deepEqual(READERS.openai(200, '{\n  "cookie_consent_required": false\n}'), { ok: true });
+  assert.deepEqual(READERS.openai(403, '{"error":{"code":"unsupported_country","message":"Country, region, or territory not supported"}}'), { ok: false });
+  assert.deepEqual(READERS.kktv(200, '{"status":{"type":"OK"},"data":{"country":"JP","ip":"3.115.99.91","is_allowed":false}}'), { ok: false, cc: "JP", ip: "3.115.99.91" });
+  assert.deepEqual(READERS.philo(200, '{"status": "FAIL", "city": "tokyo", "country": "JP"}'), { ok: false, cc: "JP" });
+  assert.deepEqual(READERS.tvb(200, '{"ip":"3.115.99.91","country":"JP","allow_in_this_country":true}'), { ok: true, cc: "JP", ip: "3.115.99.91" });
+  assert.deepEqual(READERS.sbs(200, '{"get":{"response":{"country_code":"HK"}}}'), { ok: false, cc: "HK" });
+  assert.deepEqual(READERS.fod(200, '<?xml version="1.0"?><RESULT><FLAG TYPE="false" /></RESULT>'), { ok: false, cc: null });
+  assert.deepEqual(READERS.dazn(200, '{"Region":{"isAllowed":true,"GeolocatedCountry":"jp"}}'), { ok: true, cc: "JP" });
+});
+
+test("judge: each kind of probe", () => {
+  assert.deepEqual(judge(S.claude, { cc: "JP", ip: "1.2.3.4" }, null), { v: "ok", cc: "JP", ip: "1.2.3.4", how: "edge", why: null });
+  assert.equal(judge(S.claude, { cc: "HK" }, null).v, "no");
+  assert.equal(judge(S.claude, { err: "net" }, null).v, "fail");
+  assert.deepEqual(judge(S.chatgpt, { ok: false, edge: { cc: "HK", ip: "" } }, "HK"), { v: "no", cc: "HK", ip: "", how: "api", why: null });
+  assert.equal(judge(S.netflix, { reach: true, cc: "JP", hops: 0 }, null).v, "ok");
+  assert.equal(judge(S.netflix, { reach: true, cc: null, hops: 2 }, "RU").v, "no");
+  assert.equal(judge(S.netflix, { reach: true, cc: null, hops: 2 }, "JP").v, "reach");
+  assert.equal(judge(S.netflix, { reach: false }, "JP").v, "fail");
+  assert.deepEqual(judge(S.peacock, { reach: true, hops: 0 }, "JP"), { v: "ok", cc: "US", ip: "", how: "hops", why: null });
+  assert.equal(judge(S.peacock, { reach: true, hops: 1 }, "JP").v, "no");
+  assert.equal(judge(S.disney, { reach: true, hops: null }, "JP").v, "reach");
+  assert.deepEqual(judge(S.gemini, { reach: true }, "HK"), { v: "ok", cc: "HK", ip: "", how: "guess", why: null });
+  assert.equal(judge(S.gemini, { reach: true }, "CN").v, "no");
+  assert.equal(judge(S.tiktok, { reach: true }, null).v, "reach");
+  assert.equal(judge(S.copilot, { cc: "JP" }, null).v, "ok");
+});
+
+test("guess and exits", () => {
+  assert.equal(guessCountry(["JP", "HK", "JP", null]), "JP");
+  assert.equal(guessCountry([]), null);
+  const v = { a: { cc: "JP", how: "edge" }, b: { cc: "HK", how: "api" }, c: { cc: "JP", how: "hops" }, d: { cc: "US", how: "guess" } };
+  assert.deepEqual(exitsByCountry(v), [{ cc: "JP", ids: ["a", "c"] }, { cc: "HK", ids: ["b"] }]);
+});
+
+test("share links round-trip and ignore what they don't know", () => {
+  const verdicts = { chatgpt: { v: "ok", how: "api", cc: "JP", ip: "1.2.3.4" }, gemini: { v: "reach", how: "guess", cc: null, ip: "" }, claude: { v: "fail", how: null, cc: null } };
+  const h = encodeShare({ ts: 1793517762000, tz: "JP", verdicts });
+  assert.ok(!h.includes("1.2.3.4"), "no address in the link");
+  const r = parseShare(h + "_nope~oaJP", SERVICES.map(s => s.id));
+  assert.equal(r.ts, 1793517762000); assert.equal(r.tz, "JP");
+  assert.deepEqual(r.verdicts.chatgpt, { v: "ok", how: "api", cc: "JP", ip: "" });
+  assert.deepEqual(r.verdicts.claude, { v: "fail", how: null, cc: null, ip: "" });
+  assert.equal(r.verdicts.nope, undefined);
+  assert.equal(parseShare("#r=2.x", []), null);
+});
+
+test("small helpers", () => {
+  assert.equal(maskIp("203.0.113.9"), "203.0.•.•");
+  assert.equal(maskIp("2001:db8::1"), "2001:db8:•");
+  assert.equal(parseTrace("a=1\nb=x=y").b, "x=y");
+});

@@ -1,0 +1,146 @@
+/* The page's own parts (src/style.css has the tokens and the top bar shared with the other 1ms.dog tools). */
+
+/* hero: headline, a service page's verdict, the totals, the notes, then the action bar */
+.hero { padding: 20px 22px 0; display: flex; flex-direction: column; gap: 16px; }
+.hero h1 { font-size: clamp(20px, 2.6vw, 26px); line-height: 1.25; letter-spacing: -.015em; font-weight: 700; text-wrap: balance; }
+.intro { color: var(--muted); font-size: 13.5px; margin-top: 6px; max-width: 820px; }
+.nt .bar, .fo-d .bar { display: inline-block; height: 10px; border-radius: 5px; background: var(--soft); vertical-align: middle; animation: blink 1.4s ease-in-out infinite; }
+
+/* four totals: available, not available, reachable, no connection. Fixed-width numbers, so nothing moves */
+.sum { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.tot { border: 1px solid var(--line); border-radius: 11px; padding: 10px 14px; display: flex; align-items: baseline; gap: 8px; min-width: 0; }
+.tot b { font: 700 26px/1.1 var(--f-num); font-variant-numeric: tabular-nums; min-width: 2ch; }
+.tot span { color: var(--muted); font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.t-ok b { color: var(--ok); } .t-no b { color: var(--bad); } .t-fail b { color: var(--warn); } .t-reach b { color: var(--muted); }
+
+/* notes: the countries the services see, the time zone. Two lines are reserved while running */
+.notes { display: flex; flex-direction: column; gap: 4px; }
+.nt { display: flex; align-items: flex-start; gap: 8px; min-height: 24px; font-size: 13.5px; line-height: 22px; }
+.nt.wait .bar { width: 46%; margin-top: 6px; } .nt.wait + .nt.wait .bar { width: 30%; }
+.nt i { flex: none; width: 16px; height: 16px; border-radius: 50%; margin-top: 3px; display: grid; place-items: center; font: 700 10px/1 var(--f-ui); font-style: normal; color: #fff; }
+.n-ok i { background: var(--ok); } .n-warn i { background: var(--warn); } .n-info i { background: transparent; box-shadow: inset 0 0 0 1.5px var(--line); color: var(--muted); }
+.nt b { font-weight: 600; } .nt .flag { width: 18px; height: 13px; vertical-align: -1px; margin: 0 4px; }
+.nt a.xl { color: var(--ink); text-decoration: none; white-space: nowrap; font-size: 12.5px; } .nt a.xl:hover { text-decoration: underline; }
+.flag { width: 20px; height: 15px; border-radius: 3px; box-shadow: 0 0 0 1px var(--line); object-fit: cover; flex: none; }
+
+/* a service page's lead panel: its verdict, big, and what it rests on; it keeps its height while running */
+.focus { border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; }
+.fo-h { display: flex; align-items: center; gap: 10px; min-height: 30px; }
+.st { width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; flex: none; font: 700 13px/1 var(--f-ui); font-style: normal; color: #fff; background: var(--line); }
+.fo-t { font-size: 19px; font-weight: 700; letter-spacing: -.01em; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.fo-c { display: inline-flex; align-items: center; gap: 6px; font-size: 15px; font-weight: 600; color: var(--fg); }
+.fo-d { min-height: 44px; font-size: 13.5px; line-height: 22px; color: var(--muted); }
+.fo-d .bar { width: 60%; }
+.focus.wait .fo-t { color: var(--muted); }
+.focus.v-ok { border-color: color-mix(in srgb, var(--ok) 40%, var(--line)); } .focus.v-ok .st { background: var(--ok); }
+.focus.v-no { border-color: color-mix(in srgb, var(--bad) 45%, var(--line)); background: color-mix(in srgb, var(--bad) 5%, transparent); }
+.focus.v-no .st { background: var(--bad); } .focus.v-no .fo-t { color: var(--bad); }
+.focus.v-fail .st { background: var(--warn); }
+.focus.v-reach .st { background: transparent; box-shadow: inset 0 0 0 1.5px var(--line); color: var(--muted); }
+
+/* action bar along the bottom of the hero; the progress line sits on its top border */
+.bar { position: relative; display: flex; align-items: center; gap: 12px; margin: 0 -22px; padding: 12px 22px 14px; border-top: 1px solid var(--line); }
+.prog { position: absolute; left: 0; right: 0; top: -1px; height: 2px; overflow: hidden; }
+.prog i { display: block; height: 100%; background: var(--ink); transform: scaleX(0); transform-origin: left; transition: transform .25s, opacity .4s .3s; }
+.prog.end i { opacity: 0; }
+.prog-t { font: 12.5px var(--f-num); color: var(--muted); font-variant-numeric: tabular-nums; }
+.acts { margin-left: auto; display: flex; gap: 8px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 36px; padding: 0 14px; border-radius: 10px; border: 1px solid var(--line); background: var(--panel); cursor: pointer; font-weight: 500; white-space: nowrap; }
+.btn svg { width: 15px; height: 15px; }
+.btn.pri { background: var(--ink); color: var(--ink-fg); border-color: transparent; font-weight: 600; }
+.btn:disabled { opacity: .5; cursor: default; }
+.btn.pri.busy { opacity: 1; } .btn.pri.busy svg { animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* the services, by category. Rows keep their size from the first paint; only the text inside changes */
+.list { padding: 16px 22px 10px; columns: 2 440px; column-gap: 32px; }
+.grp { break-inside: avoid; margin-bottom: 14px; }
+.grp h2 { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; height: 24px; display: flex; align-items: center; }
+.grp h2 a { text-decoration: none; } .grp h2 a:hover { color: var(--fg); }
+.g-n { margin-left: auto; font: 500 12px var(--f-num); letter-spacing: 0; font-variant-numeric: tabular-nums; }
+.sv { display: grid; grid-template-columns: minmax(0, 8fr) 118px minmax(0, 8fr) 74px; align-items: center; gap: 8px; height: 38px; border-top: 1px solid var(--line); font-size: 13.5px; }
+.sn { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 500; text-decoration: none; }
+.sn:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.vd { display: flex; align-items: center; gap: 6px; white-space: nowrap; min-width: 0; }
+.vd i { width: 16px; height: 16px; border-radius: 50%; flex: none; display: grid; place-items: center; font: 700 10px/1 var(--f-ui); font-style: normal; color: #fff; background: var(--soft); }
+.vd b { font-weight: 600; font-size: 13px; overflow: hidden; text-overflow: ellipsis; }
+.rg { display: flex; align-items: center; gap: 6px; min-width: 0; white-space: nowrap; overflow: hidden; }
+.rg span { overflow: hidden; text-overflow: ellipsis; }
+.rg .flag { width: 18px; height: 13px; }
+.hw { font-size: 11.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ip { display: none; }
+.sv.wait .vd b { color: var(--muted); font-weight: 500; animation: blink 1.2s ease-in-out infinite; }
+.sv.v-ok .vd i { background: var(--ok); } .sv.v-ok .vd b { color: var(--ok); }
+.sv.v-no .vd i { background: var(--bad); } .sv.v-no .vd b { color: var(--bad); }
+.sv.v-fail .vd i { background: var(--warn); } .sv.v-fail .vd b { color: var(--warn); }
+.sv.v-reach .vd i { background: transparent; box-shadow: inset 0 0 0 1.5px var(--line); color: var(--muted); } .sv.v-reach .vd b { color: var(--muted); }
+.sv[title] { cursor: help; }
+:root[data-theme="dark"] .vd i, :root[data-theme="dark"] .nt i, :root[data-theme="dark"] .st { color: #111; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .vd i, :root:not([data-theme="light"]) .nt i, :root:not([data-theme="light"]) .st { color: #111; } }
+/* the IP each service saw: a fifth column on wide screens */
+@media (min-width: 1000px) {
+  .sv { grid-template-columns: minmax(0, 7fr) 112px minmax(0, 7fr) 70px minmax(0, 6fr); }
+  .ip { display: block; font: 11.5px var(--f-num); color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: right; }
+  .ip a { color: inherit; text-decoration: none; border-bottom: 1px dotted var(--muted); }
+}
+
+/* a shared result: one line above the headline. The pre-paint script sets data-shared for a #r= link */
+.shared { display: none; align-items: center; gap: 6px; font-size: 12.5px; color: var(--ink); font-weight: 500; margin-bottom: 6px; }
+.shared svg { width: 14px; height: 14px; flex: none; }
+:root[data-shared] .shared { display: flex; }
+
+/* dialogs (as on 1ms.dog) */
+.scrim { position: fixed; inset: 0; z-index: 40; background: #0006; display: flex; align-items: center; justify-content: center; padding: 16px; }
+.dialog { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); max-width: 100%; max-height: calc(100vh - 32px); display: flex; flex-direction: column; box-shadow: 0 24px 64px var(--shadow); }
+.dlg-h { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 12px 12px 18px; border-bottom: 1px solid var(--line); }
+.dlg-h h2 { font-size: 16px; }
+body.dlg-open { overflow: hidden; }
+/* help: questions on the left, one answer at a time on the right */
+.dialog.help { width: 860px; height: min(560px, calc(100vh - 32px)); }
+.help-b { display: grid; grid-template-columns: 260px minmax(0, 1fr); min-height: 0; flex: 1; }
+.help-nav { border-right: 1px solid var(--line); padding: 8px; overflow: auto; display: flex; flex-direction: column; gap: 2px; }
+.help-nav button { text-align: left; border: 0; background: none; padding: 9px 12px; border-radius: 8px; cursor: pointer; font-size: 13px; color: var(--muted); line-height: 1.4; }
+.help-nav button:hover { background: var(--soft); color: var(--fg); }
+.help-nav button[aria-selected="true"] { background: color-mix(in srgb, var(--ink) 14%, transparent); color: var(--fg); font-weight: 600; }
+.help-c { padding: 18px 22px 24px; overflow: auto; }
+.help-c h3 { margin: 0 0 10px; font-size: 17px; line-height: 1.35; }
+.help-c p { font-size: 13.5px; line-height: 1.7; }
+.help-c p a { color: var(--ink); text-underline-offset: 3px; }
+.help-pick { display: none; gap: 8px; align-items: center; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+.help-pick select { flex: 1; min-width: 0; height: 34px; padding: 0 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--fg); font: 600 16px var(--f-ui); text-overflow: ellipsis; } /* 16px: iOS zooms into smaller fields */
+.help-pick .icon-btn:disabled { opacity: .35; cursor: default; }
+/* share: the image, the link, and what to do with them */
+.dialog.share { width: 640px; }
+.share-b { padding: 16px; overflow: auto; display: flex; flex-direction: column; gap: 12px; }
+#shareImg { display: block; width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--line); background: var(--soft); aspect-ratio: 4 / 3; object-fit: contain; }
+.share-link { display: flex; gap: 8px; }
+.share-link input { flex: 1; min-width: 0; height: 36px; padding: 0 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--fg); font: 13px var(--f-num); outline: none; }
+.share-acts { display: flex; gap: 8px; flex-wrap: wrap; } .share-acts .btn { flex: 1; }
+.share-note { font-size: 12px; color: var(--muted); }
+
+/* footer: every category and service page, then the line about privacy */
+.foot { display: flex; flex-direction: column; align-items: center; gap: 10px; font-size: 12px; color: var(--muted); text-align: center; }
+.foot p { margin: 0; }
+.foot a { color: inherit; }
+.foot-nav { display: flex; gap: 6px 14px; flex-wrap: wrap; justify-content: center; }
+.foot-nav a { text-decoration: none; } .foot-nav a:hover { color: var(--fg); text-decoration: underline; }
+
+@media (max-width: 760px) {
+  .hero, .list { padding-left: 16px; padding-right: 16px; }
+  .bar { margin: 0 -16px; padding: 12px 16px 14px; }
+  .sum { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .brand-name { font-size: 17px; }
+  .sv { grid-template-columns: minmax(0, 7fr) 104px minmax(0, 7fr); }
+  .hw { display: none; }
+  .nt.wait { min-height: 46px; }   /* a note takes two lines at this width: reserve them while running */
+  .dialog.help { height: calc(100vh - 32px); }
+  .help-b { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); }
+  .help-nav { display: none; }
+  .help-b .help-pick { display: flex; }
+}
+@media (max-width: 520px) { .brand-name { display: none; } }
+@media (max-width: 420px) {
+  .logo, .logo img { width: 70px; height: 28px; }
+  .prog-t { display: none; }
+  .acts { margin-left: 0; width: 100%; } .acts .btn { flex: 1; padding: 0 8px; }
+}

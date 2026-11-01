@@ -1,0 +1,33 @@
+# Unlock Check
+
+> Free browser tool that checks, over the visitor's own connection and route, whether streaming and AI services are
+> available and which country each one sees: ChatGPT, Claude, Gemini, Copilot, Grok, Perplexity, Le Chat, Poe, Character.AI, Netflix, Disney+, TikTok, DAZN, Crunchyroll, Peacock, Philo, KKTV, TVB Anywhere+, SBS On Demand, FOD. It uses each service's own
+> region API where a page can read it, the service's own Cloudflare edge (/cdn-cgi/trace) against its published
+> country list, redirect counting (Netflix's country pages, "unavailable" redirects), and marks inferred results.
+> Everything runs client-side; no results are sent to the site.
+
+- Page: https://unlock.1ms.dog/ (also /zh-cn/, /zh-tw/, /ja/, /ko/, /es/, /fr/, /de/, /pt/, /ru/)
+- AI services: https://unlock.1ms.dog/ai/
+- Streaming: https://unlock.1ms.dog/streaming/
+- Regional TV: https://unlock.1ms.dog/regional/
+- ChatGPT: https://unlock.1ms.dog/chatgpt/
+- Claude: https://unlock.1ms.dog/claude/
+- Gemini: https://unlock.1ms.dog/gemini/
+- Copilot: https://unlock.1ms.dog/copilot/
+- Grok: https://unlock.1ms.dog/grok/
+- Perplexity: https://unlock.1ms.dog/perplexity/
+- Le Chat: https://unlock.1ms.dog/le-chat/
+- Poe: https://unlock.1ms.dog/poe/
+- Character.AI: https://unlock.1ms.dog/character-ai/
+- Netflix: https://unlock.1ms.dog/netflix/
+- Disney+: https://unlock.1ms.dog/disney-plus/
+- TikTok: https://unlock.1ms.dog/tiktok/
+- DAZN: https://unlock.1ms.dog/dazn/
+- Crunchyroll: https://unlock.1ms.dog/crunchyroll/
+- Peacock: https://unlock.1ms.dog/peacock/
+- Philo: https://unlock.1ms.dog/philo/
+- KKTV: https://unlock.1ms.dog/kktv/
+- TVB Anywhere+: https://unlock.1ms.dog/tvb-anywhere/
+- SBS On Demand: https://unlock.1ms.dog/sbs-on-demand/
+- FOD: https://unlock.1ms.dog/fod/
+- Source: https://github.com/yt1988/unlock-check

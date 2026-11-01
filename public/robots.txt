@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /h/
+
+Sitemap: https://unlock.1ms.dog/sitemap.xml

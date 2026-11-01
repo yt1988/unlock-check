@@ -1,0 +1,22 @@
+{
+  "name": "unlock-check",
+  "private": true,
+  "type": "module",
+  "description": "Static page that checks, from the browser and over its real route, whether Netflix, Disney+, TikTok, ChatGPT, Claude, Gemini and more are available, and which country each one sees",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/build.mjs --check && node --test \"test/*.test.mjs\"",
+    "dev": "node scripts/dev.mjs",
+    "og": "node scripts/og.mjs"
+  },
+  "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "esbuild": "0.25.10"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yt1988/unlock-check"
+  },
+  "homepage": "https://unlock.1ms.dog"
+}
