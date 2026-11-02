@@ -251,6 +251,9 @@ ${SERVICES.map(s => `- ${s.name}: ${SITE}/${SLUG[s.id]}/`).join("\n")}
 /assets/fonts/*
   ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable
+/assets/share/*
+  ! Cache-Control
+  Cache-Control: public, max-age=0, must-revalidate
 /flags/*
   Cache-Control: public, max-age=2592000
 /og/*
