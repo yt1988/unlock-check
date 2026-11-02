@@ -107,7 +107,6 @@ export default {
   close: "Schließen",
   prev: "Zurück",
   next: "Weiter",
-  foot: "Alles läuft in deinem Browser; Ergebnisse werden nie an diese Seite gesendet.",
   join: ", ",
   // the connection checkup's findings (embedded, see src/app.js): the services that are blocked, or don't open
   fd_no: "Hier gesperrt: {list}",

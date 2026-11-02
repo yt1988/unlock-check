@@ -107,7 +107,6 @@ export default {
   close: "Cerrar",
   prev: "Anterior",
   next: "Siguiente",
-  foot: "Todo se hace en tu navegador; los resultados nunca se envían a este sitio.",
   join: ", ",
   // the connection checkup's findings (embedded, see src/app.js): the services that are blocked, or don't open
   fd_no: "Bloqueado aquí: {list}",

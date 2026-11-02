@@ -107,7 +107,6 @@ export default {
   close: "閉じる",
   prev: "前へ",
   next: "次へ",
-  foot: "確認はすべてブラウザ内で行われ、結果がこのサイトに送られることはありません。",
   join: "、",
   // the connection checkup's findings (embedded, see src/app.js): the services that are blocked, or don't open
   fd_no: "利用不可：{list}",

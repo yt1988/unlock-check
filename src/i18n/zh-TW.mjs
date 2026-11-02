@@ -107,7 +107,6 @@ export default {
   close: "關閉",
   prev: "上一則",
   next: "下一則",
-  foot: "檢測在你的瀏覽器裡完成，結果不會傳送到本站。",
   join: "、",
   // the connection checkup's findings (embedded, see src/app.js): the services that are blocked, or don't open
   fd_no: "不可用：{list}",

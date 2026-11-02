@@ -110,7 +110,6 @@ export default {
   close: "Close",
   prev: "Previous",
   next: "Next",
-  foot: "Everything runs in your browser; results are never sent to this site.",
   join: ", ",
   // the connection checkup's findings (embedded, see src/app.js): the services that are blocked, or don't open
   fd_no: "Blocked here: {list}",

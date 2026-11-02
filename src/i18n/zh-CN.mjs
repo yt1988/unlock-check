@@ -107,7 +107,6 @@ export default {
   close: "关闭",
   prev: "上一条",
   next: "下一条",
-  foot: "检测在你的浏览器里完成，结果不会发送到本站。",
   join: "、",
   // the connection checkup's findings (embedded, see src/app.js): the services that are blocked, or don't open
   fd_no: "不可用：{list}",

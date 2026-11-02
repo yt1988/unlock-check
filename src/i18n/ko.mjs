@@ -109,7 +109,6 @@ export default {
   close: "닫기",
   prev: "이전",
   next: "다음",
-  foot: "확인은 모두 브라우저에서 이루어지며 결과는 이 사이트로 전송되지 않습니다.",
   join: ", ",
   // the connection checkup's findings (embedded, see src/app.js): the services that are blocked, or don't open
   fd_no: "사용 불가: {list}",

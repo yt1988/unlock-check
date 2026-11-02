@@ -193,7 +193,7 @@ export async function build({ check = false } = {}) {
         .replace("{{prepaint}}", PREPAINT).replace("{{head}}", head).replace("{{css}}", cssName).replace("{{js}}", jsName).replace("{{strings}}", sName)
         .replace("{{homeHref}}", home).replace("{{langOpts}}", langOpts).replace("{{h1}}", esc(v.h1)).replace("{{intro}}", esc(v.intro))
         .replace("{{notesWait}}", ["wait_ex", "wait_ip", "wait_tz"].map(k => `<li class="nt wait"><i></i><span>${esc(T(k))}</span></li>`).join(""))
-        .replace("{{focus}}", focusOf(p && p.svc)).replace("{{groups}}", groupsOf(cat)).replace("{{nav}}", nav).replace("{{foot}}", esc(T("foot")))
+        .replace("{{focus}}", focusOf(p && p.svc)).replace("{{groups}}", groupsOf(cat)).replace("{{nav}}", nav)
         .replace("{{helpNav}}", helpNav).replace("{{helpC}}", helpC).replaceAll("{{repo}}", REPO)
         .replace("{{themeLabel}}", esc(T("th_system"))).replaceAll("{{closeLabel}}", esc(T("close")))
         .replace("{{prevLabel}}", esc(T("prev"))).replace("{{nextLabel}}", esc(T("next")))

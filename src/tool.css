@@ -108,7 +108,7 @@ body.dlg-open { overflow: hidden; }
 .help-pick { display: none; gap: 8px; align-items: center; padding: 10px 14px; border-bottom: 1px solid var(--line); }
 .help-pick select { flex: 1; min-width: 0; height: 34px; padding: 0 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--fg); font: 600 16px var(--f-ui); text-overflow: ellipsis; } /* 16px: iOS zooms into smaller fields */
 .help-pick .icon-btn:disabled { opacity: .35; cursor: default; }
-/* footer: every category and service page, then the line about privacy */
+/* footer: every category and service page, then the source link (the shell adds the line about privacy below it) */
 .foot { display: flex; flex-direction: column; align-items: center; gap: 10px; font-size: 12px; color: var(--muted); text-align: center; }
 .foot p { margin: 0; }
 .foot a { color: inherit; }
