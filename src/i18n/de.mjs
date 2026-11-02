@@ -80,6 +80,7 @@ export default {
   tz_ok: "Die Zeitzone deines Browsers passt zu {a}.",
   tz_bad: "Die Zeitzone deines Browsers ist {a}, aber die Dienste verorten dich in {b}. KI-Dienste können das als Zeichen für einen Proxy werten.",
   egress_link: "Welche IP jede Website sieht",
+  ck_link: "Kompletten Check starten",             // to the connection checkup (check.1ms.dog), beside the totals
   progress: "{d} / {n} Dienste",
   done: "{n} Dienste geprüft",
   rerun: "Erneut prüfen",

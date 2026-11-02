@@ -80,6 +80,7 @@ export default {
   tz_ok: "La zona horaria de tu navegador coincide con {a}.",
   tz_bad: "La zona horaria de tu navegador es {a}, pero los servicios te sitúan en {b}. Los servicios de IA pueden tomarlo como señal de un proxy.",
   egress_link: "Ver la IP que ve cada sitio",
+  ck_link: "Hacer un chequeo completo",             // to the connection checkup (check.1ms.dog), beside the totals
   progress: "{d} / {n} servicios",
   done: "{n} servicios comprobados",
   rerun: "Comprobar otra vez",

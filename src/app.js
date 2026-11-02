@@ -129,6 +129,11 @@
   // a link to another 1ms.dog tool ends in the external-link icon (the same on every tool, see the shell tool contract)
   const EXT = `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2.5h4.5V7M13.5 2.5 7.5 8.5M12 10v3.5H2.5V4H6"/></svg>`;
   const MARK = { ok: "✓", no: "✕", reach: "•", fail: "!" };
+  // the connection checkup runs this and the other tools in one go: linked beside the totals when the host has it
+  // (the shell's <meta name="check">), never inside it
+  const CHECK = (document.querySelector('meta[name="check"]') || {}).content || "";
+  if (CHECK && !EMBED) $("#progTxt").insertAdjacentHTML("afterend",
+    `<a class="xl ck" href="${esc(CHECK.replace(/\/$/, "") + D.home[LANG])}" target="_blank" rel="noopener">${esc(t("ck_link"))}${EXT}</a>`);
 
   // A row keeps its size from the start: only the text inside changes.
   function renderRow(id) {

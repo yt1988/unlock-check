@@ -80,6 +80,7 @@ export default {
   tz_ok: "瀏覽器時區和{a}一致。",
   tz_bad: "瀏覽器時區是{a}，但服務把你定位在{b}。AI 服務可能因此認為你在用代理。",
   egress_link: "查看每個網站看到的 IP",
+  ck_link: "做一次完整體檢",             // to the connection checkup (check.1ms.dog), beside the totals
   progress: "{d} / {n} 個服務",
   done: "已檢測 {n} 個服務",
   rerun: "重新檢測",

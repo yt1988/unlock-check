@@ -80,6 +80,7 @@ export default {
   tz_ok: "Le fuseau horaire du navigateur correspond au pays détecté : {a}.",
   tz_bad: "Fuseau horaire du navigateur : {a} ; pays détecté par les services : {b}. Les services d'IA peuvent y voir le signe d'un proxy.",
   egress_link: "Voir l'IP que voit chaque site",
+  ck_link: "Faire un bilan complet",             // to the connection checkup (check.1ms.dog), beside the totals
   progress: "{d} / {n} services",
   done: "{n} services vérifiés",
   rerun: "Vérifier à nouveau",

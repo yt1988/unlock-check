@@ -80,6 +80,7 @@ export default {
   tz_ok: "O fuso horário do navegador corresponde ao país detectado: {a}.",
   tz_bad: "Fuso horário do navegador: {a}; país detectado pelos serviços: {b}. Serviços de IA podem ver isso como sinal de proxy.",
   egress_link: "Ver o IP que cada site vê",
+  ck_link: "Fazer um check-up completo",             // to the connection checkup (check.1ms.dog), beside the totals
   progress: "{d} / {n} serviços",
   done: "{n} serviços verificados",
   rerun: "Verificar de novo",

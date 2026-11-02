@@ -83,6 +83,7 @@ export default {
   tz_ok: "Your browser's time zone matches {a}.",
   tz_bad: "Your browser's time zone is {a}, but services place you in {b}. AI services may take this as a sign of a proxy.",
   egress_link: "See the IP each site sees",
+  ck_link: "Run a full checkup",             // to the connection checkup (check.1ms.dog), beside the totals
   progress: "{d} / {n} services",
   done: "{n} services checked",
   rerun: "Check again",

@@ -80,6 +80,7 @@ export default {
   tz_ok: "ブラウザのタイムゾーンは{a}と一致しています。",
   tz_bad: "ブラウザのタイムゾーンは{a}ですが、サービスはあなたを{b}と判定しています。AI サービスはこれをプロキシの利用とみなすことがあります。",
   egress_link: "各サイトから見える IP",
+  ck_link: "まとめて全部チェック",             // to the connection checkup (check.1ms.dog), beside the totals
   progress: "{d} / {n} サービス",
   done: "{n} サービスを確認しました",
   rerun: "もう一度確認",

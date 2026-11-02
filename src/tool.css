@@ -21,6 +21,8 @@
 .nt b { font-weight: 600; } .nt .flag { width: 18px; height: 13px; vertical-align: -1px; margin: 0 4px; }
 .nt a.xl { display: inline-flex; align-items: center; gap: 3px; color: var(--ink); text-decoration: none; white-space: nowrap; font-size: 12.5px; } .nt a.xl:hover { text-decoration: underline; }
 .nt a.xl svg { width: .95em; height: .95em; flex: none; }
+.bar a.xl { display: inline-flex; align-items: center; gap: 3px; color: var(--ink); text-decoration: none; white-space: nowrap; font-size: 12.5px; } .bar a.xl:hover { text-decoration: underline; }
+.bar a.xl svg { width: .95em; height: .95em; flex: none; }
 .flag { width: 20px; height: 15px; border-radius: 3px; box-shadow: 0 0 0 1px var(--line); object-fit: cover; flex: none; }
 
 /* a service page's lead panel: its verdict, big, and what it rests on; it keeps its height while running */
@@ -129,6 +131,7 @@ body.dlg-open { overflow: hidden; }
 @media (max-width: 420px) {
   .logo, .logo img { width: 70px; height: 28px; }
   .prog-t { display: none; }
+  .bar { flex-wrap: wrap; row-gap: 8px; }
   .acts { margin-left: 0; width: 100%; } .acts .btn { flex: 1; padding: 0 8px; }
 }
 
