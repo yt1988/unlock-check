@@ -2,7 +2,7 @@
 <html lang="zh-CN" data-paths="{&quot;en&quot;:&quot;/gemini/&quot;,&quot;zh-CN&quot;:&quot;/zh-cn/gemini/&quot;,&quot;zh-TW&quot;:&quot;/zh-tw/gemini/&quot;,&quot;ja&quot;:&quot;/ja/gemini/&quot;,&quot;ko&quot;:&quot;/ko/gemini/&quot;,&quot;es&quot;:&quot;/es/gemini/&quot;,&quot;fr&quot;:&quot;/fr/gemini/&quot;,&quot;de&quot;:&quot;/de/gemini/&quot;,&quot;pt&quot;:&quot;/pt/gemini/&quot;,&quot;ru&quot;:&quot;/ru/gemini/&quot;}">
 <head>
 <meta charset="utf-8">
-<script>(function(){var d=document.documentElement,th=null,s=null;try{th=localStorage.getItem("unlock:theme");s=localStorage.getItem("unlock:lang")}catch(e){}if(th==="light"||th==="dark")d.setAttribute("data-theme",th);if(/^#r=/.test(location.hash))d.setAttribute("data-shared","");if(!d.hasAttribute("data-root"))return;var P=JSON.parse(d.getAttribute("data-paths")||"{}"),l=null;try{var q=new URLSearchParams(location.search).get("lang");if(P[q])l=q}catch(e){}if(!l&&P[s])l=s;for(var ls=navigator.languages||[navigator.language||"en"],i=0;!l&&!s&&i<ls.length;i++){var x=String(ls[i]).toLowerCase(),b=x.split("-")[0];l=b==="zh"?(/tw|hk|mo|hant/.test(x)?"zh-TW":"zh-CN"):P[b]?b:null}if(l&&l!==d.lang)location.replace(P[l]+location.hash)})();</script>
+<script>(function(){var d=document.documentElement,th=null,s=null;try{th=localStorage.getItem("unlock:theme");s=localStorage.getItem("unlock:lang")}catch(e){}if(th==="light"||th==="dark")d.setAttribute("data-theme",th);if(/^#r=/.test(location.hash)||/[/]r[/][a-z]+[/]$/.test(location.pathname))d.setAttribute("data-shared","");if(!d.hasAttribute("data-root"))return;var P=JSON.parse(d.getAttribute("data-paths")||"{}"),l=null;try{var q=new URLSearchParams(location.search).get("lang");if(P[q])l=q}catch(e){}if(!l&&P[s])l=s;for(var ls=navigator.languages||[navigator.language||"en"],i=0;!l&&!s&&i<ls.length;i++){var x=String(ls[i]).toLowerCase(),b=x.split("-")[0];l=b==="zh"?(/tw|hk|mo|hant/.test(x)?"zh-TW":"zh-CN"):P[b]?b:null}if(l&&l!==d.lang)location.replace(P[l]+location.hash)})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Gemini 解锁检测：你的 IP 能不能用 Gemini、显示哪个地区</title>
 <meta name="description" content="免费检测 Gemini 在你当前的 IP 上能不能用、把你定位在哪个国家。在浏览器里检测，走你代理的真实线路，不上传任何数据。">
@@ -121,7 +121,7 @@
   </div>
 </div>
 <script type="application/json" id="data">{"lang":"zh-CN","paths":{"en":"/gemini/","zh-CN":"/zh-cn/gemini/","zh-TW":"/zh-tw/gemini/","ja":"/ja/gemini/","ko":"/ko/gemini/","es":"/es/gemini/","fr":"/fr/gemini/","de":"/de/gemini/","pt":"/pt/gemini/","ru":"/ru/gemini/"},"home":{"en":"/","zh-CN":"/zh-cn/","zh-TW":"/zh-tw/","ja":"/ja/","ko":"/ko/","es":"/es/","fr":"/fr/","de":"/de/","pt":"/pt/","ru":"/ru/"},"egressPath":"/zh-cn/"}</script>
-<script src="/assets/l.zh-cn.63e37a67f4.js"></script>
-<script src="/assets/app.044888dee5.js" defer></script>
+<script src="/assets/l.zh-cn.3e02595bcd.js"></script>
+<script src="/assets/app.0a3eebd254.js" defer></script>
 </body>
 </html>

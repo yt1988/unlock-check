@@ -94,6 +94,9 @@ export default {
   share_text: "{v} · «Разблокировка стриминга/ИИ»",
   shared_from: "Чужой результат, проверен {date}",
   test_mine: "Проверить свой",
+  share_bad: "Не удаётся прочитать этот результат",     // a result link that can't be read
+  // embedded in the connection checkup: the first dozen services all failed to open
+  err_blocked: "Все проверки не удались. Возможно, их блокирует блокировщик рекламы (uBlock, AdGuard и т. п.)",
   r_desc: "Чужой результат: какие стриминговые и ИИ-сервисы работают и какую страну определил каждый. Откройте, чтобы проверить свой.",
   vh_all: "ChatGPT, Claude, Gemini, Netflix и Disney+ работают",
   vh_part: "ИИ работает, часть стриминга — нет",

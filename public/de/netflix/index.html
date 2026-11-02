@@ -2,7 +2,7 @@
 <html lang="de" data-paths="{&quot;en&quot;:&quot;/netflix/&quot;,&quot;zh-CN&quot;:&quot;/zh-cn/netflix/&quot;,&quot;zh-TW&quot;:&quot;/zh-tw/netflix/&quot;,&quot;ja&quot;:&quot;/ja/netflix/&quot;,&quot;ko&quot;:&quot;/ko/netflix/&quot;,&quot;es&quot;:&quot;/es/netflix/&quot;,&quot;fr&quot;:&quot;/fr/netflix/&quot;,&quot;de&quot;:&quot;/de/netflix/&quot;,&quot;pt&quot;:&quot;/pt/netflix/&quot;,&quot;ru&quot;:&quot;/ru/netflix/&quot;}">
 <head>
 <meta charset="utf-8">
-<script>(function(){var d=document.documentElement,th=null,s=null;try{th=localStorage.getItem("unlock:theme");s=localStorage.getItem("unlock:lang")}catch(e){}if(th==="light"||th==="dark")d.setAttribute("data-theme",th);if(/^#r=/.test(location.hash))d.setAttribute("data-shared","");if(!d.hasAttribute("data-root"))return;var P=JSON.parse(d.getAttribute("data-paths")||"{}"),l=null;try{var q=new URLSearchParams(location.search).get("lang");if(P[q])l=q}catch(e){}if(!l&&P[s])l=s;for(var ls=navigator.languages||[navigator.language||"en"],i=0;!l&&!s&&i<ls.length;i++){var x=String(ls[i]).toLowerCase(),b=x.split("-")[0];l=b==="zh"?(/tw|hk|mo|hant/.test(x)?"zh-TW":"zh-CN"):P[b]?b:null}if(l&&l!==d.lang)location.replace(P[l]+location.hash)})();</script>
+<script>(function(){var d=document.documentElement,th=null,s=null;try{th=localStorage.getItem("unlock:theme");s=localStorage.getItem("unlock:lang")}catch(e){}if(th==="light"||th==="dark")d.setAttribute("data-theme",th);if(/^#r=/.test(location.hash)||/[/]r[/][a-z]+[/]$/.test(location.pathname))d.setAttribute("data-shared","");if(!d.hasAttribute("data-root"))return;var P=JSON.parse(d.getAttribute("data-paths")||"{}"),l=null;try{var q=new URLSearchParams(location.search).get("lang");if(P[q])l=q}catch(e){}if(!l&&P[s])l=s;for(var ls=navigator.languages||[navigator.language||"en"],i=0;!l&&!s&&i<ls.length;i++){var x=String(ls[i]).toLowerCase(),b=x.split("-")[0];l=b==="zh"?(/tw|hk|mo|hant/.test(x)?"zh-TW":"zh-CN"):P[b]?b:null}if(l&&l!==d.lang)location.replace(P[l]+location.hash)})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Netflix Unlock-Test: funktioniert Netflix mit meiner IP, und in welcher Region?</title>
 <meta name="description" content="Kostenloser Test: Funktioniert Netflix mit deiner aktuellen IP, und in welchem Land verortet es dich? Im Browser, über die echte Route deines Proxys; nichts wird hochgeladen.">
@@ -118,7 +118,7 @@
   </div>
 </div>
 <script type="application/json" id="data">{"lang":"de","paths":{"en":"/netflix/","zh-CN":"/zh-cn/netflix/","zh-TW":"/zh-tw/netflix/","ja":"/ja/netflix/","ko":"/ko/netflix/","es":"/es/netflix/","fr":"/fr/netflix/","de":"/de/netflix/","pt":"/pt/netflix/","ru":"/ru/netflix/"},"home":{"en":"/","zh-CN":"/zh-cn/","zh-TW":"/zh-tw/","ja":"/ja/","ko":"/ko/","es":"/es/","fr":"/fr/","de":"/de/","pt":"/pt/","ru":"/ru/"},"egressPath":"/de/"}</script>
-<script src="/assets/l.de.d074b54f9f.js"></script>
-<script src="/assets/app.044888dee5.js" defer></script>
+<script src="/assets/l.de.3cdd301f03.js"></script>
+<script src="/assets/app.0a3eebd254.js" defer></script>
 </body>
 </html>

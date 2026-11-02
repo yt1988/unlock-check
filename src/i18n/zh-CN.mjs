@@ -92,6 +92,9 @@ export default {
   share_text: "{v} · 来自流媒体/AI 解锁检测",
   shared_from: "这是别人分享的结果，检测于 {date}",
   test_mine: "测我的",
+  share_bad: "无法读取这条结果",     // a result link that can't be read
+  // embedded in the connection checkup: the first dozen services all failed to open
+  err_blocked: "所有检测请求都失败了，可能被广告拦截扩展（uBlock、AdGuard 等）拦下了",
   r_desc: "别人分享的解锁检测结果：哪些流媒体和 AI 能用，各自把他定位在哪个国家。打开就能测你自己的。",
   vh_all: "ChatGPT、Claude、Gemini、Netflix、Disney+ 全部可用",
   vh_part: "AI 能用，部分流媒体不能用",

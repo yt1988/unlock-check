@@ -95,6 +95,9 @@ export default {
   share_text: "{v} · from Streaming & AI Unlock Check",
   shared_from: "Someone's shared result, checked {date}",
   test_mine: "Check mine",
+  share_bad: "Can't read this result",     // a result link that can't be read
+  // embedded in the connection checkup: the first dozen services all failed to open
+  err_blocked: "Every check failed to start. An ad blocker (uBlock, AdGuard…) may be blocking them",
   r_desc: "A shared unlock check: which streaming and AI services work, and which country each one placed them in. Open it to check your own.",
   vh_all: "ChatGPT, Claude, Gemini, Netflix and Disney+ all work",
   vh_part: "AI works, some streaming doesn't",

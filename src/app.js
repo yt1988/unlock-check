@@ -121,7 +121,7 @@
 
   /* ---------- state and rendering ---------- */
   // shared: a result from a link being shown (no addresses; nothing is tested until the visitor asks)
-  const S = { r: {}, v: {}, done: false, gen: 0, shared: null, guess: null };
+  const S = { r: {}, v: {}, done: false, gen: 0, shared: null, broken: false, guess: null, me: null };
   const masked = () => store.get(K.mask) === "1";
   const ipTxt = ip => masked() ? maskIp(ip) : ip;
   const IPQS = (document.querySelector('meta[name="ipqs"]') || {}).content || "";
@@ -186,7 +186,15 @@
     "America/Toronto:CA America/Vancouver:CA America/Montreal:CA America/Edmonton:CA America/Mexico_City:MX America/Sao_Paulo:BR America/Santiago:CL " +
     "America/Bogota:CO America/Lima:PE America/Argentina/Buenos_Aires:AR Africa/Johannesburg:ZA Africa/Cairo:EG Africa/Lagos:NG Africa/Nairobi:KE")
     .split(" ").map(p => p.split(":")));
-  const tzCc = () => { try { return TZ_CC[Intl.DateTimeFormat().resolvedOptions().timeZone] || ""; } catch (e) { return ""; } };
+  // a zone the table doesn't have counts for the connection's own country when the shell places it in that zone
+  const tzCc = () => { try { const z = Intl.DateTimeFormat().resolvedOptions().timeZone; return TZ_CC[z] || (S.me && S.me.timezone === z && S.me.country) || ""; } catch (e) { return ""; } };
+  // Who this connection is, from the shell (GET /_ms/me, 1ms-shell tool contract §4): Cloudflare's answer, no third
+  // party, not cached. Self-hosted without the shell it is a 404, and the services' own answers are all there is.
+  let meP = null;
+  const me = () => meP || (meP = fetch("/_ms/me", { cache: "no-store", credentials: "omit", signal: AbortSignal.timeout(TIMEOUT) })
+    .then(r => r.ok ? r.json() : {}).catch(() => ({})).then(x => (S.me = x && typeof x === "object" ? x : {})));
+  // the country the services agree on, or else the connection's own
+  const mainCc = ex => (ex[0] && ex[0].cc) || (!S.shared && S.me && S.me.country) || "";
   const place = cc => `${flag(cc)}<b>${esc(country(cc))}</b>`;
   function renderNotes() {
     const ul = $("#notes");
@@ -206,7 +214,7 @@
     if (S.shared) out.push(["info", esc(t("ip_shared"))]);
     else if (!ips.size) out.push(["info", esc(t("ip_none"))]);
     else out.push([ips.size > 1 ? "warn" : "info", t("ip_line", { list: [...ips].sort((a, b) => b[1] - a[1]).map(([ip, n]) => `${ipLink(ip)} <span class="m">×${n}</span>`).join(" · ") })]);
-    const main = ex[0] && ex[0].cc;
+    const main = mainCc(ex);
     if (!main || !tz) out.push(["info", esc(t("tz_none"))]);
     else if (tz === main) out.push(["ok", t("tz_ok", { a: place(tz) })]);
     else out.push(["warn", t("tz_bad", { a: place(tz), b: place(main) })]);
@@ -235,16 +243,22 @@
     leaveShared();
     const gen = ++S.gen, N = SERVICES.length;
     Object.assign(S, { r: {}, v: {}, done: false, guess: null });
-    maxP = null;
+    maxP = null; meP = null;
     $("#run").disabled = true; $("#run").classList.add("busy"); $("#run span").textContent = t("running"); $("#share").disabled = true;
     renderAll();
-    let d = 0; setProg(0, N);
+    let d = 0, failed = 0, err = false; setProg(0, N);
     const settle = (s, r) => {
       if (gen !== S.gen) return;
       S.r[s.id] = r; S.v[s.id] = judge(s, r, S.guess);
       renderRow(s.id); renderGroups(); renderSum(); renderFocus(); setProg(++d, N);
+      if (err) return;
+      // The first dozen services all failing to open is a blocker (an ad blocker drops the whole batch at once, a
+      // missing connection times out): the checkup hears so now, and gets no result from this run.
+      if (S.v[s.id].v === "fail") failed++;
+      if (EMBED && d >= 12 && failed === d) { err = true; post({ type: "error", text: t("err_blocked") }); return; }
       post({ type: "progress", done: d, total: N, text: t("progress", { d, n: N }) });
     };
+    me();                                                       // who this connection is, as the shell sees it
     maxHops();                                                  // measure the redirect limit while the first answers come in
     const early = SERVICES.filter(s => !LATE(s)), late = SERVICES.filter(LATE);
     const reach = Object.fromEntries(late.map(s => [s.id, ask(s)]));
@@ -252,8 +266,9 @@
     if (gen !== S.gen) return;
     // the country to assume where a service's own answer can't be read, and the order Netflix's countries are tried in
     const seen = early.map(s => S.v[s.id]).filter(v => v && v.cc && v.how !== "guess").map(v => v.cc);
-    S.guess = guessCountry(seen);
-    const prefer = [...new Set(seen)];
+    const who = await me();
+    S.guess = guessCountry(seen) || who.country || null;
+    const prefer = [...new Set([...seen, who.country].filter(Boolean))];
     await Promise.all(late.map(async s => {
       const r = await reach[s.id];
       if (r.reach) {
@@ -266,10 +281,10 @@
     S.done = true;
     renderAll(); setProg(N, N);
     $("#run").disabled = false; $("#run").classList.remove("busy"); $("#run span").textContent = t("rerun"); $("#share").disabled = false;
-    if (EMBED) post(report());
+    if (EMBED && !err) post(report());
   }
-  // a shared result's page opens the language's own page to test
-  $("#run").onclick = () => { if (S.shared && location.pathname !== D.home[LANG]) location.href = D.paths[LANG].replace(/r\/[a-z]+\/$/, ""); else run(); };
+  // a shared result's page (or one whose link can't be read) opens the language's own page to test
+  $("#run").onclick = () => { if ((S.shared || S.broken) && location.pathname !== D.home[LANG]) location.href = D.paths[LANG].replace(/r\/[a-z]+\/$/, ""); else run(); };
 
   /* ---------- questions: a dialog behind the ? button (as on 1ms.dog) ---------- */
   const scrims = { help: $("#help") };
@@ -302,9 +317,17 @@
     renderAll();
     $("#run span").textContent = t("test_mine"); $("#run").disabled = false; $("#share").disabled = false;
   }
+  // a result link that can't be read (cut short, mistyped, a format this page doesn't know) says so, and waits
+  function showBroken() {
+    S.broken = true; eye.hidden = true;
+    document.documentElement.setAttribute("data-shared", "");
+    $("#sharedTxt").textContent = t("share_bad");
+    renderAll();
+    $("#run span").textContent = t("test_mine"); $("#run").disabled = false;
+  }
   function leaveShared() {
-    if (!S.shared) return;
-    S.shared = null; eye.hidden = false; document.documentElement.removeAttribute("data-shared");
+    if (!S.shared && !S.broken) return;
+    S.shared = null; S.broken = false; eye.hidden = false; document.documentElement.removeAttribute("data-shared");
     history.replaceState(null, "", location.pathname.replace(/r\/[a-z]+\/$/, ""));
   }
 
@@ -372,7 +395,8 @@
     const ex = exitsByCountry(S.v), tz = tzCc(), findings = [];
     if (no.length) findings.push({ level: "bad", text: t("fd_no", { list: names(no) }) });
     if (ex.length > 1) findings.push({ level: "warn", text: t("ex_split", { c: ex.map((e, i) => country(e.cc) + " " + (i ? e.ids.map(id => SV[id].name).join(t("join")) : "×" + e.ids.length)).join(" · ") }) });
-    if (ex[0] && tz && tz !== ex[0].cc) findings.push({ level: "warn", text: t("tz_bad", { a: country(tz), b: country(ex[0].cc) }) });
+    const main = mainCc(ex);
+    if (main && tz && tz !== main) findings.push({ level: "warn", text: t("tz_bad", { a: country(tz), b: country(main) }) });
     if (fail.length) findings.push({ level: "warn", text: t("fd_fail", { list: names(fail) }) });
     if (ex.length === 1) findings.push({ level: "ok", text: t("ex_one", { c: country(ex[0].cc) }) });
     const stats = [{ label: t("v_ok"), value: n.ok }, { label: t("v_no"), value: n.no }];
@@ -395,5 +419,6 @@
   if (EMBED) { run(); return; }                                 // starts at once; a result in the link is not shown here
   const shared = parseShare(location.hash, SERVICES.map(s => s.id));
   if (shared) showShared(shared);
+  else if (/^#r=/.test(location.hash) || /\/r\/[a-z]+\/$/.test(location.pathname)) showBroken();
   else { document.documentElement.removeAttribute("data-shared"); run(); }
 })();

@@ -2,7 +2,7 @@
 <html lang="ru" data-paths="{&quot;en&quot;:&quot;/discord/&quot;,&quot;zh-CN&quot;:&quot;/zh-cn/discord/&quot;,&quot;zh-TW&quot;:&quot;/zh-tw/discord/&quot;,&quot;ja&quot;:&quot;/ja/discord/&quot;,&quot;ko&quot;:&quot;/ko/discord/&quot;,&quot;es&quot;:&quot;/es/discord/&quot;,&quot;fr&quot;:&quot;/fr/discord/&quot;,&quot;de&quot;:&quot;/de/discord/&quot;,&quot;pt&quot;:&quot;/pt/discord/&quot;,&quot;ru&quot;:&quot;/ru/discord/&quot;}">
 <head>
 <meta charset="utf-8">
-<script>(function(){var d=document.documentElement,th=null,s=null;try{th=localStorage.getItem("unlock:theme");s=localStorage.getItem("unlock:lang")}catch(e){}if(th==="light"||th==="dark")d.setAttribute("data-theme",th);if(/^#r=/.test(location.hash))d.setAttribute("data-shared","");if(!d.hasAttribute("data-root"))return;var P=JSON.parse(d.getAttribute("data-paths")||"{}"),l=null;try{var q=new URLSearchParams(location.search).get("lang");if(P[q])l=q}catch(e){}if(!l&&P[s])l=s;for(var ls=navigator.languages||[navigator.language||"en"],i=0;!l&&!s&&i<ls.length;i++){var x=String(ls[i]).toLowerCase(),b=x.split("-")[0];l=b==="zh"?(/tw|hk|mo|hant/.test(x)?"zh-TW":"zh-CN"):P[b]?b:null}if(l&&l!==d.lang)location.replace(P[l]+location.hash)})();</script>
+<script>(function(){var d=document.documentElement,th=null,s=null;try{th=localStorage.getItem("unlock:theme");s=localStorage.getItem("unlock:lang")}catch(e){}if(th==="light"||th==="dark")d.setAttribute("data-theme",th);if(/^#r=/.test(location.hash)||/[/]r[/][a-z]+[/]$/.test(location.pathname))d.setAttribute("data-shared","");if(!d.hasAttribute("data-root"))return;var P=JSON.parse(d.getAttribute("data-paths")||"{}"),l=null;try{var q=new URLSearchParams(location.search).get("lang");if(P[q])l=q}catch(e){}if(!l&&P[s])l=s;for(var ls=navigator.languages||[navigator.language||"en"],i=0;!l&&!s&&i<ls.length;i++){var x=String(ls[i]).toLowerCase(),b=x.split("-")[0];l=b==="zh"?(/tw|hk|mo|hant/.test(x)?"zh-TW":"zh-CN"):P[b]?b:null}if(l&&l!==d.lang)location.replace(P[l]+location.hash)})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Проверка разблокировки Discord: работает ли Discord с моим IP и в каком регионе</title>
 <meta name="description" content="Бесплатная проверка: работает ли Discord с вашим текущим IP и какую страну он определяет. В браузере, по реальному маршруту вашего прокси; ничего не загружается.">
@@ -118,7 +118,7 @@
   </div>
 </div>
 <script type="application/json" id="data">{"lang":"ru","paths":{"en":"/discord/","zh-CN":"/zh-cn/discord/","zh-TW":"/zh-tw/discord/","ja":"/ja/discord/","ko":"/ko/discord/","es":"/es/discord/","fr":"/fr/discord/","de":"/de/discord/","pt":"/pt/discord/","ru":"/ru/discord/"},"home":{"en":"/","zh-CN":"/zh-cn/","zh-TW":"/zh-tw/","ja":"/ja/","ko":"/ko/","es":"/es/","fr":"/fr/","de":"/de/","pt":"/pt/","ru":"/ru/"},"egressPath":"/ru/"}</script>
-<script src="/assets/l.ru.06d08e8df8.js"></script>
-<script src="/assets/app.044888dee5.js" defer></script>
+<script src="/assets/l.ru.d4e1f6f363.js"></script>
+<script src="/assets/app.0a3eebd254.js" defer></script>
 </body>
 </html>

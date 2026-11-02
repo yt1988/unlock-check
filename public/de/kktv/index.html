@@ -2,7 +2,7 @@
 <html lang="de" data-paths="{&quot;en&quot;:&quot;/kktv/&quot;,&quot;zh-CN&quot;:&quot;/zh-cn/kktv/&quot;,&quot;zh-TW&quot;:&quot;/zh-tw/kktv/&quot;,&quot;ja&quot;:&quot;/ja/kktv/&quot;,&quot;ko&quot;:&quot;/ko/kktv/&quot;,&quot;es&quot;:&quot;/es/kktv/&quot;,&quot;fr&quot;:&quot;/fr/kktv/&quot;,&quot;de&quot;:&quot;/de/kktv/&quot;,&quot;pt&quot;:&quot;/pt/kktv/&quot;,&quot;ru&quot;:&quot;/ru/kktv/&quot;}">
 <head>
 <meta charset="utf-8">
-<script>(function(){var d=document.documentElement,th=null,s=null;try{th=localStorage.getItem("unlock:theme");s=localStorage.getItem("unlock:lang")}catch(e){}if(th==="light"||th==="dark")d.setAttribute("data-theme",th);if(/^#r=/.test(location.hash))d.setAttribute("data-shared","");if(!d.hasAttribute("data-root"))return;var P=JSON.parse(d.getAttribute("data-paths")||"{}"),l=null;try{var q=new URLSearchParams(location.search).get("lang");if(P[q])l=q}catch(e){}if(!l&&P[s])l=s;for(var ls=navigator.languages||[navigator.language||"en"],i=0;!l&&!s&&i<ls.length;i++){var x=String(ls[i]).toLowerCase(),b=x.split("-")[0];l=b==="zh"?(/tw|hk|mo|hant/.test(x)?"zh-TW":"zh-CN"):P[b]?b:null}if(l&&l!==d.lang)location.replace(P[l]+location.hash)})();</script>
+<script>(function(){var d=document.documentElement,th=null,s=null;try{th=localStorage.getItem("unlock:theme");s=localStorage.getItem("unlock:lang")}catch(e){}if(th==="light"||th==="dark")d.setAttribute("data-theme",th);if(/^#r=/.test(location.hash)||/[/]r[/][a-z]+[/]$/.test(location.pathname))d.setAttribute("data-shared","");if(!d.hasAttribute("data-root"))return;var P=JSON.parse(d.getAttribute("data-paths")||"{}"),l=null;try{var q=new URLSearchParams(location.search).get("lang");if(P[q])l=q}catch(e){}if(!l&&P[s])l=s;for(var ls=navigator.languages||[navigator.language||"en"],i=0;!l&&!s&&i<ls.length;i++){var x=String(ls[i]).toLowerCase(),b=x.split("-")[0];l=b==="zh"?(/tw|hk|mo|hant/.test(x)?"zh-TW":"zh-CN"):P[b]?b:null}if(l&&l!==d.lang)location.replace(P[l]+location.hash)})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>KKTV Unlock-Test: funktioniert KKTV mit meiner IP, und in welcher Region?</title>
 <meta name="description" content="Kostenloser Test: Funktioniert KKTV mit deiner aktuellen IP, und in welchem Land verortet es dich? Im Browser, über die echte Route deines Proxys; nichts wird hochgeladen.">
@@ -118,7 +118,7 @@
   </div>
 </div>
 <script type="application/json" id="data">{"lang":"de","paths":{"en":"/kktv/","zh-CN":"/zh-cn/kktv/","zh-TW":"/zh-tw/kktv/","ja":"/ja/kktv/","ko":"/ko/kktv/","es":"/es/kktv/","fr":"/fr/kktv/","de":"/de/kktv/","pt":"/pt/kktv/","ru":"/ru/kktv/"},"home":{"en":"/","zh-CN":"/zh-cn/","zh-TW":"/zh-tw/","ja":"/ja/","ko":"/ko/","es":"/es/","fr":"/fr/","de":"/de/","pt":"/pt/","ru":"/ru/"},"egressPath":"/de/"}</script>
-<script src="/assets/l.de.d074b54f9f.js"></script>
-<script src="/assets/app.044888dee5.js" defer></script>
+<script src="/assets/l.de.3cdd301f03.js"></script>
+<script src="/assets/app.0a3eebd254.js" defer></script>
 </body>
 </html>

@@ -92,6 +92,9 @@ export default {
   share_text: "{v} · 動画配信/AI 解除チェックより",
   shared_from: "共有された結果です（{date} に確認）",
   test_mine: "自分も確認",
+  share_bad: "この結果は読み取れません",     // a result link that can't be read
+  // embedded in the connection checkup: the first dozen services all failed to open
+  err_blocked: "すべての確認リクエストが失敗しました。広告ブロッカー（uBlock、AdGuard など）に止められている可能性があります",
   r_desc: "共有された確認結果：使える動画配信と AI、それぞれが判定した国。開くと自分の結果を確認できます。",
   vh_all: "ChatGPT・Claude・Gemini・Netflix・Disney+ すべて利用可",
   vh_part: "AI は使えるが、一部の動画配信は使えない",

@@ -31,10 +31,10 @@ export const VERDICTS = ["all", "part", "noai"];
 // the redirects the chain can add; more than any browser follows (Chrome and Firefox: 20, Safari: 16)
 const HOPS = 25;
 
-// Runs before first paint: apply the saved theme, and mark a shared result (#r=…) so its line has its space at once.
+// Runs before first paint: apply the saved theme, and mark a shared result (#r=…, or a result page) so its line has its space at once.
 // On the English root and on every shared-result page, send visitors to their language's page (a saved choice first,
 // then the browser languages); crawlers and readers of the page's language stay.
-export const PREPAINT = `(function(){var d=document.documentElement,th=null,s=null;try{th=localStorage.getItem("unlock:theme");s=localStorage.getItem("unlock:lang")}catch(e){}if(th==="light"||th==="dark")d.setAttribute("data-theme",th);if(/^#r=/.test(location.hash))d.setAttribute("data-shared","");if(!d.hasAttribute("data-root"))return;var P=JSON.parse(d.getAttribute("data-paths")||"{}"),l=null;try{var q=new URLSearchParams(location.search).get("lang");if(P[q])l=q}catch(e){}if(!l&&P[s])l=s;for(var ls=navigator.languages||[navigator.language||"en"],i=0;!l&&!s&&i<ls.length;i++){var x=String(ls[i]).toLowerCase(),b=x.split("-")[0];l=b==="zh"?(/tw|hk|mo|hant/.test(x)?"zh-TW":"zh-CN"):P[b]?b:null}if(l&&l!==d.lang)location.replace(P[l]+location.hash)})();`;
+export const PREPAINT = `(function(){var d=document.documentElement,th=null,s=null;try{th=localStorage.getItem("unlock:theme");s=localStorage.getItem("unlock:lang")}catch(e){}if(th==="light"||th==="dark")d.setAttribute("data-theme",th);if(/^#r=/.test(location.hash)||/[/]r[/][a-z]+[/]$/.test(location.pathname))d.setAttribute("data-shared","");if(!d.hasAttribute("data-root"))return;var P=JSON.parse(d.getAttribute("data-paths")||"{}"),l=null;try{var q=new URLSearchParams(location.search).get("lang");if(P[q])l=q}catch(e){}if(!l&&P[s])l=s;for(var ls=navigator.languages||[navigator.language||"en"],i=0;!l&&!s&&i<ls.length;i++){var x=String(ls[i]).toLowerCase(),b=x.split("-")[0];l=b==="zh"?(/tw|hk|mo|hant/.test(x)?"zh-TW":"zh-CN"):P[b]?b:null}if(l&&l!==d.lang)location.replace(P[l]+location.hash)})();`;
 
 const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const fill = (s, v) => { for (const k in v) s = s.split("{" + k + "}").join(v[k]); return s; };
@@ -83,7 +83,7 @@ export async function build({ check = false } = {}) {
   const jsName = `app.${hash(js)}.js`, cssName = `app.${hash(css)}.css`;
 
   // the strings the browser needs; the page's own text is already in the HTML
-  const RUNTIME = /^(name|fd_\w+|v_\w+|how_\w+|why_\w+|note_\w+|fo_\w+|ex_\w+|tz_\w+|wait_\w+|ip_\w+|ipq_title|vh_\w+|th_\w+|egress_link|ck_link|progress|done|rerun|running|hide|show|share|share_text|shared_from|test_mine|join)$/;
+  const RUNTIME = /^(name|fd_\w+|v_\w+|how_\w+|why_\w+|note_\w+|fo_\w+|ex_\w+|tz_\w+|wait_\w+|ip_\w+|ipq_title|vh_\w+|th_\w+|egress_link|ck_link|progress|done|rerun|running|hide|show|share|share_text|shared_from|test_mine|share_bad|err_blocked|join)$/;
   const path = slug => "/" + (slug ? slug + "/" : "");
   const N = SERVICES.length;
   const pages = [], files = {};

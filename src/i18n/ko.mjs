@@ -94,6 +94,9 @@ export default {
   share_text: "{v} · 스트리밍/AI 언락 체크",
   shared_from: "다른 사람이 공유한 결과, {date} 확인",
   test_mine: "내 것 확인",
+  share_bad: "이 결과를 읽을 수 없습니다",     // a result link that can't be read
+  // embedded in the connection checkup: the first dozen services all failed to open
+  err_blocked: "모든 확인 요청이 실패했습니다. 광고 차단 확장(uBlock, AdGuard 등)이 막고 있을 수 있습니다",
   r_desc: "공유된 확인 결과: 쓸 수 있는 스트리밍과 AI, 그리고 각 서비스가 판단한 나라. 열면 내 결과를 확인할 수 있습니다.",
   vh_all: "ChatGPT·Claude·Gemini·넷플릭스·디즈니+ 모두 사용 가능",
   vh_part: "AI는 되지만 일부 스트리밍은 안 됨",

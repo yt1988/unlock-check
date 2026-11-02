@@ -92,6 +92,9 @@ export default {
   share_text: "{v} · 來自串流/AI 解鎖檢測",
   shared_from: "這是別人分享的結果，檢測於 {date}",
   test_mine: "測我的",
+  share_bad: "無法讀取這條結果",     // a result link that can't be read
+  // embedded in the connection checkup: the first dozen services all failed to open
+  err_blocked: "所有檢測請求都失敗了，可能被廣告攔截擴充功能（uBlock、AdGuard 等）擋下了",
   r_desc: "別人分享的解鎖檢測結果：哪些串流和 AI 能用，各自把他定位在哪個國家。打開就能測你自己的。",
   vh_all: "ChatGPT、Claude、Gemini、Netflix、Disney+ 全部可用",
   vh_part: "AI 能用，部分串流不能用",

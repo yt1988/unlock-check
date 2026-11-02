@@ -92,6 +92,9 @@ export default {
   share_text: "{v} · via Déblocage streaming/IA",
   shared_from: "Résultat partagé par quelqu'un, vérifié le {date}",
   test_mine: "Vérifier le mien",
+  share_bad: "Impossible de lire ce résultat",     // a result link that can't be read
+  // embedded in the connection checkup: the first dozen services all failed to open
+  err_blocked: "Toutes les vérifications ont échoué. Un bloqueur de publicité (uBlock, AdGuard…) les bloque peut-être",
   r_desc: "Un résultat partagé : quels services de streaming et d'IA fonctionnent, et dans quel pays chacun a situé la personne. Ouvrez-le pour vérifier le vôtre.",
   vh_all: "ChatGPT, Claude, Gemini, Netflix et Disney+ fonctionnent",
   vh_part: "L'IA fonctionne, une partie du streaming non",

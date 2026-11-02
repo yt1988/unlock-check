@@ -2,7 +2,7 @@
 <html lang="es" data-paths="{&quot;en&quot;:&quot;/reddit/&quot;,&quot;zh-CN&quot;:&quot;/zh-cn/reddit/&quot;,&quot;zh-TW&quot;:&quot;/zh-tw/reddit/&quot;,&quot;ja&quot;:&quot;/ja/reddit/&quot;,&quot;ko&quot;:&quot;/ko/reddit/&quot;,&quot;es&quot;:&quot;/es/reddit/&quot;,&quot;fr&quot;:&quot;/fr/reddit/&quot;,&quot;de&quot;:&quot;/de/reddit/&quot;,&quot;pt&quot;:&quot;/pt/reddit/&quot;,&quot;ru&quot;:&quot;/ru/reddit/&quot;}">
 <head>
 <meta charset="utf-8">
-<script>(function(){var d=document.documentElement,th=null,s=null;try{th=localStorage.getItem("unlock:theme");s=localStorage.getItem("unlock:lang")}catch(e){}if(th==="light"||th==="dark")d.setAttribute("data-theme",th);if(/^#r=/.test(location.hash))d.setAttribute("data-shared","");if(!d.hasAttribute("data-root"))return;var P=JSON.parse(d.getAttribute("data-paths")||"{}"),l=null;try{var q=new URLSearchParams(location.search).get("lang");if(P[q])l=q}catch(e){}if(!l&&P[s])l=s;for(var ls=navigator.languages||[navigator.language||"en"],i=0;!l&&!s&&i<ls.length;i++){var x=String(ls[i]).toLowerCase(),b=x.split("-")[0];l=b==="zh"?(/tw|hk|mo|hant/.test(x)?"zh-TW":"zh-CN"):P[b]?b:null}if(l&&l!==d.lang)location.replace(P[l]+location.hash)})();</script>
+<script>(function(){var d=document.documentElement,th=null,s=null;try{th=localStorage.getItem("unlock:theme");s=localStorage.getItem("unlock:lang")}catch(e){}if(th==="light"||th==="dark")d.setAttribute("data-theme",th);if(/^#r=/.test(location.hash)||/[/]r[/][a-z]+[/]$/.test(location.pathname))d.setAttribute("data-shared","");if(!d.hasAttribute("data-root"))return;var P=JSON.parse(d.getAttribute("data-paths")||"{}"),l=null;try{var q=new URLSearchParams(location.search).get("lang");if(P[q])l=q}catch(e){}if(!l&&P[s])l=s;for(var ls=navigator.languages||[navigator.language||"en"],i=0;!l&&!s&&i<ls.length;i++){var x=String(ls[i]).toLowerCase(),b=x.split("-")[0];l=b==="zh"?(/tw|hk|mo|hant/.test(x)?"zh-TW":"zh-CN"):P[b]?b:null}if(l&&l!==d.lang)location.replace(P[l]+location.hash)})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Test de desbloqueo de Reddit: ¿funciona Reddit con mi IP y en qué región?</title>
 <meta name="description" content="Comprobación gratuita: ¿funciona Reddit con tu IP actual y en qué país te sitúa? En tu navegador, por la ruta real de tu proxy; no se sube nada.">
@@ -118,7 +118,7 @@
   </div>
 </div>
 <script type="application/json" id="data">{"lang":"es","paths":{"en":"/reddit/","zh-CN":"/zh-cn/reddit/","zh-TW":"/zh-tw/reddit/","ja":"/ja/reddit/","ko":"/ko/reddit/","es":"/es/reddit/","fr":"/fr/reddit/","de":"/de/reddit/","pt":"/pt/reddit/","ru":"/ru/reddit/"},"home":{"en":"/","zh-CN":"/zh-cn/","zh-TW":"/zh-tw/","ja":"/ja/","ko":"/ko/","es":"/es/","fr":"/fr/","de":"/de/","pt":"/pt/","ru":"/ru/"},"egressPath":"/es/"}</script>
-<script src="/assets/l.es.79937a30e0.js"></script>
-<script src="/assets/app.044888dee5.js" defer></script>
+<script src="/assets/l.es.cbbce68164.js"></script>
+<script src="/assets/app.0a3eebd254.js" defer></script>
 </body>
 </html>

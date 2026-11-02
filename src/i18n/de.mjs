@@ -92,6 +92,9 @@ export default {
   share_text: "{v} · vom Streaming-/KI-Unlock-Check",
   shared_from: "Von jemandem geteiltes Ergebnis, geprüft am {date}",
   test_mine: "Meins prüfen",
+  share_bad: "Dieses Ergebnis lässt sich nicht lesen",     // a result link that can't be read
+  // embedded in the connection checkup: the first dozen services all failed to open
+  err_blocked: "Alle Prüfungen sind fehlgeschlagen. Vielleicht blockiert ein Werbeblocker (uBlock, AdGuard …) sie",
   r_desc: "Ein geteiltes Ergebnis: welche Streaming- und KI-Dienste funktionieren und in welchem Land jeder die Person verortet hat. Öffnen, um deins zu prüfen.",
   vh_all: "ChatGPT, Claude, Gemini, Netflix und Disney+ funktionieren",
   vh_part: "KI geht, ein Teil des Streamings nicht",

@@ -35,6 +35,8 @@ createServer(async (req, res) => {
     const to = n > 1 ? `/h/${n - 1}/${h[2]}${rest}` : `${h[2] === req.headers.host ? "http" : "https"}://${h[2]}${rest}`;
     res.writeHead(n > 0 && n <= 25 ? 302 : 404, { Location: to }).end(); return;
   }
+  // ME='{"country":"JP",…}' answers the shell's /_ms/me (without it, a 404, as when self-hosted)
+  if (urlPath === "/_ms/me" && process.env.ME) { res.writeHead(200, { "Content-Type": TYPES[".json"], "Cache-Control": "no-store" }).end(process.env.ME); return; }
   const CHECK = process.env.CHECK;
   if (CHECK && urlPath === "/__checkup.html") {
     const src = `http://localhost:${port}${new URL(req.url, "http://x").searchParams.get("p") || "/zh-cn/"}?embed=checkup`;
