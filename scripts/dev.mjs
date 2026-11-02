@@ -2,6 +2,9 @@
 // Local preview of ./public with the same headers as production (public/_headers, including the CSP), and the
 // redirect chain of public/_redirects (/h/<n>/<host>/<path>), whose last hop goes to http for this server itself.
 // Usage: node scripts/dev.mjs [port]
+// CHECK=http://127.0.0.1:<port> also plays the shell's part for the connection checkup's embed mode (1ms-shell
+// docs/checkup.md): pages get <meta name="check">, may be framed by that origin, and /__checkup.html there frames
+// /?embed=checkup on localhost and logs what it posts back.
 import { createServer } from "node:http";
 import { readFile } from "node:fs/promises";
 import { extname, normalize } from "node:path";
@@ -32,6 +35,15 @@ createServer(async (req, res) => {
     const to = n > 1 ? `/h/${n - 1}/${h[2]}${rest}` : `${h[2] === req.headers.host ? "http" : "https"}://${h[2]}${rest}`;
     res.writeHead(n > 0 && n <= 25 ? 302 : 404, { Location: to }).end(); return;
   }
+  const CHECK = process.env.CHECK;
+  if (CHECK && urlPath === "/__checkup.html") {
+    const src = `http://localhost:${port}${new URL(req.url, "http://x").searchParams.get("p") || "/zh-cn/"}?embed=checkup`;
+    res.writeHead(200, { "Content-Type": TYPES[".html"] }).end(`<!doctype html><meta charset="utf-8"><title>checkup</title>
+<iframe id="f" src="${src}" style="width:min(100%,720px);height:400px;border:1px solid #ccc"></iframe><pre id="log"></pre>
+<script>window.msgs=[];addEventListener("message",e=>{if(e.origin!=="http://localhost:${port}")return;msgs.push(e.data);
+if(e.data.type==="size")f.style.height=e.data.height+"px";log.textContent+=JSON.stringify(e.data)+"\\n";});</script>`);
+    return;
+  }
   let path = urlPath;
   if (path.endsWith("/")) path += "index.html";
   const file = normalize(root + path);
@@ -41,6 +53,14 @@ createServer(async (req, res) => {
     const headers = { "Content-Type": TYPES[extname(file)] || "application/octet-stream", "Cache-Control": "no-cache" };
     for (const r of await rules()) if (r.re.test(urlPath)) Object.assign(headers, r.h);
     headers["Cache-Control"] = "no-cache";
+    if (CHECK && extname(file) === ".html") {
+      delete headers["X-Frame-Options"];
+      headers["Content-Security-Policy"] = headers["Content-Security-Policy"].replace("frame-ancestors 'none'", "frame-ancestors " + CHECK);
+      let html = body.toString().replace("</head>", `<meta name="check" content="${CHECK}">
+</head>`);
+      if (new URL(req.url, "http://x").searchParams.get("embed") === "checkup") html = html.replace("<html ", '<html data-ms-embed="checkup" ');
+      res.writeHead(200, headers).end(html); return;
+    }
     res.writeHead(200, headers).end(body);
   } catch { res.writeHead(404, { "Content-Type": "text/plain" }).end("not found"); }
 }).listen(port, () => console.log(`unlock: http://localhost:${port}/`));

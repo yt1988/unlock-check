@@ -15,6 +15,24 @@
   const SV = Object.fromEntries(SERVICES.map(s => [s.id, s]));
   /* @lib */
 
+  /* ---------- embedded in the connection checkup (check.1ms.dog, 1ms-shell docs/checkup.md) ---------- */
+  // ?embed=checkup counts only inside a frame whose page is on the checkup's own origin, as the shell's
+  // <meta name="check"> names it; otherwise this is the ordinary page (the shell's attribute is taken back).
+  const EMBED = (() => {
+    const c = (document.querySelector('meta[name="check"]') || {}).content;
+    if (new URLSearchParams(location.search).get("embed") !== "checkup" || !c || window.parent === window) return "";
+    try { const o = new URL(c).origin; return new URL(document.referrer).origin === o ? o : ""; } catch (e) { return ""; }
+  })();
+  if (EMBED) document.documentElement.setAttribute("data-ms-embed", "checkup");
+  else document.documentElement.removeAttribute("data-ms-embed");
+  const post = m => { if (EMBED) window.parent.postMessage(Object.assign({ ms: "checkup", v: 1, tool: "unlock" }, m), EMBED); };
+  if (EMBED) {
+    // the report page sizes the frame to the content; links open outside it
+    let h = 0;
+    new ResizeObserver(() => { const n = Math.ceil(document.querySelector(".app").getBoundingClientRect().height); if (n !== h) post({ type: "size", height: h = n }); }).observe(document.querySelector(".app"));
+    for (const a of $$("a[href]")) { a.target = "_blank"; a.rel = "noopener"; }
+  }
+
   /* ---------- theme and language ---------- */
   const thBtn = $("#theme"), TH = ["system", "light", "dark"];
   const applyTheme = th => {
@@ -220,6 +238,7 @@
       if (gen !== S.gen) return;
       S.r[s.id] = r; S.v[s.id] = judge(s, r, S.guess);
       renderRow(s.id); renderGroups(); renderSum(); renderFocus(); setProg(++d, N);
+      post({ type: "progress", done: d, total: N, text: t("progress", { d, n: N }) });
     };
     maxHops();                                                  // measure the redirect limit while the first answers come in
     const early = SERVICES.filter(s => !LATE(s)), late = SERVICES.filter(LATE);
@@ -242,6 +261,7 @@
     S.done = true;
     renderAll(); setProg(N, N);
     $("#run").disabled = false; $("#run").classList.remove("busy"); $("#run span").textContent = t("rerun"); $("#share").disabled = false;
+    if (EMBED) post(report());
   }
   // a shared result's page opens the language's own page to test
   $("#run").onclick = () => { if (S.shared && location.pathname !== D.home[LANG]) location.href = D.paths[LANG].replace(/r\/[a-z]+\/$/, ""); else run(); };
@@ -337,7 +357,37 @@
     dialog.open();
   };
 
+  /* ---------- the result for the connection checkup (field names: 1ms-shell docs/checkup.md) ---------- */
+  function report() {
+    const n = tally(Object.values(S.v)), vs = SERVICES.map(s => [s, S.v[s.id]]).filter(([, v]) => v);
+    const names = list => { const x = list.map(([s]) => s.name); return x.slice(0, 6).join(t("join")) + (x.length > 6 ? t("join") + "…" : ""); };
+    const no = vs.filter(([, v]) => v.v === "no"), fail = vs.filter(([, v]) => v.v === "fail");
+    // blocked AI services first: those are what a route is usually chosen for
+    no.sort((a, b) => (b[0].cat === "ai") - (a[0].cat === "ai"));
+    const ex = exitsByCountry(S.v), tz = tzCc(), findings = [];
+    if (no.length) findings.push({ level: "bad", text: t("fd_no", { list: names(no) }) });
+    if (ex.length > 1) findings.push({ level: "warn", text: t("ex_split", { c: ex.map((e, i) => country(e.cc) + " " + (i ? e.ids.map(id => SV[id].name).join(t("join")) : "×" + e.ids.length)).join(" · ") }) });
+    if (ex[0] && tz && tz !== ex[0].cc) findings.push({ level: "warn", text: t("tz_bad", { a: country(tz), b: country(ex[0].cc) }) });
+    if (fail.length) findings.push({ level: "warn", text: t("fd_fail", { list: names(fail) }) });
+    if (ex.length === 1) findings.push({ level: "ok", text: t("ex_one", { c: country(ex[0].cc) }) });
+    const stats = [{ label: t("v_ok"), value: n.ok }, { label: t("v_no"), value: n.no }];
+    if (n.reach) stats.push({ label: t("v_reach"), value: n.reach });
+    if (n.fail) stats.push({ label: t("v_fail"), value: n.fail });
+    // a country is the one a service itself reported (not the majority assumed for those that can't say);
+    // AI services and Netflix are true/false only where the answer is known
+    const countries = {}, ai = {};
+    for (const [s, v] of vs) {
+      if (v.cc && v.how !== "guess") countries[s.id] = v.cc;
+      if (s.cat === "ai" && (v.v === "ok" || v.v === "no")) ai[s.id] = v.v === "ok";
+    }
+    const facts = { works: n.ok, blocked: n.no, total: SERVICES.length, countries, ai }, nf = S.v.netflix;
+    if (nf && nf.v === "ok" && nf.cc) facts.netflix = nf.cc; else if (nf && nf.v === "no") facts.netflix = false;
+    return { type: "result", lang: LANG, path: shareLink().slice(location.origin.length), grade: null, score: null,
+      headline: t("vh_" + verdict()), stats, findings: findings.slice(0, 4), facts };
+  }
+
   applyMask();
+  if (EMBED) { run(); return; }                                 // starts at once; a result in the link is not shown here
   const shared = parseShare(location.hash, SERVICES.map(s => s.id));
   if (shared) showShared(shared);
   else { document.documentElement.removeAttribute("data-shared"); run(); }

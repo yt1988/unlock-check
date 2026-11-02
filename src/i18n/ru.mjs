@@ -107,6 +107,9 @@ export default {
   next: "Дальше",
   foot: "Всё происходит в вашем браузере; результаты никогда не отправляются на этот сайт.",
   join: ", ",
+  // the connection checkup's findings (embedded, see src/app.js): the services that are blocked, or don't open
+  fd_no: "Недоступно здесь: {list}",
+  fd_fail: "Не открывается: {list}",
   source: "Источник",
 
   q_where: "Где можно пользоваться {name}?",

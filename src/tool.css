@@ -131,3 +131,15 @@ body.dlg-open { overflow: hidden; }
   .prog-t { display: none; }
   .acts { margin-left: 0; width: 100%; } .acts .btn { flex: 1; padding: 0 8px; }
 }
+
+/* embedded in the connection checkup (src/app.js takes the attribute back unless the frame's page is the checkup's):
+   the totals, the progress and the list, nothing else */
+[data-ms-embed] { scrollbar-gutter: auto; }
+[data-ms-embed] .top, [data-ms-embed] .foot, [data-ms-embed] .hero-h, [data-ms-embed] .focus, [data-ms-embed] .notes,
+[data-ms-embed] .acts, [data-ms-embed] .scrim { display: none !important; }
+[data-ms-embed] .app { padding-block: 0; gap: 0; }
+[data-ms-embed] main { gap: 8px; }
+[data-ms-embed] .hero { padding-top: 12px; gap: 10px; }
+[data-ms-embed] .bar { padding-block: 8px 9px; }
+[data-ms-embed] .prog-t { display: inline; }
+[data-ms-embed] .list { padding-block: 10px 12px; gap: 10px; }

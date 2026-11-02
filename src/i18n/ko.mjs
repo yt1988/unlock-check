@@ -107,6 +107,9 @@ export default {
   next: "다음",
   foot: "확인은 모두 브라우저에서 이루어지며 결과는 이 사이트로 전송되지 않습니다.",
   join: ", ",
+  // the connection checkup's findings (embedded, see src/app.js): the services that are blocked, or don't open
+  fd_no: "사용 불가: {list}",
+  fd_fail: "안 열림: {list}",
   source: "출처",
 
   q_where: "{name} 서비스는 어느 나라에서 쓸 수 있나요?",

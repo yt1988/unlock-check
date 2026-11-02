@@ -79,6 +79,7 @@ SITE_URL=https://unlock.example.com npm run build
 ```bash
 npm install
 npm run dev        # http://localhost:8787, with the production headers and the redirect chain
+CHECK=http://127.0.0.1:8787 npm run dev   # also the checkup embed mode: open http://127.0.0.1:8787/__checkup.html
 npm run build      # regenerate public/ after changing src/ (commit public/)
 npm test           # public/ up to date, page contract, SEO, and the logic tests
 npm run icons      # download the services' icons into public/assets/svc/ after adding a service (commit them)

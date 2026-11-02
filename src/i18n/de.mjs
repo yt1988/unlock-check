@@ -105,6 +105,9 @@ export default {
   next: "Weiter",
   foot: "Alles läuft in deinem Browser; Ergebnisse werden nie an diese Seite gesendet.",
   join: ", ",
+  // the connection checkup's findings (embedded, see src/app.js): the services that are blocked, or don't open
+  fd_no: "Hier gesperrt: {list}",
+  fd_fail: "Öffnet nicht: {list}",
   source: "Quelle",
 
   q_where: "Wo kann man {name} nutzen?",

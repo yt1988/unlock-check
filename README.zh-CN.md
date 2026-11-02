@@ -79,6 +79,7 @@ SITE_URL=https://unlock.example.com npm run build
 ```bash
 npm install
 npm run dev        # http://localhost:8787，带生产环境的响应头和跳转链
+CHECK=http://127.0.0.1:8787 npm run dev   # 同时模拟线路体检的嵌入模式：打开 http://127.0.0.1:8787/__checkup.html
 npm run build      # 改了 src/ 之后重新生成 public/（public/ 要提交）
 npm test           # public/ 是否最新、页面约定、SEO 和逻辑测试
 npm run icons      # 新增服务后下载它的图标到 public/assets/svc/（要提交）
