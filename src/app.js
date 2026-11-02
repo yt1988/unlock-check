@@ -172,6 +172,10 @@
   function renderSum() {
     const n = tally(Object.values(S.v));
     for (const k of ["ok", "no", "reach", "fail"]) $(`#sum .t-${k} b`).textContent = S.gen || S.shared ? n[k] : "–";
+    // the result in one line, with the share button beside it
+    const has = S.done && Object.keys(S.v).length > 0;
+    $("#vh").textContent = has ? t("vh_" + verdict()) : S.gen ? t("v_wait") : "";
+    $("#vline").classList.toggle("wait", !has);
   }
   // Notes under the totals, once everything is in: which countries the services see (several: split routing), and
   // whether the browser's time zone fits. While running, two placeholder lines hold their space.
@@ -310,12 +314,13 @@
   $$("[data-hstep]").forEach(b => { b.onclick = () => showHelp(helpIdx + +b.dataset.hstep); });
 
   /* ---------- a shared result ---------- */
+  // the shared 1ms.dog banner above it says whose result this is and offers the visitor's own test
   function showShared(R) {
     Object.assign(S, { r: {}, v: R.verdicts, shared: R, done: true, gen: 0 });
     eye.hidden = true;
-    $("#sharedTxt").textContent = t("shared_from", { date: new Date(R.ts).toLocaleString(LANG, { dateStyle: "medium", timeStyle: "short" }) });
     renderAll();
     $("#run span").textContent = t("test_mine"); $("#run").disabled = false; $("#share").disabled = false;
+    import("/assets/share/share.js").then(({ received }) => received({ lang: LANG, ts: R.ts, at: $(".hero"), test: () => $("#run").onclick() })).catch(() => {});
   }
   // a result link that can't be read (cut short, mistyped, a format this page doesn't know) says so, and waits
   function showBroken() {
@@ -342,31 +347,41 @@
   // with each service's verdict and country, never an address: so there is nothing for the visitor to choose to show.
   const shareLink = () => location.origin + D.home[LANG] + "r/" + verdict() + "/" +
     encodeShare({ ts: S.shared ? S.shared.ts : Date.now(), tz: S.shared ? S.shared.tz : tzCc(), verdicts: S.v });
-  // The card's middle, as the page shows it: the headline, the totals, then every service in two columns with its
-  // own icon and the country it sees (green) or what went wrong (red, amber).
-  const RH = 44, cardRows = () => SERVICES.filter(s => S.v[s.id]);
+  // The card's middle. It is also the link's preview in chat apps, fitted into 1200×630 (about two thirds the size),
+  // so the top holds what still reads there: the headline, the totals, and the five services people ask about, big.
+  // Then every other service in three columns, with its own icon and the country it sees (green) or what went wrong.
+  const KEY = ["chatgpt", "claude", "gemini", "netflix", "disney"], RH = 38, COLS = 3;
+  const cardRows = () => SERVICES.filter(s => S.v[s.id]), restRows = () => cardRows().filter(s => !KEY.includes(s.id));
   async function drawCard(x, k) {
     const C = { fg: k.v("fg"), muted: k.v("muted"), line: k.v("line"), ok: k.v("ok"), no: k.v("bad"), fail: k.v("warn"), reach: k.v("muted") };
+    const res = v => v.v === "ok" ? (v.cc ? country(v.cc) : t("v_ok")) : t("v_" + v.v);
+    const icon = async (id, cx, cy, n) => { const el = document.querySelector(`#s-${id} img.fi`); if (el) { try { x.drawImage(await k.img(el.src), cx, cy, n, n); } catch (e) {} } };
     // the headline in one line: smaller type before it is cut
     const head = t("vh_" + verdict()), hw = k.W - k.P * 2;
-    let fs = 42; do { x.font = `700 ${fs}px ${k.F}`; } while (x.measureText(head).width > hw && (fs -= 2) >= 30);
-    x.fillStyle = C.fg; x.fillText(k.clip(x, head, hw), k.P, k.top + 46);
+    let fs = 50; do { x.font = `700 ${fs}px ${k.F}`; } while (x.measureText(head).width > hw && (fs -= 2) >= 34);
+    x.fillStyle = C.fg; x.fillText(k.clip(x, head, hw), k.P, k.top + 50);
     const n = tally(Object.values(S.v));
     let xx = k.P;
     for (const key of ["ok", "no", "reach", "fail"]) {
-      x.fillStyle = C[key]; x.font = `700 32px ${k.M}`; x.fillText(String(n[key]), xx, k.top + 106); xx += x.measureText(String(n[key])).width + 10;
-      x.fillStyle = C.muted; x.font = `400 21px ${k.F}`; const lb = t("v_" + key); x.fillText(lb, xx, k.top + 104); xx += x.measureText(lb).width + 34;
+      x.fillStyle = C[key]; x.font = `700 36px ${k.M}`; x.fillText(String(n[key]), xx, k.top + 112); xx += x.measureText(String(n[key])).width + 10;
+      x.fillStyle = C.muted; x.font = `400 24px ${k.F}`; const lb = t("v_" + key); x.fillText(lb, xx, k.top + 110); xx += x.measureText(lb).width + 36;
     }
-    const rows = cardRows(), half = Math.ceil(rows.length / 2), colW = (k.W - k.P * 2 - 48) / 2, y0 = k.top + 170;
+    // the five, each an icon, its name, and what it says
+    const keys = KEY.filter(id => S.v[id]), kw = (k.W - k.P * 2) / Math.max(keys.length, 1);
+    for (let i = 0; i < keys.length; i++) {
+      const id = keys[i], v = S.v[id], cx = k.P + i * kw;
+      await icon(id, cx, k.top + 156, 36);
+      x.fillStyle = C.fg; x.font = `600 26px ${k.F}`; x.fillText(k.clip(x, SV[id].name, kw - 56), cx + 46, k.top + 184);
+      x.fillStyle = C[v.v]; x.font = `700 26px ${k.F}`; x.fillText(k.clip(x, res(v), kw - 16), cx, k.top + 234);
+    }
+    const rows = restRows(), per = Math.ceil(rows.length / COLS), gap = 36, colW = (k.W - k.P * 2 - gap * (COLS - 1)) / COLS, y0 = k.top + 310;
+    x.fillStyle = C.line; x.fillRect(k.P, y0 - 46, k.W - k.P * 2, 1);
     for (let i = 0; i < rows.length; i++) {
-      const s = rows[i], v = S.v[s.id], cx = k.P + (i < half ? 0 : colW + 48), cy = y0 + (i % half) * RH;
-      x.fillStyle = C.line; x.fillRect(cx, cy - 30, colW, 1);
-      const icon = document.querySelector(`#s-${s.id} img.fi`);
-      if (icon) { try { x.drawImage(await k.img(icon.src), cx, cy - 20, 24, 24); } catch (e) {} }
-      x.fillStyle = C.fg; x.font = `500 22px ${k.F}`; x.fillText(k.clip(x, s.name, colW * .58), cx + 36, cy);
-      const right = v.v === "ok" ? (v.cc ? country(v.cc) : "") : t("v_" + v.v);
-      x.textAlign = "right"; x.fillStyle = C[v.v]; x.font = `${v.v === "ok" ? 400 : 600} 20px ${k.F}`;
-      x.fillText(k.clip(x, right, colW * .38), cx + colW, cy); x.textAlign = "left";
+      const s = rows[i], v = S.v[s.id], c = Math.floor(i / per), cx = k.P + c * (colW + gap), cy = y0 + (i % per) * RH;
+      await icon(s.id, cx, cy - 18, 22);
+      x.fillStyle = C.fg; x.font = `500 20px ${k.F}`; x.fillText(k.clip(x, s.name, colW * .58), cx + 32, cy);
+      x.textAlign = "right"; x.fillStyle = C[v.v]; x.font = `${v.v === "ok" ? 400 : 600} 19px ${k.F}`;
+      x.fillText(k.clip(x, res(v), colW * .38), cx + colW, cy); x.textAlign = "left";
     }
   }
   let dialog = null;
@@ -377,7 +392,7 @@
       lang: LANG, name: t("name"), file: "unlock-check", never: ["ip"],
       link: shareLink, home: location.origin + D.home[LANG],
       text: () => t("share_text", { v: t("vh_" + verdict()) }),
-      height: (x, k) => k.top + 170 + Math.ceil(cardRows().length / 2) * RH + 70,
+      height: (x, k) => k.top + 310 + Math.ceil(restRows().length / COLS) * RH + 50,
       draw: drawCard,
       foot: () => [t("done", { n: cardRows().length })],
       ts: S.shared ? S.shared.ts : Date.now(),

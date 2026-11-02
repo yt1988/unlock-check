@@ -7,6 +7,12 @@
 .fo-d .bar { display: inline-block; height: 10px; border-radius: 5px; background: var(--soft); vertical-align: middle; animation: blink 1.4s ease-in-out infinite; }
 
 /* four totals: available, not available, reachable, no connection. Fixed-width numbers, so nothing moves */
+/* the result in one line, the share button beside it (disabled until there is a result) */
+.vline { display: flex; align-items: center; gap: 12px; min-height: 36px; }
+.vh { flex: 1; min-width: 0; font-size: 16px; font-weight: 650; line-height: 1.35; }
+.vline.wait .vh { color: var(--muted); font-weight: 500; }
+.btn.out { border-color: var(--ink); color: var(--ink); }
+.btn.out:disabled { border-color: var(--line); color: inherit; }
 .sum { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
 .tot { border: 1px solid var(--line); border-radius: 11px; padding: 10px 14px; display: flex; align-items: baseline; gap: 8px; min-width: 0; }
 .tot b { font: 700 26px/1.1 var(--f-num); font-variant-numeric: tabular-nums; min-width: 2ch; }
@@ -83,7 +89,7 @@
 /* a note still waiting: what it waits for, in the color of something not done yet */
 .nt.wait { color: var(--muted); } .nt.wait i { background: transparent; box-shadow: inset 0 0 0 1.5px var(--line); animation: blink 1.2s ease-in-out infinite; }
 
-/* a shared result: one line above the headline. The pre-paint script sets data-shared for a #r= link */
+/* a result link that can't be read: one line above the headline (someone's readable result gets the shared banner) */
 .shared { display: none; align-items: center; gap: 6px; font-size: 12.5px; color: var(--ink); font-weight: 500; margin-bottom: 6px; }
 .shared svg { width: 14px; height: 14px; flex: none; }
 :root[data-shared] .shared { display: flex; }
@@ -139,7 +145,7 @@ body.dlg-open { overflow: hidden; }
    the totals, the progress and the list, nothing else */
 [data-ms-embed] { scrollbar-gutter: auto; }
 [data-ms-embed] .top, [data-ms-embed] .foot, [data-ms-embed] .hero-h, [data-ms-embed] .focus, [data-ms-embed] .notes,
-[data-ms-embed] .acts, [data-ms-embed] .scrim { display: none !important; }
+[data-ms-embed] .acts, [data-ms-embed] .vline, [data-ms-embed] .scrim { display: none !important; }
 [data-ms-embed] .app { padding-block: 0; gap: 0; }
 [data-ms-embed] main { gap: 8px; }
 [data-ms-embed] .hero { padding-top: 12px; gap: 10px; }

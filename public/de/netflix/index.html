@@ -2,7 +2,7 @@
 <html lang="de" data-paths="{&quot;en&quot;:&quot;/netflix/&quot;,&quot;zh-CN&quot;:&quot;/zh-cn/netflix/&quot;,&quot;zh-TW&quot;:&quot;/zh-tw/netflix/&quot;,&quot;ja&quot;:&quot;/ja/netflix/&quot;,&quot;ko&quot;:&quot;/ko/netflix/&quot;,&quot;es&quot;:&quot;/es/netflix/&quot;,&quot;fr&quot;:&quot;/fr/netflix/&quot;,&quot;de&quot;:&quot;/de/netflix/&quot;,&quot;pt&quot;:&quot;/pt/netflix/&quot;,&quot;ru&quot;:&quot;/ru/netflix/&quot;}">
 <head>
 <meta charset="utf-8">
-<script>(function(){var d=document.documentElement,th=null,s=null;try{th=localStorage.getItem("unlock:theme");s=localStorage.getItem("unlock:lang")}catch(e){}if(th==="light"||th==="dark")d.setAttribute("data-theme",th);if(/^#r=/.test(location.hash)||/[/]r[/][a-z]+[/]$/.test(location.pathname))d.setAttribute("data-shared","");if(!d.hasAttribute("data-root"))return;var P=JSON.parse(d.getAttribute("data-paths")||"{}"),l=null;try{var q=new URLSearchParams(location.search).get("lang");if(P[q])l=q}catch(e){}if(!l&&P[s])l=s;for(var ls=navigator.languages||[navigator.language||"en"],i=0;!l&&!s&&i<ls.length;i++){var x=String(ls[i]).toLowerCase(),b=x.split("-")[0];l=b==="zh"?(/tw|hk|mo|hant/.test(x)?"zh-TW":"zh-CN"):P[b]?b:null}if(l&&l!==d.lang)location.replace(P[l]+location.hash)})();</script>
+<script>(function(){var d=document.documentElement,th=null,s=null;try{th=localStorage.getItem("unlock:theme");s=localStorage.getItem("unlock:lang")}catch(e){}if(th==="light"||th==="dark")d.setAttribute("data-theme",th);if(!d.hasAttribute("data-root"))return;var P=JSON.parse(d.getAttribute("data-paths")||"{}"),l=null;try{var q=new URLSearchParams(location.search).get("lang");if(P[q])l=q}catch(e){}if(!l&&P[s])l=s;for(var ls=navigator.languages||[navigator.language||"en"],i=0;!l&&!s&&i<ls.length;i++){var x=String(ls[i]).toLowerCase(),b=x.split("-")[0];l=b==="zh"?(/tw|hk|mo|hant/.test(x)?"zh-TW":"zh-CN"):P[b]?b:null}if(l&&l!==d.lang)location.replace(P[l]+location.hash)})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Netflix Unlock-Test: funktioniert Netflix mit meiner IP, und in welcher Region?</title>
 <meta name="description" content="Kostenloser Test: Funktioniert Netflix mit deiner aktuellen IP, und in welchem Land verortet es dich? Im Browser, über die echte Route deines Proxys; nichts wird hochgeladen.">
@@ -37,7 +37,7 @@
 <meta name="twitter:image" content="https://unlock.1ms.dog/og/de/netflix.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Funktioniert Netflix mit deiner IP?","url":"https://unlock.1ms.dog/de/netflix/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","description":"Kostenloser Test: Funktioniert Netflix mit deiner aktuellen IP, und in welchem Land verortet es dich? Im Browser, über die echte Route deines Proxys; nichts wird hochgeladen.","inLanguage":"de","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"FAQPage","inLanguage":"de","mainEntity":[{"@type":"Question","name":"Wo kann man Netflix nutzen?","acceptedAnswer":{"@type":"Answer","text":"Fast überall, außer: China, Nordkorea, Russland, Syrien. Quelle"}},{"@type":"Question","name":"Wie erkennt diese Seite, ob Netflix funktioniert?","acceptedAnswer":{"@type":"Answer","text":"Netflix hat für jedes Land eine eigene Adresse (/jp/, /gb/ usw.). Die eines anderen Landes leitet dich weiter; nur die deiner Region öffnet direkt. Die Seite probiert sie mit dem Weiterleitungstest durch, zuerst die Länder, in denen dich die anderen Dienste verorten, und findet deine Netflix-Region meist in ein bis zwei Versuchen."}},{"@type":"Question","name":"Bedeutet eine Netflix-Region den ganzen Katalog?","acceptedAnswer":{"@type":"Answer","text":"Nicht immer. Netflix beschränkt viele Proxy- und Rechenzentrums-IPs auf seine eigenen Serien. Um das zu erkennen, müsste man den Text einer Titelseite lesen, und Browser lassen eine Seite den Inhalt einer anderen Website nicht lesen – hier lässt sich nur die Region prüfen."}},{"@type":"Question","name":"Netflix ist gesperrt, aber mein Proxy steht in einem unterstützten Land?","acceptedAnswer":{"@type":"Answer","text":"Jeder Dienst verortet IPs mit einer eigenen Datenbank, und die stimmen nicht immer überein: derselbe Proxy kann für den einen in Japan und für den anderen in Hongkong sein. Manche Dienste weisen auch Rechenzentrums-IPs und bekannte VPNs ab. Das gezeigte Land ist das, das Netflix selbst sieht."}},{"@type":"Question","name":"Warum im Browser prüfen?","acceptedAnswer":{"@type":"Answer","text":"Proxy-Apps (Clash, Surge, Shadowrocket und ähnliche) schicken jede Website über eine andere Route. Ein Skript auf einem Server testet nur die IP dieses Servers. Diese Seite besucht jeden Dienst aus deinem Browser, über die Route, die du sonst auch nutzt."}},{"@type":"Question","name":"Was bedeuten Offizielle API, Sein Standort, Weiterleitungstest und Schätzung?","acceptedAnswer":{"@type":"Answer","text":"Wie verlässlich ein Ergebnis ist, das verlässlichste zuerst. Offizielle API: die Regions-API des Dienstes sagt, ob er funktioniert. Sein Standort: die Server des Dienstes sagen, in welchem Land sie dich verorten, verglichen mit den veröffentlichten Ländern. Weiterleitungstest: ob der Dienst dich auf seine „nicht verfügbar“-Seite geschickt hat. Schätzung: der Dienst lässt nichts lesen; bekannt ist nur, dass er öffnet, und das Land kommt von den anderen Diensten."}},{"@type":"Question","name":"Warum verorten mich die Dienste in verschiedenen Ländern?","acceptedAnswer":{"@type":"Answer","text":"Deine Proxy-Regeln schicken sie vielleicht über verschiedene Server, oder die Dienste nutzen verschiedene IP-Datenbanken. Dann zeigt die Seite, welche Dienste welches Land sehen."}},{"@type":"Question","name":"Warum zählt die Zeitzone?","acceptedAnswer":{"@type":"Answer","text":"KI-Dienste vergleichen die Zeitzone des Browsers mit dem Land deiner IP. Eine deutsche Zeitzone mit einer US-IP sieht nach Proxy aus und kann strengere Prüfungen auslösen."}},{"@type":"Question","name":"Werden meine Daten hochgeladen?","acceptedAnswer":{"@type":"Answer","text":"Nein. Dein Browser besucht jeden Dienst direkt; diese Seite liefert nur die Seite aus und sieht deine Ergebnisse nie. Nutze „IPs verbergen“ vor einem Screenshot."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Streaming-/KI-Unlock-Check","item":"https://unlock.1ms.dog/de/"},{"@type":"ListItem","position":2,"name":"Streaming","item":"https://unlock.1ms.dog/de/streaming/"},{"@type":"ListItem","position":3,"name":"Netflix","item":"https://unlock.1ms.dog/de/netflix/"}]}]}</script>
 <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/app.921266495b.css">
+<link rel="stylesheet" href="/assets/app.0909e7aef9.css">
 </head>
 <body>
 <div class="app">
@@ -71,6 +71,10 @@
         <p class="intro">Dein Browser prüft Netflix über die Route, die du sonst auch nutzt, und die anderen Dienste gleich mit.</p>
       </div>
       <div class="focus wait" id="focus" data-s="netflix"><div class="fo-h"><i class="st"></i><b class="fo-t">Netflix</b></div><p class="fo-d"><span class="bar"></span></p></div>
+      <div class="vline wait" id="vline">
+        <p class="vh" id="vh" aria-live="polite"></p>
+        <button class="btn out" id="share" type="button" disabled><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 10V2M5 4.5 8 1.5l3 3M3.5 8v5.5h9V8"/></svg><span data-i="share">Teilen</span></button>
+      </div>
       <div class="sum" id="sum">
         <div class="tot t-ok"><b>–</b><span data-i="v_ok">Geht</span></div>
         <div class="tot t-no"><b>–</b><span data-i="v_no">Gesperrt</span></div>
@@ -83,7 +87,6 @@
         <span class="prog-t" id="progTxt"></span>
         <div class="acts">
           <button class="btn" id="eye" type="button" data-i="hide">IPs verbergen</button>
-          <button class="btn" id="share" type="button" disabled><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 10V2M5 4.5 8 1.5l3 3M3.5 8v5.5h9V8"/></svg><span data-i="share">Teilen</span></button>
           <button class="btn pri" id="run" type="button" disabled><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13.5 8a5.5 5.5 0 1 1-1.6-3.9M13.5 2v3h-3"/></svg><span data-i="rerun">Erneut prüfen</span></button>
         </div>
       </div>
@@ -118,7 +121,7 @@
   </div>
 </div>
 <script type="application/json" id="data">{"lang":"de","paths":{"en":"/netflix/","zh-CN":"/zh-cn/netflix/","zh-TW":"/zh-tw/netflix/","ja":"/ja/netflix/","ko":"/ko/netflix/","es":"/es/netflix/","fr":"/fr/netflix/","de":"/de/netflix/","pt":"/pt/netflix/","ru":"/ru/netflix/"},"home":{"en":"/","zh-CN":"/zh-cn/","zh-TW":"/zh-tw/","ja":"/ja/","ko":"/ko/","es":"/es/","fr":"/fr/","de":"/de/","pt":"/pt/","ru":"/ru/"},"egressPath":"/de/"}</script>
-<script src="/assets/l.de.3cdd301f03.js"></script>
-<script src="/assets/app.0a3eebd254.js" defer></script>
+<script src="/assets/l.de.21a3d18fd5.js"></script>
+<script src="/assets/app.c1d4b86166.js" defer></script>
 </body>
 </html>

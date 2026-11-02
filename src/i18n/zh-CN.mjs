@@ -90,7 +90,6 @@ export default {
 
   share: "分享",
   share_text: "{v} · 来自流媒体/AI 解锁检测",
-  shared_from: "这是别人分享的结果，检测于 {date}",
   test_mine: "测我的",
   share_bad: "无法读取这条结果",     // a result link that can't be read
   // embedded in the connection checkup: the first dozen services all failed to open

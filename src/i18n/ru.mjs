@@ -92,7 +92,6 @@ export default {
 
   share: "Поделиться",
   share_text: "{v} · «Разблокировка стриминга/ИИ»",
-  shared_from: "Чужой результат, проверен {date}",
   test_mine: "Проверить свой",
   share_bad: "Не удаётся прочитать этот результат",     // a result link that can't be read
   // embedded in the connection checkup: the first dozen services all failed to open

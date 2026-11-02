@@ -2,7 +2,7 @@
 <html lang="es" data-paths="{&quot;en&quot;:&quot;/copilot/&quot;,&quot;zh-CN&quot;:&quot;/zh-cn/copilot/&quot;,&quot;zh-TW&quot;:&quot;/zh-tw/copilot/&quot;,&quot;ja&quot;:&quot;/ja/copilot/&quot;,&quot;ko&quot;:&quot;/ko/copilot/&quot;,&quot;es&quot;:&quot;/es/copilot/&quot;,&quot;fr&quot;:&quot;/fr/copilot/&quot;,&quot;de&quot;:&quot;/de/copilot/&quot;,&quot;pt&quot;:&quot;/pt/copilot/&quot;,&quot;ru&quot;:&quot;/ru/copilot/&quot;}">
 <head>
 <meta charset="utf-8">
-<script>(function(){var d=document.documentElement,th=null,s=null;try{th=localStorage.getItem("unlock:theme");s=localStorage.getItem("unlock:lang")}catch(e){}if(th==="light"||th==="dark")d.setAttribute("data-theme",th);if(/^#r=/.test(location.hash)||/[/]r[/][a-z]+[/]$/.test(location.pathname))d.setAttribute("data-shared","");if(!d.hasAttribute("data-root"))return;var P=JSON.parse(d.getAttribute("data-paths")||"{}"),l=null;try{var q=new URLSearchParams(location.search).get("lang");if(P[q])l=q}catch(e){}if(!l&&P[s])l=s;for(var ls=navigator.languages||[navigator.language||"en"],i=0;!l&&!s&&i<ls.length;i++){var x=String(ls[i]).toLowerCase(),b=x.split("-")[0];l=b==="zh"?(/tw|hk|mo|hant/.test(x)?"zh-TW":"zh-CN"):P[b]?b:null}if(l&&l!==d.lang)location.replace(P[l]+location.hash)})();</script>
+<script>(function(){var d=document.documentElement,th=null,s=null;try{th=localStorage.getItem("unlock:theme");s=localStorage.getItem("unlock:lang")}catch(e){}if(th==="light"||th==="dark")d.setAttribute("data-theme",th);if(!d.hasAttribute("data-root"))return;var P=JSON.parse(d.getAttribute("data-paths")||"{}"),l=null;try{var q=new URLSearchParams(location.search).get("lang");if(P[q])l=q}catch(e){}if(!l&&P[s])l=s;for(var ls=navigator.languages||[navigator.language||"en"],i=0;!l&&!s&&i<ls.length;i++){var x=String(ls[i]).toLowerCase(),b=x.split("-")[0];l=b==="zh"?(/tw|hk|mo|hant/.test(x)?"zh-TW":"zh-CN"):P[b]?b:null}if(l&&l!==d.lang)location.replace(P[l]+location.hash)})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Test de desbloqueo de Copilot: ¿funciona Copilot con mi IP y en qué región?</title>
 <meta name="description" content="Comprobación gratuita: ¿funciona Copilot con tu IP actual y en qué país te sitúa? En tu navegador, por la ruta real de tu proxy; no se sube nada.">
@@ -37,7 +37,7 @@
 <meta name="twitter:image" content="https://unlock.1ms.dog/og/es/copilot.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"¿Funciona Copilot con tu IP?","url":"https://unlock.1ms.dog/es/copilot/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","description":"Comprobación gratuita: ¿funciona Copilot con tu IP actual y en qué país te sitúa? En tu navegador, por la ruta real de tu proxy; no se sube nada.","inLanguage":"es","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"FAQPage","inLanguage":"es","mainEntity":[{"@type":"Question","name":"¿Dónde se puede usar Copilot?","acceptedAnswer":{"@type":"Answer","text":"Casi en todas partes, excepto: Bielorrusia, China, Corea del Norte, Cuba, Irán, Rusia, Siria."}},{"@type":"Question","name":"¿Cómo sabe esta página si Copilot funciona?","acceptedAnswer":{"@type":"Answer","text":"Copilot usa Cloudflare, cuyo /cdn-cgi/trace en el propio dominio de Copilot devuelve el país desde el que llega la visita y deja que otras páginas lo lean. Esa es la ubicación que ve el propio Copilot; la página la compara con la lista de países que publica."}},{"@type":"Question","name":"Copilot dice bloqueado, pero mi proxy está en un país admitido.","acceptedAnswer":{"@type":"Answer","text":"Cada servicio ubica las IP con su propia base de datos y no siempre coinciden: el mismo proxy puede estar en Japón para uno y en Hong Kong para otro. Algunos servicios también rechazan IP de centros de datos y VPN conocidas. El país que se muestra es el que ve Copilot."}},{"@type":"Question","name":"¿Por qué comprobar en el navegador?","acceptedAnswer":{"@type":"Answer","text":"Las apps de proxy (Clash, Surge, Shadowrocket y similares) envían cada sitio por una ruta distinta. Un script en un servidor solo comprueba la IP de ese servidor. Esta página visita cada servicio desde tu navegador, por la ruta que usas normalmente."}},{"@type":"Question","name":"¿Qué significan API oficial, Su ubicación, Por redirección y Estimado?","acceptedAnswer":{"@type":"Answer","text":"Lo fiable que es un resultado, de más a menos. API oficial: la API de región del propio servicio dice si funciona. Su ubicación: los servidores del servicio dicen en qué país te sitúan, comparado con los países que publica. Por redirección: si el servicio te envió a su página de «no disponible». Estimado: el servicio no deja leer nada; solo se sabe que abre, y se usa el país en que te sitúan los demás."}},{"@type":"Question","name":"¿Por qué los servicios me sitúan en países distintos?","acceptedAnswer":{"@type":"Answer","text":"Tus reglas de proxy pueden enviarlos por servidores distintos, o los servicios usan bases de datos de IP distintas. Cuando pasa, la página indica qué servicios ven cada país."}},{"@type":"Question","name":"¿Por qué importa la zona horaria?","acceptedAnswer":{"@type":"Answer","text":"Los servicios de IA comparan la zona horaria del navegador con el país de tu IP. Una zona horaria de España con una IP de EE. UU. parece un proxy y puede activar comprobaciones más estrictas."}},{"@type":"Question","name":"¿Se suben mis datos?","acceptedAnswer":{"@type":"Answer","text":"No. Tu navegador visita cada servicio directamente; este sitio solo sirve la página y nunca ve tus resultados. Usa «Ocultar IP» antes de una captura."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Desbloqueo de streaming/IA","item":"https://unlock.1ms.dog/es/"},{"@type":"ListItem","position":2,"name":"IA","item":"https://unlock.1ms.dog/es/ai/"},{"@type":"ListItem","position":3,"name":"Copilot","item":"https://unlock.1ms.dog/es/copilot/"}]}]}</script>
 <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/app.921266495b.css">
+<link rel="stylesheet" href="/assets/app.0909e7aef9.css">
 </head>
 <body>
 <div class="app">
@@ -71,6 +71,10 @@
         <p class="intro">Tu navegador comprueba Copilot por la ruta que usas normalmente, y también los demás servicios.</p>
       </div>
       <div class="focus wait" id="focus" data-s="copilot"><div class="fo-h"><i class="st"></i><b class="fo-t">Copilot</b></div><p class="fo-d"><span class="bar"></span></p></div>
+      <div class="vline wait" id="vline">
+        <p class="vh" id="vh" aria-live="polite"></p>
+        <button class="btn out" id="share" type="button" disabled><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 10V2M5 4.5 8 1.5l3 3M3.5 8v5.5h9V8"/></svg><span data-i="share">Compartir</span></button>
+      </div>
       <div class="sum" id="sum">
         <div class="tot t-ok"><b>–</b><span data-i="v_ok">Funciona</span></div>
         <div class="tot t-no"><b>–</b><span data-i="v_no">Bloqueado</span></div>
@@ -83,7 +87,6 @@
         <span class="prog-t" id="progTxt"></span>
         <div class="acts">
           <button class="btn" id="eye" type="button" data-i="hide">Ocultar IP</button>
-          <button class="btn" id="share" type="button" disabled><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 10V2M5 4.5 8 1.5l3 3M3.5 8v5.5h9V8"/></svg><span data-i="share">Compartir</span></button>
           <button class="btn pri" id="run" type="button" disabled><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13.5 8a5.5 5.5 0 1 1-1.6-3.9M13.5 2v3h-3"/></svg><span data-i="rerun">Comprobar otra vez</span></button>
         </div>
       </div>
@@ -118,7 +121,7 @@
   </div>
 </div>
 <script type="application/json" id="data">{"lang":"es","paths":{"en":"/copilot/","zh-CN":"/zh-cn/copilot/","zh-TW":"/zh-tw/copilot/","ja":"/ja/copilot/","ko":"/ko/copilot/","es":"/es/copilot/","fr":"/fr/copilot/","de":"/de/copilot/","pt":"/pt/copilot/","ru":"/ru/copilot/"},"home":{"en":"/","zh-CN":"/zh-cn/","zh-TW":"/zh-tw/","ja":"/ja/","ko":"/ko/","es":"/es/","fr":"/fr/","de":"/de/","pt":"/pt/","ru":"/ru/"},"egressPath":"/es/"}</script>
-<script src="/assets/l.es.cbbce68164.js"></script>
-<script src="/assets/app.0a3eebd254.js" defer></script>
+<script src="/assets/l.es.ef78ebd31c.js"></script>
+<script src="/assets/app.c1d4b86166.js" defer></script>
 </body>
 </html>

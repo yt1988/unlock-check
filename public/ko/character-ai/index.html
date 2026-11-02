@@ -2,7 +2,7 @@
 <html lang="ko" data-paths="{&quot;en&quot;:&quot;/character-ai/&quot;,&quot;zh-CN&quot;:&quot;/zh-cn/character-ai/&quot;,&quot;zh-TW&quot;:&quot;/zh-tw/character-ai/&quot;,&quot;ja&quot;:&quot;/ja/character-ai/&quot;,&quot;ko&quot;:&quot;/ko/character-ai/&quot;,&quot;es&quot;:&quot;/es/character-ai/&quot;,&quot;fr&quot;:&quot;/fr/character-ai/&quot;,&quot;de&quot;:&quot;/de/character-ai/&quot;,&quot;pt&quot;:&quot;/pt/character-ai/&quot;,&quot;ru&quot;:&quot;/ru/character-ai/&quot;}">
 <head>
 <meta charset="utf-8">
-<script>(function(){var d=document.documentElement,th=null,s=null;try{th=localStorage.getItem("unlock:theme");s=localStorage.getItem("unlock:lang")}catch(e){}if(th==="light"||th==="dark")d.setAttribute("data-theme",th);if(/^#r=/.test(location.hash)||/[/]r[/][a-z]+[/]$/.test(location.pathname))d.setAttribute("data-shared","");if(!d.hasAttribute("data-root"))return;var P=JSON.parse(d.getAttribute("data-paths")||"{}"),l=null;try{var q=new URLSearchParams(location.search).get("lang");if(P[q])l=q}catch(e){}if(!l&&P[s])l=s;for(var ls=navigator.languages||[navigator.language||"en"],i=0;!l&&!s&&i<ls.length;i++){var x=String(ls[i]).toLowerCase(),b=x.split("-")[0];l=b==="zh"?(/tw|hk|mo|hant/.test(x)?"zh-TW":"zh-CN"):P[b]?b:null}if(l&&l!==d.lang)location.replace(P[l]+location.hash)})();</script>
+<script>(function(){var d=document.documentElement,th=null,s=null;try{th=localStorage.getItem("unlock:theme");s=localStorage.getItem("unlock:lang")}catch(e){}if(th==="light"||th==="dark")d.setAttribute("data-theme",th);if(!d.hasAttribute("data-root"))return;var P=JSON.parse(d.getAttribute("data-paths")||"{}"),l=null;try{var q=new URLSearchParams(location.search).get("lang");if(P[q])l=q}catch(e){}if(!l&&P[s])l=s;for(var ls=navigator.languages||[navigator.language||"en"],i=0;!l&&!s&&i<ls.length;i++){var x=String(ls[i]).toLowerCase(),b=x.split("-")[0];l=b==="zh"?(/tw|hk|mo|hant/.test(x)?"zh-TW":"zh-CN"):P[b]?b:null}if(l&&l!==d.lang)location.replace(P[l]+location.hash)})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Character.AI 확인: 내 IP로 Character.AI 사용 가능? 어느 지역?</title>
 <meta name="description" content="지금 IP로 Character.AI 서비스를 쓸 수 있는지, 어느 나라로 판단하는지 무료로 확인합니다. 브라우저에서 프록시의 실제 경로로 확인하며 데이터는 보내지 않습니다.">
@@ -37,7 +37,7 @@
 <meta name="twitter:image" content="https://unlock.1ms.dog/og/ko/character-ai.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"내 IP로 Character.AI 사용 가능?","url":"https://unlock.1ms.dog/ko/character-ai/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","description":"지금 IP로 Character.AI 서비스를 쓸 수 있는지, 어느 나라로 판단하는지 무료로 확인합니다. 브라우저에서 프록시의 실제 경로로 확인하며 데이터는 보내지 않습니다.","inLanguage":"ko","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"FAQPage","inLanguage":"ko","mainEntity":[{"@type":"Question","name":"Character.AI 서비스는 어느 나라에서 쓸 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"거의 모든 곳에서 쓸 수 있습니다. 예외: 북한, 시리아, 이란, 쿠바."}},{"@type":"Question","name":"이 페이지는 Character.AI 서비스 사용 가능 여부를 어떻게 판단하나요?","acceptedAnswer":{"@type":"Answer","text":"Character.AI 서비스는 Cloudflare를 쓰며, 자체 도메인의 /cdn-cgi/trace가 접속한 나라를 알려 주고 다른 페이지도 읽을 수 있습니다. 이것이 서비스 자신이 보는 내 위치이며, 공개된 지원 국가와 비교합니다."}},{"@type":"Question","name":"Character.AI: 사용 불가로 나오는데 프록시는 지원 국가에 있다면?","acceptedAnswer":{"@type":"Answer","text":"서비스마다 자체 IP 데이터베이스로 위치를 판단하므로 결과가 다를 수 있습니다. 같은 프록시를 일본으로 보는 곳도, 홍콩으로 보는 곳도 있습니다. 데이터센터 IP나 알려진 VPN을 거부하는 서비스도 있습니다. 표시되는 나라는 Character.AI 서비스 자신이 판단한 나라입니다."}},{"@type":"Question","name":"왜 브라우저에서 확인하나요?","acceptedAnswer":{"@type":"Answer","text":"프록시 앱(Clash, Surge, Shadowrocket 등)은 규칙에 따라 사이트마다 다른 경로를 씁니다. 서버에서 실행되는 확인 스크립트는 그 서버의 IP만 확인합니다. 이 페이지는 브라우저에서 각 서비스에 직접 접속하므로 평소와 같은 경로로 확인합니다."}},{"@type":"Question","name":"'공식 API', '공식 위치', '리디렉션 확인', '추정'의 차이는?","acceptedAnswer":{"@type":"Answer","text":"결과가 얼마나 확실한지이며, 확실한 순서입니다. 공식 API: 서비스 자체 지역 API가 사용 가능 여부를 답했습니다. 공식 위치: 서비스 서버가 판단한 나라를 공개된 지원 국가와 비교했습니다. 리디렉션 확인: 서비스가 '이용할 수 없음' 페이지로 보냈는지 봤습니다. 추정: 서비스가 아무것도 읽지 못하게 해서 열리는지만 확인하고, 나라는 다른 서비스의 판단을 썼습니다."}},{"@type":"Question","name":"서비스마다 판단한 나라가 다른 이유는?","acceptedAnswer":{"@type":"Answer","text":"프록시 규칙 때문에 서로 다른 서버를 거치거나, 서비스마다 쓰는 IP 데이터베이스가 다르기 때문입니다. 나라가 다르면 어느 서비스가 어느 나라로 판단했는지 보여 줍니다."}},{"@type":"Question","name":"시간대는 왜 중요한가요?","acceptedAnswer":{"@type":"Answer","text":"AI 서비스는 브라우저 시간대와 IP의 나라를 비교합니다. 시간대는 한국인데 IP가 미국이면 프록시를 쓰는 것처럼 보여 더 엄격한 확인을 받을 수 있습니다."}},{"@type":"Question","name":"데이터가 업로드되나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 브라우저가 각 서비스에 직접 접속하고, 이 사이트는 페이지만 제공하며 결과를 볼 수 없습니다. 스크린샷 전에 'IP 숨기기'를 누를 수 있습니다."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"스트리밍/AI 언락 체크","item":"https://unlock.1ms.dog/ko/"},{"@type":"ListItem","position":2,"name":"AI","item":"https://unlock.1ms.dog/ko/ai/"},{"@type":"ListItem","position":3,"name":"Character.AI","item":"https://unlock.1ms.dog/ko/character-ai/"}]}]}</script>
 <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/app.921266495b.css">
+<link rel="stylesheet" href="/assets/app.0909e7aef9.css">
 </head>
 <body>
 <div class="app">
@@ -71,6 +71,10 @@
         <p class="intro">평소와 같은 경로로 브라우저에서 Character.AI 서비스를 확인하고, 다른 서비스도 함께 확인합니다.</p>
       </div>
       <div class="focus wait" id="focus" data-s="characterai"><div class="fo-h"><i class="st"></i><b class="fo-t">Character.AI</b></div><p class="fo-d"><span class="bar"></span></p></div>
+      <div class="vline wait" id="vline">
+        <p class="vh" id="vh" aria-live="polite"></p>
+        <button class="btn out" id="share" type="button" disabled><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 10V2M5 4.5 8 1.5l3 3M3.5 8v5.5h9V8"/></svg><span data-i="share">공유</span></button>
+      </div>
       <div class="sum" id="sum">
         <div class="tot t-ok"><b>–</b><span data-i="v_ok">사용 가능</span></div>
         <div class="tot t-no"><b>–</b><span data-i="v_no">사용 불가</span></div>
@@ -83,7 +87,6 @@
         <span class="prog-t" id="progTxt"></span>
         <div class="acts">
           <button class="btn" id="eye" type="button" data-i="hide">IP 숨기기</button>
-          <button class="btn" id="share" type="button" disabled><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 10V2M5 4.5 8 1.5l3 3M3.5 8v5.5h9V8"/></svg><span data-i="share">공유</span></button>
           <button class="btn pri" id="run" type="button" disabled><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13.5 8a5.5 5.5 0 1 1-1.6-3.9M13.5 2v3h-3"/></svg><span data-i="rerun">다시 확인</span></button>
         </div>
       </div>
@@ -118,7 +121,7 @@
   </div>
 </div>
 <script type="application/json" id="data">{"lang":"ko","paths":{"en":"/character-ai/","zh-CN":"/zh-cn/character-ai/","zh-TW":"/zh-tw/character-ai/","ja":"/ja/character-ai/","ko":"/ko/character-ai/","es":"/es/character-ai/","fr":"/fr/character-ai/","de":"/de/character-ai/","pt":"/pt/character-ai/","ru":"/ru/character-ai/"},"home":{"en":"/","zh-CN":"/zh-cn/","zh-TW":"/zh-tw/","ja":"/ja/","ko":"/ko/","es":"/es/","fr":"/fr/","de":"/de/","pt":"/pt/","ru":"/ru/"},"egressPath":"/ko/"}</script>
-<script src="/assets/l.ko.063fcc86da.js"></script>
-<script src="/assets/app.0a3eebd254.js" defer></script>
+<script src="/assets/l.ko.97fd583d03.js"></script>
+<script src="/assets/app.c1d4b86166.js" defer></script>
 </body>
 </html>

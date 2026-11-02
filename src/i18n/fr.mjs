@@ -90,7 +90,6 @@ export default {
 
   share: "Partager",
   share_text: "{v} · via Déblocage streaming/IA",
-  shared_from: "Résultat partagé par quelqu'un, vérifié le {date}",
   test_mine: "Vérifier le mien",
   share_bad: "Impossible de lire ce résultat",     // a result link that can't be read
   // embedded in the connection checkup: the first dozen services all failed to open

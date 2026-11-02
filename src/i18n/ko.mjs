@@ -92,7 +92,6 @@ export default {
 
   share: "공유",
   share_text: "{v} · 스트리밍/AI 언락 체크",
-  shared_from: "다른 사람이 공유한 결과, {date} 확인",
   test_mine: "내 것 확인",
   share_bad: "이 결과를 읽을 수 없습니다",     // a result link that can't be read
   // embedded in the connection checkup: the first dozen services all failed to open

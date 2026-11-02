@@ -90,7 +90,6 @@ export default {
 
   share: "共有",
   share_text: "{v} · 動画配信/AI 解除チェックより",
-  shared_from: "共有された結果です（{date} に確認）",
   test_mine: "自分も確認",
   share_bad: "この結果は読み取れません",     // a result link that can't be read
   // embedded in the connection checkup: the first dozen services all failed to open

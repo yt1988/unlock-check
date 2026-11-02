@@ -93,7 +93,6 @@ export default {
 
   share: "Share",
   share_text: "{v} · from Streaming & AI Unlock Check",
-  shared_from: "Someone's shared result, checked {date}",
   test_mine: "Check mine",
   share_bad: "Can't read this result",     // a result link that can't be read
   // embedded in the connection checkup: the first dozen services all failed to open

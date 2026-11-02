@@ -2,7 +2,7 @@
 <html lang="zh-CN" data-paths="{&quot;en&quot;:&quot;/character-ai/&quot;,&quot;zh-CN&quot;:&quot;/zh-cn/character-ai/&quot;,&quot;zh-TW&quot;:&quot;/zh-tw/character-ai/&quot;,&quot;ja&quot;:&quot;/ja/character-ai/&quot;,&quot;ko&quot;:&quot;/ko/character-ai/&quot;,&quot;es&quot;:&quot;/es/character-ai/&quot;,&quot;fr&quot;:&quot;/fr/character-ai/&quot;,&quot;de&quot;:&quot;/de/character-ai/&quot;,&quot;pt&quot;:&quot;/pt/character-ai/&quot;,&quot;ru&quot;:&quot;/ru/character-ai/&quot;}">
 <head>
 <meta charset="utf-8">
-<script>(function(){var d=document.documentElement,th=null,s=null;try{th=localStorage.getItem("unlock:theme");s=localStorage.getItem("unlock:lang")}catch(e){}if(th==="light"||th==="dark")d.setAttribute("data-theme",th);if(/^#r=/.test(location.hash)||/[/]r[/][a-z]+[/]$/.test(location.pathname))d.setAttribute("data-shared","");if(!d.hasAttribute("data-root"))return;var P=JSON.parse(d.getAttribute("data-paths")||"{}"),l=null;try{var q=new URLSearchParams(location.search).get("lang");if(P[q])l=q}catch(e){}if(!l&&P[s])l=s;for(var ls=navigator.languages||[navigator.language||"en"],i=0;!l&&!s&&i<ls.length;i++){var x=String(ls[i]).toLowerCase(),b=x.split("-")[0];l=b==="zh"?(/tw|hk|mo|hant/.test(x)?"zh-TW":"zh-CN"):P[b]?b:null}if(l&&l!==d.lang)location.replace(P[l]+location.hash)})();</script>
+<script>(function(){var d=document.documentElement,th=null,s=null;try{th=localStorage.getItem("unlock:theme");s=localStorage.getItem("unlock:lang")}catch(e){}if(th==="light"||th==="dark")d.setAttribute("data-theme",th);if(!d.hasAttribute("data-root"))return;var P=JSON.parse(d.getAttribute("data-paths")||"{}"),l=null;try{var q=new URLSearchParams(location.search).get("lang");if(P[q])l=q}catch(e){}if(!l&&P[s])l=s;for(var ls=navigator.languages||[navigator.language||"en"],i=0;!l&&!s&&i<ls.length;i++){var x=String(ls[i]).toLowerCase(),b=x.split("-")[0];l=b==="zh"?(/tw|hk|mo|hant/.test(x)?"zh-TW":"zh-CN"):P[b]?b:null}if(l&&l!==d.lang)location.replace(P[l]+location.hash)})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Character.AI 解锁检测：你的 IP 能不能用 Character.AI、显示哪个地区</title>
 <meta name="description" content="免费检测 Character.AI 在你当前的 IP 上能不能用、把你定位在哪个国家。在浏览器里检测，走你代理的真实线路，不上传任何数据。">
@@ -40,7 +40,7 @@
 <meta name="twitter:image" content="https://unlock.1ms.dog/og/zh-cn/character-ai.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"你的 IP 能用 Character.AI 吗？","url":"https://unlock.1ms.dog/zh-cn/character-ai/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","description":"免费检测 Character.AI 在你当前的 IP 上能不能用、把你定位在哪个国家。在浏览器里检测，走你代理的真实线路，不上传任何数据。","inLanguage":"zh-CN","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"FAQPage","inLanguage":"zh-CN","mainEntity":[{"@type":"Question","name":"Character.AI 在哪些国家和地区能用？","acceptedAnswer":{"@type":"Answer","text":"大部分地方都能用，以下地方除外：朝鲜、古巴、叙利亚、伊朗。"}},{"@type":"Question","name":"这个页面怎么判断 Character.AI 能不能用？","acceptedAnswer":{"@type":"Answer","text":"Character.AI 使用 Cloudflare，它域名下的 /cdn-cgi/trace 会返回这次访问来自哪个国家，并且允许其他网页读取。这就是 Character.AI 自己看到的位置，再拿它对照 Character.AI 公布的可用地区。"}},{"@type":"Question","name":"Character.AI 显示不可用，但我的代理明明在支持的地区？","acceptedAnswer":{"@type":"Answer","text":"各服务用自己的 IP 数据库定位，结果不一定一样：同一个代理，有的服务认为在日本，有的认为在香港。另外，有些服务会拒绝机房 IP 和已知的 VPN。页面显示的就是 Character.AI 自己看到的位置。"}},{"@type":"Question","name":"为什么要在浏览器里测？","acceptedAnswer":{"@type":"Answer","text":"代理软件（Clash、Surge、Shadowrocket 等）会按规则给不同网站走不同线路。在服务器上运行的检测脚本只能测那台服务器的 IP。这个页面在你的浏览器里直接访问每个服务，走的就是你平时打开它们的线路。"}},{"@type":"Question","name":"“官方接口”“官方定位”“跳转判断”“推测”有什么区别？","acceptedAnswer":{"@type":"Answer","text":"代表结论有多可靠，从高到低。官方接口：服务自己的地区接口直接说能不能用。官方定位：服务的服务器告诉我们你被定位在哪个国家，再对照它公布的可用地区。跳转判断：看服务有没有把你转到“本地区不可用”页面。推测：服务不让读取任何结果，只确认能打开，国家按其他服务的定位来算。"}},{"@type":"Question","name":"为什么不同服务把我定位在不同国家？","acceptedAnswer":{"@type":"Answer","text":"可能是你的代理规则让它们走了不同节点，也可能是各服务用的 IP 数据库不一样。出现这种情况时，页面会列出每个国家对应哪些服务。"}},{"@type":"Question","name":"为什么要看时区？","acceptedAnswer":{"@type":"Answer","text":"AI 服务会对比浏览器时区和 IP 所在国家。比如时区是中国、IP 却在美国，就很像在用代理，可能触发更严格的验证。"}},{"@type":"Question","name":"会上传我的数据吗？","acceptedAnswer":{"@type":"Answer","text":"不会。浏览器直接访问各个服务，本站只提供网页文件，看不到你的结果。截图前可以点“隐藏 IP”。"}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"流媒体/AI 解锁检测","item":"https://unlock.1ms.dog/zh-cn/"},{"@type":"ListItem","position":2,"name":"AI 服务","item":"https://unlock.1ms.dog/zh-cn/ai/"},{"@type":"ListItem","position":3,"name":"Character.AI","item":"https://unlock.1ms.dog/zh-cn/character-ai/"}]}]}</script>
 <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/app.921266495b.css">
+<link rel="stylesheet" href="/assets/app.0909e7aef9.css">
 </head>
 <body>
 <div class="app">
@@ -74,6 +74,10 @@
         <p class="intro">在你的浏览器里检测 Character.AI，走你平时打开它的线路，同时也检测其他服务。</p>
       </div>
       <div class="focus wait" id="focus" data-s="characterai"><div class="fo-h"><i class="st"></i><b class="fo-t">Character.AI</b></div><p class="fo-d"><span class="bar"></span></p></div>
+      <div class="vline wait" id="vline">
+        <p class="vh" id="vh" aria-live="polite"></p>
+        <button class="btn out" id="share" type="button" disabled><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 10V2M5 4.5 8 1.5l3 3M3.5 8v5.5h9V8"/></svg><span data-i="share">分享</span></button>
+      </div>
       <div class="sum" id="sum">
         <div class="tot t-ok"><b>–</b><span data-i="v_ok">可用</span></div>
         <div class="tot t-no"><b>–</b><span data-i="v_no">不可用</span></div>
@@ -86,7 +90,6 @@
         <span class="prog-t" id="progTxt"></span>
         <div class="acts">
           <button class="btn" id="eye" type="button" data-i="hide">隐藏 IP</button>
-          <button class="btn" id="share" type="button" disabled><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 10V2M5 4.5 8 1.5l3 3M3.5 8v5.5h9V8"/></svg><span data-i="share">分享</span></button>
           <button class="btn pri" id="run" type="button" disabled><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13.5 8a5.5 5.5 0 1 1-1.6-3.9M13.5 2v3h-3"/></svg><span data-i="rerun">重新检测</span></button>
         </div>
       </div>
@@ -121,7 +124,7 @@
   </div>
 </div>
 <script type="application/json" id="data">{"lang":"zh-CN","paths":{"en":"/character-ai/","zh-CN":"/zh-cn/character-ai/","zh-TW":"/zh-tw/character-ai/","ja":"/ja/character-ai/","ko":"/ko/character-ai/","es":"/es/character-ai/","fr":"/fr/character-ai/","de":"/de/character-ai/","pt":"/pt/character-ai/","ru":"/ru/character-ai/"},"home":{"en":"/","zh-CN":"/zh-cn/","zh-TW":"/zh-tw/","ja":"/ja/","ko":"/ko/","es":"/es/","fr":"/fr/","de":"/de/","pt":"/pt/","ru":"/ru/"},"egressPath":"/zh-cn/"}</script>
-<script src="/assets/l.zh-cn.3e02595bcd.js"></script>
-<script src="/assets/app.0a3eebd254.js" defer></script>
+<script src="/assets/l.zh-cn.4b715edc5e.js"></script>
+<script src="/assets/app.c1d4b86166.js" defer></script>
 </body>
 </html>

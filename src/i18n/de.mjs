@@ -90,7 +90,6 @@ export default {
 
   share: "Teilen",
   share_text: "{v} · vom Streaming-/KI-Unlock-Check",
-  shared_from: "Von jemandem geteiltes Ergebnis, geprüft am {date}",
   test_mine: "Meins prüfen",
   share_bad: "Dieses Ergebnis lässt sich nicht lesen",     // a result link that can't be read
   // embedded in the connection checkup: the first dozen services all failed to open

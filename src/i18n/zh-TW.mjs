@@ -90,7 +90,6 @@ export default {
 
   share: "分享",
   share_text: "{v} · 來自串流/AI 解鎖檢測",
-  shared_from: "這是別人分享的結果，檢測於 {date}",
   test_mine: "測我的",
   share_bad: "無法讀取這條結果",     // a result link that can't be read
   // embedded in the connection checkup: the first dozen services all failed to open
