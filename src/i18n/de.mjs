@@ -23,7 +23,7 @@ export default {
     kw: "tiktok region, youtube gesperrt, x twitter lädt nicht, instagram gesperrt, telegram verbindet nicht, discord gesperrt",
     h1: "Öffnen sich TikTok, YouTube und X in deinem Netz?", intro: "Manche Länder sperren soziale Netzwerke. Jedes wird hier über deine übliche Route getestet." },
   cat_local: { nav: "Regional-TV", title: "Regionales Streaming: KKTV, TVB Anywhere+, SBS, FOD, DMM TV und ZDF",
-    desc: "Prüfe Streamingdienste, die es nur in einem Land gibt: KKTV (Taiwan), TVB Anywhere+, SBS On Demand (Australien), FOD und DMM TV (Japan), ZDF (Deutschland).",
+    desc: "Prüfe Streamingdienste, die es nur in einem Land gibt: KKTV (Taiwan, China), TVB Anywhere+, SBS On Demand (Australien), FOD und DMM TV (Japan), ZDF (Deutschland).",
     kw: "kktv region, tvb anywhere region, sbs on demand außerhalb australiens, fod japan ip, dmm tv ausland, zdf ausland",
     h1: "Halten dich regionale Streamingdienste für jemanden aus ihrem Land?", intro: "Diese Dienste gibt es nur in einem Land oder einer Region, und sie prüfen bei jedem Besuch, wo du bist. Jeder wird hier über deine übliche Route getestet." },
   svc_title: "{name}-Unlock-Test: Geht {name} mit meiner IP, und in welcher Region?",

@@ -21,7 +21,7 @@ export default {
     kw: "tiktok région, youtube bloqué, x twitter ne charge pas, instagram bloqué, telegram ne se connecte pas, discord bloqué",
     h1: "TikTok, YouTube et X s'ouvrent-ils sur votre réseau ?", intro: "Certains pays bloquent les réseaux sociaux. Chacun est testé ici par le chemin que vous utilisez d'habitude." },
   cat_local: { nav: "TV régionale", title: "Streaming régional : KKTV, TVB Anywhere+, SBS, FOD, DMM TV et ZDF",
-    desc: "Vérifiez les services de streaming proposés dans un seul pays : KKTV (Taïwan), TVB Anywhere+, SBS On Demand (Australie), FOD et DMM TV (Japon), ZDF (Allemagne).",
+    desc: "Vérifiez les services de streaming proposés dans un seul pays : KKTV (Taïwan, Chine), TVB Anywhere+, SBS On Demand (Australie), FOD et DMM TV (Japon), ZDF (Allemagne).",
     kw: "kktv région, tvb anywhere région, sbs on demand hors australie, fod japon ip, dmm tv étranger, zdf allemagne ip",
     h1: "Les services de streaming régionaux vous voient-ils dans leur pays ?", intro: "Ces services ne sont proposés que dans un pays ou une région, et vérifient où vous êtes à chaque visite. Chacun est testé ici par le chemin que vous utilisez d'habitude." },
   svc_title: "Test de déblocage {name} : {name} marche-t-il avec mon IP, et dans quelle région ?",

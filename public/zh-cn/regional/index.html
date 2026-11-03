@@ -5,7 +5,7 @@
 <script>(function(){var d=document.documentElement,th=null,s=null;try{th=localStorage.getItem("unlock:theme");s=localStorage.getItem("unlock:lang")}catch(e){}if(th==="light"||th==="dark")d.setAttribute("data-theme",th);if(!d.hasAttribute("data-root"))return;var P=JSON.parse(d.getAttribute("data-paths")||"{}"),l=null;try{var q=new URLSearchParams(location.search).get("lang");if(P[q])l=q}catch(e){}if(!l&&P[s])l=s;for(var ls=navigator.languages||[navigator.language||"en"],i=0;!l&&!s&&i<ls.length;i++){var x=String(ls[i]).toLowerCase(),b=x.split("-")[0];l=b==="zh"?(/tw|hk|mo|hant/.test(x)?"zh-TW":"zh-CN"):P[b]?b:null}if(l&&l!==d.lang)location.replace(P[l]+location.hash)})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>地区流媒体解锁检测：KKTV、TVB Anywhere+、SBS、FOD、DMM TV、ZDF</title>
-<meta name="description" content="检测只在一个国家提供的流媒体：KKTV（台湾）、TVB Anywhere+、SBS On Demand（澳大利亚）、FOD 和 DMM TV（日本）、ZDF（德国）。">
+<meta name="description" content="检测只在一个国家提供的流媒体：KKTV（中国台湾）、TVB Anywhere+、SBS On Demand（澳大利亚）、FOD 和 DMM TV（日本）、ZDF（德国）。">
 <meta name="keywords" content="KKTV 解锁, TVB Anywhere 地区, SBS On Demand 澳洲, FOD 日本 IP, DMM TV 海外, ZDF 德国 IP, 地区流媒体检测">
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
@@ -30,7 +30,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="1ms.dog">
 <meta property="og:title" content="地区流媒体解锁检测：KKTV、TVB Anywhere+、SBS、FOD、DMM TV、ZDF">
-<meta property="og:description" content="检测只在一个国家提供的流媒体：KKTV（台湾）、TVB Anywhere+、SBS On Demand（澳大利亚）、FOD 和 DMM TV（日本）、ZDF（德国）。">
+<meta property="og:description" content="检测只在一个国家提供的流媒体：KKTV（中国台湾）、TVB Anywhere+、SBS On Demand（澳大利亚）、FOD 和 DMM TV（日本）、ZDF（德国）。">
 <meta property="og:url" content="https://unlock.1ms.dog/zh-cn/regional/">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unlock.1ms.dog/og/zh-cn/regional.png">
@@ -38,7 +38,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://unlock.1ms.dog/og/zh-cn/regional.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"流媒体/AI 解锁检测","url":"https://unlock.1ms.dog/zh-cn/regional/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","description":"检测只在一个国家提供的流媒体：KKTV（台湾）、TVB Anywhere+、SBS On Demand（澳大利亚）、FOD 和 DMM TV（日本）、ZDF（德国）。","inLanguage":"zh-CN","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"FAQPage","inLanguage":"zh-CN","mainEntity":[{"@type":"Question","name":"为什么要在浏览器里测？","acceptedAnswer":{"@type":"Answer","text":"代理软件（Clash、Surge、Shadowrocket 等）会按规则让不同网站走不同线路。放在服务器上跑的检测脚本，只能测那台服务器的 IP。这个页面在你的浏览器里直接访问每个服务，走的就是你平时打开它们的那条线路。"}},{"@type":"Question","name":"「官方接口」「官方定位」「跳转判断」「推测」是什么意思？","acceptedAnswer":{"@type":"Answer","text":"表示结论有多可靠，从高到低。官方接口：服务自己的地区接口直接说能不能用。官方定位：服务的服务器告诉我们它认为你在哪个国家，再对照它公布的支持地区。跳转判断：看服务有没有把你转到「本地区不可用」页面。推测：服务什么都不让读，只能确认打得开，国家按其他服务的判断来算。"}},{"@type":"Question","name":"为什么不同服务认为我在不同国家？","acceptedAnswer":{"@type":"Answer","text":"可能是代理规则让它们走了不同节点（也就是分流），也可能是各家用的 IP 数据库不一样。出现这种情况时，页面会列出每个国家对应哪些服务。想让它们一致，可以把这些服务分到同一个节点。"}},{"@type":"Question","name":"为什么要看时区？","acceptedAnswer":{"@type":"Answer","text":"AI 服务会对比浏览器时区和 IP 所在的国家。比如时区是中国、IP 却在美国，看起来就像在用代理，可能触发更严格的验证。把电脑的时区改成和 IP 一致，能减少这种情况。"}},{"@type":"Question","name":"会上传我的数据吗？","acceptedAnswer":{"@type":"Answer","text":"检测时不会：你的浏览器直接访问各个服务，本站只提供网页，看不到你的结果。在 1ms.dog 上点「分享」时，短链接和预览图会保存在 1ms.dog，聊天软件里才能显示；分享的结果不含 IP。截图前可以先点「隐藏 IP」。"}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"流媒体/AI 解锁检测","item":"https://unlock.1ms.dog/zh-cn/"},{"@type":"ListItem","position":2,"name":"地区电视","item":"https://unlock.1ms.dog/zh-cn/regional/"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"流媒体/AI 解锁检测","url":"https://unlock.1ms.dog/zh-cn/regional/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","description":"检测只在一个国家提供的流媒体：KKTV（中国台湾）、TVB Anywhere+、SBS On Demand（澳大利亚）、FOD 和 DMM TV（日本）、ZDF（德国）。","inLanguage":"zh-CN","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"FAQPage","inLanguage":"zh-CN","mainEntity":[{"@type":"Question","name":"为什么要在浏览器里测？","acceptedAnswer":{"@type":"Answer","text":"代理软件（Clash、Surge、Shadowrocket 等）会按规则让不同网站走不同线路。放在服务器上跑的检测脚本，只能测那台服务器的 IP。这个页面在你的浏览器里直接访问每个服务，走的就是你平时打开它们的那条线路。"}},{"@type":"Question","name":"「官方接口」「官方定位」「跳转判断」「推测」是什么意思？","acceptedAnswer":{"@type":"Answer","text":"表示结论有多可靠，从高到低。官方接口：服务自己的地区接口直接说能不能用。官方定位：服务的服务器告诉我们它认为你在哪个国家，再对照它公布的支持地区。跳转判断：看服务有没有把你转到「本地区不可用」页面。推测：服务什么都不让读，只能确认打得开，国家按其他服务的判断来算。"}},{"@type":"Question","name":"为什么不同服务认为我在不同国家？","acceptedAnswer":{"@type":"Answer","text":"可能是代理规则让它们走了不同节点（也就是分流），也可能是各家用的 IP 数据库不一样。出现这种情况时，页面会列出每个国家对应哪些服务。想让它们一致，可以把这些服务分到同一个节点。"}},{"@type":"Question","name":"为什么要看时区？","acceptedAnswer":{"@type":"Answer","text":"AI 服务会对比浏览器时区和 IP 所在的国家。比如时区是中国、IP 却在美国，看起来就像在用代理，可能触发更严格的验证。把电脑的时区改成和 IP 一致，能减少这种情况。"}},{"@type":"Question","name":"会上传我的数据吗？","acceptedAnswer":{"@type":"Answer","text":"检测时不会：你的浏览器直接访问各个服务，本站只提供网页，看不到你的结果。在 1ms.dog 上点「分享」时，短链接和预览图会保存在 1ms.dog，聊天软件里才能显示；分享的结果不含 IP。截图前可以先点「隐藏 IP」。"}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"流媒体/AI 解锁检测","item":"https://unlock.1ms.dog/zh-cn/"},{"@type":"ListItem","position":2,"name":"地区电视","item":"https://unlock.1ms.dog/zh-cn/regional/"}]}]}</script>
 <link rel="preload" href="/assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/app.e8b0e4cb38.css">
 </head>
@@ -125,6 +125,6 @@
 </div>
 <script type="application/json" id="data">{"lang":"zh-CN","paths":{"en":"/regional/","zh-CN":"/zh-cn/regional/","zh-TW":"/zh-tw/regional/","ja":"/ja/regional/","ko":"/ko/regional/","es":"/es/regional/","fr":"/fr/regional/","de":"/de/regional/","pt":"/pt/regional/","ru":"/ru/regional/"},"home":{"en":"/","zh-CN":"/zh-cn/","zh-TW":"/zh-tw/","ja":"/ja/","ko":"/ko/","es":"/es/","fr":"/fr/","de":"/de/","pt":"/pt/","ru":"/ru/"},"egressPath":"/zh-cn/"}</script>
 <script src="/assets/l.zh-cn.9d9c724b51.js"></script>
-<script src="/assets/app.576400ff74.js" defer></script>
+<script src="/assets/app.f7228d9cb1.js" defer></script>
 </body>
 </html>

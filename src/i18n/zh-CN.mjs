@@ -21,7 +21,7 @@ export default {
     kw: "TikTok 地区检测, YouTube 能打开吗, X 推特 打不开, Instagram 打不开, Telegram 连不上, Discord 打不开",
     h1: "TikTok、YouTube、X 在你的网络上能打开吗？", intro: "一些国家会封锁社交平台。这里测它们在你的线路上能不能打开。" },
   cat_local: { nav: "地区电视", title: "地区流媒体解锁检测：KKTV、TVB Anywhere+、SBS、FOD、DMM TV、ZDF",
-    desc: "检测只在一个国家提供的流媒体：KKTV（台湾）、TVB Anywhere+、SBS On Demand（澳大利亚）、FOD 和 DMM TV（日本）、ZDF（德国）。",
+    desc: "检测只在一个国家提供的流媒体：KKTV（中国台湾）、TVB Anywhere+、SBS On Demand（澳大利亚）、FOD 和 DMM TV（日本）、ZDF（德国）。",
     kw: "KKTV 解锁, TVB Anywhere 地区, SBS On Demand 澳洲, FOD 日本 IP, DMM TV 海外, ZDF 德国 IP, 地区流媒体检测",
     h1: "KKTV、FOD、ZDF 这些地区流媒体能看吗？", intro: "这些服务只在一个国家或地区开放，每次访问都会查你在哪。这里用你平时的线路逐个测一遍。" },
   svc_title: "{name} 解锁检测：当前 IP 能不能用 {name}，被认成哪个地区",

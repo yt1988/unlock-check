@@ -16,6 +16,7 @@ import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { transform } from "esbuild";
 import { SERVICES, CATS, NETFLIX_TRY, SLUG, CAT_SLUG } from "../src/services.mjs";
+import { regionName } from "../src/lib.mjs";
 // each service's icon in public/assets/svc/ (scripts/icons.mjs); a service without one keeps the space empty
 const ICONS = JSON.parse(await readFile(new URL("../src/icons.json", import.meta.url), "utf8"));
 
@@ -57,7 +58,7 @@ export async function loadI18n() {
 }
 
 // the countries of a list, by name in the page's language
-const names = (lang, codes) => { const dn = new Intl.DisplayNames([lang], { type: "region" }); return codes.split(" ").map(c => dn.of(c)).sort((a, b) => a.localeCompare(b, lang)); };
+const names = (lang, codes) => codes.split(" ").map(c => regionName(c, lang)).sort((a, b) => a.localeCompare(b, lang));
 
 // A page of the site: which one (null for the main page, { cat } or { svc }), in one language
 export function pageIds() {

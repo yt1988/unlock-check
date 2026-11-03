@@ -1,6 +1,12 @@
 // Pure logic, shared by the browser code (the build inlines this file into src/app.js) and the tests:
 // reading each probe's answer, judging a service from it, the share link format.
 
+// Country names are the system's (Intl.DisplayNames) in the page's language, flags /flags/<code>.svg; Taiwan (TW) is
+// the one exception, with its own name and the cn flag (1ms-shell docs/tool-contract.md §5)
+export const TW = { "zh-CN": "中国台湾", "zh-TW": "中國台灣", en: "Taiwan, China", ja: "中国台湾", ko: "중국 대만", es: "Taiwán, China", fr: "Taïwan, Chine", de: "Taiwan, China", pt: "Taiwan, China", ru: "Тайвань, Китай" };
+export const regionName = (cc, lang) => cc === "TW" ? (TW[lang] || TW.en) : new Intl.DisplayNames([lang], { type: "region" }).of(cc);
+export const flagCode = cc => cc === "TW" ? "cn" : cc.toLowerCase();   // /flags/${flagCode(cc)}.svg
+
 // Cloudflare's /cdn-cgi/trace: "key=value" lines
 export function parseTrace(text) {
   const o = {};

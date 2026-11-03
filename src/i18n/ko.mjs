@@ -23,7 +23,7 @@ export default {
     kw: "틱톡 지역, 유튜브 접속 안됨, X 트위터 접속 안됨, 인스타그램 차단, 텔레그램 연결 안됨, 디스코드 차단",
     h1: "TikTok·YouTube·X, 지금 네트워크에서 열릴까요?", intro: "일부 나라에서는 소셜 앱을 차단해요. 평소 경로로 열리는지 확인해요." },
   cat_local: { nav: "지역 TV", title: "지역 스트리밍 확인: KKTV·TVB Anywhere+·SBS·FOD·DMM TV·ZDF",
-    desc: "한 나라에서만 제공하는 스트리밍을 확인해요: KKTV(대만), TVB Anywhere+, SBS On Demand(호주), FOD·DMM TV(일본), ZDF(독일).",
+    desc: "한 나라에서만 제공하는 스트리밍을 확인해요: KKTV(중국 대만), TVB Anywhere+, SBS On Demand(호주), FOD·DMM TV(일본), ZDF(독일).",
     kw: "KKTV 지역, TVB Anywhere 지역, SBS On Demand 해외, FOD 일본 IP, DMM TV 해외, ZDF 독일 IP",
     h1: "지역 스트리밍 서비스가 나를 그 나라 사용자로 볼까요?", intro: "이 서비스들은 한 나라나 지역에서만 제공되고, 접속할 때마다 위치를 확인해요. 평소 경로로 하나씩 확인해요." },
   svc_title: "{name} 지역 확인: 지금 IP로 이용 가능? 어느 지역으로 잡힐까?",

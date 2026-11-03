@@ -24,7 +24,7 @@ export default {
     kw: "tiktok region check, is youtube blocked, x twitter not loading, instagram blocked, telegram not connecting, discord blocked",
     h1: "Do TikTok, YouTube and X open on your network?", intro: "Some countries block social apps. Each one is tested here over the route you normally use." },
   cat_local: { nav: "Regional TV", title: "Regional streaming check: KKTV, TVB Anywhere+, SBS, FOD, DMM TV, ZDF",
-    desc: "Check streaming services offered in one country only: KKTV (Taiwan), TVB Anywhere+, SBS On Demand (Australia), FOD and DMM TV (Japan), ZDF (Germany).",
+    desc: "Check streaming services offered in one country only: KKTV (Taiwan, China), TVB Anywhere+, SBS On Demand (Australia), FOD and DMM TV (Japan), ZDF (Germany).",
     kw: "kktv region, tvb anywhere region, sbs on demand outside australia, fod japan ip, dmm tv overseas, zdf germany ip",
     h1: "Do regional streaming services think you're in their country?", intro: "These services are offered in one country or region only, and check where you are on every visit. Each one is tested here over the route you normally use." },
   svc_title: "{name} unlock test: does {name} work on my IP, and in which region?",

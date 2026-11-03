@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { READERS, judge, offered, guessCountry, exitsByCountry, encodeShare, parseShare, maskIp, parseTrace } from "../src/lib.mjs";
+import { READERS, judge, offered, guessCountry, exitsByCountry, encodeShare, parseShare, maskIp, parseTrace, regionName, flagCode } from "../src/lib.mjs";
 import { SERVICES, CATS, SLUG, CAT_SLUG } from "../src/services.mjs";
 
 const S = Object.fromEntries(SERVICES.map(s => [s.id, s]));
@@ -96,4 +96,15 @@ test("small helpers", () => {
   assert.equal(maskIp("203.0.113.9"), "203.0.•.•");
   assert.equal(maskIp("2001:db8::1"), "2001:db8:•");
   assert.equal(parseTrace("a=1\nb=x=y").b, "x=y");
+});
+
+test("Taiwan: its own name in every language and the cn flag (1ms-shell tool contract §5); others the system's", () => {
+  assert.equal(regionName("TW", "zh-CN"), "中国台湾");
+  assert.equal(regionName("TW", "zh-TW"), "中國台灣");
+  assert.equal(regionName("TW", "en"), "Taiwan, China");
+  assert.equal(regionName("TW", "ru"), "Тайвань, Китай");
+  assert.equal(regionName("HK", "en"), new Intl.DisplayNames(["en"], { type: "region" }).of("HK"));
+  assert.equal(flagCode("TW"), "cn");
+  assert.equal(flagCode("HK"), "hk");
+  assert.equal(flagCode("MO"), "mo");
 });

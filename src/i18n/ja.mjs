@@ -21,7 +21,7 @@ export default {
     kw: "TikTok 地域, YouTube 開かない, X 開かない, Instagram 開かない, Telegram つながらない, Discord 開かない",
     h1: "TikTok・YouTube・X は今のネットワークで開ける？", intro: "SNS は国によってはブロックされています。ふだんの経路で開けるかどうかを確認します。" },
   cat_local: { nav: "地域限定", title: "地域限定の動画配信チェック：KKTV・TVB Anywhere+・SBS・FOD・DMM TV・ZDF",
-    desc: "1 つの国だけで提供されている動画配信を確認します：KKTV（台湾）、TVB Anywhere+、SBS On Demand（オーストラリア）、FOD と DMM TV（日本）、ZDF（ドイツ）。",
+    desc: "1 つの国だけで提供されている動画配信を確認します：KKTV（中国台湾）、TVB Anywhere+、SBS On Demand（オーストラリア）、FOD と DMM TV（日本）、ZDF（ドイツ）。",
     kw: "FOD 海外, DMM TV 海外, FOD 日本 IP, KKTV 地域, TVB Anywhere 地域, SBS On Demand 海外, ZDF ドイツ",
     h1: "地域限定の動画配信は、あなたを国内と判定している？", intro: "これらは 1 つの国や地域だけで提供され、アクセスのたびに場所を確認します。ふだんの経路でひとつずつ確認します。" },
   svc_title: "{name} 地域チェック：今の IP で {name} は使える？どの地域と判定される？",

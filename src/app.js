@@ -10,8 +10,8 @@
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
   const store = { get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
   const K = { theme: "unlock:theme", lang: "unlock:lang", mask: "unlock:mask" };
-  const country = cc => { try { return new Intl.DisplayNames([LANG], { type: "region" }).of(cc); } catch (e) { return cc; } };
-  const flag = cc => /^[A-Z]{2}$/.test(cc || "") && cc !== "XK" ? `<img class="flag" src="/flags/${cc.toLowerCase()}.svg" alt="" width="20" height="15">` : "";
+  const country = cc => { try { return regionName(cc, LANG); } catch (e) { return cc; } };
+  const flag = cc => /^[A-Z]{2}$/.test(cc || "") && cc !== "XK" ? `<img class="flag" src="/flags/${flagCode(cc)}.svg" alt="" width="20" height="15">` : "";
   const SV = Object.fromEntries(SERVICES.map(s => [s.id, s]));
   /* @lib */
 
