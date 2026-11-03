@@ -57,6 +57,13 @@ export default {
   why_nf_none: "A Netflix abre, mas não deu para saber de qual país é o catálogo que você recebe.",
   why_reach_nolist: "País detectado pelos servidores de {name}: {c}. {name} não publica onde está disponível, então só a localização aparece.",
   why_reach_nocc: "{name} abre, mas não informou qual país detecta, então não dá para saber se você pode usar.",
+  // someone else's shared result: the lines above that speak of "you", about the person who shared it
+  why_api_ok_s: "A API de região de {name} disse: quem compartilhou pode usar.",
+  why_api_no_s: "A API de região de {name} disse: não está disponível onde está quem compartilhou.",
+  why_hops_ok_s: "{name} abriu normalmente e não mandou quem compartilhou para a página de \"indisponível na sua região\".",
+  why_hops_no_s: "{name} mandou quem compartilhou para a página de \"indisponível na sua região\".",
+  why_nf_none_s: "A Netflix abriu, mas não deu para saber de qual país era o catálogo que quem compartilhou recebeu.",
+  why_reach_nocc_s: "{name} abriu, mas não informou qual país detecta, então não dá para saber se quem compartilhou pode usar.",
   why_fail_net: "{name} não abre. Sua rede, uma regra do proxy ou um bloqueador de anúncios pode estar barrando. Tente outro servidor, ou pause o bloqueador e teste de novo.",
   why_fail_timeout: "{name} não respondeu em 8 segundos. A rota pode estar lenta ou bloqueada; teste de novo.",
   why_fail_http: "{name} retornou um erro (HTTP {n}), então desta vez não dá para saber. Tente mais tarde.",

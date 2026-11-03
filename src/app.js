@@ -158,7 +158,7 @@
     else if (v.v === "reach") k = v.cc ? "reach_nolist" : "reach_nocc";
     else if (v.how === "api" || v.how === "hops") k = v.how + "_" + v.v;
     else k = v.how + "_" + (s.allow ? "list" : "block") + "_" + v.v;
-    const out = [t("why_" + k, { name: n, c })];
+    const out = [t(sk("why_" + k), { name: n, c })];
     if (id === "netflix" && v.v === "ok") out.push(t("note_netflix"));
     if (id === "gemini") out.push(t("note_google"));
     return out.join(" ");
@@ -200,7 +200,7 @@
   // the country the services agree on, or else the connection's own
   const mainCc = ex => (ex[0] && ex[0].cc) || (!S.shared && S.me && S.me.country) || "";
   // someone else's shared result speaks of the person who shared it, not "you" (keys with _s)
-  const sk = k => S.shared ? k + "_s" : k;
+  const sk = k => S.shared && L[k + "_s"] != null ? k + "_s" : k;
   const place = cc => `${flag(cc)}<b>${esc(country(cc))}</b>`;
   function renderNotes() {
     const ul = $("#notes");

@@ -59,6 +59,8 @@ export default {
   why_nf_none: "Netflix는 열리지만 어느 나라 콘텐츠인지 알아내지 못했어요.",
   why_reach_nolist: "{name} 서버가 판단한 위치: {c}. 지원 국가를 공개하지 않아서 위치만 보여 드려요.",
   why_reach_nocc: "{name} 서비스는 열리지만 어느 나라로 판단했는지 알 수 없어서, 이용 가능 여부를 판단할 수 없어요.",
+  // someone else's shared result: the lines above that speak of "you", about the person who shared it
+  why_api_no_s: "{name} 공식 지역 API의 답: 공유자의 지역에서는 이용할 수 없어요.",
   why_fail_net: "{name} 서비스가 열리지 않아요. 네트워크, 프록시 규칙 또는 광고 차단기가 막고 있을 수 있어요. 다른 서버로 바꾸거나 광고 차단기를 잠시 끄고 다시 확인해 보세요.",
   why_fail_timeout: "{name} 서비스가 8초 안에 응답하지 않았어요. 경로가 느리거나 막혔을 수 있어요. 다시 확인해 보세요.",
   why_fail_http: "{name} 서비스가 오류(HTTP {n})를 돌려줘서 이번에는 판단할 수 없어요. 잠시 후 다시 확인해 보세요.",

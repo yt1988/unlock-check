@@ -57,6 +57,8 @@ export default {
   why_nf_none: "Netflix は開けますが、どの国のラインナップかは確認できませんでした。",
   why_reach_nolist: "{name} のサーバーは{c}と判定しています。{name} は対応国を公表していないため、判定された国だけを表示します。",
   why_reach_nocc: "{name} は開けますが、どの国と判定されたかがわからないため、使えるかどうかは判断できません。",
+  // someone else's shared result: the lines above that speak of "you", about the person who shared it
+  why_api_no_s: "{name} 公式の地域 API の回答：共有した人の地域では利用できません。",
   why_fail_net: "{name} を開けません。ネットワーク、プロキシのルール、または広告ブロッカーに止められている可能性があります。別のサーバーに切り替えるか、広告ブロッカーを一時的に止めて、もう一度確認してください。",
   why_fail_timeout: "{name} から 8 秒以内に応答がありませんでした。経路が遅いか、ブロックされている可能性があります。もう一度確認してください。",
   why_fail_http: "{name} がエラー（HTTP {n}）を返したため、今回は判断できません。少し時間をおいて確認してください。",
