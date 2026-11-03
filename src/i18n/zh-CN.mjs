@@ -64,6 +64,7 @@ export default {
   note_google: "注意：Google 用自己的数据库判断 IP 在哪，可能和其他服务不一样，比如把代理认成在中国大陆（俗称「送中」），这时 Gemini 也用不了。",
   fo_ok: "{name} 可以用",
   fo_no: "{name} 在你的地区用不了",
+  fo_no_s: "{name} 在分享者的地区用不了",
   fo_reach: "{name} 打得开，但不确定能不能用",
   fo_fail: "{name} 打不开",
   ex_none: "没有服务告诉我们你在哪个地区。",
@@ -79,6 +80,12 @@ export default {
   tz_none: "无法对比时区。",
   tz_ok: "浏览器时区和{a}一致。",
   tz_bad: "浏览器时区是{a}，但服务认为你在{b}。AI 服务可能因此判断你在用代理，把电脑时区改成和 IP 一致可以减少这种情况。",
+  // someone else's shared result: the same lines about the person who shared it
+  ex_none_s: "没有服务告诉我们分享者在哪个地区。",
+  ex_one_s: "所有服务都认为分享者在{c}。",
+  ex_split_s: "各服务认为分享者在不同地区，可能是代理分流了：{c}",
+  tz_ok_s: "分享者的浏览器时区和{a}一致。",
+  tz_bad_s: "分享者的浏览器时区是{a}，但服务认为分享者在{b}。AI 服务可能因此判断其在用代理。",
   egress_link: "看每个网站看到的 IP",
   ck_link: "做一次完整体检",             // to the connection checkup (check.1ms.dog), beside the totals
   progress: "{d} / {n} 个服务",

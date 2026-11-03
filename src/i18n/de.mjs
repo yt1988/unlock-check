@@ -66,6 +66,7 @@ export default {
   note_google: "Hinweis: Google ortet IPs mit einer eigenen Datenbank, die von anderen Diensten abweichen kann (etwa wenn ein Proxy in Festlandchina verortet wird). Dann geht auch Gemini nicht.",
   fo_ok: "{name} ist verfügbar",
   fo_no: "{name} ist an deinem Standort gesperrt",
+  fo_no_s: "{name} ist am Standort der teilenden Person gesperrt",
   fo_reach: "{name} lädt, aber ob es geht, ist unklar",
   fo_fail: "{name} lädt nicht",
   ex_none: "Kein Dienst hat deinen Standort gemeldet.",
@@ -81,6 +82,12 @@ export default {
   tz_none: "Zeitzone nicht verglichen.",
   tz_ok: "Die Zeitzone deines Browsers passt: {a}.",
   tz_bad: "Zeitzone deines Browsers: {a}. Land laut den Diensten: {b}. KI-Dienste können das als Zeichen für einen Proxy werten. Es hilft, die Zeitzone des Geräts an deine IP anzupassen.",
+  // someone else's shared result: the same lines about the person who shared it
+  ex_none_s: "Kein Dienst hat gemeldet, wo die teilende Person ist.",
+  ex_one_s: "Alle Dienste erkannten bei der teilenden Person dasselbe Land: {c}.",
+  ex_split_s: "Die Dienste erkannten bei der teilenden Person unterschiedliche Länder, vielleicht wegen Split-Routing im Proxy: {c}",
+  tz_ok_s: "Die Browser-Zeitzone der teilenden Person passte: {a}.",
+  tz_bad_s: "Browser-Zeitzone der teilenden Person: {a}. Land laut den Diensten: {b}. KI-Dienste können das als Zeichen für einen Proxy werten.",
   egress_link: "IP ansehen, die jede Seite sieht",
   ck_link: "Kompletten Check starten",             // to the connection checkup (check.1ms.dog), beside the totals
   progress: "{d} / {n} Dienste",

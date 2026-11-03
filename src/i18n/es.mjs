@@ -64,6 +64,7 @@ export default {
   note_google: "Nota: Google ubica las IP con su propia base de datos, que puede no coincidir con la de otros servicios (por ejemplo, ubicar un proxy en China continental). En ese caso, Gemini tampoco funciona.",
   fo_ok: "{name} está disponible",
   fo_no: "{name} está bloqueado donde estás",
+  fo_no_s: "{name} está bloqueado donde está quien lo compartió",
   fo_reach: "{name} abre, pero no está claro si funciona",
   fo_fail: "{name} no abre",
   ex_none: "Ningún servicio indicó dónde estás.",
@@ -79,6 +80,12 @@ export default {
   tz_none: "No se pudo comparar la zona horaria.",
   tz_ok: "La zona horaria de tu navegador coincide con {a}.",
   tz_bad: "La zona horaria de tu navegador es {a}, pero los servicios te ubican en {b}. Los servicios de IA pueden tomarlo como señal de un proxy. Poner la zona horaria del dispositivo acorde con tu IP ayuda.",
+  // someone else's shared result: the same lines about the person who shared it
+  ex_none_s: "Ningún servicio indicó dónde está quien lo compartió.",
+  ex_one_s: "Todos los servicios ubicaron a quien lo compartió en {c}.",
+  ex_split_s: "Los servicios ubicaron a quien lo compartió en países distintos, quizá por enrutamiento dividido en su proxy: {c}",
+  tz_ok_s: "La zona horaria del navegador de quien lo compartió coincidía con {a}.",
+  tz_bad_s: "La zona horaria del navegador de quien lo compartió era {a}, pero los servicios lo ubicaron en {b}. Los servicios de IA pueden tomarlo como señal de un proxy.",
   egress_link: "Ver la IP que ve cada sitio",
   ck_link: "Hacer un chequeo completo",             // to the connection checkup (check.1ms.dog), beside the totals
   progress: "{d} / {n} servicios",

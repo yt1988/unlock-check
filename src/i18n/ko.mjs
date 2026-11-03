@@ -66,6 +66,7 @@ export default {
   note_google: "참고: Google은 자체 데이터베이스로 IP 위치를 판단해서 다른 서비스와 다를 수 있어요(예: 프록시를 중국 본토로 판단). 그러면 Gemini도 쓸 수 없어요.",
   fo_ok: "{name}: 이용 가능",
   fo_no: "{name}: 지금 지역에서 이용 불가",
+  fo_no_s: "{name}: 공유자의 지역에서 이용 불가",
   fo_reach: "{name}: 열리지만 이용 가능 여부는 확인 불가",
   fo_fail: "{name}: 접속 안 됨",
   ex_none: "위치를 알려 준 서비스가 없어요.",
@@ -81,6 +82,12 @@ export default {
   tz_none: "시간대를 비교하지 못했어요.",
   tz_ok: "브라우저 시간대 일치: {a}.",
   tz_bad: "브라우저 시간대: {a}, 서비스가 판단한 위치: {b}. AI 서비스가 프록시 사용으로 볼 수 있어요. 기기 시간대를 IP의 나라에 맞추면 이런 일이 줄어요.",
+  // someone else's shared result: the same lines about the person who shared it
+  ex_none_s: "공유자의 위치를 알려 준 서비스가 없어요.",
+  ex_one_s: "모든 서비스가 판단한 공유자 위치: {c}.",
+  ex_split_s: "서비스마다 공유자의 나라를 다르게 판단했어요(프록시의 분할 라우팅 때문일 수 있어요): {c}",
+  tz_ok_s: "공유자의 브라우저 시간대 일치: {a}.",
+  tz_bad_s: "공유자의 브라우저 시간대: {a}, 서비스가 판단한 위치: {b}. AI 서비스가 프록시 사용으로 볼 수 있어요.",
   egress_link: "사이트마다 보이는 IP 보기",
   ck_link: "연결 전체 점검하기",             // to the connection checkup (check.1ms.dog), beside the totals
   progress: "서비스 {d} / {n}",

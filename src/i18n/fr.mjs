@@ -64,6 +64,7 @@ export default {
   note_google: "À noter : Google localise les IP avec sa propre base de données, qui peut différer de celle des autres services (par exemple en plaçant un proxy en Chine continentale). Dans ce cas, Gemini ne marche pas non plus.",
   fo_ok: "{name} est accessible",
   fo_no: "{name} est bloqué là où vous êtes",
+  fo_no_s: "{name} est bloqué là où se trouve cette personne",
   fo_reach: "{name} s'ouvre, mais l'accès reste incertain",
   fo_fail: "{name} ne s'ouvre pas",
   ex_none: "Aucun service n'a indiqué votre localisation.",
@@ -79,6 +80,12 @@ export default {
   tz_none: "Fuseau horaire non comparé.",
   tz_ok: "Le fuseau horaire du navigateur correspond : {a}.",
   tz_bad: "Fuseau horaire du navigateur : {a} ; pays détecté par les services : {b}. Les services d'IA peuvent y voir le signe d'un proxy. Régler le fuseau de l'appareil sur celui de votre IP aide.",
+  // someone else's shared result: the same lines about the person who shared it
+  ex_none_s: "Aucun service n'a indiqué où se trouve la personne qui a partagé ce résultat.",
+  ex_one_s: "Tous les services ont détecté le même pays pour cette personne : {c}.",
+  ex_split_s: "Les services ont détecté des pays différents pour cette personne, peut-être à cause du routage séparé de son proxy : {c}",
+  tz_ok_s: "Le fuseau horaire de son navigateur correspondait : {a}.",
+  tz_bad_s: "Fuseau horaire de son navigateur : {a} ; pays détecté par les services : {b}. Les services d'IA peuvent y voir le signe d'un proxy.",
   egress_link: "Voir l'IP vue par chaque site",
   ck_link: "Faire un bilan complet",             // to the connection checkup (check.1ms.dog), beside the totals
   progress: "{d} / {n} services",

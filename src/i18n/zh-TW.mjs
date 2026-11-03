@@ -64,6 +64,7 @@ export default {
   note_google: "注意：Google 用自己的資料庫判斷 IP 位置，結果可能和其他服務不同（例如把代理判定在中國大陸），這時 Gemini 也無法使用。",
   fo_ok: "{name} 可以使用",
   fo_no: "{name} 在你的地區無法使用",
+  fo_no_s: "{name} 在分享者的地區無法使用",
   fo_reach: "{name} 開得了，但無法確認能不能用",
   fo_fail: "{name} 打不開",
   ex_none: "沒有服務回報你的位置。",
@@ -79,6 +80,12 @@ export default {
   tz_none: "無法比對時區。",
   tz_ok: "瀏覽器時區和{a}一致。",
   tz_bad: "瀏覽器時區是{a}，但服務認為你在{b}。AI 服務可能因此判斷你在用代理；把裝置時區改成和 IP 一致，可以減少這種情況。",
+  // someone else's shared result: the same lines about the person who shared it
+  ex_none_s: "沒有服務回報分享者的位置。",
+  ex_one_s: "所有服務都認為分享者在{c}。",
+  ex_split_s: "各服務認為分享者在不同地區，可能是代理分流造成的：{c}",
+  tz_ok_s: "分享者的瀏覽器時區和{a}一致。",
+  tz_bad_s: "分享者的瀏覽器時區是{a}，但服務認為分享者在{b}。AI 服務可能因此判斷對方在用代理。",
   egress_link: "查看每個網站看到的 IP",
   ck_link: "做一次完整體檢",             // to the connection checkup (check.1ms.dog), beside the totals
   progress: "{d} / {n} 個服務",

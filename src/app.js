@@ -199,6 +199,8 @@
     .then(r => r.ok ? r.json() : {}).catch(() => ({})).then(x => (S.me = x && typeof x === "object" ? x : {})));
   // the country the services agree on, or else the connection's own
   const mainCc = ex => (ex[0] && ex[0].cc) || (!S.shared && S.me && S.me.country) || "";
+  // someone else's shared result speaks of the person who shared it, not "you" (keys with _s)
+  const sk = k => S.shared ? k + "_s" : k;
   const place = cc => `${flag(cc)}<b>${esc(country(cc))}</b>`;
   function renderNotes() {
     const ul = $("#notes");
@@ -206,10 +208,10 @@
     if (!S.done) { ul.innerHTML = ["wait_ex", "wait_ip", "wait_tz"].map(k => `<li class="nt wait"><i></i><span>${esc(t(k))}</span></li>`).join(""); return; }
     const ex = exitsByCountry(S.v), tz = S.shared ? S.shared.tz : tzCc(), out = [];
     const names = ids => esc(ids.map(id => SV[id].name).join(t("join")));
-    if (!ex.length) out.push(["info", esc(t("ex_none"))]);
-    else if (ex.length === 1) out.push(["ok", t("ex_one", { c: place(ex[0].cc) })]);
+    if (!ex.length) out.push(["info", esc(t(sk("ex_none")))]);
+    else if (ex.length === 1) out.push(["ok", t(sk("ex_one"), { c: place(ex[0].cc) })]);
     // the most common country by count, the others with the services that see them
-    else out.push(["warn", t("ex_split", { c: ex.map((e, i) => `${place(e.cc)} <span class="m">${i ? names(e.ids) : "×" + e.ids.length}</span>`).join(" · ") }) +
+    else out.push(["warn", t(sk("ex_split"), { c: ex.map((e, i) => `${place(e.cc)} <span class="m">${i ? names(e.ids) : "×" + e.ids.length}</span>`).join(" · ") }) +
       (EGRESS ? ` <a class="xl" href="${esc(EGRESS + D.egressPath)}" target="_blank" rel="noopener">${esc(t("egress_link"))}${EXT}</a>` : "")]);
     // the addresses the services saw, most common first, each linked to the IP quality check when the host has one
     const ips = new Map();
@@ -220,8 +222,8 @@
     else out.push([ips.size > 1 ? "warn" : "info", t("ip_line", { list: [...ips].sort((a, b) => b[1] - a[1]).map(([ip, n]) => `${ipLink(ip)} <span class="m">×${n}</span>`).join(" · ") })]);
     const main = mainCc(ex);
     if (!main || !tz) out.push(["info", esc(t("tz_none"))]);
-    else if (tz === main) out.push(["ok", t("tz_ok", { a: place(tz) })]);
-    else out.push(["warn", t("tz_bad", { a: place(tz), b: place(main) })]);
+    else if (tz === main) out.push(["ok", t(sk("tz_ok"), { a: place(tz) })]);
+    else out.push(["warn", t(sk("tz_bad"), { a: place(tz), b: place(main) })]);
     ul.innerHTML = out.map(([k, h]) => `<li class="nt n-${k}"><i>${k === "ok" ? "✓" : k === "warn" ? "!" : "•"}</i><span>${h}</span></li>`).join("");
   }
   // A service page's lead panel: that service's verdict, big, and what it is based on
@@ -232,7 +234,7 @@
     fo.className = "focus" + (v ? " v-" + v.v : " wait");
     if (!v) { h.textContent = S.gen ? t("v_wait") : SV[id].name; st.textContent = ""; d.innerHTML = `<span class="bar"></span>`; return; }
     st.textContent = MARK[v.v];
-    h.innerHTML = esc(t("fo_" + v.v, { name: SV[id].name })) + (v.cc ? ` <span class="fo-c">${place(v.cc)}</span>` : "");
+    h.innerHTML = esc(t(v.v === "no" ? sk("fo_no") : "fo_" + v.v, { name: SV[id].name })) + (v.cc ? ` <span class="fo-c">${place(v.cc)}</span>` : "");
     d.textContent = whyOf(id, v);
   }
   function setProg(d, n) { $("#prog").classList.toggle("end", S.done); $("#prog i").style.transform = `scaleX(${n ? d / n : 0})`; $("#progTxt").textContent = !S.gen ? "" : S.done ? t("done", { n }) : t("progress", { d, n }); }

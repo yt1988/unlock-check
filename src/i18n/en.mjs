@@ -67,6 +67,7 @@ export default {
   note_google: "Note: Google locates IPs with its own database, which can disagree with other services (for example, placing a proxy in mainland China). When that happens, Gemini won't work either.",
   fo_ok: "{name} works",
   fo_no: "{name} is blocked where you are",
+  fo_no_s: "{name} is blocked where the sharer is",
   fo_reach: "{name} opens, but it's unclear if it works",
   fo_fail: "{name} won't open",
   ex_none: "No service told us where you are.",
@@ -82,6 +83,12 @@ export default {
   tz_none: "Couldn't compare your time zone.",
   tz_ok: "Your browser's time zone matches {a}.",
   tz_bad: "Your browser's time zone is {a}, but services think you're in {b}. AI services may read this as a sign of a proxy. Setting your device's time zone to match your IP helps.",
+  // someone else's shared result: the same lines about the person who shared it
+  ex_none_s: "No service reported where the sharer is.",
+  ex_one_s: "Every service placed the sharer in {c}.",
+  ex_split_s: "Services placed the sharer in different countries, possibly because of split routing: {c}",
+  tz_ok_s: "The sharer's browser time zone matched {a}.",
+  tz_bad_s: "The sharer's browser time zone was {a}, but services placed them in {b}. AI services may read this as a sign of a proxy.",
   egress_link: "See the IP each site sees",
   ck_link: "Run a full checkup",             // to the connection checkup (check.1ms.dog), beside the totals
   progress: "{d} / {n} services",

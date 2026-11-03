@@ -64,6 +64,7 @@ export default {
   note_google: "Atenção: o Google localiza IPs com um banco de dados próprio, que pode discordar de outros serviços (por exemplo, colocando um proxy na China continental). Nesse caso, o Gemini também não funciona.",
   fo_ok: "{name} está disponível",
   fo_no: "{name} está bloqueado onde você está",
+  fo_no_s: "{name} está bloqueado onde está quem compartilhou",
   fo_reach: "{name} abre, mas não dá para saber se funciona",
   fo_fail: "{name} não abre",
   ex_none: "Nenhum serviço informou onde você está.",
@@ -79,6 +80,12 @@ export default {
   tz_none: "Não foi possível comparar o fuso horário.",
   tz_ok: "O fuso horário do navegador bate: {a}.",
   tz_bad: "Fuso horário do navegador: {a}; país detectado pelos serviços: {b}. Serviços de IA podem ver isso como sinal de proxy. Ajustar o fuso do aparelho para o do seu IP ajuda.",
+  // someone else's shared result: the same lines about the person who shared it
+  ex_none_s: "Nenhum serviço informou onde está quem compartilhou.",
+  ex_one_s: "Todos os serviços detectaram o mesmo país para quem compartilhou: {c}.",
+  ex_split_s: "Os serviços detectaram países diferentes para quem compartilhou, talvez por roteamento dividido no proxy: {c}",
+  tz_ok_s: "O fuso horário do navegador de quem compartilhou batia: {a}.",
+  tz_bad_s: "Fuso horário do navegador de quem compartilhou: {a}; país detectado pelos serviços: {b}. Serviços de IA podem ver isso como sinal de proxy.",
   egress_link: "Ver o IP que cada site vê",
   ck_link: "Fazer um check-up completo",             // to the connection checkup (check.1ms.dog), beside the totals
   progress: "{d} / {n} serviços",

@@ -64,6 +64,7 @@ export default {
   note_google: "注意：Google は独自のデータベースで IP の場所を判定するため、ほかのサービスと結果が違うことがあります（たとえばプロキシを中国本土と判定する）。その場合は Gemini も使えません。",
   fo_ok: "{name} は利用可能",
   fo_no: "{name} はこの地域では利用不可",
+  fo_no_s: "{name} は共有した人の地域では利用不可",
   fo_reach: "{name} は開けるが、使えるかは不明",
   fo_fail: "{name} を開けない",
   ex_none: "場所を返したサービスはありませんでした。",
@@ -79,6 +80,12 @@ export default {
   tz_none: "タイムゾーンを比較できませんでした。",
   tz_ok: "ブラウザのタイムゾーンは{a}と一致しています。",
   tz_bad: "ブラウザのタイムゾーンは{a}ですが、サービスは{b}と判定しています。AI サービスにプロキシ利用と見なされることがあります。端末のタイムゾーンを IP の国に合わせると、見なされにくくなります。",
+  // someone else's shared result: the same lines about the person who shared it
+  ex_none_s: "共有した人の場所を返したサービスはありませんでした。",
+  ex_one_s: "すべてのサービスが、共有した人を{c}と判定しました。",
+  ex_split_s: "サービスによって、共有した人の判定国が違いました（プロキシのスプリットトンネルが原因のことが多い）：{c}",
+  tz_ok_s: "共有した人のブラウザのタイムゾーンは{a}と一致していました。",
+  tz_bad_s: "共有した人のブラウザのタイムゾーンは{a}でしたが、サービスは{b}と判定しました。AI サービスにプロキシ利用と見なされることがあります。",
   egress_link: "各サイトに見えている IP を見る",
   ck_link: "接続をまとめて診断する",             // to the connection checkup (check.1ms.dog), beside the totals
   progress: "{d} / {n} サービス",
