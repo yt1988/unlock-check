@@ -57,6 +57,10 @@ export default {
   why_nf_none: "Netflix 開得了，但測不出它給你的是哪一區的片庫。",
   why_reach_nolist: "{name} 的伺服器認為你在{c}。它沒有公布支援哪些地區，所以這裡只顯示位置。",
   why_reach_nocc: "{name} 開得了，但不知道它認為你在哪個國家，無法判斷能不能用。",
+  // the site opens but the browser stopped its location check (an ad blocker, tracking protection)
+  why_blocked_ok: "{name} 開得了，但瀏覽器擋下了讀取它認為你在哪個國家的請求（廣告封鎖工具或追蹤防護會這樣做）。其他服務大多認為你在{c}，{name} 在那裡可以使用，所以推測能用。",
+  why_blocked_no: "{name} 開得了，但瀏覽器擋下了讀取它認為你在哪個國家的請求（廣告封鎖工具或追蹤防護會這樣做）。其他服務大多認為你在{c}，{name} 在那裡無法使用，所以推測不能用。",
+  why_blocked_nocc: "{name} 開得了，但瀏覽器擋下了讀取它認為你在哪個國家的請求（廣告封鎖工具或追蹤防護會這樣做），無法判斷能不能用。",
   // someone else's shared result: the lines above that speak of "you", about the person who shared it
   why_api_no_s: "{name} 官方的地區 API 回覆：分享者所在的地區無法使用。",
   why_edge_list_ok_s: "{name} 的伺服器認為分享者在{c}，在它公布的支援地區內。",
@@ -74,7 +78,10 @@ export default {
   why_nf_none_s: "Netflix 開得了，但測不出它給分享者的是哪一區的片庫。",
   why_reach_nolist_s: "{name} 的伺服器認為分享者在{c}。它沒有公布支援哪些地區，所以這裡只顯示位置。",
   why_reach_nocc_s: "{name} 開得了，但不知道它認為分享者在哪個國家，無法判斷能不能用。",
-  why_fail_net: "{name} 打不開：可能被網路、代理規則或廣告封鎖工具擋住了。可以換個節點，或先暫停廣告封鎖工具再測一次。",
+  why_blocked_ok_s: "{name} 開得了，但瀏覽器擋下了讀取它認為分享者在哪個國家的請求（廣告封鎖工具或追蹤防護會這樣做）。其他服務大多認為分享者在{c}，{name} 在那裡可以使用，所以推測能用。",
+  why_blocked_no_s: "{name} 開得了，但瀏覽器擋下了讀取它認為分享者在哪個國家的請求（廣告封鎖工具或追蹤防護會這樣做）。其他服務大多認為分享者在{c}，{name} 在那裡無法使用，所以推測不能用。",
+  why_blocked_nocc_s: "{name} 開得了，但瀏覽器擋下了讀取它認為分享者在哪個國家的請求（廣告封鎖工具或追蹤防護會這樣做），無法判斷能不能用。",
+  why_fail_net: "{name} 打不開：可能被網路、代理規則、廣告封鎖工具或瀏覽器的追蹤防護擋住了。如果直接開啟 {name} 是正常的，多半是後兩者擋了這個檢測。可以換個節點，或先暫停它們再測一次。",
   why_fail_timeout: "{name} 8 秒內沒有回應，可能是路徑太慢或被擋住了。可以再測一次。",
   why_fail_http: "{name} 回傳了錯誤（HTTP {n}），這次無法判斷。請稍後再試。",
   note_netflix: "注意：Netflix 會把許多代理和機房 IP 限制成只能看 Netflix 原創作品，這點瀏覽器測不出來。",

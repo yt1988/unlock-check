@@ -59,6 +59,10 @@ export default {
   why_nf_none: "Netflix lädt, aber es ließ sich nicht feststellen, welchen Länderkatalog du bekommst.",
   why_reach_nolist: "Land laut den Servern von {name}: {c}. {name} veröffentlicht nicht, wo es verfügbar ist, daher wird nur der Standort angezeigt.",
   why_reach_nocc: "{name} lädt, hat aber nicht verraten, welches Land es erkennt. Ob du es nutzen kannst, bleibt offen.",
+  // the site opens but the browser stopped its location check (an ad blocker, tracking protection)
+  why_blocked_ok: "{name} lädt, aber der Browser hat verhindert, dass die Seite liest, welches Land {name} erkennt (das kann ein Werbeblocker oder der Tracking-Schutz sein). Land laut den meisten anderen Diensten: {c}. Dort ist {name} verfügbar, also sollte es gehen.",
+  why_blocked_no: "{name} lädt, aber der Browser hat verhindert, dass die Seite liest, welches Land {name} erkennt (das kann ein Werbeblocker oder der Tracking-Schutz sein). Land laut den meisten anderen Diensten: {c}. Dort ist {name} nicht verfügbar, also geht es wahrscheinlich nicht.",
+  why_blocked_nocc: "{name} lädt, aber der Browser hat verhindert, dass die Seite liest, welches Land {name} erkennt (das kann ein Werbeblocker oder der Tracking-Schutz sein). Ob es nutzbar ist, bleibt offen.",
   // someone else's shared result: the lines above that speak of "you", about the person who shared it
   why_api_ok_s: "Die Regions-API von {name} sagte: Die teilende Person kann den Dienst nutzen.",
   why_api_no_s: "Die Regions-API von {name} sagte: Am Standort der teilenden Person nicht verfügbar.",
@@ -67,7 +71,7 @@ export default {
   why_nf_ok_s: "Netflix zeigte der teilenden Person den Katalog für dieses Land: {c}.",
   why_nf_none_s: "Netflix lud, aber es ließ sich nicht feststellen, welchen Länderkatalog die teilende Person bekam.",
   why_reach_nocc_s: "{name} lud, hat aber nicht verraten, welches Land es erkennt. Ob die teilende Person es nutzen kann, bleibt offen.",
-  why_fail_net: "{name} lädt nicht. Dein Netz, eine Proxy-Regel oder ein Werbeblocker hält es vielleicht auf. Probier einen anderen Server oder pausiere den Werbeblocker und teste erneut.",
+  why_fail_net: "{name} lädt von dieser Seite aus nicht. Dein Netz, eine Proxy-Regel, ein Werbeblocker oder der Tracking-Schutz des Browsers hält es vielleicht auf; lädt {name} direkt aufgerufen normal, blockieren die letzten beiden den Test. Probier einen anderen Server oder pausiere sie und teste erneut.",
   why_fail_timeout: "{name} hat innerhalb von 8 Sekunden nicht geantwortet. Die Route ist vielleicht langsam oder gesperrt; teste erneut.",
   why_fail_http: "{name} hat einen Fehler gemeldet (HTTP {n}), daher lässt sich diesmal nichts sagen. Versuch es später noch einmal.",
   note_netflix: "Hinweis: Netflix beschränkt viele Proxy- und Rechenzentrums-IPs auf Netflix-Eigenproduktionen, und das kann ein Browser nicht erkennen.",

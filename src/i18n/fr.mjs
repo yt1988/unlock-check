@@ -57,6 +57,10 @@ export default {
   why_nf_none: "Netflix s'ouvre, mais impossible de savoir quel catalogue national il vous propose.",
   why_reach_nolist: "Pays détecté par les serveurs de {name} : {c}. {name} ne publie pas où il est disponible, donc seule la localisation est affichée.",
   why_reach_nocc: "{name} s'ouvre, mais n'a pas indiqué quel pays il détecte : impossible de savoir si vous pouvez l'utiliser.",
+  // the site opens but the browser stopped its location check (an ad blocker, tracking protection)
+  why_blocked_ok: "{name} s'ouvre, mais le navigateur a empêché de lire le pays qu'il détecte (un bloqueur de pub ou la protection contre le pistage peut en être la cause). Pays détecté par la plupart des autres services : {c}. {name} y est accessible, donc cela devrait marcher.",
+  why_blocked_no: "{name} s'ouvre, mais le navigateur a empêché de lire le pays qu'il détecte (un bloqueur de pub ou la protection contre le pistage peut en être la cause). Pays détecté par la plupart des autres services : {c}. {name} n'y est pas accessible, donc cela ne marchera probablement pas.",
+  why_blocked_nocc: "{name} s'ouvre, mais le navigateur a empêché de lire le pays qu'il détecte (un bloqueur de pub ou la protection contre le pistage peut en être la cause) : impossible de savoir s'il est utilisable.",
   // someone else's shared result: the lines above that speak of "you", about the person who shared it
   why_api_ok_s: "L'API de région de {name} a répondu : cette personne peut l'utiliser.",
   why_api_no_s: "L'API de région de {name} a répondu : pas disponible là où se trouve cette personne.",
@@ -65,7 +69,7 @@ export default {
   why_nf_ok_s: "Netflix a proposé à cette personne le catalogue de ce pays : {c}.",
   why_nf_none_s: "Netflix s'est ouvert, mais impossible de savoir quel catalogue national il a proposé à cette personne.",
   why_reach_nocc_s: "{name} s'est ouvert, mais n'a pas indiqué quel pays il détecte : impossible de savoir si cette personne peut l'utiliser.",
-  why_fail_net: "{name} ne s'ouvre pas. Votre réseau, une règle du proxy ou un bloqueur de publicité l'en empêche peut-être. Essayez un autre serveur, ou mettez le bloqueur en pause et relancez le test.",
+  why_fail_net: "{name} ne s'ouvre pas depuis cette page. Votre réseau, une règle du proxy, un bloqueur de publicité ou la protection contre le pistage du navigateur l'en empêche peut-être ; si {name} s'ouvre normalement en direct, ce sont ces deux derniers qui bloquent le test. Essayez un autre serveur, ou mettez-les en pause et relancez le test.",
   why_fail_timeout: "{name} n'a pas répondu en 8 secondes. Le chemin est peut-être lent ou bloqué ; relancez le test.",
   why_fail_http: "{name} a renvoyé une erreur (HTTP {n}) : impossible de conclure cette fois. Réessayez plus tard.",
   note_netflix: "À noter : Netflix limite de nombreuses IP de proxy et de datacenter à ses seules productions originales, et un navigateur ne peut pas le détecter.",

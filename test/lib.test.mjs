@@ -55,6 +55,10 @@ test("judge: each kind of probe", () => {
   assert.deepEqual(judge(S.claude, { cc: "JP", ip: "1.2.3.4" }, null), { v: "ok", cc: "JP", ip: "1.2.3.4", how: "edge", why: null });
   assert.equal(judge(S.claude, { cc: "HK" }, null).v, "no");
   assert.equal(judge(S.claude, { err: "net" }, null).v, "fail");
+  // a trace the browser blocked while the site opens: the country most services see
+  assert.deepEqual(judge(S.x, { err: "net", reach: true }, "HK"), { v: "ok", cc: "HK", ip: "", how: "guess", why: null });
+  assert.equal(judge(S.x, { err: "net", reach: true }, null).v, "reach");
+  assert.equal(judge(S.x, { err: "net", reach: false }, "HK").v, "fail");
   assert.deepEqual(judge(S.chatgpt, { ok: false, edge: { cc: "HK", ip: "" } }, "HK"), { v: "no", cc: "HK", ip: "", how: "api", why: null });
   assert.equal(judge(S.netflix, { reach: true, cc: "JP", hops: 0 }, null).v, "ok");
   assert.equal(judge(S.netflix, { reach: true, cc: null, hops: 2 }, "RU").v, "no");

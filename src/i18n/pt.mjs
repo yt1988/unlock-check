@@ -57,6 +57,10 @@ export default {
   why_nf_none: "A Netflix abre, mas não deu para saber de qual país é o catálogo que você recebe.",
   why_reach_nolist: "País detectado pelos servidores de {name}: {c}. {name} não publica onde está disponível, então só a localização aparece.",
   why_reach_nocc: "{name} abre, mas não informou qual país detecta, então não dá para saber se você pode usar.",
+  // the site opens but the browser stopped its location check (an ad blocker, tracking protection)
+  why_blocked_ok: "{name} abre, mas o navegador impediu a leitura do país que ele detecta (um bloqueador de anúncios ou a proteção contra rastreamento pode causar isso). País detectado pela maioria dos outros serviços: {c}. Lá {name} está disponível, então deve funcionar.",
+  why_blocked_no: "{name} abre, mas o navegador impediu a leitura do país que ele detecta (um bloqueador de anúncios ou a proteção contra rastreamento pode causar isso). País detectado pela maioria dos outros serviços: {c}. Lá {name} não está disponível, então provavelmente não funciona.",
+  why_blocked_nocc: "{name} abre, mas o navegador impediu a leitura do país que ele detecta (um bloqueador de anúncios ou a proteção contra rastreamento pode causar isso), então não dá para saber se funciona.",
   // someone else's shared result: the lines above that speak of "you", about the person who shared it
   why_api_ok_s: "A API de região de {name} disse: quem compartilhou pode usar.",
   why_api_no_s: "A API de região de {name} disse: não está disponível onde está quem compartilhou.",
@@ -64,7 +68,7 @@ export default {
   why_hops_no_s: "{name} mandou quem compartilhou para a página de \"indisponível na sua região\".",
   why_nf_none_s: "A Netflix abriu, mas não deu para saber de qual país era o catálogo que quem compartilhou recebeu.",
   why_reach_nocc_s: "{name} abriu, mas não informou qual país detecta, então não dá para saber se quem compartilhou pode usar.",
-  why_fail_net: "{name} não abre. Sua rede, uma regra do proxy ou um bloqueador de anúncios pode estar barrando. Tente outro servidor, ou pause o bloqueador e teste de novo.",
+  why_fail_net: "{name} não abre a partir desta página. Sua rede, uma regra do proxy, um bloqueador de anúncios ou a proteção contra rastreamento do navegador pode estar barrando; se {name} abre normalmente direto, são esses dois últimos que bloqueiam o teste. Tente outro servidor, ou pause-os e teste de novo.",
   why_fail_timeout: "{name} não respondeu em 8 segundos. A rota pode estar lenta ou bloqueada; teste de novo.",
   why_fail_http: "{name} retornou um erro (HTTP {n}), então desta vez não dá para saber. Tente mais tarde.",
   note_netflix: "Atenção: a Netflix limita muitos IPs de proxy e de data center às produções originais dela, e o navegador não consegue detectar isso.",

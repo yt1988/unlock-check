@@ -57,6 +57,10 @@ export default {
   why_nf_none: "Netflix abre, pero no se pudo saber de qué país es el catálogo que te muestra.",
   why_reach_nolist: "Los servidores de {name} te ubican en {c}. {name} no publica dónde está disponible, así que solo se muestra la ubicación.",
   why_reach_nocc: "{name} abre, pero no indicó en qué país te ubica, así que no se puede saber si puedes usarlo.",
+  // the site opens but the browser stopped its location check (an ad blocker, tracking protection)
+  why_blocked_ok: "{name} abre, pero el navegador impidió leer en qué país te ubica (puede pasar con un bloqueador de anuncios o la protección contra el rastreo). La mayoría de los demás servicios te ubican en {c}, donde {name} está disponible, así que debería funcionar.",
+  why_blocked_no: "{name} abre, pero el navegador impidió leer en qué país te ubica (puede pasar con un bloqueador de anuncios o la protección contra el rastreo). La mayoría de los demás servicios te ubican en {c}, donde {name} no está disponible, así que probablemente no funcione.",
+  why_blocked_nocc: "{name} abre, pero el navegador impidió leer en qué país te ubica (puede pasar con un bloqueador de anuncios o la protección contra el rastreo), así que no se puede saber si puedes usarlo.",
   // someone else's shared result: the lines above that speak of "you", about the person who shared it
   why_api_ok_s: "La API de región de {name} indicó que quien lo compartió puede usarlo.",
   why_api_no_s: "La API de región de {name} indicó que no está disponible donde está quien lo compartió.",
@@ -75,7 +79,10 @@ export default {
   why_nf_none_s: "Netflix abrió, pero no se pudo saber de qué país era el catálogo que le mostró a quien lo compartió.",
   why_reach_nolist_s: "Los servidores de {name} ubicaron a quien lo compartió en {c}. {name} no publica dónde está disponible, así que solo se muestra la ubicación.",
   why_reach_nocc_s: "{name} abrió, pero no indicó en qué país ubicó a quien lo compartió, así que no se puede saber si puede usarlo.",
-  why_fail_net: "{name} no abre. Puede que lo esté bloqueando tu red, una regla del proxy o un bloqueador de anuncios. Prueba otro servidor, o pausa el bloqueador y vuelve a comprobar.",
+  why_blocked_ok_s: "{name} abrió, pero el navegador impidió leer en qué país ubicó a quien lo compartió (puede pasar con un bloqueador de anuncios o la protección contra el rastreo). La mayoría de los demás servicios ubicaron a quien lo compartió en {c}, donde {name} está disponible, así que debería funcionar.",
+  why_blocked_no_s: "{name} abrió, pero el navegador impidió leer en qué país ubicó a quien lo compartió (puede pasar con un bloqueador de anuncios o la protección contra el rastreo). La mayoría de los demás servicios ubicaron a quien lo compartió en {c}, donde {name} no está disponible, así que probablemente no funcione.",
+  why_blocked_nocc_s: "{name} abrió, pero el navegador impidió leer en qué país ubicó a quien lo compartió (puede pasar con un bloqueador de anuncios o la protección contra el rastreo), así que no se puede saber si puede usarlo.",
+  why_fail_net: "{name} no abre desde esta página. Puede que lo esté bloqueando tu red, una regla del proxy, un bloqueador de anuncios o la protección contra el rastreo del navegador; si {name} abre bien por sí solo, son estos dos últimos los que bloquean la comprobación. Prueba otro servidor, o páusalos y vuelve a comprobar.",
   why_fail_timeout: "{name} no respondió en 8 segundos. La ruta puede ser lenta o estar bloqueada; vuelve a comprobar.",
   why_fail_http: "{name} devolvió un error (HTTP {n}), así que esta vez no se puede saber. Inténtalo más tarde.",
   note_netflix: "Nota: Netflix limita muchas IP de proxy y de centro de datos a sus producciones originales, y el navegador no puede detectarlo.",

@@ -60,6 +60,10 @@ export default {
   why_nf_none: "Netflix opens, but the page couldn't tell which country's catalog you get.",
   why_reach_nolist: "{name}'s servers think you're in {c}. {name} doesn't publish where it's available, so only the location is shown.",
   why_reach_nocc: "{name} opens, but didn't reveal which country it thinks you're in, so the page can't tell if you can use it.",
+  // the site opens but the browser stopped its location check (an ad blocker, tracking protection)
+  why_blocked_ok: "{name} opens, but the browser stopped the page from reading which country {name} places you in (an ad blocker or tracking protection can do this). Most other services think you're in {c}, where {name} works, so it should work.",
+  why_blocked_no: "{name} opens, but the browser stopped the page from reading which country {name} places you in (an ad blocker or tracking protection can do this). Most other services think you're in {c}, where {name} isn't available, so it probably won't work.",
+  why_blocked_nocc: "{name} opens, but the browser stopped the page from reading which country {name} places you in (an ad blocker or tracking protection can do this), so the page can't tell if you can use it.",
   // someone else's shared result: the lines above that speak of "you", about the person who shared it
   why_api_ok_s: "{name}'s own region API said the sharer can use it.",
   why_api_no_s: "{name}'s own region API said it isn't available where the sharer is.",
@@ -78,7 +82,10 @@ export default {
   why_nf_none_s: "Netflix opened, but the page couldn't tell which country's catalog the sharer got.",
   why_reach_nolist_s: "{name}'s servers placed the sharer in {c}. {name} doesn't publish where it's available, so only the location is shown.",
   why_reach_nocc_s: "{name} opened, but didn't reveal which country it placed the sharer in, so the page can't tell if they can use it.",
-  why_fail_net: "{name} won't open. Your network, a proxy rule or an ad blocker may be stopping it. Try another server, or pause the ad blocker and check again.",
+  why_blocked_ok_s: "{name} opened, but the browser stopped the page from reading which country {name} placed the sharer in (an ad blocker or tracking protection can do this). Most other services placed the sharer in {c}, where {name} works, so it should work.",
+  why_blocked_no_s: "{name} opened, but the browser stopped the page from reading which country {name} placed the sharer in (an ad blocker or tracking protection can do this). Most other services placed the sharer in {c}, where {name} isn't available, so it probably won't work.",
+  why_blocked_nocc_s: "{name} opened, but the browser stopped the page from reading which country {name} placed the sharer in (an ad blocker or tracking protection can do this), so the page can't tell if they can use it.",
+  why_fail_net: "{name} won't open from this page. Your network, a proxy rule, an ad blocker or the browser's tracking protection may be stopping it; if {name} opens fine on its own, it's the last two blocking the check. Try another server, or pause them and check again.",
   why_fail_timeout: "{name} didn't answer within 8 seconds. The route may be slow or blocked; try checking again.",
   why_fail_http: "{name} returned an error (HTTP {n}), so the page can't tell this time. Try again later.",
   note_netflix: "Note: Netflix limits many proxy and data center IPs to Netflix originals only, and a browser can't detect that.",

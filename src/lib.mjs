@@ -77,7 +77,9 @@ export function judge(s, r, guess) {
     const cc = (r.edge && r.edge.cc) || r.cc || null;
     return { v: r.ok ? "ok" : "no", cc, ip: (r.edge && r.edge.ip) || r.ip || "", how: "api", why: null };
   }
-  if (p.trace) return r.err ? fail() : byList(r.cc, "edge", r.ip);
+  // a trace that can't be read while the site itself opens: the browser (an ad blocker, tracking protection) stopped
+  // the check, not the service, so the country is the one most services see
+  if (p.trace) return !r.err ? byList(r.cc, "edge", r.ip) : r.reach ? byList(guess, "guess") : fail();
   if (p.netflix) {
     if (r.reach === false) return fail();
     if (r.cc) return byList(r.cc, "hops");

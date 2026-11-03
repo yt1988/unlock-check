@@ -110,6 +110,9 @@
     if (p.trace) {
       try { const a = await read(p.trace), x = READERS.trace(a.st, a.text); if (x) Object.assign(r, x); else { r.err = "http"; r.n = a.st; } }
       catch (e) { r.err = e.why || "net"; }
+      // whether the service answers at all when its answer isn't read (no CORS): a proxy or blocker that breaks the
+      // readable request often lets this through. Its home page last: most refuse other sites (Cross-Origin-Resource-Policy)
+      if (r.err) r.reach = await loads(p.trace) || await loads(p.trace) || await loads(s.site);
       return r;
     }
     // one retry: a proxy sometimes drops the first connection to a host
@@ -155,6 +158,7 @@
     if (v.v === "fail") return t("why_fail_" + (v.why === "timeout" ? "timeout" : v.why === "http" ? "http" : "net"), { name: n, n: v.n || "" });
     let k;
     if (id === "netflix") k = v.cc ? "nf_" + v.v : "nf_none";
+    else if (s.probe.trace && v.how === "guess") k = "blocked_" + (v.cc ? v.v : "nocc");   // the browser stopped its trace
     else if (v.v === "reach") k = v.cc ? "reach_nolist" : "reach_nocc";
     else if (v.how === "api" || v.how === "hops") k = v.how + "_" + v.v;
     else k = v.how + "_" + (s.allow ? "list" : "block") + "_" + v.v;
@@ -275,6 +279,9 @@
     const who = await me();
     S.guess = guessCountry(seen) || who.country || null;
     const prefer = [...new Set([...seen, who.country].filter(Boolean))];
+    // a trace the browser blocked, now with that country
+    for (const s of early) if (s.probe.trace && S.r[s.id].err && S.r[s.id].reach) { S.v[s.id] = judge(s, S.r[s.id], S.guess); renderRow(s.id); }
+    renderGroups(); renderSum(); renderFocus();
     await Promise.all(late.map(async s => {
       const r = await reach[s.id];
       if (r.reach) {
@@ -431,6 +438,21 @@
     return { type: "result", lang: LANG, path: shareLink().slice(location.origin.length), grade: null, score: null,
       headline: t("vh_" + verdict()), stats, findings: findings.slice(0, 4), facts };
   }
+
+  // "Report a problem" (the shell's dialog) attaches this run the way a share link holds it: no address; each service's
+  // verdict, how it was reached and what its probe got
+  window.msReport = () => {
+    const n = tally(Object.values(S.v)), has = S.done && Object.keys(S.v).length > 0;
+    return {
+      summary: has ? `${t("vh_" + verdict())} · ${t("v_ok")} ${n.ok} · ${t("v_no")} ${n.no} · ${t("v_reach")} ${n.reach} · ${t("v_fail")} ${n.fail}` : t("v_wait"),
+      data: { page: location.pathname, lang: LANG, shared: !!S.shared, done: S.done, link: has ? shareLink() : null,
+        tz: (S.shared ? S.shared.tz : tzCc()) || null, guess: S.guess,
+        results: Object.fromEntries(SERVICES.filter(s => S.v[s.id]).map(s => {
+          const v = S.v[s.id], r = S.r[s.id] || {};
+          return [s.id, { v: v.v, how: v.how || null, why: v.why || null, cc: v.cc || null, err: r.err || undefined, n: r.n || undefined, reach: r.reach == null ? undefined : r.reach }];
+        })) },
+    };
+  };
 
   applyMask();
   if (EMBED) { run(); return; }                                 // starts at once; a result in the link is not shown here

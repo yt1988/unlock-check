@@ -57,6 +57,10 @@ export default {
   why_nf_none: "Netflix 打得开，但没测出它给你的是哪个区。",
   why_reach_nolist: "{name} 的服务器认为你在{c}。它没有公布在哪些地区可用，所以这里只显示位置，判断不了能不能用。",
   why_reach_nocc: "{name} 打得开，但没拿到它认为你在哪个地区，判断不了能不能用。",
+  // the site opens but the browser stopped its location check (an ad blocker, tracking protection)
+  why_blocked_ok: "{name} 打得开，但浏览器拦下了读取它认为你在哪个地区的请求（广告拦截插件或跟踪防护会这样做）。其他服务大多认为你在{c}，{name} 在那里能用，所以推测能用。",
+  why_blocked_no: "{name} 打得开，但浏览器拦下了读取它认为你在哪个地区的请求（广告拦截插件或跟踪防护会这样做）。其他服务大多认为你在{c}，{name} 在那里用不了，所以推测用不了。",
+  why_blocked_nocc: "{name} 打得开，但浏览器拦下了读取它认为你在哪个地区的请求（广告拦截插件或跟踪防护会这样做），判断不了能不能用。",
   // someone else's shared result: the lines above that speak of "you", about the person who shared it
   why_api_no_s: "{name} 自己的地区接口说：分享者所在的地区用不了。",
   why_edge_list_ok_s: "{name} 的服务器认为分享者在{c}，在它公布的支持地区里。",
@@ -74,7 +78,10 @@ export default {
   why_nf_none_s: "Netflix 打得开，但没测出它给分享者的是哪个区。",
   why_reach_nolist_s: "{name} 的服务器认为分享者在{c}。它没有公布在哪些地区可用，所以这里只显示位置，判断不了能不能用。",
   why_reach_nocc_s: "{name} 打得开，但没拿到它认为分享者在哪个地区，判断不了能不能用。",
-  why_fail_net: "{name} 打不开：可能被网络、代理规则或广告拦截插件挡住了。换个节点，或先关掉拦截插件再测一次。",
+  why_blocked_ok_s: "{name} 打得开，但浏览器拦下了读取它认为分享者在哪个地区的请求（广告拦截插件或跟踪防护会这样做）。其他服务大多认为分享者在{c}，{name} 在那里能用，所以推测能用。",
+  why_blocked_no_s: "{name} 打得开，但浏览器拦下了读取它认为分享者在哪个地区的请求（广告拦截插件或跟踪防护会这样做）。其他服务大多认为分享者在{c}，{name} 在那里用不了，所以推测用不了。",
+  why_blocked_nocc_s: "{name} 打得开，但浏览器拦下了读取它认为分享者在哪个地区的请求（广告拦截插件或跟踪防护会这样做），判断不了能不能用。",
+  why_fail_net: "{name} 打不开：可能被网络、代理规则、广告拦截插件或浏览器的跟踪防护挡住了。如果直接打开 {name} 是正常的，多半是后两者拦了这个检测。换个节点，或先关掉它们再测一次。",
   why_fail_timeout: "{name} 8 秒内没有响应，可能是线路太慢或被拦截了。可以重新检测一次。",
   why_fail_http: "{name} 返回了错误（HTTP {n}），这次判断不了。可以稍后再测。",
   note_netflix: "注意：Netflix 会把很多代理和机房 IP 限制成只能看 Netflix 自制剧，浏览器测不出这一点。",
