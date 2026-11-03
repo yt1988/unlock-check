@@ -145,7 +145,7 @@
     // result says so in a word (and the cell is tinted). Screen readers get the verdict word either way.
     if (!v) { vd.textContent = S.gen ? t("v_wait") : ""; rg.textContent = S.gen ? "…" : ""; li.removeAttribute("title"); return; }
     vd.textContent = t("v_" + v.v);
-    rg.textContent = v.v === "ok" ? (v.cc ? country(v.cc) : "") : t("v_" + v.v);
+    rg.textContent = v.v === "ok" ? (v.cc ? country(v.cc) : t("v_ok")) : t("v_" + v.v);   // no country: it says it works
     li.title = (v.how ? t("how_" + v.how) + " · " : "") + whyOf(id, v) + (v.ip && !S.shared ? "\nIP " + ipTxt(v.ip) : "");
   }
   // One plain sentence on what the verdict rests on (row tooltip, a service page's panel). Keys: why_<how>_<verdict>,
@@ -320,7 +320,7 @@
     eye.hidden = true;
     renderAll();
     $("#run span").textContent = t("test_mine"); $("#run").disabled = false; $("#share").disabled = false;
-    import("/assets/share/share.js?v=3").then(({ received }) => received({ lang: LANG, ts: R.ts, at: $(".hero"), test: () => $("#run").onclick() })).catch(() => {});
+    import("/assets/share/share.js?v=4").then(({ received }) => received({ lang: LANG, ts: R.ts, at: $(".hero"), test: () => $("#run").onclick() })).catch(() => {});
   }
   // a result link that can't be read (cut short, mistyped, a format this page doesn't know) says so, and waits
   function showBroken() {
@@ -387,7 +387,7 @@
   let dialog = null;
   $("#share").onclick = async () => {
     if (!S.done) return;
-    const { share } = await import("/assets/share/share.js?v=3");
+    const { share } = await import("/assets/share/share.js?v=4");
     dialog = share({
       lang: LANG, name: t("name"), file: "unlock-check", never: ["ip"],
       link: shareLink, home: location.origin + D.home[LANG],
