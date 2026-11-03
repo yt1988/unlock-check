@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <script>(function(){var d=document.documentElement,th=null,s=null;try{th=localStorage.getItem("unlock:theme");s=localStorage.getItem("unlock:lang")}catch(e){}if(th==="light"||th==="dark")d.setAttribute("data-theme",th);if(!d.hasAttribute("data-root"))return;var P=JSON.parse(d.getAttribute("data-paths")||"{}"),l=null;try{var q=new URLSearchParams(location.search).get("lang");if(P[q])l=q}catch(e){}if(!l&&P[s])l=s;for(var ls=navigator.languages||[navigator.language||"en"],i=0;!l&&!s&&i<ls.length;i++){var x=String(ls[i]).toLowerCase(),b=x.split("-")[0];l=b==="zh"?(/tw|hk|mo|hant/.test(x)?"zh-TW":"zh-CN"):P[b]?b:null}if(l&&l!==d.lang)location.replace(P[l]+location.hash)})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>ChatGPT、Claude、Gemini、Netflix、Disney+ 全部可用 · 流媒体/AI 解锁检测</title>
-<meta name="description" content="别人分享的解锁检测结果：哪些流媒体和 AI 能用，各自把他定位在哪个国家。打开就能测你自己的。">
+<title>ChatGPT、Claude、Gemini、Netflix、Disney+ 全都能用 · 流媒体/AI 解锁检测</title>
+<meta name="description" content="别人分享的解锁检测结果：哪些流媒体和 AI 能用，各服务认为对方在哪个地区。打开就能测你自己的。">
 <meta name="robots" content="noindex, follow">
 <meta name="theme-color" content="#f6f6f7" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#1c1c1c" media="(prefers-color-scheme: dark)">
@@ -14,8 +14,8 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="1ms.dog">
-<meta property="og:title" content="ChatGPT、Claude、Gemini、Netflix、Disney+ 全部可用 · 流媒体/AI 解锁检测">
-<meta property="og:description" content="别人分享的解锁检测结果：哪些流媒体和 AI 能用，各自把他定位在哪个国家。打开就能测你自己的。">
+<meta property="og:title" content="ChatGPT、Claude、Gemini、Netflix、Disney+ 全都能用 · 流媒体/AI 解锁检测">
+<meta property="og:description" content="别人分享的解锁检测结果：哪些流媒体和 AI 能用，各服务认为对方在哪个地区。打开就能测你自己的。">
 <meta property="og:url" content="https://unlock.1ms.dog/zh-cn/r/all/">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unlock.1ms.dog/og/zh-cn/r-all.png">
@@ -55,7 +55,7 @@
       <div class="hero-h">
         <p class="shared" id="shared"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6.5 9.5l3-3M7 4.5l1-1a2.5 2.5 0 0 1 3.5 3.5l-1 1M9 11.5l-1 1a2.5 2.5 0 0 1-3.5-3.5l1-1"/></svg><span id="sharedTxt"></span></p>
         <h1>你的 IP 能用哪些流媒体和 AI？</h1>
-        <p class="intro">在你的浏览器里逐个访问 33 个服务，走的就是你平时打开它们的线路，看每个服务能不能用、把你定位在哪个国家。</p>
+        <p class="intro">你的浏览器会逐个访问 33 个服务，走的就是你平时打开它们的线路。测完告诉你：每个服务能不能用，它认为你在哪个地区。</p>
       </div>
       
       <div class="vline wait" id="vline">
@@ -68,7 +68,7 @@
         <div class="tot t-reach"><b>–</b><span data-i="v_reach">无法确认</span></div>
         <div class="tot t-fail"><b>–</b><span data-i="v_fail">打不开</span></div>
       </div>
-      <ul class="notes" id="notes"><li class="nt wait"><i></i><span>正在比较各服务把你定位在哪…</span></li><li class="nt wait"><i></i><span>正在汇总各服务看到的 IP…</span></li><li class="nt wait"><i></i><span>正在比较浏览器时区…</span></li></ul>
+      <ul class="notes" id="notes"><li class="nt wait"><i></i><span>正在对比各服务认为你在哪…</span></li><li class="nt wait"><i></i><span>正在汇总各服务看到的 IP…</span></li><li class="nt wait"><i></i><span>正在对比浏览器时区…</span></li></ul>
       <div class="bar">
         <div class="prog" id="prog"><i></i></div>
         <span class="prog-t" id="progTxt"></span>
@@ -97,18 +97,18 @@
     <div class="dlg-h"><h2 id="helpT" data-i="faq_h">常见问题</h2>
       <button class="icon-btn" data-close type="button" aria-label="关闭"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg></button></div>
     <div class="help-b">
-      <nav class="help-nav" id="helpNav" role="tablist"><button type="button" role="tab" data-hq="0" aria-selected="true">为什么要在浏览器里测？</button><button type="button" role="tab" data-hq="1" aria-selected="false">“官方接口”“官方定位”“跳转判断”“推测”有什么区别？</button><button type="button" role="tab" data-hq="2" aria-selected="false">为什么不同服务把我定位在不同国家？</button><button type="button" role="tab" data-hq="3" aria-selected="false">为什么要看时区？</button><button type="button" role="tab" data-hq="4" aria-selected="false">会上传我的数据吗？</button></nav>
+      <nav class="help-nav" id="helpNav" role="tablist"><button type="button" role="tab" data-hq="0" aria-selected="true">为什么要在浏览器里测？</button><button type="button" role="tab" data-hq="1" aria-selected="false">「官方接口」「官方定位」「跳转判断」「推测」是什么意思？</button><button type="button" role="tab" data-hq="2" aria-selected="false">为什么不同服务认为我在不同国家？</button><button type="button" role="tab" data-hq="3" aria-selected="false">为什么要看时区？</button><button type="button" role="tab" data-hq="4" aria-selected="false">会上传我的数据吗？</button></nav>
       <div class="help-pick">
         <button class="icon-btn" type="button" data-hstep="-1" aria-label="上一条"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 4L6 8l4 4"/></svg></button>
         <select id="helpSel" aria-labelledby="helpT"></select>
         <button class="icon-btn" type="button" data-hstep="1" aria-label="下一条"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 4l4 4-4 4"/></svg></button>
       </div>
-      <div class="help-c" id="helpC"><article data-hqb="0"><h3>为什么要在浏览器里测？</h3><p>代理软件（Clash、Surge、Shadowrocket 等）会按规则给不同网站走不同线路。在服务器上运行的检测脚本只能测那台服务器的 IP。这个页面在你的浏览器里直接访问每个服务，走的就是你平时打开它们的线路。</p></article><article data-hqb="1" hidden><h3>“官方接口”“官方定位”“跳转判断”“推测”有什么区别？</h3><p>代表结论有多可靠，从高到低。官方接口：服务自己的地区接口直接说能不能用。官方定位：服务的服务器告诉我们你被定位在哪个国家，再对照它公布的可用地区。跳转判断：看服务有没有把你转到“本地区不可用”页面。推测：服务不让读取任何结果，只确认能打开，国家按其他服务的定位来算。</p></article><article data-hqb="2" hidden><h3>为什么不同服务把我定位在不同国家？</h3><p>可能是你的代理规则让它们走了不同节点，也可能是各服务用的 IP 数据库不一样。出现这种情况时，页面会列出每个国家对应哪些服务。</p></article><article data-hqb="3" hidden><h3>为什么要看时区？</h3><p>AI 服务会对比浏览器时区和 IP 所在国家。比如时区是中国、IP 却在美国，就很像在用代理，可能触发更严格的验证。</p></article><article data-hqb="4" hidden><h3>会上传我的数据吗？</h3><p>不会。浏览器直接访问各个服务，本站只提供网页文件，看不到你的结果。截图前可以点“隐藏 IP”。</p></article></div>
+      <div class="help-c" id="helpC"><article data-hqb="0"><h3>为什么要在浏览器里测？</h3><p>代理软件（Clash、Surge、Shadowrocket 等）会按规则让不同网站走不同线路。放在服务器上跑的检测脚本，只能测那台服务器的 IP。这个页面在你的浏览器里直接访问每个服务，走的就是你平时打开它们的那条线路。</p></article><article data-hqb="1" hidden><h3>「官方接口」「官方定位」「跳转判断」「推测」是什么意思？</h3><p>表示结论有多可靠，从高到低。官方接口：服务自己的地区接口直接说能不能用。官方定位：服务的服务器告诉我们它认为你在哪个国家，再对照它公布的支持地区。跳转判断：看服务有没有把你转到「本地区不可用」页面。推测：服务什么都不让读，只能确认打得开，国家按其他服务的判断来算。</p></article><article data-hqb="2" hidden><h3>为什么不同服务认为我在不同国家？</h3><p>可能是代理规则让它们走了不同节点（也就是分流），也可能是各家用的 IP 数据库不一样。出现这种情况时，页面会列出每个国家对应哪些服务。想让它们一致，可以把这些服务分到同一个节点。</p></article><article data-hqb="3" hidden><h3>为什么要看时区？</h3><p>AI 服务会对比浏览器时区和 IP 所在的国家。比如时区是中国、IP 却在美国，看起来就像在用代理，可能触发更严格的验证。把电脑的时区改成和 IP 一致，能减少这种情况。</p></article><article data-hqb="4" hidden><h3>会上传我的数据吗？</h3><p>检测时不会：你的浏览器直接访问各个服务，本站只提供网页，看不到你的结果。在 1ms.dog 上点「分享」时，短链接和预览图会保存在 1ms.dog，聊天软件里才能显示；分享的结果不含 IP。截图前可以先点「隐藏 IP」。</p></article></div>
     </div>
   </div>
 </div>
 <script type="application/json" id="data">{"lang":"zh-CN","paths":{"en":"/r/all/","zh-CN":"/zh-cn/r/all/","zh-TW":"/zh-tw/r/all/","ja":"/ja/r/all/","ko":"/ko/r/all/","es":"/es/r/all/","fr":"/fr/r/all/","de":"/de/r/all/","pt":"/pt/r/all/","ru":"/ru/r/all/"},"home":{"en":"/","zh-CN":"/zh-cn/","zh-TW":"/zh-tw/","ja":"/ja/","ko":"/ko/","es":"/es/","fr":"/fr/","de":"/de/","pt":"/pt/","ru":"/ru/"},"egressPath":"/zh-cn/"}</script>
-<script src="/assets/l.zh-cn.4b715edc5e.js"></script>
+<script src="/assets/l.zh-cn.bd346e08e3.js"></script>
 <script src="/assets/app.6f9384d735.js" defer></script>
 </body>
 </html>
