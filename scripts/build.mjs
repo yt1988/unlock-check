@@ -59,6 +59,8 @@ export async function loadI18n() {
 
 // the countries of a list, by name in the page's language
 const names = (lang, codes) => codes.split(" ").map(c => regionName(c, lang)).sort((a, b) => a.localeCompare(b, lang));
+// countries in a row: " · " where the language's list comma would split a name ("Taiwan, China"); 、 stays (tool contract §5)
+const joinCc = join => join === "、" ? join : " · ";
 
 // A page of the site: which one (null for the main page, { cat } or { svc }), in one language
 export function pageIds() {
@@ -117,8 +119,8 @@ export async function build({ check = false } = {}) {
     const svcFaq = s => {
       const n = s.name, f = v => fill(v, { name: n });
       const where = s.only ? fill(T("a_only"), { name: n, c: names(lang, s.only)[0] })
-        : s.allow ? fill(T("a_allow"), { name: n, n: s.allow.split(" ").length, list: names(lang, s.allow).join(T("join")) })
-          : s.deny ? fill(T("a_deny"), { name: n, list: names(lang, s.deny).join(T("join")) }) : fill(T("a_nolist"), { name: n });
+        : s.allow ? fill(T("a_allow"), { name: n, n: s.allow.split(" ").length, list: names(lang, s.allow).join(joinCc(T("join"))) })
+          : s.deny ? fill(T("a_deny"), { name: n, list: names(lang, s.deny).join(joinCc(T("join"))) }) : fill(T("a_nolist"), { name: n });
       const how = s.probe.api ? "m_api" : s.probe.trace ? "m_edge" : s.probe.netflix ? "m_nf" : s.probe.hops ? "m_hops" : "m_guess";
       const out = [[f(T("q_where")), where + (s.src ? ` <a href="${esc(s.src)}" target="_blank" rel="noopener">${esc(T("source"))}</a>` : "")],
         [f(T("q_how")), esc(f(T(how)))]];
