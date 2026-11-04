@@ -119,7 +119,7 @@ test("dnsNote: where the DNS lookups come from against the exit", () => {
   assert.deepEqual(dnsNote([{ cc: "JP", org: "a" }, { cc: "CN", org: "China Unicom" }], "JP"), { k: "dns_cn", r: "CN", e: "JP", org: "China Unicom", ecs: null });
   // in mainland China with a mainland resolver: nothing leaks
   assert.equal(dnsNote([{ cc: "CN", org: "x" }], "CN").k, "dns_same");
-  // a subnet passed on from another country than the resolver's
-  assert.deepEqual(dnsNote([{ cc: "US", org: "Google", ecs: { net: "114.254.79.0/24", cc: "CN" } }], "JP").ecs, { net: "114.254.79.0/24", cc: "CN" });
-  assert.equal(dnsNote([{ cc: "JP", org: "Google", ecs: { net: "16.76.79.0/24", cc: "JP" } }], "JP").ecs, null);
+  // the visitor's subnet passed on by a resolver
+  assert.deepEqual(dnsNote([{ cc: "HK", org: "Google LLC", ecs: { net: "47.76.29.0/24" } }], "JP").ecs, { net: "47.76.29.0/24" });
+  assert.equal(dnsNote([{ cc: "JP", org: "Google LLC", ecs: null }], "JP").ecs, null);
 });

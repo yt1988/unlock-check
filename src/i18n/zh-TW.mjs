@@ -63,7 +63,7 @@ export default {
   dns_cn: "你的 DNS 查詢走的是中國大陸的解析器（{org}），網頁流量卻從{e}出去。國外網站的網域交給大陸的 DNS 解析，可能被污染，或拿到大陸節點的位址。代理軟體通常能繞過去（fake-ip 或網域嗅探），但如果有服務打不開，先檢查 DNS 分流。",
   dns_split: "你的 DNS 從{r}發出（{org}），網頁流量卻從{e}出去。有些服務依 DNS 解析器的位置分配節點或判斷地區，所以結論可能和本頁測到的不同。使用「DNS 解鎖」的線路就是這種情況。",
   dns_same: "你的 DNS 解析器也在{e}（{org}），和網頁流量的出口一致，不會因為 DNS 被分到別處的節點。",
-  dns_ecs: "解析器還把你的網段（{net}，在{c}）一併送給了網站的 DNS，網站可以依這個網段判斷你在哪裡。",
+  dns_ecs: "解析器還把你的網段（{net}）一併送給了網站的 DNS，網站可以依這個網段判斷你在哪裡。",
   why_reach_nocc: "{name} 開得了，但不知道它認為你在哪個國家，無法判斷能不能用。",
   // the site opens but the browser stopped its location check (an ad blocker, tracking protection)
   why_blocked_ok: "{name} 開得了，但瀏覽器擋下了讀取它認為你在哪個國家的請求（廣告封鎖工具或追蹤防護會這樣做）。其他服務大多認為你在{c}，{name} 在那裡可以使用，所以推測能用。",

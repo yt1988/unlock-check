@@ -66,7 +66,7 @@ export default {
   dns_cn: "Your DNS lookups go through a resolver in mainland China ({org}), while your traffic leaves from {e}. Names of foreign sites looked up there can come back wrong or point to mainland servers. Proxy apps usually get around this (fake-IP, or sniffing the site's name), but if a service won't open, check how your DNS is routed first.",
   dns_split: "Your DNS lookups come from {r} ({org}), while your traffic leaves from {e}. Some services pick a server or a region by where your DNS resolver is, so they may not agree with what this page measured. A \"DNS unlock\" route looks exactly like this.",
   dns_same: "Your DNS resolver is in {e} too ({org}), where your traffic leaves: DNS won't send you to servers somewhere else.",
-  dns_ecs: "The resolver also passed your subnet ({net}, in {c}) on to the sites' name servers, which can place you by it.",
+  dns_ecs: "The resolver also passed your subnet ({net}) on to the sites' name servers, which can place you by it.",
   why_reach_nocc: "{name} opens, but didn't reveal which country it thinks you're in, so the page can't tell if you can use it.",
   // the site opens but the browser stopped its location check (an ad blocker, tracking protection)
   why_blocked_ok: "{name} opens, but the browser stopped the page from reading which country {name} places you in (an ad blocker or tracking protection can do this). Most other services think you're in {c}, where {name} works, so it should work.",

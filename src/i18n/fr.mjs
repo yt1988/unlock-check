@@ -63,7 +63,7 @@ export default {
   dns_cn: "Vos requêtes DNS passent par un résolveur de Chine continentale ({org}), alors que votre trafic sort par ce pays : {e}. Les noms de sites étrangers résolus là-bas peuvent revenir faussés ou pointer vers des serveurs chinois. Les applis de proxy contournent souvent le problème (fake-IP ou détection du nom du site), mais si un service ne s'ouvre pas, vérifiez d'abord le routage de votre DNS.",
   dns_split: "Vos requêtes DNS partent de ce pays : {r} ({org}), alors que votre trafic sort par celui-ci : {e}. Certains services choisissent un serveur ou une région d'après l'emplacement de votre résolveur DNS, donc ils peuvent ne pas être d'accord avec ce que cette page a mesuré. Une route de « déblocage DNS » ressemble exactement à ça.",
   dns_same: "Votre résolveur DNS est aussi dans le pays par où sort votre trafic ({e}, {org}) : le DNS ne vous enverra pas vers des serveurs ailleurs.",
-  dns_ecs: "Le résolveur a aussi transmis votre sous-réseau ({net}, {c}) aux serveurs de noms des sites, qui peuvent vous situer grâce à lui.",
+  dns_ecs: "Le résolveur a aussi transmis votre sous-réseau ({net}) aux serveurs de noms des sites, qui peuvent vous situer grâce à lui.",
   why_reach_nocc: "{name} s'ouvre, mais n'a pas indiqué quel pays il détecte : impossible de savoir si vous pouvez l'utiliser.",
   // the site opens but the browser stopped its location check (an ad blocker, tracking protection)
   why_blocked_ok: "{name} s'ouvre, mais le navigateur a empêché de lire le pays qu'il détecte (un bloqueur de pub ou la protection contre le pistage peut en être la cause). Pays détecté par la plupart des autres services : {c}. {name} y est accessible, donc cela devrait marcher.",

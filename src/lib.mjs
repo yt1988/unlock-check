@@ -137,14 +137,14 @@ export function exitsByCountry(verdicts) {
 //   dns_split  the resolver is in another country than the exit (the "DNS in Hong Kong, exit in Japan" case: a service
 //              that places you by your resolver, or a DNS unlock, gives a different answer than this page measured)
 //   dns_same   the resolver is where the traffic leaves
-// plus ecs: a subnet a resolver passed on, when it is in another country than that resolver
+// plus ecs: the visitor's subnet a resolver passed on to the sites' name servers ({ net }), when one did
 export function dnsNote(resolvers, exit) {
   const rs = (resolvers || []).filter(r => r && r.cc);
   if (!rs.length || !exit) return null;
   const cn = exit !== "CN" ? rs.find(x => x.cc === "CN") : null, other = rs.find(x => x.cc !== exit);
   const k = cn ? "dns_cn" : other ? "dns_split" : "dns_same", r = cn || other || rs[0];
-  const x = rs.find(y => y.ecs && y.ecs.cc && y.ecs.net && y.ecs.cc !== y.cc);
-  return { k, r: r.cc, e: exit, org: r.org || "", ecs: x ? { net: x.ecs.net, cc: x.ecs.cc } : null };
+  const x = rs.find(y => y.ecs && y.ecs.net);
+  return { k, r: r.cc, e: exit, org: r.org || "", ecs: x ? { net: x.ecs.net } : null };
 }
 
 // An IP with its middle hidden: 203.0.•.• / 2001:db8:•

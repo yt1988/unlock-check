@@ -164,6 +164,21 @@
   const watchBad = id => { const w = S.w && S.w.services[id]; return !!w && w.s !== "ok" && w.streak >= 2; };
   const RTF = new Intl.RelativeTimeFormat(LANG, { numeric: "auto" });
   const ago = iso => { const m = Math.max(1, Math.round((Date.now() - Date.parse(iso)) / 60e3)); return m < 60 ? RTF.format(-m, "minute") : RTF.format(-Math.round(m / 60), "hour"); };
+  // Which resolver this connection's DNS lookups go through: the browser looks up a name nobody else has
+  // (<token>-u.l.1ms.dog), and the dns tool's name server (api.l.1ms.dog, github.com/yt1988/dns-test) answers it on
+  // port 2053 with the resolvers it saw for that token. The resolver addresses stay on this page: share links and the
+  // checkup's facts carry the country only. Same hosts as the hourly check; nothing when it can't be reached.
+  const dnsAsk = () => {
+    if (!WATCH) return Promise.resolve(null);
+    const tok = [...crypto.getRandomValues(new Uint8Array(20))].map(b => "abcdefghijklmnopqrstuvwxyz0123456789"[b % 36]).join("");
+    return fetch(`https://${tok}-u.l.1ms.dog:2053/`, { cache: "no-store", credentials: "omit", referrerPolicy: "no-referrer", signal: AbortSignal.timeout(6000) })
+      .then(r => r.ok ? r.json() : null).then(j => {
+        if (!j || !Array.isArray(j.hits)) return null;
+        const seen = new Set(), rs = [];
+        for (const h of j.hits) if (h && h.ip && !seen.has(h.ip)) { seen.add(h.ip); rs.push({ ip: h.ip, cc: h.cc || null, org: h.org || "", ecs: h.ecs ? { net: h.ecs } : null }); }
+        return rs.length ? { rs, geo: j.geo || "" } : null;
+      }).catch(() => null);
+  };
   // the services whose answer waits for the others: the country they see (guess) and Netflix's list to try
   const LATE = s => !!(s.probe.netflix || s.probe.hops || (!s.probe.api && !s.probe.trace && !s.probe.jsonp));
   // a mainland-China-only service that can't be read is in mainland China when one that can be (Mango TV, Tencent
@@ -172,7 +187,7 @@
 
   /* ---------- state and rendering ---------- */
   // shared: a result from a link being shown (no addresses; nothing is tested until the visitor asks)
-  const S = { r: {}, v: {}, done: false, gen: 0, shared: null, broken: false, guess: null, cnOk: false, me: null, w: null };
+  const S = { r: {}, v: {}, done: false, gen: 0, shared: null, broken: false, guess: null, cnOk: false, me: null, w: null, dns: null };
   const masked = () => store.get(K.mask) === "1";
   const ipTxt = ip => masked() ? maskIp(ip) : ip;
   const IPQS = (document.querySelector('meta[name="ipqs"]') || {}).content || "";
@@ -284,6 +299,10 @@
     if (!main || !tz) out.push(["info", esc(t("tz_none"))]);
     else if (tz === main) out.push(["ok", t(sk("tz_ok"), { a: place(tz) })]);
     else out.push(["warn", t(sk("tz_bad"), { a: place(tz), b: place(main) })]);
+    // where the DNS lookups come from (not in a shared result: it never carries the resolvers)
+    const dn = !S.shared && S.dns && dnsNote(S.dns.rs, main);
+    if (dn) out.push([dn.k === "dns_same" ? "ok" : "warn", t(dn.k, { r: place(dn.r), e: place(dn.e), org: esc(dn.org || "?") }) +
+      (dn.ecs ? " " + t("dns_ecs", { net: esc(dn.ecs.net) }) : "") + (S.dns.geo ? ` <span class="m">${esc(S.dns.geo)}</span>` : "")]);
     ul.innerHTML = out.map(([k, h]) => `<li class="nt n-${k}"><i>${k === "ok" ? "✓" : k === "warn" ? "!" : "•"}</i><span>${h}</span></li>`).join("");
   }
   // A service page's lead panel: that service's verdict, big, and what it is based on
@@ -308,7 +327,8 @@
   async function run() {
     leaveShared();
     const gen = ++S.gen, N = SERVICES.length;
-    Object.assign(S, { r: {}, v: {}, done: false, guess: null, cnOk: false });
+    Object.assign(S, { r: {}, v: {}, done: false, guess: null, cnOk: false, dns: null });
+    const dnsP = dnsAsk().then(d => { if (gen === S.gen) S.dns = d; });
     maxP = null; meP = null;
     $("#run").disabled = true; $("#run").classList.add("busy"); $("#run span").textContent = t("running"); $("#share").disabled = true;
     renderAll();
@@ -360,6 +380,7 @@
       }
       settle(s, r);
     }));
+    await dnsP;
     if (gen !== S.gen) return;
     S.done = true;
     renderAll(); setProg(N, N);
@@ -537,6 +558,8 @@
     }
     const facts = { works: n.ok, blocked: n.no, total: SERVICES.length, countries, ai }, nf = S.v.netflix;
     if (nf && nf.v === "ok" && nf.cc) facts.netflix = nf.cc; else if (nf && nf.v === "no") facts.netflix = false;
+    const dn = S.dns && dnsNote(S.dns.rs, main);
+    if (dn) { facts.resolverCountry = dn.r; if (dn.k !== "dns_same") findings.push({ level: "warn", text: t(dn.k, { r: country(dn.r), e: country(dn.e), org: dn.org || "?" }) }); }
     return { type: "result", lang: LANG, path: shareLink().slice(location.origin.length), grade: null, score: null,
       headline: t("vh_" + verdict()), stats, findings: findings.slice(0, 4), facts };
   }
