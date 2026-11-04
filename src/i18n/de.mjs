@@ -59,6 +59,7 @@ export default {
   why_nf_none: "Netflix lädt, aber es ließ sich nicht feststellen, welchen Länderkatalog du bekommst.",
   why_reach_nolist: "Land laut den Servern von {name}: {c}. {name} veröffentlicht nicht, wo es verfügbar ist, daher wird nur der Standort angezeigt.",
   why_guess_nolist: "{name} lässt andere Seiten seine Antworten nicht lesen, daher ist nur bekannt, dass es lädt. Land laut den meisten anderen Diensten: {c}. {name} veröffentlicht aber nicht, wo es verfügbar ist, also bleibt offen, ob es dort geht.",
+  why_cn_ok: "{name} lässt andere Seiten seine Antworten nicht lesen, daher ist nur bekannt, dass es lädt. Über diese Route spielen Mango TV oder Tencent Video Titel aus Festlandchina ab, also sollte auch {name} gehen.",
   why_reach_nocc: "{name} lädt, hat aber nicht verraten, welches Land es erkennt. Ob du es nutzen kannst, bleibt offen.",
   // the site opens but the browser stopped its location check (an ad blocker, tracking protection)
   why_blocked_ok: "{name} lädt, aber der Browser hat verhindert, dass die Seite liest, welches Land {name} erkennt (das kann ein Werbeblocker oder der Tracking-Schutz sein). Land laut den meisten anderen Diensten: {c}. Dort ist {name} verfügbar, also sollte es gehen.",

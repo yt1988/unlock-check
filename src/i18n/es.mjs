@@ -57,6 +57,7 @@ export default {
   why_nf_none: "Netflix abre, pero no se pudo saber de qué país es el catálogo que te muestra.",
   why_reach_nolist: "Los servidores de {name} te ubican en {c}. {name} no publica dónde está disponible, así que solo se muestra la ubicación.",
   why_guess_nolist: "{name} no deja que otros sitios lean sus respuestas, así que solo se sabe que abre. La mayoría de los demás servicios te ubican en {c}, pero {name} no publica dónde está disponible, así que no se puede saber si funciona ahí.",
+  why_cn_ok: "{name} no deja que otros sitios lean sus respuestas, así que solo se sabe que abre. Mango TV o Tencent Video reproducen títulos de China continental por esta ruta, así que {name} también debería funcionar.",
   why_reach_nocc: "{name} abre, pero no indicó en qué país te ubica, así que no se puede saber si puedes usarlo.",
   // the site opens but the browser stopped its location check (an ad blocker, tracking protection)
   why_blocked_ok: "{name} abre, pero el navegador impidió leer en qué país te ubica (puede pasar con un bloqueador de anuncios o la protección contra el rastreo). La mayoría de los demás servicios te ubican en {c}, donde {name} está disponible, así que debería funcionar.",
@@ -80,6 +81,7 @@ export default {
   why_nf_none_s: "Netflix abrió, pero no se pudo saber de qué país era el catálogo que le mostró a quien lo compartió.",
   why_reach_nolist_s: "Los servidores de {name} ubicaron a quien lo compartió en {c}. {name} no publica dónde está disponible, así que solo se muestra la ubicación.",
   why_guess_nolist_s: "{name} no deja que otros sitios lean sus respuestas, así que solo se sabe que abre. La mayoría de los demás servicios ubicaron a quien lo compartió en {c}, pero {name} no publica dónde está disponible, así que no se puede saber si funciona ahí.",
+  why_cn_ok_s: "{name} no deja que otros sitios lean sus respuestas, así que solo se sabe que abre. Mango TV o Tencent Video reprodujeron títulos de China continental por la ruta de quien lo compartió, así que {name} también debería funcionar.",
   why_reach_nocc_s: "{name} abrió, pero no indicó en qué país ubicó a quien lo compartió, así que no se puede saber si puede usarlo.",
   why_blocked_ok_s: "{name} abrió, pero el navegador impidió leer en qué país ubicó a quien lo compartió (puede pasar con un bloqueador de anuncios o la protección contra el rastreo). La mayoría de los demás servicios ubicaron a quien lo compartió en {c}, donde {name} está disponible, así que debería funcionar.",
   why_blocked_no_s: "{name} abrió, pero el navegador impidió leer en qué país ubicó a quien lo compartió (puede pasar con un bloqueador de anuncios o la protección contra el rastreo). La mayoría de los demás servicios ubicaron a quien lo compartió en {c}, donde {name} no está disponible, así que probablemente no funcione.",

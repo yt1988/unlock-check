@@ -195,6 +195,7 @@
     let k;
     if (id === "netflix") k = v.cc ? "nf_" + v.v : "nf_none";
     else if (s.probe.trace && v.how === "guess") k = "blocked_" + (v.cc ? v.v : "nocc");   // the browser stopped its trace
+    else if ((S.r[id] || {}).cn && v.v === "ok") k = "cn_ok";                              // Mango TV or Tencent Video play here
     // no list to check the country against: the service's own country, or the one the others see (guess)
     else if (v.v === "reach") k = v.cc ? (v.how === "guess" ? "guess_nolist" : "reach_nolist") : "reach_nocc";
     else if (v.how === "api" || v.how === "hops") k = v.how + "_" + v.v;
@@ -297,6 +298,7 @@
     let d = 0, failed = 0, err = false; setProg(0, N);
     const settle = (s, r) => {
       if (gen !== S.gen) return;
+      if (s.only === "CN" && LATE(s) && S.cnOk) r.cn = true;   // judged by Mango TV's or Tencent Video's route (whyOf)
       S.r[s.id] = r; S.v[s.id] = judge(s, r, guessFor(s));
       renderRow(s.id); renderGroups(); renderSum(); renderFocus(); setProg(++d, N);
       if (err) return;
@@ -310,13 +312,17 @@
     maxHops();                                                  // measure the redirect limit while the first answers come in
     const early = SERVICES.filter(s => !LATE(s)), late = SERVICES.filter(LATE);
     const reach = Object.fromEntries(late.map(s => [s.id, ask(s)]));
+    // a page with a mainland-China-only service that can't be read but without Mango TV and Tencent Video (its own
+    // page, say) asks those two as well, for the route that site takes: not shown, not shared, only that answer
+    const cnHelp = SERVICES.some(s => s.only === "CN" && LATE(s)) ? ALL_SERVICES.filter(s => s.only === "CN" && !LATE(s) && !SERVICES.includes(s)) : [];
+    const helped = Promise.all(cnHelp.map(s => ask(s).then(r => judge(s, r, null).v === "ok")));
     await Promise.all(early.map(async s => settle(s, await ask(s))));
     if (gen !== S.gen) return;
     // the country to assume where a service's own answer can't be read, and the order Netflix's countries are tried in
     const seen = early.map(s => S.v[s.id]).filter(v => v && v.cc && v.how !== "guess").map(v => v.cc);
     const who = await me();
     S.guess = guessCountry(seen) || who.country || null;
-    S.cnOk = early.some(s => s.only === "CN" && (S.v[s.id] || {}).v === "ok");
+    S.cnOk = early.some(s => s.only === "CN" && (S.v[s.id] || {}).v === "ok") || (await helped).some(Boolean);
     const prefer = [...new Set([...seen, who.country].filter(Boolean))];
     // a trace the browser blocked, now with that country
     for (const s of early) if (s.probe.trace && S.r[s.id].err && S.r[s.id].reach) { S.v[s.id] = judge(s, S.r[s.id], S.guess); renderRow(s.id); }

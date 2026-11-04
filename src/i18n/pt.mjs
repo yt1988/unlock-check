@@ -57,6 +57,7 @@ export default {
   why_nf_none: "A Netflix abre, mas não deu para saber de qual país é o catálogo que você recebe.",
   why_reach_nolist: "País detectado pelos servidores de {name}: {c}. {name} não publica onde está disponível, então só a localização aparece.",
   why_guess_nolist: "{name} não deixa outros sites lerem as respostas dele, então só dá para saber que abre. País detectado pela maioria dos outros serviços: {c}. Mas {name} não publica onde está disponível, então não dá para saber se funciona lá.",
+  why_cn_ok: "{name} não deixa outros sites lerem as respostas dele, então só dá para saber que abre. Mango TV ou Tencent Video reproduzem títulos da China continental por esta rota, então {name} também deve funcionar.",
   why_reach_nocc: "{name} abre, mas não informou qual país detecta, então não dá para saber se você pode usar.",
   // the site opens but the browser stopped its location check (an ad blocker, tracking protection)
   why_blocked_ok: "{name} abre, mas o navegador impediu a leitura do país que ele detecta (um bloqueador de anúncios ou a proteção contra rastreamento pode causar isso). País detectado pela maioria dos outros serviços: {c}. Lá {name} está disponível, então deve funcionar.",
