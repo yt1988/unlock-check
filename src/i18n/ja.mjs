@@ -111,7 +111,7 @@ export default {
   vh_all: "ChatGPT・Claude・Gemini・Netflix・Disney+ すべて利用可能",
   vh_part: "AI は利用可能、一部のサービスは使えないか不明",
   vh_noai: "この IP では一部の AI が利用不可",
-  vh_n: "{n} サービス中 {d} 個が利用可能",
+  vh_n_other: "{n} サービス中 {d} 個が利用可能",
   all_link: "全 {n} サービスをまとめてチェック",
 
   th_system: "テーマ：システムに合わせる",

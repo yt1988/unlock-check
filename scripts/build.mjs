@@ -94,7 +94,7 @@ export async function build({ check = false } = {}) {
     // no fallback to English: a string missing in this language stops the build
     const d = I[lang], T = k => { if (d[k] == null) throw new Error(`${lang}: missing string "${k}"`); return d[k]; };
     // a line's version for someone else's shared result (<key>_s) is left out where the line names nobody ("you")
-    const strings = Object.fromEntries(Object.keys(I.en).filter(k => RUNTIME.test(k) && !(k.endsWith("_s") && d[k] == null)).map(k => [k, T(k)]));
+    const strings = Object.fromEntries(Object.keys(I.en).filter(k => RUNTIME.test(k) && !(/_(s|one|few|many)$/.test(k) && d[k] == null)).map(k => [k, T(k)]));
     const sjs = `window.LUNLOCK=${JSON.stringify(strings).replace(/</g, "\\u003c")};\n`;
     const sName = `l.${lang.toLowerCase()}.${hash(sjs)}.js`;
     files["assets/" + sName] = sjs;

@@ -7,6 +7,8 @@
   const D = JSON.parse($("#data").textContent);
   const L = window.LUNLOCK || {}, LANG = D.lang;              // strings: /assets/l.<lang>.<hash>.js, loaded first
   const t = (k, v) => { let s = L[k] ?? k; if (v) for (const x in v) s = s.split("{" + x + "}").join(v[x]); return s; };
+  // a line with a count: <key>_one / _few / _many / _other by the language's plural rules, _other when there is no such form
+  const PR = new Intl.PluralRules(LANG), tn = (k, n, v) => t(L[k + "_" + PR.select(n)] != null ? k + "_" + PR.select(n) : k + "_other", v);
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
   const store = { get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
   const K = { theme: "unlock:theme", lang: "unlock:lang", mask: "unlock:mask" };
@@ -359,7 +361,7 @@
   };
   // The result in one line: the main page's verdict, a category's count, one service's own sentence
   const headline = () => ONE ? (S.v[ONE] ? t(S.v[ONE].v === "no" ? sk("fo_no") : "fo_" + S.v[ONE].v, { name: SV[ONE].name }) : "")
-    : D.scope ? t("vh_n", { d: tally(Object.values(S.v)).ok, n: SERVICES.length }) : t("vh_" + verdict());
+    : D.scope ? (d => tn("vh_n", d, { d, n: SERVICES.length }))(tally(Object.values(S.v)).ok) : t("vh_" + verdict());
   // The link opens the headline's own page (/<lang>/r/<verdict>/), or a category's or service's own page with only its
   // result; the result itself is in the hash (src/lib.mjs), with each service's verdict and country, never an
   // address: so there is nothing for the visitor to choose to show.

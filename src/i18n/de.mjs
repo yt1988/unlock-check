@@ -119,7 +119,8 @@ export default {
   vh_all: "ChatGPT, Claude, Gemini, Netflix und Disney+ sind verfügbar",
   vh_part: "KI nicht gesperrt; einige Dienste gehen nicht oder sind unklar",
   vh_noai: "Einige KI-Dienste gehen mit dieser IP nicht",
-  vh_n: "{d} von {n} funktionieren",
+  vh_n_one: "{d} von {n} funktioniert",
+  vh_n_other: "{d} von {n} funktionieren",
   all_link: "Alle {n} Dienste prüfen",
 
   th_system: "Design: System",

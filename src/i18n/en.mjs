@@ -133,7 +133,8 @@ export default {
   vh_all: "ChatGPT, Claude, Gemini, Netflix and Disney+ all work",
   vh_part: "AI isn't blocked; some services don't work or are unclear",
   vh_noai: "Some AI services don't work on this IP",
-  vh_n: "{d} of {n} work",
+  vh_n_one: "{d} of {n} works",
+  vh_n_other: "{d} of {n} work",
   all_link: "Test all {n} services",
 
   th_system: "Theme: system",

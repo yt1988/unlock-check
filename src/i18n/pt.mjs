@@ -116,7 +116,8 @@ export default {
   vh_all: "ChatGPT, Claude, Gemini, Netflix e Disney+ estão disponíveis",
   vh_part: "IA sem bloqueio; alguns serviços falham ou estão incertos",
   vh_noai: "Alguns serviços de IA não funcionam neste IP",
-  vh_n: "{d} de {n} funcionam",
+  vh_n_one: "{d} de {n} funciona",
+  vh_n_other: "{d} de {n} funcionam",
   all_link: "Testar todos os {n} serviços",
 
   th_system: "Tema: do sistema",

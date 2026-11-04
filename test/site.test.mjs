@@ -16,7 +16,7 @@ test("every language has every string, with the same placeholders", () => {
   for (const [l] of LANGS) {
     assert.ok(I[l], "missing language " + l);
     for (const [k, v] of Object.entries(I.en)) {
-      if (k.endsWith("_s") && !(k in I[l])) continue;   // a shared result's version, only where the line names "you"
+      if (/_(s|one|few|many)$/.test(k) && !(k in I[l])) continue;   // a shared result's version, only where the line names "you"; a plural form the language lacks
       assert.ok(k in I[l], `${l}: missing ${k}`);
       if (typeof v === "string") assert.deepEqual(holes(I[l][k]), holes(v), `${l}: placeholders of ${k}`);
       if (k.startsWith("cat_")) for (const f of ["nav", "title", "desc", "kw", "h1", "intro"]) assert.equal(typeof I[l][k][f], "string", `${l} ${k}.${f}`);

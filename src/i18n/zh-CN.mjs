@@ -129,7 +129,7 @@ export default {
   vh_all: "ChatGPT、Claude、Gemini、Netflix、Disney+ 全都能用",
   vh_part: "AI 没被拦，部分服务用不了或无法确认",
   vh_noai: "这个 IP 上有 AI 服务用不了",
-  vh_n: "{n} 个服务里有 {d} 个能用",
+  vh_n_other: "{n} 个服务里有 {d} 个能用",
   all_link: "测一下全部 {n} 个服务",
 
   th_system: "主题：跟随系统",
