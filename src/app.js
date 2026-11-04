@@ -302,7 +302,8 @@
     // where the DNS lookups come from (not in a shared result: it never carries the resolvers)
     const dn = !S.shared && S.dns && dnsNote(S.dns.rs, main);
     if (dn) out.push([dn.k === "dns_same" ? "ok" : "warn", t(dn.k, { r: place(dn.r), e: place(dn.e), org: esc(dn.org || "?") }) +
-      (dn.ecs ? " " + t("dns_ecs", { net: esc(dn.ecs.net) }) : "") + (S.dns.geo ? ` <span class="m">${esc(S.dns.geo)}</span>` : "")]);
+      // the subnet is the visitor's own /24: shown to them only (never shared), hidden with the addresses
+      (dn.ecs ? " " + t("dns_ecs", { net: esc(masked() ? maskIp(dn.ecs.net.split("/")[0]) : dn.ecs.net) }) : "") + (S.dns.geo ? ` <span class="m">${esc(S.dns.geo)}</span>` : "")]);
     ul.innerHTML = out.map(([k, h]) => `<li class="nt n-${k}"><i>${k === "ok" ? "✓" : k === "warn" ? "!" : "•"}</i><span>${h}</span></li>`).join("");
   }
   // A service page's lead panel: that service's verdict, big, and what it is based on
@@ -320,7 +321,7 @@
   function renderAll() { for (const s of SERVICES) renderRow(s.id); renderGroups(); renderSum(); renderNotes(); renderFocus(); }
 
   const eye = $("#eye");
-  const applyMask = () => { eye.textContent = t(masked() ? "show" : "hide"); eye.setAttribute("aria-pressed", masked()); for (const s of SERVICES) renderRow(s.id); };
+  const applyMask = () => { eye.textContent = t(masked() ? "show" : "hide"); eye.setAttribute("aria-pressed", masked()); for (const s of SERVICES) renderRow(s.id); if (S.done) renderNotes(); };
   eye.onclick = () => { store.set(K.mask, masked() ? "0" : "1"); applyMask(); };
 
   /* ---------- a run ---------- */
