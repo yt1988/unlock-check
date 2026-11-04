@@ -412,12 +412,11 @@
     maxP = null; meP = null;
     $("#run").disabled = true; $("#run").classList.add("busy"); $("#run span").textContent = t("running"); $("#share").disabled = true;
     renderAll();
-    // the bar counts answers as they come in (a verdict may wait for the others: the country they see, the redirect
-    // tests), so it moves with the requests rather than in jumps
-    let d = 0, failed = 0, err = false, got = 0; setProg(0, N);
+    // the bar counts verdicts, as the totals above it do; the last few still out are named (a slow or blocked one is
+    // waited for up to its time limit)
+    let d = 0, failed = 0, err = false; setProg(0, N);
     const left = new Set(SERVICES.map(s => s.id));
-    const tick = s => { left.delete(s.id); if (gen !== S.gen || S.done) return; setProg(Math.min(++got, N - 1), N);
-      // the last few, by name: a slow or blocked one is waited for up to its time limit, and this says which
+    const prog = () => { if (gen !== S.gen || S.done) return; setProg(Math.min(d, N - 1), N);
       if (left.size && left.size <= 5 && !ONE) $("#progTxt").textContent += " · " + t("pr_wait", { list: [...left].map(id => SV[id].name).join(t("join")) }); };
     const watched = Promise.race([watch(), new Promise(r => setTimeout(r, 3000, null))]).then(w => { S.w = w; });
     const settle = (s, r) => {
@@ -426,7 +425,7 @@
       S.r[s.id] = r; S.v[s.id] = judge(s, r, guessFor(s));
       // a check the server found broken: the published list for the country the others see, marked as a guess
       if (watchBad(s.id) && S.v[s.id].how !== "guess" && S.v[s.id].v !== "fail") { r.watch = true; S.v[s.id] = judge({ ...s, probe: { reach: s.site } }, { reach: true }, guessFor(s)); }
-      renderRow(s.id); renderGroups(); renderSum(); renderFocus(); ++d;
+      left.delete(s.id); renderRow(s.id); renderGroups(); renderSum(); renderFocus(); ++d; prog();
       if (err) return;
       // The first dozen services all failing to open is a blocker (an ad blocker drops the whole batch at once, a
       // missing connection times out): the checkup hears so now, and gets no result from this run.
@@ -438,28 +437,39 @@
     maxHops();                                                  // measure the redirect limit while the first answers come in
     const early = SERVICES.filter(s => !LATE(s)), late = SERVICES.filter(LATE);
     // a redirect test counts once its redirects are counted, the others when they answer
-    const reach = Object.fromEntries(late.map(s => [s.id, ask(s).then(r => { if (!s.probe.netflix && !(s.probe.hops && r.reach)) tick(s); return r; })]));
+    const reach = Object.fromEntries(late.map(s => [s.id, ask(s)]));
     // a page with a mainland-China-only service that can't be read but without Mango TV and Tencent Video (its own
     // page, say) asks those two as well, for the route that site takes: not shown, not shared, only that answer
     const cnHelp = SERVICES.some(s => s.only === "CN" && LATE(s)) ? ALL_SERVICES.filter(s => s.only === "CN" && !LATE(s) && !SERVICES.includes(s)) : [];
     const helped = Promise.all(cnHelp.map(s => ask(s).then(r => judge(s, r, null).v === "ok")));
-    await Promise.all(early.map(async s => { const r = await ask(s); tick(s); await watched; settle(s, r); }));
-    if (gen !== S.gen) return;
-    // the country to assume where a service's own answer can't be read, and the order Netflix's countries are tried in
-    const seen = early.map(s => S.v[s.id]).filter(v => v && v.cc && v.how !== "guess").map(v => v.cc);
+    // The services that can be read come in first; the rest are judged by the country most of them see. That country
+    // is taken once most have answered (or after 4 seconds), not after the slowest (a blocked one waits out its time
+    // limit), and checked again once all are in.
+    let answered = 0, ready;
+    const enough = new Promise(r => { ready = r; setTimeout(r, 4000); }), need = Math.ceil(early.length * 0.8);
+    const earlyAll = Promise.all(early.map(async s => { const r = await ask(s); if (++answered >= need) ready(); await watched; settle(s, r); }));
     const who = await me();
-    S.guess = guessCountry(seen) || who.country || null;
-    S.cnOk = early.some(s => s.only === "CN" && (S.v[s.id] || {}).v === "ok") || (await helped).some(Boolean);
-    const prefer = [...new Set([...seen, who.country].filter(Boolean))];
-    // a trace the browser blocked, now with that country
-    for (const s of early) if (s.probe.trace && S.r[s.id].err && S.r[s.id].reach) { S.v[s.id] = judge(s, S.r[s.id], S.guess); renderRow(s.id); }
-    // an answer that only reads one way (its refusal), now with that country
-    for (const s of early) if ((s.probe.api || s.probe.jsonp) && S.r[s.id] && !S.r[s.id].err && S.r[s.id].ok == null && !S.r[s.id].watch) { S.v[s.id] = judge(s, S.r[s.id], guessFor(s)); renderRow(s.id); }
-    // a check the server found broken, now with that country
-    for (const s of early) if (S.r[s.id] && S.r[s.id].watch) { S.v[s.id] = judge({ ...s, probe: { reach: s.site } }, { reach: true }, guessFor(s)); renderRow(s.id); }
-    renderGroups(); renderSum(); renderFocus();
-    await watched;
-    await Promise.all(late.map(async s => {
+    // the country to assume where a service's own answer can't be read, from the answers in so far; true when it changed
+    const fixGuess = async () => {
+      const seen = early.map(s => S.v[s.id]).filter(v => v && v.cc && v.how !== "guess").map(v => v.cc), was = S.guess, cn = S.cnOk;
+      S.guess = guessCountry(seen) || who.country || null;
+      S.cnOk = early.some(s => s.only === "CN" && (S.v[s.id] || {}).v === "ok") || (await helped).some(Boolean);
+      // a trace the browser blocked, an answer that only reads one way (its refusal), a check the server found
+      // broken: now with that country
+      for (const s of early) { const r = S.r[s.id]; if (!r) continue;
+        if (r.watch) S.v[s.id] = judge({ ...s, probe: { reach: s.site } }, { reach: true }, guessFor(s));
+        else if ((s.probe.trace && r.err && r.reach) || ((s.probe.api || s.probe.jsonp) && !r.err && r.ok == null)) S.v[s.id] = judge(s, r, guessFor(s));
+        else continue;
+        renderRow(s.id); }
+      renderGroups(); renderSum(); renderFocus();
+      return S.guess !== was || S.cnOk !== cn;
+    };
+    await enough; await watched;
+    if (gen !== S.gen) return;
+    await fixGuess();
+    // the order Netflix's countries are tried in: the ones the others see first
+    const prefer = [...new Set([...early.map(s => S.v[s.id]).filter(v => v && v.cc && v.how !== "guess").map(v => v.cc), who.country].filter(Boolean))];
+    await Promise.all([...late.map(async s => {
       const r = await reach[s.id];
       if (r.reach) {
         if (s.probe.netflix) Object.assign(r, await netflixCountry(prefer));
@@ -467,9 +477,13 @@
         // nothing loaded, as a slow page among sixty requests misses the time limit now and then
         else if (s.probe.hops) r.hops = await addedHops(s.probe.hops, 3) ?? await addedHops(s.probe.hops, 3);
       }
-      if (s.probe.netflix || (s.probe.hops && r.reach)) tick(s);
       settle(s, r);
-    }));
+    }), earlyAll.then(async () => {
+      // every readable answer is in: if the country most of them see changed, the services judged by it follow
+      if (gen !== S.gen || !(await fixGuess())) return;
+      for (const s of late) if (S.r[s.id]) { if (s.only === "CN" && S.cnOk) S.r[s.id].cn = true; S.v[s.id] = judge(s, S.r[s.id], guessFor(s)); if (watchBad(s.id) && S.v[s.id].how !== "guess" && S.v[s.id].v !== "fail") S.v[s.id] = judge({ ...s, probe: { reach: s.site } }, { reach: true }, guessFor(s)); renderRow(s.id); }
+      renderGroups(); renderSum(); renderFocus();
+    })]);
     await dnsP;
     if (gen !== S.gen) return;
     S.done = true;
