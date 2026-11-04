@@ -195,7 +195,8 @@
     let k;
     if (id === "netflix") k = v.cc ? "nf_" + v.v : "nf_none";
     else if (s.probe.trace && v.how === "guess") k = "blocked_" + (v.cc ? v.v : "nocc");   // the browser stopped its trace
-    else if (v.v === "reach") k = v.cc ? "reach_nolist" : "reach_nocc";
+    // no list to check the country against: the service's own country, or the one the others see (guess)
+    else if (v.v === "reach") k = v.cc ? (v.how === "guess" ? "guess_nolist" : "reach_nolist") : "reach_nocc";
     else if (v.how === "api" || v.how === "hops") k = v.how + "_" + v.v;
     else k = v.how + "_" + (s.allow ? "list" : "block") + "_" + v.v;
     const out = [t(sk("why_" + k), { name: n, c })];

@@ -56,6 +56,7 @@ export default {
   why_nf_no: "ほかのサービスの多くは{c}と判定しており、Netflix はその国では提供されていません。",
   why_nf_none: "Netflix は開けますが、どの国のラインナップかは確認できませんでした。",
   why_reach_nolist: "{name} のサーバーは{c}と判定しています。{name} は対応国を公表していないため、判定された国だけを表示します。",
+  why_guess_nolist: "{name} はほかのサイトに回答を読ませないため、開けることしか確認できません。ほかのサービスの多くは{c}と判定していますが、{name} は対応国を公表していないため、使えるかどうかは判断できません。",
   why_reach_nocc: "{name} は開けますが、どの国と判定されたかがわからないため、使えるかどうかは判断できません。",
   // the site opens but the browser stopped its location check (an ad blocker, tracking protection)
   why_blocked_ok: "{name} は開けますが、どの国と判定されたかを読み取る通信がブラウザに止められました（広告ブロッカーやトラッキング防止機能が原因のことがあります）。ほかのサービスの多くは{c}と判定しており、{name} はその国で利用できるので、使える見込みです。",

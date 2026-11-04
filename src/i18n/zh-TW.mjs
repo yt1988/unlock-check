@@ -56,6 +56,7 @@ export default {
   why_nf_no: "其他服務大多認為你在{c}，Netflix 在那裡沒有提供服務。",
   why_nf_none: "Netflix 開得了，但測不出它給你的是哪一區的片庫。",
   why_reach_nolist: "{name} 的伺服器認為你在{c}。它沒有公布支援哪些地區，所以這裡只顯示位置。",
+  why_guess_nolist: "{name} 不讓其他網站讀取它的回應，所以只能確認開得了。其他服務大多認為你在{c}，但 {name} 沒有公布支援哪些地區，無法判斷能不能用。",
   why_reach_nocc: "{name} 開得了，但不知道它認為你在哪個國家，無法判斷能不能用。",
   // the site opens but the browser stopped its location check (an ad blocker, tracking protection)
   why_blocked_ok: "{name} 開得了，但瀏覽器擋下了讀取它認為你在哪個國家的請求（廣告封鎖工具或追蹤防護會這樣做）。其他服務大多認為你在{c}，{name} 在那裡可以使用，所以推測能用。",
@@ -77,6 +78,7 @@ export default {
   why_nf_no_s: "其他服務大多認為分享者在{c}，Netflix 在那裡沒有提供服務。",
   why_nf_none_s: "Netflix 開得了，但測不出它給分享者的是哪一區的片庫。",
   why_reach_nolist_s: "{name} 的伺服器認為分享者在{c}。它沒有公布支援哪些地區，所以這裡只顯示位置。",
+  why_guess_nolist_s: "{name} 不讓其他網站讀取它的回應，所以只能確認開得了。其他服務大多認為分享者在{c}，但 {name} 沒有公布支援哪些地區，無法判斷能不能用。",
   why_reach_nocc_s: "{name} 開得了，但不知道它認為分享者在哪個國家，無法判斷能不能用。",
   why_blocked_ok_s: "{name} 開得了，但瀏覽器擋下了讀取它認為分享者在哪個國家的請求（廣告封鎖工具或追蹤防護會這樣做）。其他服務大多認為分享者在{c}，{name} 在那裡可以使用，所以推測能用。",
   why_blocked_no_s: "{name} 開得了，但瀏覽器擋下了讀取它認為分享者在哪個國家的請求（廣告封鎖工具或追蹤防護會這樣做）。其他服務大多認為分享者在{c}，{name} 在那裡無法使用，所以推測不能用。",
