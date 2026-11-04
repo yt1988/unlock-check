@@ -7,7 +7,9 @@
 //
 // Per service:
 //   s       "ok"     the check works: its answer reads, and it agrees with the published list where there is one
-//           "drift"  it reads, but says the opposite of the list for Japan (a changed endpoint, or a datacenter refusal)
+//           "drift"  it reads, but says it is available where the published list says it isn't (a changed endpoint)
+//   dc      it says not available where the list offers it: most likely a refusal of this server's datacenter address
+//           (not held against the check)
 //           "bad"    it doesn't read: no answer, an answer the reader doesn't know, a redirect test that can't count
 //   streak  runs in a row in this state; since: when it began; ok_at: the last run it was "ok"
 //   how, v, cc, n, hops, err   what judge() made of it, the HTTP status, the redirects counted, the error
@@ -98,17 +100,23 @@ function health(s, r, v) {
   if ((p.hops || p.netflix) && r.hops == null) return "bad";
   if (p.trace && !r.cc) return "bad";
   // the check reads: does it agree with the published list for the country it sees (the one it names, or this server's)?
-  const want = offered(s, (r.edge && r.edge.cc) || r.cc || HERE);
-  if (want != null && (v.how === "api" || v.how === "edge" || v.how === "hops") && (v.v === "ok" || v.v === "no") && (v.v === "ok") !== want) return "drift";
+  // Only "available" where the list says it isn't counts: a datacenter address is refused by many services that work
+  // for visitors (DMM TV calls this server foreign), so a "not available" against the list is recorded (dc) but not
+  // held against the check
+  if (offered(s, seen(r)) === false && sure(v) && v.v === "ok") return "drift";
   return "ok";
 }
+const seen = r => (r.edge && r.edge.cc) || r.cc || HERE;
+const sure = v => v.how === "api" || v.how === "edge" || v.how === "hops";
+// refused here although the list offers it: most likely this server's datacenter address
+const dcRefused = (s, r, v) => offered(s, seen(r)) === true && sure(v) && v.v === "no";
 
 async function check(s) {
   const t0 = Date.now();
   let r = await ask(s), v = judge(s, r, HERE), st = health(s, r, v);
   // one retry, as the page does: a first connection is sometimes dropped
   if (st !== "ok") { r = await ask(s); v = judge(s, r, HERE); st = health(s, r, v); }
-  return { s: st, how: v.how, v: v.v, cc: v.cc || r.cc || null, n: r.n ?? null, hops: r.hops ?? null, err: r.err || (v.v === "fail" ? v.why : null), ms: Date.now() - t0 };
+  return { s: st, dc: dcRefused(s, r, v), how: v.how, v: v.v, cc: v.cc || r.cc || null, n: r.n ?? null, hops: r.hops ?? null, err: r.err || (v.v === "fail" ? v.why : null), ms: Date.now() - t0 };
 }
 
 async function main() {

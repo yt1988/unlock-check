@@ -29,7 +29,9 @@ A server in a datacenter doesn't see what a visitor sees: Netflix and DAZN, amon
 Each service gets one of three states:
 
 - `ok`: the answer can be read, and it agrees with the service's published country list. The list is checked against the country the service names, or Japan if it names none.
-- `drift`: the answer can be read but contradicts that list. Either the endpoint changed what it returns, or the service refused the datacenter address.
+- `drift`: the answer can be read, but says the service is available where its list says it isn't. The endpoint probably changed what it returns.
+
+The opposite case, "not available" where the list offers the service, is not held against the check. A datacenter address can produce that answer (DMM TV calls this server foreign), but it can't produce a false "available". Such a service stays `ok` and is marked with `dc: true`.
 - `bad`: there was no answer, an answer the reader doesn't understand, or a redirect chain that couldn't be followed.
 
 Every check that isn't `ok` gets one retry, as the page does.
