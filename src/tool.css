@@ -183,6 +183,9 @@ body.dlg-open { overflow: hidden; }
 /* the main page's extras once a run is in: report card, route advice, the last run, the collection (src/app.js renderPlay) */
 .play { padding: 16px 22px 18px; }
 .pl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 28px; }
+.pl-w { grid-column: 1 / -1; }
+.pl-h2 { margin-top: 14px; }
+.pl-hint { margin-top: 8px; font-size: 12.5px !important; }
 .pl-b h3 { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 8px; }
 .pl-b ul { list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; line-height: 21px; }
 .pl-b p { font-size: 13.5px; line-height: 22px; display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
@@ -205,3 +208,16 @@ body.dlg-open { overflow: hidden; }
 .pl-f .flag { margin: 0 1px; }
 @media (max-width: 720px) { .pl { grid-template-columns: minmax(0, 1fr); } .play { padding: 14px 16px 16px; } }
 [data-ms-embed] .play { display: none; }
+
+/* a note: one line (label, values), its explanation folded under it */
+.nt details { min-width: 0; flex: 1; }
+.nt summary { display: flex; align-items: flex-start; gap: 8px; cursor: pointer; list-style: none; border-radius: 6px; }
+.nt summary::-webkit-details-marker { display: none; }
+.nt summary:hover .nl { color: var(--ink); }
+.nt summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.nt .nl { flex: none; min-width: 64px; font-weight: 600; }
+.nt .ns { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.nt .chev { flex: none; width: 14px; height: 14px; margin-top: 4px; fill: none; stroke: var(--muted); stroke-width: 1.6; transition: transform .15s; }
+.nt details[open] .chev { transform: rotate(180deg); }
+.nt .nd { margin: 2px 0 4px 24px; color: var(--muted); font-size: 13px; line-height: 21px; }
+.nt .nd b { color: var(--fg); }

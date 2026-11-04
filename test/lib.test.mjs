@@ -138,6 +138,8 @@ test("readers added from the command-line scripts (answers measured from Tokyo, 
   assert.deepEqual(READERS.itv(500, ""), { ok: null });
   assert.deepEqual(READERS.telasa(200, '{"status":{"type":"OK","subtype":null,"message":null},"data":null}'), { ok: true, cc: "JP" });
   assert.deepEqual(READERS.telasa(403, '{"status":{"type":"NG","subtype":"IPLocationNotAllowed"}}'), { ok: false });
+  assert.deepEqual(READERS.catchplay(400, '{"code":"100016","message":"The location JP is not allowed."}'), { ok: false, cc: "JP" });
+  assert.deepEqual(READERS.catchplay(401, '{"code":"401","message":"unauthorized"}'), { ok: null });
   assert.deepEqual(READERS.aetv(403, '{ "title": "Geographic Restriction", "exception": "GeoLocationBlocked", "responseCode": "403" }'), { ok: false });
   // an answer that only reads one way leaves it to the country the others see
   const itvx = SERVICES.find(s => s.id === "itvx");

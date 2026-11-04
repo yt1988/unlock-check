@@ -104,6 +104,17 @@ export const SERVICES = [
   { id: "viu", cat: "video", name: "Viu", site: "https://www.viu.com/", probe: { hops: "https://www.viu.com/ott/no-service/", reach: "https://www.viu.com/robots.txt" } },
   { id: "viki", cat: "video", name: "Viki", site: "https://www.viki.com/", deny: BLOCK.viki, probe: { reach: "https://www.viki.com/robots.txt" } },
   { id: "bilibilitv", cat: "video", name: "Bilibili TV", site: "https://www.bilibili.tv/", deny: BLOCK.bilibilitv, probe: { reach: "https://www.bilibili.tv/robots.txt" } },
+  // Offered in a set of countries, each from its own published list (checked 2026-11-04)
+  { id: "viaplay", cat: "video", name: "Viaplay", site: "https://viaplay.com/", allow: "DK FI IS NO SE", src: "https://en.wikipedia.org/wiki/Viaplay", probe: { reach: "https://viaplay.com/robots.txt" } },
+  { id: "skyshowtime", cat: "video", name: "SkyShowtime", site: "https://www.skyshowtime.com/", allow: "AL AD BA BG HR CZ DK FI HU XK ME MK NO NL PL PT RO RS SK SI ES SE",
+    src: "https://skyshowtime.com/where-can-i-stream", probe: { reach: "https://www.skyshowtime.com/robots.txt" } },
+  { id: "acorn", cat: "video", name: "Acorn TV", site: "https://acorn.tv/", allow: "US PR CA AU NZ ES", src: "https://support.acorn.tv/support/solutions/articles/1000215534-where-is-acorn-tv-available-", probe: { reach: "https://acorn.tv/robots.txt" } },
+  // CATCHPLAY+: its geo endpoint names a refused country ("The location JP is not allowed"); inside its countries it
+  // asks for its app's key, which this page doesn't send, so any other answer is left to the country
+  { id: "catchplay", cat: "video", name: "CATCHPLAY+", site: "https://www.catchplay.com/", allow: "TW ID SG",
+    src: "https://support-sg.catchplay.com/en/support/solutions/articles/67000675840-can-i-use-catchplay-services-outside-of-my-origin-registered-region-", probe: { api: "https://sunapi.catchplay.com/geo", read: "catchplay" } },
+  { id: "docplay", cat: "video", name: "DocPlay", site: "https://www.docplay.com/", allow: "AU NZ GB", src: "https://docplay.com/help", probe: { reach: "https://www.docplay.com/robots.txt" } },
+  { id: "nowtv", cat: "video", name: "NOW", site: "https://www.nowtv.com/", allow: "GB IE", src: "https://skygroup.sky/what-we-do/better-ways-to-watch", probe: { reach: "https://www.nowtv.com/robots.txt" } },
   // music
   { id: "spotify", cat: "video", name: "Spotify", site: "https://open.spotify.com/", deny: GONE_RU, probe: { reach: "https://open.spotify.com/robots.txt" } },
   { id: "pandora", cat: "video", name: "Pandora", site: "https://www.pandora.com/", only: "US", probe: { hops: "https://www.pandora.com/", zero: true, reach: "https://www.pandora.com/robots.txt" } },
@@ -273,7 +284,7 @@ export const SLUG = { chatgpt: "chatgpt", claude: "claude", gemini: "gemini", co
   videomarket: "videomarket", rakutenjp: "rakuten-tv-japan", mora: "mora", spotv: "spotv-now", ofiii: "ofiii", linetv: "line-tv",
   hoytv: "hoy-tv", tataplay: "tata-play-binge", mxplayer: "mx-player", starhub: "starhub-tv-plus", aisplay: "ais-play",
   galaxyplay: "galaxy-play", tv360: "tv360", kplus: "k-plus", neon: "neon", skygonz: "sky-go-nz", skygo: "sky-go",
-  skyde: "sky-go-germany", skych: "sky-switzerland", fxnow: "fx", nflplus: "nfl-plus", tlc: "tlc-go" };
+  skyde: "sky-go-germany", skych: "sky-switzerland", viaplay: "viaplay", skyshowtime: "skyshowtime", acorn: "acorn-tv", catchplay: "catchplay", docplay: "docplay", nowtv: "now-tv", fxnow: "fx", nflplus: "nfl-plus", tlc: "tlc-go" };
 // a language's copy of the list, each service under the name that language uses
 export const named = lang => SERVICES.map(s => s.names && s.names[lang] ? { ...s, name: s.names[lang] } : s);
 export const CAT_SLUG = { ai: "ai", video: "streaming", social: "social", local: "regional" };

@@ -23,13 +23,14 @@ Methods, strongest first (src/services.mjs): **official API** (the service's own
 location** (its Cloudflare edge's country against its published list), **redirect test**, **guess** (it opens, and
 the country most services see is checked against the one country it serves).
 
-Totals: 57 had it before, 90 added (9 by API, 10 by location, 71 by guess), 37 can be added with more work, 59 not added.
+Totals: 57 had it before, 96 added (10 by API, 10 by location, 76 by guess), 30 can be added with more work, 60 not added.
 
-## Added: official API (9)
+## Added: official API (10)
 
 | Check | In | Here | Notes |
 |---|---|---|---|
 | aetv | 1HLX | `aetv` | thePlatform's GeoLocationBlocked; any other answer is left to the country |
+| catchplay | 1HLNX | `catchplay` | sunapi.catchplay.com/geo names a refused country; Taiwan, Indonesia and Singapore |
 | channel10 | 1HLX | `tenplay` | e410fasadvz.global.ssl.fastly.net/geo: {allow} |
 | itvhub | 1LX | `itvx` | simulcast.itv.com: 403 geoblock outside the UK, 404 inside |
 | itvx | H | `itvx` | As ITV Hub |
@@ -54,7 +55,7 @@ Totals: 57 had it before, 90 added (9 by API, 10 by location, 71 by guess), 37 c
 | litv | 1HLNX | `litv` | Cloudflare edge of its API host |
 | nlziet | 1HLX | `nlziet` | Cloudflare edge of nlziet.nl |
 
-## Added: guess (71)
+## Added: guess (76)
 
 | Check | In | Here | Notes |
 |---|---|---|---|
@@ -63,6 +64,7 @@ Totals: 57 had it before, 90 added (9 by API, 10 by location, 71 by guess), 37 c
 | abema | HN | `abema` | Its IP check (api.abema.io) refuses other sites |
 | abematv | L | `abema` |  |
 | abematviptest | 1X | `abema` |  |
+| acorntv | 1HLNX | `acorn` | The US, Canada, Australia, New Zealand, Spain (the UK is a library only) |
 | aisplay | 1HLX | `aisplay` |  |
 | amediateka | 1HLX | `amediateka` |  |
 | binge | 1LX | `binge` | Its sign-in host answers other sites, but with Akamai's refusal for datacenters |
@@ -73,6 +75,7 @@ Totals: 57 had it before, 90 added (9 by API, 10 by location, 71 by guess), 37 c
 | coupangplay | 1HLX | `coupang` | Sends visitors outside Korea to /not-available: a redirect test, to measure from inside Korea |
 | crave | 1HLNX | `crave` | Its API answers other sites, but the scripts' titles are gone |
 | danimestore | 1HLX | `danime` |  |
+| docplay | 1HLX | `docplay` | Australia, New Zealand, the UK |
 | epix | 1LNX | `mgmplus` | Now MGM+ |
 | francetv | 1H | `francetv` |  |
 | fridayvideo | 1H | `friday` |  |
@@ -99,6 +102,7 @@ Totals: 57 had it before, 90 added (9 by API, 10 by location, 71 by guess), 37 c
 | neontv | 1HLX | `neon` |  |
 | nflplus | 1HLNX | `nflplus` |  |
 | nowe | 1LNX | `nowe` |  |
+| nowtv | H | `nowtv` | NOW in the UK and Ireland (Italy has its own) |
 | npostartplus | 1HLX | `npo` |  |
 | ofiii | 1H | `ofiii` | Its API answers other sites but the scripts' title is gone |
 | radiko | 1HLNX | `radiko` |  |
@@ -108,6 +112,7 @@ Totals: 57 had it before, 90 added (9 by API, 10 by location, 71 by guess), 37 c
 | skyde | 1HLX | `skyde` | The scripts read Brightcove with Sky's player key |
 | skygo | 1HLX | `skygo` |  |
 | skygonz | 1LX | `skygonz` |  |
+| skyshowtime | 1HLX | `skyshowtime` | Its 22 countries, from skyshowtime.com/where-can-i-stream |
 | sonyliv | 1HLX | `sonyliv` |  |
 | sooka | 1H | `sooka` |  |
 | spotvnow | 1HLX | `spotv` | The scripts read Brightcove with SPOTV's player key; to test from a page |
@@ -122,6 +127,7 @@ Totals: 57 had it before, 90 added (9 by API, 10 by location, 71 by guess), 37 c
 | tver | 1HLNX | `tver` | Its player API answers other sites, but refuses datacenters even from Japan; to retest from a home connection |
 | tving | 1HLX | `tving` | As Wavve |
 | unext | 1HLNX | `unext` | Its API refuses other sites |
+| viaplay | 1H | `viaplay` | Denmark, Finland, Iceland, Norway, Sweden (it left the UK, US, Canada, the Baltics and Poland in 2024 and 2025) |
 | videoland | 1HLX | `videoland` |  |
 | videomarket | 1HLNX | `videomarket` |  |
 | vidio | 1 | `vidio` |  |
@@ -192,24 +198,21 @@ Totals: 57 had it before, 90 added (9 by API, 10 by location, 71 by guess), 37 c
 | youtube | HN | `youtube` |  |
 | zdf | 1HLX | `zdf` |  |
 
-## Can be added, needs work (37)
+## Can be added, needs work (30)
 
 | Check | In | Here | Notes |
 |---|---|---|---|
-| acorntv | 1HLNX |  | Several English-speaking countries: needs its list |
 | amcplus | HLX |  | Sends visitors where it isn't offered to /pages/geographic-restriction: a redirect test to measure |
 | animefesta | 1H |  | Its API answers per title; to check whether it lets other sites read it |
 | bing | H |  | Bing sends mainland China to cn.bing.com: a redirect test, to measure from inside China |
-| britbox | 1HLNX |  | Several countries: needs its list |
+| britbox | 1HLNX |  | Several countries: no current published list found |
 | canalplus | 1HLX |  | Offered in many countries: needs its list |
-| catchplay | 1HLNX |  | Its geo API answers other sites ("The location JP is not allowed") but its answer inside its countries is unknown; offered in several Asian countries |
 | cliptv | 1 |  | Vietnam: to check |
 | coze | H |  | Has regional sites (coze.com, coze.cn) but no published list; its API refuses other sites |
-| directvgo | 1HLX |  | DGO, across Latin America: needs its list |
+| directvgo | 1HLX |  | DGO in Latin America: the latest list found is from 2020 |
 | discovery | N |  |  |
 | discoveryplus | 1HLX |  | discovery+'s API answers other sites (a token, then currentLocationTerritory): to build |
 | discoveryplusuk | 1 |  | discovery+'s API answers other sites (a token, then /users/me): to build |
-| docplay | 1HLX |  | Offered in Australia and New Zealand: to check |
 | dola | H |  | ByteDance's assistant outside China; no published list, and its pages refuse other sites |
 | dstv | 1HLX |  | DStv: much of sub-Saharan Africa, needs its list |
 | encoretvb | 1HLNX |  | TVB's US service, read through Brightcove with its player key |
@@ -218,23 +221,19 @@ Totals: 57 had it before, 90 added (9 by API, 10 by location, 71 by guess), 37 c
 | kbs | H |  | KBS's domestic and American services: to check which answer other sites |
 | kbsamerican | 1LX |  |  |
 | kbsdomestic | 1LX |  |  |
-| kocowa | 1HLX |  | Offered across the Americas: needs its country list |
+| kocowa | 1HLX |  | About 74 countries in the Americas, Europe and Oceania: no full published list found |
 | maoritv | 1HLX |  | Read through Brightcove with its player key: to test from a page |
-| megogotv | 1LX |  | The former Soviet countries: needs its list; its API refuses unknown clients (antibot) |
+| megogotv | 1LX |  | Ukraine and other countries: no published list found; its API refuses unknown clients (antibot) |
 | music | 1X |  | music.jp: to check that it is Japan-only |
 | musicjp | HLN |  | music.jp: to check that it is Japan-only |
 | mytv | 1 |  | MyTV (Vietnam): its API answers other sites; the title is gone |
 | niconico | 1HLNX |  | Only some titles are Japan-only; the site opens everywhere |
-| nowtv | H |  | NOW (Sky): the UK, Ireland and Italy each have their own |
-| rakutentv | 1HLX |  | Rakuten TV Europe: about 40 countries |
-| showmax | LX |  | Showmax: much of Africa, needs its list |
-| skyshowtime | 1HLX |  | About 20 European countries: needs its list |
+| rakutentv | 1HLX |  | Rakuten TV Europe: 43 countries, no published list found |
 | steam | HN |  | The store's currency shows the region, in the page body; its API refuses other sites |
 | tntsports | H |  | The UK and Ireland, through discovery+ |
-| viaplay | 1H |  | The Nordic and Baltic countries, Poland, the Netherlands: needs its list |
 | vtvcab | 1 |  | Needs a token |
 
-## Not added (59)
+## Not added (60)
 
 | Check | In | Here | Notes |
 |---|---|---|---|
@@ -287,6 +286,7 @@ Totals: 57 had it before, 90 added (9 by API, 10 by location, 71 by guess), 37 c
 | rakutenmagazine | 1H |  | An e-magazine store, not a stream |
 | salto | 1X |  | Closed in 2023 |
 | setantasports | 1HLX |  | Closed |
+| showmax | LX |  | Closed on 30 April 2026 |
 | showtime | 1NX |  | Merged into Paramount+ |
 | soop | H |  | As AfreecaTV |
 | sora | 1 |  | The app closed in 2026 |

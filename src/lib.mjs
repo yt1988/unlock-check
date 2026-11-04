@@ -71,6 +71,13 @@ export const READERS = {
   // A&E (thePlatform, NBCUniversal's video platform): GeoLocationBlocked outside the US; any other answer isn't one
   // either way (the title's own rules), so the country decides
   aetv(st, text) { return /GeoLocationBlocked/.test(text) ? { ok: false } : { ok: null }; },
+  // CATCHPLAY+: code 100016 "The location XX is not allowed" outside its countries, 0 with the country inside; any
+  // other answer (it wants its app's key) isn't one either way
+  catchplay(st, text) {
+    const j = json(text); if (!j) return { ok: null };
+    if (String(j.code) === "100016") return { ok: false, cc: CC((/location ([A-Z]{2})\b/.exec(j.message || "") || [])[1]) };
+    return String(j.code) === "0" ? { ok: true, cc: CC((j.data || {}).isoCode) } : { ok: null };
+  },
   // BBC iPlayer's media selector (JSONP): "geolocation" outside the UK, the streams inside it
   bbc(st, text) { return /"result"\s*:\s*"geolocation"/.test(text) ? { ok: false } : /"media"\s*:\s*\[/.test(text) ? { ok: true, cc: "GB" } : null; },
 };

@@ -519,6 +519,90 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/bilibili-tv/"/>
   </url>
   <url>
+    <loc>https://unlock.1ms.dog/viaplay/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/viaplay/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/skyshowtime/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/skyshowtime/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/acorn-tv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/acorn-tv/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/catchplay/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/catchplay/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/docplay/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/docplay/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/now-tv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/now-tv/"/>
+  </url>
+  <url>
     <loc>https://unlock.1ms.dog/spotify/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/spotify/"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/spotify/"/>
@@ -2659,6 +2743,90 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/bilibili-tv/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/bilibili-tv/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/bilibili-tv/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-cn/viaplay/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/viaplay/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-cn/skyshowtime/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/skyshowtime/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-cn/acorn-tv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/acorn-tv/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-cn/catchplay/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/catchplay/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-cn/docplay/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/docplay/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-cn/now-tv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/now-tv/"/>
   </url>
   <url>
     <loc>https://unlock.1ms.dog/zh-cn/spotify/</loc>
@@ -4803,6 +4971,90 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/bilibili-tv/"/>
   </url>
   <url>
+    <loc>https://unlock.1ms.dog/zh-tw/viaplay/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/viaplay/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-tw/skyshowtime/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/skyshowtime/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-tw/acorn-tv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/acorn-tv/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-tw/catchplay/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/catchplay/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-tw/docplay/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/docplay/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/zh-tw/now-tv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/now-tv/"/>
+  </url>
+  <url>
     <loc>https://unlock.1ms.dog/zh-tw/spotify/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/spotify/"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/spotify/"/>
@@ -6943,6 +7195,90 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/bilibili-tv/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/bilibili-tv/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/bilibili-tv/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ja/viaplay/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/viaplay/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ja/skyshowtime/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/skyshowtime/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ja/acorn-tv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/acorn-tv/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ja/catchplay/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/catchplay/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ja/docplay/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/docplay/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ja/now-tv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/now-tv/"/>
   </url>
   <url>
     <loc>https://unlock.1ms.dog/ja/spotify/</loc>
@@ -9087,6 +9423,90 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/bilibili-tv/"/>
   </url>
   <url>
+    <loc>https://unlock.1ms.dog/ko/viaplay/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/viaplay/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ko/skyshowtime/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/skyshowtime/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ko/acorn-tv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/acorn-tv/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ko/catchplay/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/catchplay/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ko/docplay/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/docplay/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ko/now-tv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/now-tv/"/>
+  </url>
+  <url>
     <loc>https://unlock.1ms.dog/ko/spotify/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/spotify/"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/spotify/"/>
@@ -11227,6 +11647,90 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/bilibili-tv/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/bilibili-tv/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/bilibili-tv/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/es/viaplay/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/viaplay/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/es/skyshowtime/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/skyshowtime/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/es/acorn-tv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/acorn-tv/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/es/catchplay/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/catchplay/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/es/docplay/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/docplay/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/es/now-tv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/now-tv/"/>
   </url>
   <url>
     <loc>https://unlock.1ms.dog/es/spotify/</loc>
@@ -13371,6 +13875,90 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/bilibili-tv/"/>
   </url>
   <url>
+    <loc>https://unlock.1ms.dog/fr/viaplay/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/viaplay/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/fr/skyshowtime/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/skyshowtime/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/fr/acorn-tv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/acorn-tv/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/fr/catchplay/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/catchplay/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/fr/docplay/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/docplay/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/fr/now-tv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/now-tv/"/>
+  </url>
+  <url>
     <loc>https://unlock.1ms.dog/fr/spotify/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/spotify/"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/spotify/"/>
@@ -15511,6 +16099,90 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/bilibili-tv/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/bilibili-tv/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/bilibili-tv/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/de/viaplay/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/viaplay/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/de/skyshowtime/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/skyshowtime/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/de/acorn-tv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/acorn-tv/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/de/catchplay/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/catchplay/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/de/docplay/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/docplay/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/de/now-tv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/now-tv/"/>
   </url>
   <url>
     <loc>https://unlock.1ms.dog/de/spotify/</loc>
@@ -17655,6 +18327,90 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/bilibili-tv/"/>
   </url>
   <url>
+    <loc>https://unlock.1ms.dog/pt/viaplay/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/viaplay/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/pt/skyshowtime/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/skyshowtime/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/pt/acorn-tv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/acorn-tv/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/pt/catchplay/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/catchplay/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/pt/docplay/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/docplay/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/pt/now-tv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/now-tv/"/>
+  </url>
+  <url>
     <loc>https://unlock.1ms.dog/pt/spotify/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/spotify/"/>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/spotify/"/>
@@ -19795,6 +20551,90 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/bilibili-tv/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/bilibili-tv/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/bilibili-tv/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ru/viaplay/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/viaplay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/viaplay/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ru/skyshowtime/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/skyshowtime/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/skyshowtime/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ru/acorn-tv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/acorn-tv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/acorn-tv/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ru/catchplay/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/catchplay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/catchplay/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ru/docplay/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/docplay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/docplay/"/>
+  </url>
+  <url>
+    <loc>https://unlock.1ms.dog/ru/now-tv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://unlock.1ms.dog/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://unlock.1ms.dog/zh-cn/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://unlock.1ms.dog/zh-tw/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://unlock.1ms.dog/ja/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://unlock.1ms.dog/ko/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://unlock.1ms.dog/es/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://unlock.1ms.dog/fr/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://unlock.1ms.dog/de/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://unlock.1ms.dog/pt/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://unlock.1ms.dog/ru/now-tv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://unlock.1ms.dog/now-tv/"/>
   </url>
   <url>
     <loc>https://unlock.1ms.dog/ru/spotify/</loc>

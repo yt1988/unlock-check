@@ -161,6 +161,7 @@
   let watchP = null;
   const watch = () => watchP || (watchP = !WATCH ? Promise.resolve(null) : fetch(WATCH, { credentials: "omit", referrerPolicy: "no-referrer", signal: AbortSignal.timeout(4000) })
     .then(r => r.ok ? r.json() : null).then(j => j && j.v === 1 && j.services && Date.now() - Date.parse(j.at) < 3 * 3600e3 ? j : null).catch(() => null));
+  watch();                                                     // asked at once: the first answers don't wait for it
   const watchBad = id => { const w = S.w && S.w.services[id]; return !!w && w.s !== "ok" && w.streak >= 2; };
   const RTF = new Intl.RelativeTimeFormat(LANG, { numeric: "auto" });
   const ago = iso => { const m = Math.max(1, Math.round((Date.now() - Date.parse(iso)) / 60e3)); return m < 60 ? RTF.format(-m, "minute") : RTF.format(-Math.round(m / 60), "hour"); };
@@ -287,37 +288,46 @@
     const ul = $("#notes");
     // while running, each line says what it is waiting for, in the space its result will take
     if (!S.done) { ul.innerHTML = (ONE ? ["wait_ip", "wait_tz"] : ["wait_ex", "wait_ip", "wait_tz"]).map(k => `<li class="nt wait"><i></i><span>${esc(t(k))}</span></li>`).join(""); return; }
+    // one line each: what it is about and the values, the explanation folded under it
+    //   [kind ok|warn|info, label key, summary HTML, explanation HTML]
     const ex = exitsByCountry(S.v), tz = S.shared ? S.shared.tz : tzCc(), out = [];
     const names = ids => esc(ids.map(id => SV[id].name).join(t("join")));
+    const egress = EGRESS ? ` <a class="xl" href="${esc(EGRESS + D.egressPath)}" target="_blank" rel="noopener">${esc(t("egress_link"))}${EXT}</a>` : "";
     if (ONE) {}                                                  // its country is in its own panel
-    else if (!ex.length) out.push(["info", esc(t(sk("ex_none")))]);
-    else if (ex.length === 1) out.push(["ok", t(sk("ex_one"), { c: place(ex[0].cc) })]);
+    else if (!ex.length) out.push(["info", "ln_ex", "–", esc(t(sk("ex_none")))]);
+    else if (ex.length === 1) out.push(["ok", "ln_ex", place(ex[0].cc), t(sk("ex_one"), { c: place(ex[0].cc) })]);
     // the most common country by count, the others with the services that see them
-    else out.push(["warn", t(sk("ex_split"), { c: ex.map((e, i) => `${place(e.cc)} <span class="m">${i ? names(e.ids) : "×" + e.ids.length}</span>`).join(" · ") }) +
-      (EGRESS ? ` <a class="xl" href="${esc(EGRESS + D.egressPath)}" target="_blank" rel="noopener">${esc(t("egress_link"))}${EXT}</a>` : "")]);
+    else out.push(["warn", "ln_ex", ex.map(e => `${place(e.cc)} <span class="m">×${e.ids.length}</span>`).join(" · "),
+      t(sk("ex_split"), { c: ex.map((e, i) => `${place(e.cc)} <span class="m">${i ? names(e.ids) : "×" + e.ids.length}</span>`).join(" · ") }) + egress]);
     // the addresses the services saw, most common first, each linked to the IP quality check when the host has one
     const ips = new Map();
     for (const v of Object.values(S.v)) if (v && v.ip) ips.set(v.ip, (ips.get(v.ip) || 0) + 1);
     const ipLink = ip => IPQS && !masked() ? `<a class="ipq" href="${esc(IPQS)}/?ip=${encodeURIComponent(ip)}" title="${esc(t("ipq_title"))}" target="_blank" rel="noopener">${esc(ip)}</a>` : `<span class="ipq">${esc(ipTxt(ip))}</span>`;
-    if (S.shared) out.push(["info", esc(t("ip_shared"))]);
-    else if (!ips.size) out.push(["info", esc(t("ip_none"))]);
-    else out.push([ips.size > 1 ? "warn" : "info", t("ip_line", { list: [...ips].sort((a, b) => b[1] - a[1]).map(([ip, n]) => `${ipLink(ip)} <span class="m">×${n}</span>`).join(" · ") })]);
+    const ipl = [...ips].sort((a, b) => b[1] - a[1]);
+    if (S.shared) out.push(["info", "ln_ip", "–", esc(t("ip_shared"))]);
+    else if (!ips.size) out.push(["info", "ln_ip", "–", esc(t("ip_none"))]);
+    else out.push([ips.size > 1 ? "warn" : "info", "ln_ip", `<span class="ipq">${esc(ipTxt(ipl[0][0]))}</span> <span class="m">×${ipl[0][1]}${ips.size > 1 ? " · +" + (ips.size - 1) : ""}</span>`,
+      t("ip_line", { list: ipl.map(([ip, n]) => `${ipLink(ip)} <span class="m">×${n}</span>`).join(" · ") })]);
     const main = mainCc(ex);
-    if (!main || !tz) out.push(["info", esc(t("tz_none"))]);
-    else if (tz === main) out.push(["ok", t(sk("tz_ok"), { a: place(tz) })]);
-    else out.push(["warn", t(sk("tz_bad"), { a: place(tz), b: place(main) })]);
+    if (!main || !tz) out.push(["info", "ln_tz", "–", esc(t("tz_none"))]);
+    else if (tz === main) out.push(["ok", "ln_tz", place(tz), t(sk("tz_ok"), { a: place(tz) })]);
+    else out.push(["warn", "ln_tz", `${place(tz)} ≠ ${place(main)}`, t(sk("tz_bad"), { a: place(tz), b: place(main) })]);
     // where the DNS lookups come from (not in a shared result: it never carries the resolvers)
     const dn = !S.shared && S.dns && dnsNote(S.dns.rs, main);
-    if (dn) out.push([dn.k === "dns_same" ? "ok" : "warn", t(dn.k, { r: place(dn.r), e: place(dn.e), org: esc(dn.org || "?") }) +
+    if (dn) out.push([dn.k === "dns_same" ? "ok" : "warn", "ln_dns", `${place(dn.r)} <span class="m">${esc(dn.org || "")}</span>${dn.k === "dns_same" ? "" : " ≠ " + place(dn.e)}`,
+      t(dn.k, { r: place(dn.r), e: place(dn.e), org: esc(dn.org || "?") }) +
       // the subnet is the visitor's own /24: shown to them only (never shared), hidden with the addresses
       (dn.ecs ? " " + t("dns_ecs", { net: esc(masked() ? maskIp(dn.ecs.net.split("/")[0]) : dn.ecs.net) }) : "") + (S.dns.geo ? ` <span class="m">${esc(S.dns.geo)}</span>` : "")]);
     // what the address looks like to services that check: a proxy or a data center (Wikipedia's block, Sling TV's refusal)
     const px = S.shared ? [] : SERVICES.filter(s => (S.r[s.id] || {}).proxy).map(s => s.name), wk = !S.shared && S.wiki;
     if (wk && wk.proxy) px.unshift(t("id_wiki"));
-    if (px.length) out.push(["warn", t("id_proxy", { list: esc(px.join(t("join"))) }) + (wk && wk.host ? " " + t("id_host", { h: esc(wk.host) }) : "")]);
-    else if (wk && wk.blocked) out.push(["info", esc(t("id_block"))]);
-    else if (wk) out.push(["ok", esc(t("id_clean"))]);
-    ul.innerHTML = out.map(([k, h]) => `<li class="nt n-${k}"><i>${k === "ok" ? "✓" : k === "warn" ? "!" : "•"}</i><span>${h}</span></li>`).join("");
+    if (px.length) out.push(["warn", "ln_id", `${esc(t("id_short"))}${wk && wk.host ? ` <span class="m">${esc(wk.host)}</span>` : ""}`,
+      t("id_proxy", { list: esc(px.join(t("join"))) }) + (wk && wk.host ? " " + t("id_host", { h: esc(wk.host) }) : "")]);
+    else if (wk && wk.blocked) out.push(["info", "ln_id", esc(t("id_short_b")), esc(t("id_block"))]);
+    else if (wk) out.push(["ok", "ln_id", esc(t("id_short_ok")), esc(t("id_clean"))]);
+    const open = new Set($$("#notes details[open]").map(d => d.dataset.k));   // a re-render (hiding addresses) keeps what was open
+    ul.innerHTML = out.map(([k, l, sum, more]) => `<li class="nt n-${k}"><details data-k="${l}"${open.has(l) ? " open" : ""}><summary><i>${k === "ok" ? "✓" : k === "warn" ? "!" : "•"}</i>` +
+      `<b class="nl">${esc(t(l))}</b><span class="ns">${sum}</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg></summary><p class="nd">${more}</p></details></li>`).join("");
   }
   /* ---------- the main page's extras, once a run is in: report card, route advice, the last run, the collection ---------- */
   // Kept on this device only (localStorage): the last 10 runs of the main page (each service's verdict and country,
@@ -349,22 +359,27 @@
     const cells = CATS.filter(c => sc.cats[c]).map(c => c === "local"
       ? badge(t("pl_local"), sc.cats.local.places.length ? String(sc.cats.local.places.length) : "0", sc.cats.local.places.slice(0, 8).map(flag).join(""))
       : badge(t(CAT_K[c]), sc.cats[c].g, `${sc.cats[c].ok}/${sc.cats[c].n}`));
-    out.push(`<div class="pl-b"><h3>${esc(t("pl_card"))}</h3><div class="pl-gs">${badge(t("pl_total"), sc.total, "")}${cells.join("")}</div></div>`);
+    out.push(`<div class="pl-b pl-w"><h3>${esc(t("pl_card"))}</h3><div class="pl-gs">${badge(t("pl_total"), sc.total, "")}${cells.join("")}</div></div>`);
     // route advice from the exits this run saw
-    const ex = exitsByCountry(S.v), adv = routeAdvice(S.v, SERVICES, ex);
-    const advLine = a => { const n = esc(SV[a.id].name), host = `<code>${esc(hostOf(a.id))}</code>`;
-      return a.k === "to" ? t("pl_adv_to", { name: n, c: place(a.at), d: place(a.to), via: esc(SV[a.via].name), host })
-        : a.k === "need" ? t("pl_adv_need", { name: n, c: place(a.at) }) : t("pl_adv_fail", { name: n, host }); };
+    // route advice from the exits this run saw, one line per route: the services it would fix and their domains
+    const ex = exitsByCountry(S.v), groups = new Map();
+    for (const a of routeAdvice(S.v, SERVICES, ex, 60)) { const g = [a.k, a.at || "", a.to || ""].join("|"); if (!groups.has(g)) groups.set(g, { ...a, ids: [] }); groups.get(g).ids.push(a.id); }
+    const few = (l, f) => l.slice(0, 5).map(f).join(t("join")) + (l.length > 5 ? ` <span class="m">+${l.length - 5}</span>` : "");
+    const advLine = a => { const list = few(a.ids, id => esc(SV[id].name)), hosts = few(a.ids, id => `<code>${esc(hostOf(id))}</code>`);
+      return a.k === "to" ? t("pl_adv_to", { list, c: place(a.at), d: place(a.to), via: esc(SV[a.via].name), hosts })
+        : a.k === "need" ? t("pl_adv_need", { list, c: place(a.at) }) : t("pl_adv_fail", { list, hosts }); };
+    const adv = [...groups.values()].slice(0, 5);
     if (!S.shared) out.push(`<div class="pl-b"><h3>${esc(t("pl_adv"))}</h3><ul>${adv.length ? adv.map(a => `<li>${advLine(a)}</li>`).join("") : `<li>${esc(t("pl_adv_none"))}</li>`}</ul></div>`);
     // the last run on this device
     if (!S.shared) {
       const p = S.prev, d = p ? diffRuns(p, packRun(0, S.v)) : [], when = p ? ago(new Date(p.ts).toISOString()) : "";
       const row = c => `<li>${esc(SV[c.id] ? SV[c.id].name : c.id)}: <span class="pl-a">${c.a.cc && c.a.v === "ok" ? flag(c.a.cc) : ""}${esc(vTxt(c.a))}</span> → <b class="pl-${c.b.v}">${c.b.cc && c.b.v === "ok" ? flag(c.b.cc) : ""}${esc(vTxt(c.b))}</b></li>`;
-      out.push(`<div class="pl-b"><h3>${esc(p ? t("pl_diff", { t: when }) : t("pl_diff0"))}</h3>` +
-        (!p ? `<p class="m">${esc(t("pl_first"))}</p>` : d.length ? `<ul>${d.slice(0, 12).map(row).join("")}${d.length > 12 ? `<li class="m">+${d.length - 12}</li>` : ""}</ul>` : `<p class="m">${esc(t("pl_same"))}</p>`) + "</div>");
-      // the collection: Netflix regions, exit countries and regional TV places seen on this device
+      // the collection (Netflix regions, exit countries and regional TV places seen on this device), then what changed
+      // since the last run, when there was one
       const dx = jget(K.dex) || {}, set = (k, lab) => { const l = dx[k] || []; return `<p><span class="pl-k">${esc(lab)} <b>${l.length}</b></span>${l.map(cc => `<span class="pl-f" title="${esc(country(cc))}">${flag(cc) || esc(cc)}</span>`).join("")}</p>`; };
-      out.push(`<div class="pl-b"><h3>${esc(t("pl_dex"))}</h3>${set("nf", t("pl_dex_nf"))}${set("ex", t("pl_dex_ex"))}${set("lc", t("pl_dex_lc"))}<p class="m">${esc(t("pl_dex_hint"))}</p></div>`);
+      out.push(`<div class="pl-b"><h3>${esc(t("pl_dex"))}</h3>${set("nf", t("pl_dex_nf"))}${set("ex", t("pl_dex_ex"))}${set("lc", t("pl_dex_lc"))}` +
+        (p ? `<h3 class="pl-h2">${esc(t("pl_diff", { t: when }))}</h3>` + (d.length ? `<ul>${d.slice(0, 8).map(row).join("")}${d.length > 8 ? `<li class="m">+${d.length - 8}</li>` : ""}</ul>` : `<p class="m">${esc(t("pl_same"))}</p>`) : "") +
+        `<p class="m pl-hint">${esc(t("pl_dex_hint"))}</p></div>`);
     }
     PLAY.querySelector(".pl").innerHTML = out.join("");
   }
@@ -395,7 +410,13 @@
     maxP = null; meP = null;
     $("#run").disabled = true; $("#run").classList.add("busy"); $("#run span").textContent = t("running"); $("#share").disabled = true;
     renderAll();
-    let d = 0, failed = 0, err = false; setProg(0, N);
+    // the bar counts answers as they come in (a verdict may wait for the others: the country they see, the redirect
+    // tests), so it moves with the requests rather than in jumps
+    let d = 0, failed = 0, err = false, got = 0; setProg(0, N);
+    const left = new Set(SERVICES.map(s => s.id));
+    const tick = s => { left.delete(s.id); if (gen !== S.gen || S.done) return; setProg(Math.min(++got, N - 1), N);
+      // the last few, by name: a slow or blocked one is waited for up to its time limit, and this says which
+      if (left.size && left.size <= 5 && !ONE) $("#progTxt").textContent += " · " + t("pr_wait", { list: [...left].map(id => SV[id].name).join(t("join")) }); };
     const watched = Promise.race([watch(), new Promise(r => setTimeout(r, 3000, null))]).then(w => { S.w = w; });
     const settle = (s, r) => {
       if (gen !== S.gen) return;
@@ -403,7 +424,7 @@
       S.r[s.id] = r; S.v[s.id] = judge(s, r, guessFor(s));
       // a check the server found broken: the published list for the country the others see, marked as a guess
       if (watchBad(s.id) && S.v[s.id].how !== "guess" && S.v[s.id].v !== "fail") { r.watch = true; S.v[s.id] = judge({ ...s, probe: { reach: s.site } }, { reach: true }, guessFor(s)); }
-      renderRow(s.id); renderGroups(); renderSum(); renderFocus(); setProg(++d, N);
+      renderRow(s.id); renderGroups(); renderSum(); renderFocus(); ++d;
       if (err) return;
       // The first dozen services all failing to open is a blocker (an ad blocker drops the whole batch at once, a
       // missing connection times out): the checkup hears so now, and gets no result from this run.
@@ -414,12 +435,13 @@
     me();                                                       // who this connection is, as the shell sees it
     maxHops();                                                  // measure the redirect limit while the first answers come in
     const early = SERVICES.filter(s => !LATE(s)), late = SERVICES.filter(LATE);
-    const reach = Object.fromEntries(late.map(s => [s.id, ask(s)]));
+    // a redirect test counts once its redirects are counted, the others when they answer
+    const reach = Object.fromEntries(late.map(s => [s.id, ask(s).then(r => { if (!s.probe.netflix && !(s.probe.hops && r.reach)) tick(s); return r; })]));
     // a page with a mainland-China-only service that can't be read but without Mango TV and Tencent Video (its own
     // page, say) asks those two as well, for the route that site takes: not shown, not shared, only that answer
     const cnHelp = SERVICES.some(s => s.only === "CN" && LATE(s)) ? ALL_SERVICES.filter(s => s.only === "CN" && !LATE(s) && !SERVICES.includes(s)) : [];
     const helped = Promise.all(cnHelp.map(s => ask(s).then(r => judge(s, r, null).v === "ok")));
-    await Promise.all(early.map(async s => { const r = await ask(s); await watched; settle(s, r); }));
+    await Promise.all(early.map(async s => { const r = await ask(s); tick(s); await watched; settle(s, r); }));
     if (gen !== S.gen) return;
     // the country to assume where a service's own answer can't be read, and the order Netflix's countries are tried in
     const seen = early.map(s => S.v[s.id]).filter(v => v && v.cc && v.how !== "guess").map(v => v.cc);
@@ -443,6 +465,7 @@
         // nothing loaded, as a slow page among sixty requests misses the time limit now and then
         else if (s.probe.hops) r.hops = await addedHops(s.probe.hops, 3) ?? await addedHops(s.probe.hops, 3);
       }
+      if (s.probe.netflix || (s.probe.hops && r.reach)) tick(s);
       settle(s, r);
     }));
     await dnsP;
