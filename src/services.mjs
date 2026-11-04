@@ -187,7 +187,6 @@ export const SERVICES = [
   { id: "mewatch", cat: "local", name: "meWATCH", site: "https://www.mewatch.sg/", only: "SG", probe: { reach: "https://www.mewatch.sg/robots.txt" } },
   { id: "starhub", cat: "local", name: "StarHub TV+", site: "https://www.starhubtvplus.com/", only: "SG", probe: { reach: "https://www.starhubtvplus.com/robots.txt" } },
   { id: "vidio", cat: "local", name: "Vidio", site: "https://www.vidio.com/", only: "ID", probe: { reach: "https://www.vidio.com/robots.txt" } },
-  { id: "molatv", cat: "local", name: "Mola", site: "https://mola.tv/", only: "ID", probe: { reach: "https://mola.tv/robots.txt" } },
   { id: "trueid", cat: "local", name: "TrueID", site: "https://tv.trueid.net/", only: "TH", probe: { reach: "https://tv.trueid.net/robots.txt" } },
   { id: "aisplay", cat: "local", name: "AIS PLAY", site: "https://aisplay.ais.co.th/", only: "TH", probe: { reach: "https://aisplay.ais.co.th/robots.txt" } },
   { id: "sooka", cat: "local", name: "sooka", site: "https://sooka.my/", only: "MY", probe: { reach: "https://sooka.my/robots.txt" } },
@@ -202,7 +201,6 @@ export const SERVICES = [
   { id: "7plus", cat: "local", name: "7plus", site: "https://7plus.com.au/", only: "AU", probe: { reach: "https://7plus.com.au/robots.txt" } },
   { id: "iview", cat: "local", name: "ABC iview", site: "https://iview.abc.net.au/", only: "AU", probe: { reach: "https://iview.abc.net.au/robots.txt" } },
   { id: "9now", cat: "local", name: "9Now", site: "https://www.9now.com.au/", only: "AU", probe: { reach: "https://www.9now.com.au/robots.txt" } },
-  { id: "optus", cat: "local", name: "Optus Sport", site: "https://sport.optus.com.au/", only: "AU", probe: { reach: "https://sport.optus.com.au/robots.txt" } },
   { id: "threenow", cat: "local", name: "ThreeNow", site: "https://www.threenow.co.nz/", only: "NZ", probe: { reach: "https://www.threenow.co.nz/robots.txt" } },
   { id: "neon", cat: "local", name: "Neon", site: "https://www.neontv.co.nz/", only: "NZ", probe: { reach: "https://www.neontv.co.nz/robots.txt" } },
   { id: "skygonz", cat: "local", name: "Sky Go NZ", site: "https://www.skygo.co.nz/", only: "NZ", probe: { reach: "https://www.skygo.co.nz/robots.txt" } },
@@ -273,8 +271,8 @@ export const SLUG = { chatgpt: "chatgpt", claude: "claude", gemini: "gemini", co
   videoland: "videoland", nlziet: "nlziet", amediateka: "amediateka", sling: "sling-tv", starz: "starz", aetv: "a-and-e", cw: "the-cw",
   directv: "directv-stream", mgmplus: "mgm-plus", cbcgem: "cbc-gem", crave: "crave",
   videomarket: "videomarket", rakutenjp: "rakuten-tv-japan", mora: "mora", spotv: "spotv-now", ofiii: "ofiii", linetv: "line-tv",
-  hoytv: "hoy-tv", tataplay: "tata-play-binge", mxplayer: "mx-player", starhub: "starhub-tv-plus", molatv: "mola", aisplay: "ais-play",
-  galaxyplay: "galaxy-play", tv360: "tv360", kplus: "k-plus", optus: "optus-sport", neon: "neon", skygonz: "sky-go-nz", skygo: "sky-go",
+  hoytv: "hoy-tv", tataplay: "tata-play-binge", mxplayer: "mx-player", starhub: "starhub-tv-plus", aisplay: "ais-play",
+  galaxyplay: "galaxy-play", tv360: "tv360", kplus: "k-plus", neon: "neon", skygonz: "sky-go-nz", skygo: "sky-go",
   skyde: "sky-go-germany", skych: "sky-switzerland", fxnow: "fx", nflplus: "nfl-plus", tlc: "tlc-go" };
 // a language's copy of the list, each service under the name that language uses
 export const named = lang => SERVICES.map(s => s.names && s.names[lang] ? { ...s, name: s.names[lang] } : s);

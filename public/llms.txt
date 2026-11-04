@@ -1,7 +1,7 @@
 # Streaming & AI Unlock Check
 
 > Free browser tool that checks, over the visitor's own connection and route, whether streaming and AI services are
-> available and which country each one sees: ChatGPT, Claude, Gemini, Copilot, Grok, Perplexity, Le Chat, Poe, Character.AI, Meta AI, Netflix, Disney+, DAZN, Crunchyroll, Peacock, Philo, NBC, Shudder, beIN CONNECT, Twitch, Prime Video, Apple TV+, HBO Max, Hulu, Paramount+, Tubi, Pluto TV, ESPN+, Fubo, Viu, Viki, Bilibili TV, Spotify, Pandora, Deezer, SoundCloud, TikTok, YouTube, X, Instagram, Telegram, WhatsApp, Discord, Reddit, Facebook, Messenger, Threads, Signal, LINE, Snapchat, Pinterest, Google, Wikipedia, Roblox, KKTV, TVB Anywhere+, SBS On Demand, FOD, DMM TV, ZDF, BBC iPlayer, NHK ONE, TELASA, J:COM STREAM, ABEMA, U-NEXT, TVer, Hulu Japan, Lemino, d Anime Store, WOWOW, radiko, VideoMarket, Rakuten TV Japan, mora, Wavve, TVING, Coupang Play, Watcha, SPOTV NOW, 4GTV, LiTV, Bahamut Anime Crazy, Hami Video, myVideo, friDay Video, ofiii, LINE TV, myTV SUPER, Now E, ViuTV, HOY TV, JioHotstar, Sony LIV, Tata Play Binge, MX Player, meWATCH, StarHub TV+, Vidio, Mola, TrueID, AIS PLAY, sooka, Galaxy Play, TV360, K+, 10 Play, Stan, Binge, Kayo Sports, 7plus, ABC iview, 9Now, Optus Sport, ThreeNow, Neon, Sky Go NZ, ITVX, Channel 4, My5, Sky Go, Molotov, france.tv, Joyn, RTL+, Sky Go Germany, Sky Switzerland, RaiPlay, Movistar Plus+, NPO Start, Videoland, NLZIET, Amediateka, Sling TV, STARZ, A&E, The CW, DIRECTV Stream, MGM+, FX, NFL+, TLC GO, CBC Gem, Crave, Mango TV, Tencent Video, Bilibili, iQIYI, Youku, NetEase Cloud Music. It uses each service's own
+> available and which country each one sees: ChatGPT, Claude, Gemini, Copilot, Grok, Perplexity, Le Chat, Poe, Character.AI, Meta AI, Netflix, Disney+, DAZN, Crunchyroll, Peacock, Philo, NBC, Shudder, beIN CONNECT, Twitch, Prime Video, Apple TV+, HBO Max, Hulu, Paramount+, Tubi, Pluto TV, ESPN+, Fubo, Viu, Viki, Bilibili TV, Spotify, Pandora, Deezer, SoundCloud, TikTok, YouTube, X, Instagram, Telegram, WhatsApp, Discord, Reddit, Facebook, Messenger, Threads, Signal, LINE, Snapchat, Pinterest, Google, Wikipedia, Roblox, KKTV, TVB Anywhere+, SBS On Demand, FOD, DMM TV, ZDF, BBC iPlayer, NHK ONE, TELASA, J:COM STREAM, ABEMA, U-NEXT, TVer, Hulu Japan, Lemino, d Anime Store, WOWOW, radiko, VideoMarket, Rakuten TV Japan, mora, Wavve, TVING, Coupang Play, Watcha, SPOTV NOW, 4GTV, LiTV, Bahamut Anime Crazy, Hami Video, myVideo, friDay Video, ofiii, LINE TV, myTV SUPER, Now E, ViuTV, HOY TV, JioHotstar, Sony LIV, Tata Play Binge, MX Player, meWATCH, StarHub TV+, Vidio, TrueID, AIS PLAY, sooka, Galaxy Play, TV360, K+, 10 Play, Stan, Binge, Kayo Sports, 7plus, ABC iview, 9Now, ThreeNow, Neon, Sky Go NZ, ITVX, Channel 4, My5, Sky Go, Molotov, france.tv, Joyn, RTL+, Sky Go Germany, Sky Switzerland, RaiPlay, Movistar Plus+, NPO Start, Videoland, NLZIET, Amediateka, Sling TV, STARZ, A&E, The CW, DIRECTV Stream, MGM+, FX, NFL+, TLC GO, CBC Gem, Crave, Mango TV, Tencent Video, Bilibili, iQIYI, Youku, NetEase Cloud Music. It uses each service's own
 > region API where a page can read it, the service's own Cloudflare edge (/cdn-cgi/trace) against its published
 > country list, redirect counting (Netflix's country pages, "unavailable" redirects), and marks inferred results.
 > Everything runs client-side; no results are sent to the site.
@@ -110,7 +110,6 @@
 - meWATCH: https://unlock.1ms.dog/mewatch/
 - StarHub TV+: https://unlock.1ms.dog/starhub-tv-plus/
 - Vidio: https://unlock.1ms.dog/vidio/
-- Mola: https://unlock.1ms.dog/mola/
 - TrueID: https://unlock.1ms.dog/trueid/
 - AIS PLAY: https://unlock.1ms.dog/ais-play/
 - sooka: https://unlock.1ms.dog/sooka/
@@ -124,7 +123,6 @@
 - 7plus: https://unlock.1ms.dog/7plus/
 - ABC iview: https://unlock.1ms.dog/abc-iview/
 - 9Now: https://unlock.1ms.dog/9now/
-- Optus Sport: https://unlock.1ms.dog/optus-sport/
 - ThreeNow: https://unlock.1ms.dog/threenow/
 - Neon: https://unlock.1ms.dog/neon/
 - Sky Go NZ: https://unlock.1ms.dog/sky-go-nz/

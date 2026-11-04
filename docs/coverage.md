@@ -23,7 +23,7 @@ Methods, strongest first (src/services.mjs): **official API** (the service's own
 location** (its Cloudflare edge's country against its published list), **redirect test**, **guess** (it opens, and
 the country most services see is checked against the one country it serves).
 
-Totals: 57 had it before, 92 added (9 by API, 10 by location, 73 by guess), 37 can be added with more work, 57 not added.
+Totals: 57 had it before, 90 added (9 by API, 10 by location, 71 by guess), 37 can be added with more work, 59 not added.
 
 ## Added: official API (9)
 
@@ -54,7 +54,7 @@ Totals: 57 had it before, 92 added (9 by API, 10 by location, 73 by guess), 37 c
 | litv | 1HLNX | `litv` | Cloudflare edge of its API host |
 | nlziet | 1HLX | `nlziet` | Cloudflare edge of nlziet.nl |
 
-## Added: guess (73)
+## Added: guess (71)
 
 | Check | In | Here | Notes |
 |---|---|---|---|
@@ -91,7 +91,6 @@ Totals: 57 had it before, 92 added (9 by API, 10 by location, 73 by guess), 37 c
 | linetvtw | L | `linetv` |  |
 | mewatch | 1HLX | `mewatch` |  |
 | mgmplus | H | `mgmplus` |  |
-| molatv | 1LX | `molatv` |  |
 | mora | 1HLX | `mora` |  |
 | movistarplus | 1HLX | `movistar` |  |
 | mxplayer | 1HLX | `mxplayer` |  |
@@ -102,7 +101,6 @@ Totals: 57 had it before, 92 added (9 by API, 10 by location, 73 by guess), 37 c
 | nowe | 1LNX | `nowe` |  |
 | npostartplus | 1HLX | `npo` |  |
 | ofiii | 1H | `ofiii` | Its API answers other sites but the scripts' title is gone |
-| optussports | 1LX | `optus` |  |
 | radiko | 1HLNX | `radiko` |  |
 | raiplay | 1HLX | `raiplay` |  |
 | rakutentvjp | 1L | `rakutenjp` |  |
@@ -236,7 +234,7 @@ Totals: 57 had it before, 92 added (9 by API, 10 by location, 73 by guess), 37 c
 | viaplay | 1H |  | The Nordic and Baltic countries, Poland, the Netherlands: needs its list |
 | vtvcab | 1 |  | Needs a token |
 
-## Not added (57)
+## Not added (59)
 
 | Check | In | Here | Notes |
 |---|---|---|---|
@@ -272,10 +270,12 @@ Totals: 57 had it before, 92 added (9 by API, 10 by location, 73 by guess), 37 c
 | konosubafd | 1HNX |  | A Japan-only game (as above) |
 | mathsspot | 1 |  | A cloud gaming service; nothing to unlock |
 | mgstage | 1H |  | Adult content: left out on purpose |
+| molatv | 1LX |  | mola.tv no longer resolves (2026-11-04) |
 | navertv | 1HLX |  | Only some clips are Korea-only |
 | nbatv | 1HLNX |  | NBA League Pass is offered worldwide |
 | netflixcdn | 1X |  | The CDN node is found from a server; a page can't read which node serves it |
 | nowgg | H |  | A cloud gaming service; nothing to unlock |
+| optussports | 1LX |  | sport.optus.com.au no longer resolves (2026-11-04) |
 | pandatv | 1H |  | Streams worldwide |
 | paravi | 1HN |  | Merged into U-NEXT in 2023 |
 | pcrjp | 1HNX |  | A Japan-only game (as above) |
