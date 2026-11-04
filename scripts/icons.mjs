@@ -14,7 +14,10 @@ await mkdir(out, { recursive: true });
 // domains to try, where the site's host isn't the one the brand's icon is known under
 const DOMAINS = { copilot: ["copilot.microsoft.com", "copilot.cloud.microsoft", "www.bing.com"], mistral: ["mistral.ai"], bein: ["beinsports.com"],
   dmm: ["tv.dmm.com"], fod: ["fod.fujitv.co.jp"], tvb: ["tvbanywhere.com"], whatsapp: ["www.whatsapp.com", "whatsapp.com"],
-  disney: ["www.disneyplus.com", "disneyplus.com"], nbc: ["www.nbc.com", "nbc.com"], kktv: ["www.kktv.me", "kktv.me"], deezer: ["deezer.com", "www.deezer.com"] };
+  disney: ["www.disneyplus.com", "disneyplus.com"], nbc: ["www.nbc.com", "nbc.com"], kktv: ["www.kktv.me", "kktv.me"], deezer: ["deezer.com", "www.deezer.com"],
+  wavve: ["wavve.com", "m.wavve.com"], "4gtv": ["4gtv.tv", "m.4gtv.tv"], viutv: ["www.viu.tv", "viu.tv"], tenplay: ["www.10play.com.au", "10play.com.au", "10.com.au"],
+  aetv: ["www.aetv.com", "aetv.com"], directv: ["www.directv.com", "directv.com"], molatv: ["www.mola.tv", "mola.tv"], aisplay: ["www.ais.th", "ais.th", "ais.co.th"],
+  kplus: ["kplus.vn", "vstv.vn"], optus: ["www.optus.com.au", "optus.com.au"] };
 // the service's own icon, for one the favicon service doesn't have
 const ICON_URL = { sbs: "https://www.sbs.com.au/ondemand/favicons/favicon-96.png" };
 // the image format from its first bytes; PNG and ICO also give their size

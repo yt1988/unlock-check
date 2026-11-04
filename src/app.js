@@ -11,7 +11,7 @@
   const PR = new Intl.PluralRules(LANG), tn = (k, n, v) => t(L[k + "_" + PR.select(n)] != null ? k + "_" + PR.select(n) : k + "_other", v);
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
   const store = { get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
-  const K = { theme: "unlock:theme", lang: "unlock:lang", mask: "unlock:mask" };
+  const K = { theme: "unlock:theme", lang: "unlock:lang", mask: "unlock:mask", hist: "unlock:hist", dex: "unlock:dex" };
   const country = cc => { try { return regionName(cc, LANG); } catch (e) { return cc; } };
   const flag = cc => /^[A-Z]{2}$/.test(cc || "") && cc !== "XK" ? `<img class="flag" src="/flags/${flagCode(cc)}.svg" alt="" width="20" height="15">` : "";
   for (const s of ALL_SERVICES) if (s.names && s.names[LANG]) s.name = s.names[LANG];   // the name this language uses
@@ -179,6 +179,12 @@
         return rs.length ? { rs, geo: j.geo || "" } : null;
       }).catch(() => null);
   };
+  // Whether Wikipedia blocks the address it sees from editing, and why (an open proxy or a hosting range): its API lets
+  // any site read the answer (origin=*). Shown under the totals with the services that refused you as a proxy (Sling TV);
+  // the address itself isn't kept or shared.
+  const wikiAsk = () => fetch("https://en.wikipedia.org/w/api.php?action=query&meta=userinfo&uiprop=blockinfo&format=json&origin=*",
+    { cache: "no-store", credentials: "omit", referrerPolicy: "no-referrer", signal: AbortSignal.timeout(6000) })
+    .then(r => r.ok ? r.text() : "").then(wikiBlock).catch(() => null);
   // the services whose answer waits for the others: the country they see (guess) and Netflix's list to try
   const LATE = s => !!(s.probe.netflix || s.probe.hops || (!s.probe.api && !s.probe.trace && !s.probe.jsonp));
   // a mainland-China-only service that can't be read is in mainland China when one that can be (Mango TV, Tencent
@@ -187,7 +193,7 @@
 
   /* ---------- state and rendering ---------- */
   // shared: a result from a link being shown (no addresses; nothing is tested until the visitor asks)
-  const S = { r: {}, v: {}, done: false, gen: 0, shared: null, broken: false, guess: null, cnOk: false, me: null, w: null, dns: null };
+  const S = { r: {}, v: {}, done: false, gen: 0, shared: null, broken: false, guess: null, cnOk: false, me: null, w: null, dns: null, prev: null, wiki: null };
   const masked = () => store.get(K.mask) === "1";
   const ipTxt = ip => masked() ? maskIp(ip) : ip;
   const IPQS = (document.querySelector('meta[name="ipqs"]') || {}).content || "";
@@ -230,6 +236,7 @@
     const out = [t(sk("why_" + k), { name: n, c })];
     if (id === "netflix" && v.v === "ok") out.push(t("note_netflix"));
     if (id === "gemini") out.push(t("note_google"));
+    if ((S.r[id] || {}).proxy) out.push(t("note_proxy", { name: n }));
     // the hourly check: broken (this verdict is a guess because of it), or when it last found this check working
     const w = !S.shared && S.w && S.w.services[id];
     if (w && (S.r[id] || {}).watch) out.unshift(t("watch_bad", { t: ago(S.w.at) }));
@@ -304,7 +311,62 @@
     if (dn) out.push([dn.k === "dns_same" ? "ok" : "warn", t(dn.k, { r: place(dn.r), e: place(dn.e), org: esc(dn.org || "?") }) +
       // the subnet is the visitor's own /24: shown to them only (never shared), hidden with the addresses
       (dn.ecs ? " " + t("dns_ecs", { net: esc(masked() ? maskIp(dn.ecs.net.split("/")[0]) : dn.ecs.net) }) : "") + (S.dns.geo ? ` <span class="m">${esc(S.dns.geo)}</span>` : "")]);
+    // what the address looks like to services that check: a proxy or a data center (Wikipedia's block, Sling TV's refusal)
+    const px = S.shared ? [] : SERVICES.filter(s => (S.r[s.id] || {}).proxy).map(s => s.name), wk = !S.shared && S.wiki;
+    if (wk && wk.proxy) px.unshift(t("id_wiki"));
+    if (px.length) out.push(["warn", t("id_proxy", { list: esc(px.join(t("join"))) }) + (wk && wk.host ? " " + t("id_host", { h: esc(wk.host) }) : "")]);
+    else if (wk && wk.blocked) out.push(["info", esc(t("id_block"))]);
+    else if (wk) out.push(["ok", esc(t("id_clean"))]);
     ul.innerHTML = out.map(([k, h]) => `<li class="nt n-${k}"><i>${k === "ok" ? "✓" : k === "warn" ? "!" : "•"}</i><span>${h}</span></li>`).join("");
+  }
+  /* ---------- the main page's extras, once a run is in: report card, route advice, the last run, the collection ---------- */
+  // Kept on this device only (localStorage): the last 10 runs of the main page (each service's verdict and country,
+  // as a share link has them: no address), and the Netflix regions and exit countries seen so far. Nothing leaves it.
+  const PLAY = $("#play");
+  const jget = k => { try { return JSON.parse(store.get(k) || "null"); } catch (e) { return null; } };
+  const CAT_K = { ai: "pl_ai", video: "pl_video", social: "pl_social", local: "pl_local" };
+  // after a run of the main page: remember it, and what it adds to the collection; S.prev is the run before
+  function remember() {
+    if (!PLAY || D.scope || EMBED || S.shared) return;
+    const h = (jget(K.hist) || []).filter(x => x && x.ts && x.v), cur = packRun(Date.now(), S.v);
+    S.prev = h.length ? h[h.length - 1] : null;
+    store.set(K.hist, JSON.stringify([...h, cur].slice(-10)));
+    const dx = jget(K.dex) || {}, add = (k, cc) => { if (!cc) return; const l = dx[k] || (dx[k] = []); if (!l.includes(cc)) l.push(cc); };
+    const nf = S.v.netflix; if (nf && nf.v === "ok") add("nf", nf.cc);
+    add("ex", mainCc(exitsByCountry(S.v)));
+    for (const s of SERVICES) if (s.cat === "local" && (S.v[s.id] || {}).v === "ok") add("lc", S.v[s.id].cc || s.only);
+    store.set(K.dex, JSON.stringify(dx));
+  }
+  const hostOf = id => new URL(SV[id].site).hostname.replace(/^www\./, "");
+  const vTxt = x => x.v === "ok" ? (x.cc ? country(x.cc) : t("v_ok")) : t("v_" + x.v);
+  function renderPlay() {
+    if (!PLAY) return;
+    if (!S.done || !Object.keys(S.v).length) { PLAY.hidden = true; return; }
+    PLAY.hidden = false;
+    const sc = scoreCard(S.v, SERVICES), out = [];
+    // the report card: a grade per category, regional TV as the places unlocked
+    const badge = (lab, g, sub) => `<span class="pl-g g-${g || "n"}"><b>${g || "–"}</b><span>${esc(lab)}</span>${sub ? `<i>${sub}</i>` : ""}</span>`;
+    const cells = CATS.filter(c => sc.cats[c]).map(c => c === "local"
+      ? badge(t("pl_local"), sc.cats.local.places.length ? String(sc.cats.local.places.length) : "0", sc.cats.local.places.slice(0, 8).map(flag).join(""))
+      : badge(t(CAT_K[c]), sc.cats[c].g, `${sc.cats[c].ok}/${sc.cats[c].n}`));
+    out.push(`<div class="pl-b"><h3>${esc(t("pl_card"))}</h3><div class="pl-gs">${badge(t("pl_total"), sc.total, "")}${cells.join("")}</div></div>`);
+    // route advice from the exits this run saw
+    const ex = exitsByCountry(S.v), adv = routeAdvice(S.v, SERVICES, ex);
+    const advLine = a => { const n = esc(SV[a.id].name), host = `<code>${esc(hostOf(a.id))}</code>`;
+      return a.k === "to" ? t("pl_adv_to", { name: n, c: place(a.at), d: place(a.to), via: esc(SV[a.via].name), host })
+        : a.k === "need" ? t("pl_adv_need", { name: n, c: place(a.at) }) : t("pl_adv_fail", { name: n, host }); };
+    if (!S.shared) out.push(`<div class="pl-b"><h3>${esc(t("pl_adv"))}</h3><ul>${adv.length ? adv.map(a => `<li>${advLine(a)}</li>`).join("") : `<li>${esc(t("pl_adv_none"))}</li>`}</ul></div>`);
+    // the last run on this device
+    if (!S.shared) {
+      const p = S.prev, d = p ? diffRuns(p, packRun(0, S.v)) : [], when = p ? ago(new Date(p.ts).toISOString()) : "";
+      const row = c => `<li>${esc(SV[c.id] ? SV[c.id].name : c.id)}: <span class="pl-a">${c.a.cc && c.a.v === "ok" ? flag(c.a.cc) : ""}${esc(vTxt(c.a))}</span> → <b class="pl-${c.b.v}">${c.b.cc && c.b.v === "ok" ? flag(c.b.cc) : ""}${esc(vTxt(c.b))}</b></li>`;
+      out.push(`<div class="pl-b"><h3>${esc(p ? t("pl_diff", { t: when }) : t("pl_diff0"))}</h3>` +
+        (!p ? `<p class="m">${esc(t("pl_first"))}</p>` : d.length ? `<ul>${d.slice(0, 12).map(row).join("")}${d.length > 12 ? `<li class="m">+${d.length - 12}</li>` : ""}</ul>` : `<p class="m">${esc(t("pl_same"))}</p>`) + "</div>");
+      // the collection: Netflix regions, exit countries and regional TV places seen on this device
+      const dx = jget(K.dex) || {}, set = (k, lab) => { const l = dx[k] || []; return `<p><span class="pl-k">${esc(lab)} <b>${l.length}</b></span>${l.map(cc => `<span class="pl-f" title="${esc(country(cc))}">${flag(cc) || esc(cc)}</span>`).join("")}</p>`; };
+      out.push(`<div class="pl-b"><h3>${esc(t("pl_dex"))}</h3>${set("nf", t("pl_dex_nf"))}${set("ex", t("pl_dex_ex"))}${set("lc", t("pl_dex_lc"))}<p class="m">${esc(t("pl_dex_hint"))}</p></div>`);
+    }
+    PLAY.querySelector(".pl").innerHTML = out.join("");
   }
   // A service page's lead panel: that service's verdict, big, and what it is based on
   const fo = $("#focus");
@@ -318,7 +380,7 @@
     d.textContent = whyOf(id, v);
   }
   function setProg(d, n) { $("#prog").classList.toggle("end", S.done); $("#prog i").style.transform = `scaleX(${n ? d / n : 0})`; $("#progTxt").textContent = !S.gen ? "" : S.done ? (ONE ? "" : t("done", { n })) : t("progress", { d, n }); }
-  function renderAll() { for (const s of SERVICES) renderRow(s.id); renderGroups(); renderSum(); renderNotes(); renderFocus(); }
+  function renderAll() { for (const s of SERVICES) renderRow(s.id); renderGroups(); renderSum(); renderNotes(); renderFocus(); renderPlay(); }
 
   const eye = $("#eye");
   const applyMask = () => { eye.textContent = t(masked() ? "show" : "hide"); eye.setAttribute("aria-pressed", masked()); for (const s of SERVICES) renderRow(s.id); if (S.done) renderNotes(); };
@@ -328,8 +390,8 @@
   async function run() {
     leaveShared();
     const gen = ++S.gen, N = SERVICES.length;
-    Object.assign(S, { r: {}, v: {}, done: false, guess: null, cnOk: false, dns: null });
-    const dnsP = dnsAsk().then(d => { if (gen === S.gen) S.dns = d; });
+    Object.assign(S, { r: {}, v: {}, done: false, guess: null, cnOk: false, dns: null, wiki: null });
+    const dnsP = Promise.all([dnsAsk().then(d => { if (gen === S.gen) S.dns = d; }), ONE ? null : wikiAsk().then(w => { if (gen === S.gen) S.wiki = w; })]);
     maxP = null; meP = null;
     $("#run").disabled = true; $("#run").classList.add("busy"); $("#run span").textContent = t("running"); $("#share").disabled = true;
     renderAll();
@@ -367,6 +429,8 @@
     const prefer = [...new Set([...seen, who.country].filter(Boolean))];
     // a trace the browser blocked, now with that country
     for (const s of early) if (s.probe.trace && S.r[s.id].err && S.r[s.id].reach) { S.v[s.id] = judge(s, S.r[s.id], S.guess); renderRow(s.id); }
+    // an answer that only reads one way (its refusal), now with that country
+    for (const s of early) if ((s.probe.api || s.probe.jsonp) && S.r[s.id] && !S.r[s.id].err && S.r[s.id].ok == null && !S.r[s.id].watch) { S.v[s.id] = judge(s, S.r[s.id], guessFor(s)); renderRow(s.id); }
     // a check the server found broken, now with that country
     for (const s of early) if (S.r[s.id] && S.r[s.id].watch) { S.v[s.id] = judge({ ...s, probe: { reach: s.site } }, { reach: true }, guessFor(s)); renderRow(s.id); }
     renderGroups(); renderSum(); renderFocus();
@@ -384,6 +448,7 @@
     await dnsP;
     if (gen !== S.gen) return;
     S.done = true;
+    remember();
     renderAll(); setProg(N, N);
     $("#run").disabled = false; $("#run").classList.remove("busy"); $("#run span").textContent = t("rerun"); $("#share").disabled = false;
     if (EMBED && !err) post(report());
@@ -497,6 +562,19 @@
     if (!ONE) for (const key of ["ok", "no", "reach", "fail"]) {
       x.fillStyle = C[key]; x.font = `700 36px ${k.M}`; x.fillText(String(n[key]), xx, L.sTop + 62); xx += x.measureText(String(n[key])).width + 10;
       x.fillStyle = C.muted; x.font = `400 24px ${k.F}`; const lb = t("v_" + key); x.fillText(lb, xx, L.sTop + 60); xx += x.measureText(lb).width + 36;
+    }
+    // the report card's grades at the right of the totals, when they fit (the main page)
+    if (!D.scope) {
+      const sc = scoreCard(S.v, SERVICES), gs = [[t("pl_total"), sc.total], ...["ai", "video", "social"].filter(c => sc.cats[c] && sc.cats[c].g).map(c => [t(CAT_K[c]), sc.cats[c].g])].filter(([, g]) => g);
+      x.font = `400 22px ${k.F}`; const lw = gs.map(([l]) => x.measureText(l).width);
+      const w = gs.reduce((a, g, i) => a + lw[i] + 8 + 30 + 28, 0) - 28;
+      if (xx + w < k.W - k.P) {
+        let gx = k.W - k.P - w;
+        gs.forEach(([l, g], i) => {
+          x.fillStyle = C.muted; x.font = `400 22px ${k.F}`; x.fillText(l, gx, L.sTop + 60); gx += lw[i] + 8;
+          x.fillStyle = g === "S" || g === "A" ? C.ok : g === "B" ? C.fg : g === "C" ? C.fail : C.no; x.font = `800 34px ${k.M}`; x.fillText(g, gx, L.sTop + 62); gx += 30 + 28;
+        });
+      }
     }
     // the five, each an icon, its name, and what it says
     for (let i = 0; i < L.keys.length; i++) {

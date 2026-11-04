@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { READERS, judge, offered, guessCountry, exitsByCountry, encodeShare, parseShare, maskIp, parseTrace, regionName, flagCode, dnsNote } from "../src/lib.mjs";
+import { READERS, judge, offered, guessCountry, exitsByCountry, encodeShare, parseShare, maskIp, parseTrace, regionName, flagCode, dnsNote, scoreCard, routeAdvice, packRun, diffRuns } from "../src/lib.mjs";
 import { SERVICES, CATS, SLUG, CAT_SLUG } from "../src/services.mjs";
 
 const S = Object.fromEntries(SERVICES.map(s => [s.id, s]));
@@ -122,4 +122,42 @@ test("dnsNote: where the DNS lookups come from against the exit", () => {
   // the visitor's subnet passed on by a resolver
   assert.deepEqual(dnsNote([{ cc: "HK", org: "Google LLC", ecs: { net: "47.76.29.0/24" } }], "JP").ecs, { net: "47.76.29.0/24" });
   assert.equal(dnsNote([{ cc: "JP", org: "Google LLC", ecs: null }], "JP").ecs, null);
+});
+
+test("readers added from the command-line scripts (answers measured from Tokyo, 2026-11-04)", () => {
+  assert.deepEqual(READERS.ten(200, ' { "state": "WA", "allow": false } '), { ok: false, cc: null });
+  assert.deepEqual(READERS.ten(200, '{"state":"NSW","allow":true}'), { ok: true, cc: "AU" });
+  assert.deepEqual(READERS.molotov(200, '{"is_france":false}'), { ok: false, cc: null });
+  assert.deepEqual(READERS.nhk(200, '{ "continent_code": "AS", "country_code": "JP", "country_name": "Japan" }'), { ok: true, cc: "JP" });
+  assert.deepEqual(READERS.nhk(200, '{ "continent_code": "other", "country_code": "other" }'), { ok: false, cc: null });
+  assert.deepEqual(READERS.sling(200, '{"playback_allowed": null, "playback_disallowed": true, "playback_disallowed_code": 10, "playback_disallowed_reason": "proxy not allowed: commercial \'hosting,cloud\' for 16.76.79.94", "country": "jpn"}'),
+    { ok: false, cc: null, proxy: true });
+  assert.deepEqual(READERS.sling(200, '{"playback_allowed": true, "playback_disallowed": false, "country": "usa"}'), { ok: true, cc: "US" });
+  assert.deepEqual(READERS.itv(403, '{ "error":"geoblock", "IP":"16.76.79.94"}'), { ok: false });
+  assert.deepEqual(READERS.itv(404, ""), { ok: true, cc: "GB" });
+  assert.deepEqual(READERS.itv(500, ""), { ok: null });
+  assert.deepEqual(READERS.telasa(200, '{"status":{"type":"OK","subtype":null,"message":null},"data":null}'), { ok: true, cc: "JP" });
+  assert.deepEqual(READERS.telasa(403, '{"status":{"type":"NG","subtype":"IPLocationNotAllowed"}}'), { ok: false });
+  assert.deepEqual(READERS.aetv(403, '{ "title": "Geographic Restriction", "exception": "GeoLocationBlocked", "responseCode": "403" }'), { ok: false });
+  // an answer that only reads one way leaves it to the country the others see
+  const itvx = SERVICES.find(s => s.id === "itvx");
+  assert.deepEqual(judge(itvx, { err: null, ok: null }, "GB"), { v: "ok", cc: "GB", ip: "", how: "guess", why: null });
+  assert.equal(judge(itvx, { err: null, ok: null }, "JP").v, "no");
+});
+
+test("report card, route advice, comparing runs", () => {
+  const sv = [{ id: "a", cat: "ai", deny: "CN" }, { id: "b", cat: "ai", only: "US" }, { id: "n", cat: "video", deny: "CN" }, { id: "j", cat: "local", only: "JP" }, { id: "k", cat: "local", only: "KR" }];
+  const v = { a: { v: "ok", cc: "JP" }, b: { v: "no", cc: "JP" }, n: { v: "reach" }, j: { v: "ok", cc: null }, k: { v: "no" } };
+  const c = scoreCard(v, sv);
+  assert.deepEqual(c.cats.ai, { ok: 1, n: 2, places: [], g: "C" });
+  assert.equal(c.cats.video.n, 0);                       // unclear doesn't count
+  assert.deepEqual(c.cats.local.places, ["JP"]);
+  assert.equal(c.total, "C");
+  // another exit offers it: route there; none does: it needs another country
+  assert.deepEqual(routeAdvice(v, sv, [{ cc: "JP", ids: ["a", "b"] }, { cc: "US", ids: ["x"] }]), [{ id: "b", k: "to", at: "JP", to: "US", via: "x" }]);
+  assert.deepEqual(routeAdvice(v, sv, [{ cc: "JP", ids: ["a", "b"] }]), [{ id: "b", k: "need", at: "JP" }]);
+  assert.deepEqual(routeAdvice({ a: { v: "fail" } }, sv, []), [{ id: "a", k: "fail" }]);
+  const p = packRun(1, { a: { v: "ok", cc: "JP" }, b: { v: "no", cc: "JP" } }), q = packRun(2, { a: { v: "ok", cc: "HK" }, b: { v: "no", cc: "JP" }, n: { v: "ok" } });
+  assert.deepEqual(p.v, { a: "oJP", b: "nJP" });
+  assert.deepEqual(diffRuns(p, q), [{ id: "a", a: { v: "ok", cc: "JP" }, b: { v: "ok", cc: "HK" } }]);
 });

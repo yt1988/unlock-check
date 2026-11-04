@@ -86,7 +86,7 @@ export async function build({ check = false } = {}) {
   const jsName = `app.${hash(js)}.js`, cssName = `app.${hash(css)}.css`;
 
   // the strings the browser needs; the page's own text is already in the HTML
-  const RUNTIME = /^(name|fd_\w+|v_\w+|how_\w+|why_\w+|note_\w+|watch_\w+|dns_\w+|fo_\w+|ex_\w+|tz_\w+|wait_\w+|ip_\w+|ipq_title|vh_\w+|th_\w+|egress_link|ck_link|progress|done|rerun|running|hide|show|share|share_text|test_mine|share_bad|err_blocked|join)$/;
+  const RUNTIME = /^(name|fd_\w+|v_\w+|how_\w+|why_\w+|note_\w+|watch_\w+|dns_\w+|pl_\w+|id_\w+|fo_\w+|ex_\w+|tz_\w+|wait_\w+|ip_\w+|ipq_title|vh_\w+|th_\w+|egress_link|ck_link|progress|done|rerun|running|hide|show|share|share_text|test_mine|share_bad|err_blocked|join)$/;
   const path = slug => "/" + (slug ? slug + "/" : "");
   const N = SERVICES.length;
   const pages = [], files = {};
@@ -204,6 +204,7 @@ export async function build({ check = false } = {}) {
         .replace("{{lang}}", lang).replace("{{pathsAttr}}", esc(JSON.stringify(paths))).replace("{{rootAttr}}", root ? " data-root" : "")
         .replace("{{prepaint}}", PREPAINT).replace("{{head}}", head).replace("{{css}}", cssName).replace("{{js}}", jsName).replace("{{strings}}", sName)
         .replace("{{homeHref}}", home).replace("{{langOpts}}", langOpts).replace("{{h1}}", esc(v.h1)).replace("{{intro}}", esc(v.intro))
+        .replace("{{play}}", p ? "" : `    <section class="play card" id="play" hidden><div class="pl"></div></section>\n`)
         .replace("{{notesWait}}", (p && p.svc ? ["wait_ip", "wait_tz"] : ["wait_ex", "wait_ip", "wait_tz"]).map(k => `<li class="nt wait"><i></i><span>${esc(T(k))}</span></li>`).join(""))
         .replace("{{focus}}", focusOf(p && p.svc)).replace("{{list}}", listOf(p)).replace("{{allLink}}", allLink(p)).replace("{{nav}}", nav)
         .replace("{{heroAttr}}", p && p.svc ? " data-one" : "")

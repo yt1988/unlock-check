@@ -2,7 +2,7 @@
 
 **English** · [简体中文](README.zh-CN.md)
 
-Which streaming and AI services work on your IP, and which country does each one see? [Streaming & AI Unlock Check](https://unlock.1ms.dog) asks 67 services from your browser — Netflix, Disney+, TikTok, ChatGPT, Claude, Gemini and more — over the route your proxy picks for each one, and says how sure each verdict is.
+Which streaming and AI services work on your IP, and which country does each one see? [Streaming & AI Unlock Check](https://unlock.1ms.dog) asks 150 services from your browser — Netflix, Disney+, TikTok, ChatGPT, Claude, Gemini and more — over the route your proxy picks for each one, and says how sure each verdict is.
 
 **Live:** https://unlock.1ms.dog
 
@@ -24,11 +24,11 @@ The well-known unlock scripts (RegionRestrictionCheck and its forks) run `curl` 
 
 | Label | How | Services |
 |---|---|---|
-| **Official API** | The service's own region API, readable from any page (CORS). The same endpoint the command-line scripts read. | ChatGPT (`api.openai.com/compliance/cookie_requirements` + its trace), DAZN, Philo, NBC, Shudder, beIN CONNECT, KKTV, TVB Anywhere+, SBS On Demand, FOD, DMM TV, ZDF, Mango TV (its player, with a token made in the browser) |
+| **Official API** | The service's own region API, readable from any page (CORS). The same endpoint the command-line scripts read. | ChatGPT (`api.openai.com/compliance/cookie_requirements` + its trace), DAZN, Philo, NBC, Shudder, beIN CONNECT, KKTV, TVB Anywhere+, SBS On Demand, FOD, DMM TV, ZDF, NHK ONE, TELASA, 10 Play, ITVX, Molotov, Sling TV, A&E, Mango TV |
 | **Official API (script)** | An answer only given as a script (JSONP): run in `/assets/jsonp.html`, a sandboxed frame with no origin of its own whose policy only lets those services’ scripts run, and posted back. | BBC iPlayer (media selector: `geolocation` outside the UK), Tencent Video (`getinfo`: `em` 0 plays) |
-| **Its location** | Cloudflare's `/cdn-cgi/trace` on the service's own domain (`Access-Control-Allow-Origin: *`) gives the country that edge sees, checked against the service's published list. | Claude, Copilot, Grok, Perplexity, Le Chat, Poe, Character.AI, Crunchyroll, X |
+| **Its location** | Cloudflare's `/cdn-cgi/trace` on the service's own domain (`Access-Control-Allow-Origin: *`) gives the country that edge sees, checked against the service's published list. | Claude, Copilot, Grok, Perplexity, Le Chat, Poe, Character.AI, Crunchyroll, X, J:COM STREAM, 4GTV, LiTV, Bahamut Anime Crazy, NLZIET, The CW, DIRECTV Stream |
 | **Redirect test** | Redirect counting, below. | Netflix (region), Disney+, Peacock, Pandora, Tubi (a redirect from the front page outside their regions only), Paramount+, Viu (their own “not available here” page stays put outside their regions and sends everyone else home) |
-| **Guess** | Nothing of the service's own is readable: it is reachable over your route, and the country most services see is checked against its published list. | Gemini, TikTok, YouTube, Instagram, Telegram, WhatsApp, Discord, Reddit, Twitch, Pluto TV, ESPN+, Fubo, Facebook, Messenger, Threads, Signal, LINE, Snapchat, Pinterest, Google, Wikipedia, Roblox, Meta AI, Prime Video, Apple TV+, HBO Max, Hulu, Viki, Bilibili TV, Spotify, Deezer, SoundCloud; Bilibili, iQIYI, Youku and NetEase Cloud Music (mainland China when Mango TV or Tencent Video play) |
+| **Guess** | Nothing of the service's own is readable: it is reachable over your route, and the country most services see is checked against its published list. | Gemini, Meta AI, Twitch, Prime Video, Apple TV+, HBO Max, Hulu, Pluto TV, ESPN+, Fubo, Viki, Bilibili TV, Spotify, Deezer, SoundCloud, TikTok, YouTube, Instagram, Telegram, WhatsApp, Discord, Reddit, Facebook, Messenger, Threads, Signal, LINE, Snapchat, Pinterest, Google, Wikipedia, Roblox, ABEMA, U-NEXT, TVer, Hulu Japan, Lemino, d Anime Store, WOWOW, radiko, VideoMarket, Rakuten TV Japan, mora, Wavve, TVING, Coupang Play, Watcha, SPOTV NOW, Hami Video, myVideo, friDay Video, ofiii, LINE TV, myTV SUPER, Now E, ViuTV, HOY TV, JioHotstar, Sony LIV, Tata Play Binge, MX Player, meWATCH, StarHub TV+, Vidio, Mola, TrueID, AIS PLAY, sooka, Galaxy Play, TV360, K+, Stan, Binge, Kayo Sports, 7plus, ABC iview, 9Now, Optus Sport, ThreeNow, Neon, Sky Go NZ, Channel 4, My5, Sky Go, france.tv, Joyn, RTL+, Sky Go Germany, Sky Switzerland, RaiPlay, Movistar Plus+, NPO Start, Videoland, Amediateka, STARZ, MGM+, FX, NFL+, TLC GO, CBC Gem, Crave, Bilibili, iQIYI, Youku, NetEase Cloud Music |
 
 Country lists come from the services: [OpenAI](https://developers.openai.com/api/docs/supported-countries), [Anthropic](https://www.anthropic.com/supported-countries), [Gemini app](https://support.google.com/gemini/answer/13575153) (it includes Hong Kong and Macau; the Gemini API list doesn't), [Netflix](https://help.netflix.com/en/node/14164).
 
@@ -63,6 +63,15 @@ Pages whose resource policy refuses other sites (`Cross-Origin-Resource-Policy: 
 - Browser time zone vs. the services' country: AI services use it as a proxy signal.
 
 **Private by design:** static files only. Your browser talks to each service directly; no result is sent to the site. Share links carry each service's verdict and country, never an IP.
+
+### After a run
+
+- **Report card:** a grade per category (S at 95% of the services with an answer, then A 80%, B 60%, C 40%, D), and the places whose own regional services work. The main grades go on the share card too.
+- **Route advice:** for a service that isn't available over the route it took, another of your exits where it is (send its domain there), or none (it needs a node elsewhere); for one that doesn't open, its domain to check in your rules.
+- **IP identity:** whether Wikipedia blocks the address from editing as an open proxy or hosting range (its API answers any site, with the host it names), and whether Sling TV refused it as a proxy.
+- **Since your last run** and **your collection** (Netflix regions, exit countries, regional TV places seen): kept in this browser only (`localStorage`, the last 10 runs, verdicts and countries, no address).
+
+Every check in the command-line scripts, and why each is or isn't here: [docs/coverage.md](docs/coverage.md).
 
 ## Pages
 

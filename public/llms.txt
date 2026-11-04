@@ -1,7 +1,7 @@
 # Streaming & AI Unlock Check
 
 > Free browser tool that checks, over the visitor's own connection and route, whether streaming and AI services are
-> available and which country each one sees: ChatGPT, Claude, Gemini, Copilot, Grok, Perplexity, Le Chat, Poe, Character.AI, Meta AI, Netflix, Disney+, DAZN, Crunchyroll, Peacock, Philo, NBC, Shudder, beIN CONNECT, Twitch, Prime Video, Apple TV+, HBO Max, Hulu, Paramount+, Tubi, Pluto TV, ESPN+, Fubo, Viu, Viki, Bilibili TV, Spotify, Pandora, Deezer, SoundCloud, TikTok, YouTube, X, Instagram, Telegram, WhatsApp, Discord, Reddit, Facebook, Messenger, Threads, Signal, LINE, Snapchat, Pinterest, Google, Wikipedia, Roblox, KKTV, TVB Anywhere+, SBS On Demand, FOD, DMM TV, ZDF, BBC iPlayer, Mango TV, Tencent Video, Bilibili, iQIYI, Youku, NetEase Cloud Music. It uses each service's own
+> available and which country each one sees: ChatGPT, Claude, Gemini, Copilot, Grok, Perplexity, Le Chat, Poe, Character.AI, Meta AI, Netflix, Disney+, DAZN, Crunchyroll, Peacock, Philo, NBC, Shudder, beIN CONNECT, Twitch, Prime Video, Apple TV+, HBO Max, Hulu, Paramount+, Tubi, Pluto TV, ESPN+, Fubo, Viu, Viki, Bilibili TV, Spotify, Pandora, Deezer, SoundCloud, TikTok, YouTube, X, Instagram, Telegram, WhatsApp, Discord, Reddit, Facebook, Messenger, Threads, Signal, LINE, Snapchat, Pinterest, Google, Wikipedia, Roblox, KKTV, TVB Anywhere+, SBS On Demand, FOD, DMM TV, ZDF, BBC iPlayer, NHK ONE, TELASA, J:COM STREAM, ABEMA, U-NEXT, TVer, Hulu Japan, Lemino, d Anime Store, WOWOW, radiko, VideoMarket, Rakuten TV Japan, mora, Wavve, TVING, Coupang Play, Watcha, SPOTV NOW, 4GTV, LiTV, Bahamut Anime Crazy, Hami Video, myVideo, friDay Video, ofiii, LINE TV, myTV SUPER, Now E, ViuTV, HOY TV, JioHotstar, Sony LIV, Tata Play Binge, MX Player, meWATCH, StarHub TV+, Vidio, Mola, TrueID, AIS PLAY, sooka, Galaxy Play, TV360, K+, 10 Play, Stan, Binge, Kayo Sports, 7plus, ABC iview, 9Now, Optus Sport, ThreeNow, Neon, Sky Go NZ, ITVX, Channel 4, My5, Sky Go, Molotov, france.tv, Joyn, RTL+, Sky Go Germany, Sky Switzerland, RaiPlay, Movistar Plus+, NPO Start, Videoland, NLZIET, Amediateka, Sling TV, STARZ, A&E, The CW, DIRECTV Stream, MGM+, FX, NFL+, TLC GO, CBC Gem, Crave, Mango TV, Tencent Video, Bilibili, iQIYI, Youku, NetEase Cloud Music. It uses each service's own
 > region API where a page can read it, the service's own Cloudflare edge (/cdn-cgi/trace) against its published
 > country list, redirect counting (Netflix's country pages, "unavailable" redirects), and marks inferred results.
 > Everything runs client-side; no results are sent to the site.
@@ -72,6 +72,89 @@
 - DMM TV: https://unlock.1ms.dog/dmm-tv/
 - ZDF: https://unlock.1ms.dog/zdf/
 - BBC iPlayer: https://unlock.1ms.dog/bbc-iplayer/
+- NHK ONE: https://unlock.1ms.dog/nhk-one/
+- TELASA: https://unlock.1ms.dog/telasa/
+- J:COM STREAM: https://unlock.1ms.dog/jcom-stream/
+- ABEMA: https://unlock.1ms.dog/abema/
+- U-NEXT: https://unlock.1ms.dog/u-next/
+- TVer: https://unlock.1ms.dog/tver/
+- Hulu Japan: https://unlock.1ms.dog/hulu-japan/
+- Lemino: https://unlock.1ms.dog/lemino/
+- d Anime Store: https://unlock.1ms.dog/d-anime-store/
+- WOWOW: https://unlock.1ms.dog/wowow/
+- radiko: https://unlock.1ms.dog/radiko/
+- VideoMarket: https://unlock.1ms.dog/videomarket/
+- Rakuten TV Japan: https://unlock.1ms.dog/rakuten-tv-japan/
+- mora: https://unlock.1ms.dog/mora/
+- Wavve: https://unlock.1ms.dog/wavve/
+- TVING: https://unlock.1ms.dog/tving/
+- Coupang Play: https://unlock.1ms.dog/coupang-play/
+- Watcha: https://unlock.1ms.dog/watcha/
+- SPOTV NOW: https://unlock.1ms.dog/spotv-now/
+- 4GTV: https://unlock.1ms.dog/4gtv/
+- LiTV: https://unlock.1ms.dog/litv/
+- Bahamut Anime Crazy: https://unlock.1ms.dog/bahamut-anime/
+- Hami Video: https://unlock.1ms.dog/hami-video/
+- myVideo: https://unlock.1ms.dog/myvideo/
+- friDay Video: https://unlock.1ms.dog/friday-video/
+- ofiii: https://unlock.1ms.dog/ofiii/
+- LINE TV: https://unlock.1ms.dog/line-tv/
+- myTV SUPER: https://unlock.1ms.dog/mytv-super/
+- Now E: https://unlock.1ms.dog/now-e/
+- ViuTV: https://unlock.1ms.dog/viutv/
+- HOY TV: https://unlock.1ms.dog/hoy-tv/
+- JioHotstar: https://unlock.1ms.dog/jiohotstar/
+- Sony LIV: https://unlock.1ms.dog/sony-liv/
+- Tata Play Binge: https://unlock.1ms.dog/tata-play-binge/
+- MX Player: https://unlock.1ms.dog/mx-player/
+- meWATCH: https://unlock.1ms.dog/mewatch/
+- StarHub TV+: https://unlock.1ms.dog/starhub-tv-plus/
+- Vidio: https://unlock.1ms.dog/vidio/
+- Mola: https://unlock.1ms.dog/mola/
+- TrueID: https://unlock.1ms.dog/trueid/
+- AIS PLAY: https://unlock.1ms.dog/ais-play/
+- sooka: https://unlock.1ms.dog/sooka/
+- Galaxy Play: https://unlock.1ms.dog/galaxy-play/
+- TV360: https://unlock.1ms.dog/tv360/
+- K+: https://unlock.1ms.dog/k-plus/
+- 10 Play: https://unlock.1ms.dog/10-play/
+- Stan: https://unlock.1ms.dog/stan/
+- Binge: https://unlock.1ms.dog/binge/
+- Kayo Sports: https://unlock.1ms.dog/kayo-sports/
+- 7plus: https://unlock.1ms.dog/7plus/
+- ABC iview: https://unlock.1ms.dog/abc-iview/
+- 9Now: https://unlock.1ms.dog/9now/
+- Optus Sport: https://unlock.1ms.dog/optus-sport/
+- ThreeNow: https://unlock.1ms.dog/threenow/
+- Neon: https://unlock.1ms.dog/neon/
+- Sky Go NZ: https://unlock.1ms.dog/sky-go-nz/
+- ITVX: https://unlock.1ms.dog/itvx/
+- Channel 4: https://unlock.1ms.dog/channel-4/
+- My5: https://unlock.1ms.dog/my5/
+- Sky Go: https://unlock.1ms.dog/sky-go/
+- Molotov: https://unlock.1ms.dog/molotov/
+- france.tv: https://unlock.1ms.dog/france-tv/
+- Joyn: https://unlock.1ms.dog/joyn/
+- RTL+: https://unlock.1ms.dog/rtl-plus/
+- Sky Go Germany: https://unlock.1ms.dog/sky-go-germany/
+- Sky Switzerland: https://unlock.1ms.dog/sky-switzerland/
+- RaiPlay: https://unlock.1ms.dog/raiplay/
+- Movistar Plus+: https://unlock.1ms.dog/movistar-plus/
+- NPO Start: https://unlock.1ms.dog/npo-start/
+- Videoland: https://unlock.1ms.dog/videoland/
+- NLZIET: https://unlock.1ms.dog/nlziet/
+- Amediateka: https://unlock.1ms.dog/amediateka/
+- Sling TV: https://unlock.1ms.dog/sling-tv/
+- STARZ: https://unlock.1ms.dog/starz/
+- A&E: https://unlock.1ms.dog/a-and-e/
+- The CW: https://unlock.1ms.dog/the-cw/
+- DIRECTV Stream: https://unlock.1ms.dog/directv-stream/
+- MGM+: https://unlock.1ms.dog/mgm-plus/
+- FX: https://unlock.1ms.dog/fx/
+- NFL+: https://unlock.1ms.dog/nfl-plus/
+- TLC GO: https://unlock.1ms.dog/tlc-go/
+- CBC Gem: https://unlock.1ms.dog/cbc-gem/
+- Crave: https://unlock.1ms.dog/crave/
 - Mango TV: https://unlock.1ms.dog/mango-tv/
 - Tencent Video: https://unlock.1ms.dog/tencent-video/
 - Bilibili: https://unlock.1ms.dog/bilibili/

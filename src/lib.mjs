@@ -51,6 +51,26 @@ export const READERS = {
   mgtv(st, text) { const j = json(text); return !j ? null : j.code === 200 && j.data ? { ok: true, cc: "CN" } : /地区|区域|海外|版权|region|country/i.test(j.msg || "") ? { ok: false } : null; },
   // Tencent Video's getinfo (JSONP): em 0 plays, with the address it sees; 80 is its region refusal
   qq(st, text) { const j = json(text); return !j || typeof j.em !== "number" ? null : j.em === 0 ? { ok: true, cc: "CN", ip: j.ip || "" } : j.em === 80 ? { ok: false, ip: j.ip || "" } : null; },
+  // 10 Play (Australia): its geo endpoint says allow, with the state
+  ten(st, text) { const j = json(text); return j && typeof j.allow === "boolean" ? { ok: j.allow, cc: j.allow ? "AU" : null } : null; },
+  // Molotov: is_france
+  molotov(st, text) { const j = json(text); return j && typeof j.is_france === "boolean" ? { ok: j.is_france, cc: j.is_france ? "FR" : null } : null; },
+  // NHK ONE: its geo lookup names the country in Japan, and says "other" anywhere else
+  nhk(st, text) { const j = json(text), c = j && j.country_code; return typeof c !== "string" ? null : c === "JP" ? { ok: true, cc: "JP" } : { ok: false, cc: CC(c) }; },
+  // Sling TV: playback allowed or not, and why (it names a proxy or a data center when it takes you for one)
+  sling(st, text) {
+    const j = json(text);
+    if (!j || (j.playback_allowed == null && j.playback_disallowed == null)) return null;
+    const ok = j.playback_allowed === true || j.playback_disallowed === false, why = String(j.playback_disallowed_reason || "");
+    return { ok, cc: String(j.country || "").toLowerCase() === "usa" ? "US" : null, ...(!ok && /proxy|hosting|vpn|cloud/i.test(why) ? { proxy: true } : {}) };
+  },
+  // ITVX: 403 "geoblock" outside the UK, 404 inside it; anything else: not an answer either way
+  itv(st, text) { return st === 403 && /geoblock/i.test(text) ? { ok: false } : st === 404 ? { ok: true, cc: "GB" } : { ok: null }; },
+  // TELASA: IPLocationNotAllowed outside Japan, OK inside it (an error now and then under load: not an answer)
+  telasa(st, text) { return /IPLocationNotAllowed/.test(text) ? { ok: false } : /"type"s*:s*"OK"/.test(text) ? { ok: true, cc: "JP" } : { ok: null }; },
+  // A&E (thePlatform, NBCUniversal's video platform): GeoLocationBlocked outside the US; any other answer isn't one
+  // either way (the title's own rules), so the country decides
+  aetv(st, text) { return /GeoLocationBlocked/.test(text) ? { ok: false } : { ok: null }; },
   // BBC iPlayer's media selector (JSONP): "geolocation" outside the UK, the streams inside it
   bbc(st, text) { return /"result"\s*:\s*"geolocation"/.test(text) ? { ok: false } : /"media"\s*:\s*\[/.test(text) ? { ok: true, cc: "GB" } : null; },
 };
@@ -89,6 +109,8 @@ export function judge(s, r, guess) {
   const byList = (cc, how, ip = "") => { const o = offered(s, cc); return { v: o == null ? "reach" : o ? "ok" : "no", cc, ip, how, why: o == null ? (cc ? "unknown" : "nocc") : null }; };
   if (p.api || p.jsonp) {
     if (r.err) return fail();
+    // an answer that only reads one way (the refusal): any other one leaves it to the country
+    if (r.ok == null) return byList(guess, "guess");
     const cc = (r.edge && r.edge.cc) || r.cc || null;
     return { v: r.ok ? "ok" : "no", cc, ip: (r.edge && r.edge.ip) || r.ip || "", how: "api", why: null };
   }
@@ -175,4 +197,60 @@ export function parseShare(hash, ids) {
   }
   if (!Object.keys(verdicts).length) return null;
   return { ts: parseInt(m[1], 36) * 1000, tz: m[2] === "-" ? "" : m[2], verdicts };
+}
+
+// The report card: per category, the share of services that work among those with an answer either way (an unclear
+// one doesn't count), as a grade; regional services instead count the places whose own services work (they are each
+// for one country, so a share would only say how many countries there are). total: the three others together.
+export const grade = r => r >= 0.95 ? "S" : r >= 0.8 ? "A" : r >= 0.6 ? "B" : r >= 0.4 ? "C" : "D";
+export function scoreCard(verdicts, services) {
+  const c = {};
+  for (const s of services) {
+    const v = verdicts[s.id]; if (!v) continue;
+    const b = c[s.cat] || (c[s.cat] = { ok: 0, n: 0, places: [] });
+    if (s.cat === "local") { const cc = v.cc || s.only; if (v.v === "ok" && cc && !b.places.includes(cc)) b.places.push(cc); continue; }
+    if (v.v === "reach") continue;
+    b.n++; if (v.v === "ok") b.ok++;
+  }
+  for (const b of Object.values(c)) if (b.n) b.g = grade(b.ok / b.n);
+  const all = Object.entries(c).filter(([k]) => k !== "local").map(([, b]) => b), ok = all.reduce((a, b) => a + b.ok, 0), n = all.reduce((a, b) => a + b.n, 0);
+  return { cats: c, total: n ? grade(ok / n) : null };
+}
+
+// Route advice: for a service that isn't available over the route it took, another of this connection's exits where
+// its published list offers it (route the service's domain there), or none of them (it needs another country), or for
+// one that doesn't open at all, a route that doesn't reach it. Regional services only when another exit fixes them
+// (each is for one country: "use a node in that country" for all of them says nothing). At most `max`, AI first.
+//   exits: exitsByCountry()  →  [{ id, k: "to" | "need" | "fail", at: where it was tried (its own country, else the main exit), to: cc, via: id }]
+export function routeAdvice(verdicts, services, exits, max = 6) {
+  const out = [];
+  for (const s of services) {
+    const v = verdicts[s.id]; if (!v || (v.v !== "no" && v.v !== "fail")) continue;
+    if (v.v === "fail") { if (s.cat !== "local") out.push({ id: s.id, k: "fail" }); continue; }
+    const at = v.cc || (exits[0] && exits[0].cc), e = exits.find(e => e.cc !== at && offered(s, e.cc) === true);
+    if (e) out.push({ id: s.id, k: "to", at, to: e.cc, via: e.ids.find(id => id !== s.id) || e.ids[0] });
+    else if (s.cat !== "local" && at) out.push({ id: s.id, k: "need", at });
+  }
+  const rank = a => (a.k === "to" ? 0 : a.k === "need" ? 1 : 2) * 10 + ["ai", "video", "social", "local"].indexOf(services.find(s => s.id === a.id).cat);
+  return out.sort((a, b) => rank(a) - rank(b)).slice(0, max);
+}
+
+// Runs kept on this device to compare with (localStorage, src/app.js): { ts, v: { id: "<v><cc>" } }, v as in share links
+export const packRun = (ts, verdicts) => ({ ts, v: Object.fromEntries(Object.entries(verdicts).filter(([, v]) => v).map(([id, v]) => [id, V[v.v] + (v.cc || "")])) });
+// what changed between two runs: [{ id, a: { v, cc }, b: { v, cc } }] for services in both whose verdict or country changed
+export function diffRuns(prev, cur) {
+  const un = x => ({ v: unV[x[0]], cc: x.slice(1) || null }), out = [];
+  for (const [id, b] of Object.entries(cur.v)) { const a = prev.v[id]; if (a && a !== b) out.push({ id, a: un(a), b: un(b) }); }
+  return out;
+}
+
+// Whether Wikipedia blocks this address from editing (the RegionRestrictionCheck fork's "Wikipedia editable" check):
+// its API answers any site (origin=*) with the block on the address it sees, and open proxies and hosting ranges are
+// blocked with a reason that says so, often naming the host in a comment. Returns { blocked, proxy, host } or null.
+export function wikiBlock(text) {
+  let j; try { j = JSON.parse(text); } catch (e) { return null; }
+  const u = j && j.query && j.query.userinfo; if (!u) return null;
+  if (!u.blockid) return { blocked: false, proxy: false, host: "" };
+  const why = String(u.blockreason || ""), host = (/<!--\s*([^<>]{2,60}?)\s*-->/.exec(why) || [])[1] || "";
+  return { blocked: true, proxy: /proxy|webhost|colocation|hosting|vpn/i.test(why), host };
 }

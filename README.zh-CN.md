@@ -2,7 +2,7 @@
 
 [English](README.md) · **简体中文**
 
-你的 IP 能用哪些流媒体和 AI，每个服务看到你在哪个国家？[流媒体/AI 解锁检测](https://unlock.1ms.dog) 从你的浏览器询问 67 个服务（Netflix、Disney+、TikTok、ChatGPT、Claude、Gemini 等），每个都走你的代理给它分配的线路，并标明每个结论有多可靠。
+你的 IP 能用哪些流媒体和 AI，每个服务看到你在哪个国家？[流媒体/AI 解锁检测](https://unlock.1ms.dog) 从你的浏览器询问 150 个服务（Netflix、Disney+、TikTok、ChatGPT、Claude、Gemini 等），每个都走你的代理给它分配的线路，并标明每个结论有多可靠。
 
 **在线使用：** https://unlock.1ms.dog
 
@@ -24,10 +24,10 @@
 
 | 标签 | 方法 | 服务 |
 |---|---|---|
-| **官方接口** | 服务自己的地区接口，任何网页都能读（CORS），和命令行脚本读的是同一个接口。 | ChatGPT（`api.openai.com/compliance/cookie_requirements` 加它的 trace）、DAZN、Philo、NBC、Shudder、beIN CONNECT、KKTV、TVB Anywhere+、SBS On Demand、FOD、DMM TV、ZDF |
-| **官方定位** | 服务自己域名下 Cloudflare 的 `/cdn-cgi/trace`（`Access-Control-Allow-Origin: *`）给出这个节点看到的国家，再对照服务公布的列表。 | Claude、Copilot、Grok、Perplexity、Le Chat、Poe、Character.AI、Crunchyroll、X |
-| **跳转判断** | 数跳转次数，见下文。 | Netflix（地区）、Disney+、Peacock |
-| **推测** | 服务自己的东西一样也读不到：只确认它在你的线路上能访问，再拿多数服务看到的国家对照它公布的列表。 | Gemini、TikTok、YouTube、Instagram、Telegram、WhatsApp、Discord、Reddit、Twitch |
+| **官方接口** | 服务自己的地区接口，任何网页都能读（CORS），和命令行脚本读的是同一个接口。 | ChatGPT（`api.openai.com/compliance/cookie_requirements` 加它的 trace）、DAZN、Philo、NBC、Shudder、beIN CONNECT、KKTV、TVB Anywhere+、SBS On Demand、FOD、DMM TV、ZDF、NHK ONE、TELASA、10 Play、ITVX、Molotov、Sling TV、A&E、芒果TV；脚本形式（JSONP）：BBC iPlayer、腾讯视频 |
+| **官方定位** | 服务自己域名下 Cloudflare 的 `/cdn-cgi/trace`（`Access-Control-Allow-Origin: *`）给出这个节点看到的国家，再对照服务公布的列表。 | Claude、Copilot、Grok、Perplexity、Le Chat、Poe、Character.AI、Crunchyroll、X、J:COM STREAM、四季线上、LiTV 立视、巴哈姆特动画疯、NLZIET、The CW、DIRECTV Stream |
+| **跳转判断** | 数跳转次数，见下文。 | Netflix、Disney+、Peacock、Paramount+、Tubi、Viu、Pandora |
+| **推测** | 服务自己的东西一样也读不到：只确认它在你的线路上能访问，再拿多数服务看到的国家对照它公布的列表。 | Gemini、Meta AI、Twitch、Prime Video、Apple TV+、HBO Max、Hulu、Pluto TV、ESPN+、Fubo、Viki、Bilibili TV、Spotify、Deezer、SoundCloud、TikTok、YouTube、Instagram、Telegram、WhatsApp、Discord、Reddit、Facebook、Messenger、Threads、Signal、LINE、Snapchat、Pinterest、Google、Wikipedia、Roblox、ABEMA、U-NEXT、TVer、Hulu 日本、Lemino、d动画商店、WOWOW、radiko、VideoMarket、乐天 TV 日本、mora、Wavve、TVING、Coupang Play、Watcha、SPOTV NOW、Hami Video、myVideo、friDay影音、欧飞、LINE TV、myTV SUPER、Now E、ViuTV、HOY TV、JioHotstar、Sony LIV、Tata Play Binge、MX Player、meWATCH、StarHub TV+、Vidio、Mola、TrueID、AIS PLAY、sooka、Galaxy Play、TV360、K+、Stan、Binge、Kayo Sports、7plus、ABC iview、9Now、Optus Sport、ThreeNow、Neon、Sky Go NZ、Channel 4、My5、Sky Go、france.tv、Joyn、RTL+、Sky Go Germany、Sky Switzerland、RaiPlay、Movistar Plus+、NPO Start、Videoland、Amediateka、STARZ、MGM+、FX、NFL+、TLC GO、CBC Gem、Crave、哔哩哔哩、爱奇艺、优酷、网易云音乐 |
 
 国家列表来自各服务官方：[OpenAI](https://developers.openai.com/api/docs/supported-countries)、[Anthropic](https://www.anthropic.com/supported-countries)、[Gemini 应用](https://support.google.com/gemini/answer/13575153)（包含香港和澳门；Gemini API 的列表不含）、[Netflix](https://help.netflix.com/en/node/14164)。
 
@@ -61,6 +61,15 @@
 - 浏览器时区和服务看到的国家：AI 服务会把它当成代理特征。
 
 **隐私：** 只有静态文件。你的浏览器直接询问每个服务，结果不会发送到本站。分享链接只带每个服务的结论和国家，不带 IP。
+
+### 测完之后
+
+- **成绩单：** 每类一个等级（有明确结论的服务里能用的占 95% 是 S，80% A，60% B，40% C，以下 D），地区电视则数能用的地区。主要等级也会画在分享卡片上。
+- **分流建议：** 某个服务在它走的线路上用不了，而你另一条出口在它支持的国家，就建议把它的域名分过去；都不在，就说需要换别处的节点；完全打不开的，提示检查它的域名有没有走代理。
+- **IP 身份：** 维基百科是否把出口 IP 当成开放代理或机房地址封禁编辑（它的接口允许任何网站读取，还会写出机房名），以及 Sling TV 是否以代理为由拒绝。
+- **和上次比**、**图鉴**（测到过的 Netflix 地区、出口国家、地区电视）：只存在这个浏览器里（`localStorage`，最近 10 次，只有结论和国家，没有 IP）。
+
+命令行脚本里的每一项检测，以及为什么加了或没加：[docs/coverage.md](docs/coverage.md)。
 
 ## 页面
 
