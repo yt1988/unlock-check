@@ -223,9 +223,10 @@ body.dlg-open { overflow: hidden; }
 .nt .nd b { color: var(--fg); }
 
 /* the list's link to the status page */
-.st-link { display: flex; justify-content: flex-end; margin: -4px 0 6px; font-size: 13px; }
-.st-link a { color: var(--ink); text-decoration: none; min-height: 32px; display: inline-flex; align-items: center; }
-.st-link a:hover { text-decoration: underline; }
+.grp h2 a.st-link { margin-left: auto; color: var(--ink); font-size: 13px; font-weight: 500; text-transform: none; letter-spacing: 0; white-space: nowrap; }
+.grp h2 a.st-link:hover { color: var(--ink); text-decoration: underline; }
+.grp h2 .st-link + .g-n { margin-left: 12px; }
+.grp h2 .st-link + .g-n:empty { display: none; }
 
 /* the status page (src/status.js) */
 .stp-h { padding-bottom: 18px; }

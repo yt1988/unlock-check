@@ -112,15 +112,15 @@ export async function build({ check = false } = {}) {
     // A page tests only what it is about (1ms-shell tool contract, "a sub-page tests only its own item"): the main
     // page every service, a category page that category, a service page that service, with its category's other
     // pages linked below (names only, not tested). Both lead to the main page to test everything.
-    // "Are these services really up?": the status page, at the top of the list
-    const stLink = `<p class="st-link"><a href="${home}status/">${esc(T("sp_link"))}</a></p>`;
-    const listOf = p => p && p.status ? "" : !p ? `    <section class="list card">\n${stLink}\n${groupsOf(CATS)}\n    </section>` : p.cat ? `    <section class="list card">\n${stLink}\n${groupsOf([p.cat])}\n    </section>`
+    // "Are these services really up?": the status page, on the first heading's line of the list, at its right
+    const stLink = `<a class="st-link" href="${home}status/">${esc(T("sp_link"))}</a>`;
+    const listOf = p => p && p.status ? "" : !p ? `    <section class="list card">\n${groupsOf(CATS)}\n    </section>` : p.cat ? `    <section class="list card">\n${groupsOf([p.cat])}\n    </section>`
       : `    <nav class="peers card"><h2><a href="${href({ cat: SV(p.svc).cat })}">${esc(T("cat_" + SV(p.svc).cat).nav)}</a></h2><p>` +
         SERVICES.filter(s => s.cat === SV(p.svc).cat && s.id !== p.svc).map(s => `<a href="${href({ svc: s.id })}">${esc(s.name)}</a>`).join("") + `</p></nav>`;
     const scopeOf = p => !p ? null : p.cat ? SERVICES.filter(s => s.cat === p.cat).map(s => s.id) : [p.svc];
     const allLink = p => !p || p.status ? "" : `      <p class="all"><a class="btn" href="${home}">${esc(fill(T("all_link"), { n: N }))}</a></p>\n`;
-    const groupsOf = cats => cats.map(c =>
-      `<div class="grp" data-c="${c}"><h2><a href="${href({ cat: c })}">${esc(T("cat_" + c).nav)}</a><b class="g-n"></b></h2><ul>${SERVICES.filter(s => s.cat === c).map(row).join("")}</ul></div>`).join("\n");
+    const groupsOf = cats => cats.map((c, i) =>
+      `<div class="grp" data-c="${c}"><h2><a href="${href({ cat: c })}">${esc(T("cat_" + c).nav)}</a>${i ? "" : stLink}<b class="g-n"></b></h2><ul>${SERVICES.filter(s => s.cat === c).map(row).join("")}</ul></div>`).join("\n");
     const focusOf = id => !id ? "" : `<div class="focus wait" id="focus" data-s="${id}"><div class="fo-h"><i class="st"></i>${ICONS[id] ? `<img class="fi" src="/assets/svc/${ICONS[id]}" width="22" height="22" alt="">` : ""}<b class="fo-t">${esc(SV(id).name)}</b></div><p class="fo-d"><span class="bar"></span></p></div>`;
     const SV = id => SERVICES.find(s => s.id === id);
     const langOpts = langs.map(([l, , , nm]) => `<option value="${l}"${l === lang ? " selected" : ""}>${esc(nm)}</option>`).join("");
