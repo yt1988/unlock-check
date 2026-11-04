@@ -324,8 +324,9 @@
       const r = await reach[s.id];
       if (r.reach) {
         if (s.probe.netflix) Object.assign(r, await netflixCountry(prefer));
-        // once more when nothing loaded: a slow page among sixty requests misses the time limit now and then
-        else if (s.probe.hops) r.hops = await addedHops(s.probe.hops, s.probe.zero ? 3 : 0) ?? await addedHops(s.probe.hops, s.probe.zero ? 3 : 0);
+        // up to 3 either way (a "not here" page sends those it serves home: one redirect or more); once more when
+        // nothing loaded, as a slow page among sixty requests misses the time limit now and then
+        else if (s.probe.hops) r.hops = await addedHops(s.probe.hops, 3) ?? await addedHops(s.probe.hops, 3);
       }
       settle(s, r);
     }));
