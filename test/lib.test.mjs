@@ -41,6 +41,7 @@ test("readers: real answers (measured 2026-11-01)", () => {
   assert.deepEqual(READERS.sbs(200, '{"get":{"response":{"country_code":"HK"}}}'), { ok: false, cc: "HK" });
   assert.deepEqual(READERS.fod(200, '<?xml version="1.0"?><RESULT><FLAG TYPE="false" /></RESULT>'), { ok: false, cc: null });
   assert.deepEqual(READERS.dazn(200, '{"Region":{"isAllowed":true,"GeolocatedCountry":"jp"}}'), { ok: true, cc: "JP" });
+  assert.deepEqual(READERS.dazn(403, '{"odata.error": {"code": 132986,"message": {"lang": "en-US","value": "Security policy has been breached"}}}'), { ok: false });
   assert.deepEqual(READERS.nbc(200, '{"restricted":true,"requestInfo":{"mediaType":"live","geoLookupType":"ip","countryCode":"JP"}}'), { ok: false, cc: "JP" });
   assert.deepEqual(READERS.dmm(200, '{"is_blocked":true,"block_status":"FOREIGN"}'), { ok: false });
   assert.deepEqual(READERS.dmm(401, '{"code":"UNAUTHORIZED"}'), { ok: true, cc: "JP" });

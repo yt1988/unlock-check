@@ -86,7 +86,7 @@ export async function build({ check = false } = {}) {
   const jsName = `app.${hash(js)}.js`, cssName = `app.${hash(css)}.css`;
 
   // the strings the browser needs; the page's own text is already in the HTML
-  const RUNTIME = /^(name|fd_\w+|v_\w+|how_\w+|why_\w+|note_\w+|fo_\w+|ex_\w+|tz_\w+|wait_\w+|ip_\w+|ipq_title|vh_\w+|th_\w+|egress_link|ck_link|progress|done|rerun|running|hide|show|share|share_text|test_mine|share_bad|err_blocked|join)$/;
+  const RUNTIME = /^(name|fd_\w+|v_\w+|how_\w+|why_\w+|note_\w+|watch_\w+|fo_\w+|ex_\w+|tz_\w+|wait_\w+|ip_\w+|ipq_title|vh_\w+|th_\w+|egress_link|ck_link|progress|done|rerun|running|hide|show|share|share_text|test_mine|share_bad|err_blocked|join)$/;
   const path = slug => "/" + (slug ? slug + "/" : "");
   const N = SERVICES.length;
   const pages = [], files = {};

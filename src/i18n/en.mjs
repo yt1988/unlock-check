@@ -61,6 +61,8 @@ export default {
   why_reach_nolist: "{name}'s servers think you're in {c}. {name} doesn't publish where it's available, so only the location is shown.",
   why_guess_nolist: "{name} doesn't let other sites read its answers, so the page can only tell that it opens. Most other services think you're in {c}, but {name} doesn't publish where it's available, so the page can't tell if it works there.",
   why_cn_ok: "{name} doesn't let other sites read its answers, so the page can only tell that it opens. Mango TV or Tencent Video plays mainland titles over this route, so {name} should work too.",
+  watch_ok: "Our Tokyo server's hourly run found this check working {t}.",
+  watch_bad: "In our Tokyo server's hourly run {t}, this check's endpoint didn't answer the way the page reads it (the service may have changed it), so this result is inferred instead.",
   why_reach_nocc: "{name} opens, but didn't reveal which country it thinks you're in, so the page can't tell if you can use it.",
   // the site opens but the browser stopped its location check (an ad blocker, tracking protection)
   why_blocked_ok: "{name} opens, but the browser stopped the page from reading which country {name} places you in (an ad blocker or tracking protection can do this). Most other services think you're in {c}, where {name} works, so it should work.",

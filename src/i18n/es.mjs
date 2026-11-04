@@ -58,6 +58,8 @@ export default {
   why_reach_nolist: "Los servidores de {name} te ubican en {c}. {name} no publica dónde está disponible, así que solo se muestra la ubicación.",
   why_guess_nolist: "{name} no deja que otros sitios lean sus respuestas, así que solo se sabe que abre. La mayoría de los demás servicios te ubican en {c}, pero {name} no publica dónde está disponible, así que no se puede saber si funciona ahí.",
   why_cn_ok: "{name} no deja que otros sitios lean sus respuestas, así que solo se sabe que abre. Mango TV o Tencent Video reproducen títulos de China continental por esta ruta, así que {name} también debería funcionar.",
+  watch_ok: "Nuestro servidor de Tokio revisa cada hora: {t}, esta comprobación funcionaba bien.",
+  watch_bad: "En la revisión horaria de nuestro servidor de Tokio ({t}), el servicio no respondió a esta comprobación como de costumbre (puede que la haya cambiado), así que este resultado es una estimación.",
   why_reach_nocc: "{name} abre, pero no indicó en qué país te ubica, así que no se puede saber si puedes usarlo.",
   // the site opens but the browser stopped its location check (an ad blocker, tracking protection)
   why_blocked_ok: "{name} abre, pero el navegador impidió leer en qué país te ubica (puede pasar con un bloqueador de anuncios o la protección contra el rastreo). La mayoría de los demás servicios te ubican en {c}, donde {name} está disponible, así que debería funcionar.",

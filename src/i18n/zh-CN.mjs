@@ -58,6 +58,8 @@ export default {
   why_reach_nolist: "{name} 的服务器认为你在{c}。它没有公布在哪些地区可用，所以这里只显示位置，判断不了能不能用。",
   why_guess_nolist: "{name} 不让别的网站读取它的回答，只能确认它打得开。其他服务大多认为你在{c}，但 {name} 没有公布在哪些地区可用，判断不了能不能用。",
   why_cn_ok: "{name} 不让别的网站读取它的回答，只能确认它打得开。芒果TV 或腾讯视频在这条线路上能播大陆内容，所以推测 {name} 也能用。",
+  watch_ok: "东京服务器每小时巡检一次，{t}确认这项检测工作正常。",
+  watch_bad: "东京服务器{t}巡检时，这项检测用的接口回答和平常不一样（服务可能改版了），所以这一项改为推测。",
   why_reach_nocc: "{name} 打得开，但没拿到它认为你在哪个地区，判断不了能不能用。",
   // the site opens but the browser stopped its location check (an ad blocker, tracking protection)
   why_blocked_ok: "{name} 打得开，但浏览器拦下了读取它认为你在哪个地区的请求（广告拦截插件或跟踪防护会这样做）。其他服务大多认为你在{c}，{name} 在那里能用，所以推测能用。",

@@ -58,6 +58,8 @@ export default {
   why_reach_nolist: "Pays détecté par les serveurs de {name} : {c}. {name} ne publie pas où il est disponible, donc seule la localisation est affichée.",
   why_guess_nolist: "{name} ne laisse pas les autres sites lire ses réponses : on sait seulement qu'il s'ouvre. Pays détecté par la plupart des autres services : {c}. Mais {name} ne publie pas où il est disponible, donc impossible de savoir s'il y marche.",
   why_cn_ok: "{name} ne laisse pas les autres sites lire ses réponses : on sait seulement qu'il s'ouvre. Mango TV ou Tencent Video lisent des titres de Chine continentale par cette route, donc {name} devrait marcher aussi.",
+  watch_ok: "Notre serveur de Tokyo vérifie chaque heure : {t}, ce test fonctionnait bien.",
+  watch_bad: "Lors de la vérification horaire de notre serveur de Tokyo ({t}), le service n'a pas répondu à ce test comme d'habitude (il l'a peut-être changé) : ce résultat est donc estimé.",
   why_reach_nocc: "{name} s'ouvre, mais n'a pas indiqué quel pays il détecte : impossible de savoir si vous pouvez l'utiliser.",
   // the site opens but the browser stopped its location check (an ad blocker, tracking protection)
   why_blocked_ok: "{name} s'ouvre, mais le navigateur a empêché de lire le pays qu'il détecte (un bloqueur de pub ou la protection contre le pistage peut en être la cause). Pays détecté par la plupart des autres services : {c}. {name} y est accessible, donc cela devrait marcher.",

@@ -1,0 +1,11 @@
+# every hour at minute 13 (1ms-shell docs/processes.md, dedicated server: the timers are staggered)
+[Unit]
+Description=unlock.1ms.dog hourly probe check
+
+[Timer]
+OnCalendar=*-*-* *:13:00
+Persistent=true
+AccuracySec=30s
+
+[Install]
+WantedBy=timers.target

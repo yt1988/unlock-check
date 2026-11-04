@@ -27,9 +27,11 @@ export const READERS = {
     const code = (j.error && (j.error.code || j.error.type)) || "";
     return { ok: !/unsupported_country/i.test(code) && !/unsupported_country/i.test(text) };
   },
+  // DAZN: isAllowed with the country it sees; a 403 "Security policy has been breached" is its refusal of an address it
+  // takes for a proxy or a datacenter (not available here either)
   dazn(st, text) {
     const a = /"isAllowed"\s*:\s*(true|false)/.exec(text), c = /"GeolocatedCountry"\s*:\s*"([a-z]{2})"/i.exec(text);
-    return a ? { ok: a[1] === "true", cc: c ? CC(c[1]) : null } : null;
+    return a ? { ok: a[1] === "true", cc: c ? CC(c[1]) : null } : st === 403 && /Security policy has been breached/i.test(text) ? { ok: false } : null;
   },
   kktv(st, text) { const d = (json(text) || {}).data; return d && typeof d.is_allowed === "boolean" ? { ok: d.is_allowed, cc: CC(d.country), ip: d.ip || "" } : null; },
   philo(st, text) { const j = json(text); return j && j.status ? { ok: j.status === "SUCCESS", cc: CC(j.country) } : null; },

@@ -1,0 +1,24 @@
+# unlock.1ms.dog: the hourly probe check (scripts/watch.mjs), on 1ms.dog's Tokyo server. See watch/README.md.
+[Unit]
+Description=unlock.1ms.dog hourly probe check
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=1ms-unlock
+Group=1ms-unlock
+WorkingDirectory=/opt/1ms/unlock
+ExecStart=/usr/bin/node /opt/1ms/unlock/scripts/watch.mjs /srv/1ms-data/unlock
+TimeoutStartSec=300
+MemoryMax=128M
+# the run's one-line summary is not kept; errors (stderr) are
+StandardOutput=null
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ReadWritePaths=/srv/1ms-data/unlock
+CapabilityBoundingSet=
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX

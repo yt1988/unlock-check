@@ -152,6 +152,18 @@
     r.reach = await loads(p.reach || p.hops) || await loads(p.reach || p.hops);
     return r;
   }
+  // The hourly check from 1ms.dog's Tokyo server (scripts/watch.mjs, watch/README.md): whether each check's endpoint
+  // still answers the way it's read here. A check found not working for two runs in a row is judged as a guess (the
+  // country the others see, against the published list) instead of trusting an answer that may have changed meaning.
+  // Only on 1ms.dog itself and localhost (a copy hosted elsewhere doesn't ask our server); no status, or one over 3 hours
+  // old: no change.
+  const WATCH = /(^|\.)1ms\.dog$|^localhost$/.test(location.hostname) ? "https://data.1ms.dog:2083/unlock/status.json" : "";
+  let watchP = null;
+  const watch = () => watchP || (watchP = !WATCH ? Promise.resolve(null) : fetch(WATCH, { credentials: "omit", referrerPolicy: "no-referrer", signal: AbortSignal.timeout(4000) })
+    .then(r => r.ok ? r.json() : null).then(j => j && j.v === 1 && j.services && Date.now() - Date.parse(j.at) < 3 * 3600e3 ? j : null).catch(() => null));
+  const watchBad = id => { const w = S.w && S.w.services[id]; return !!w && w.s !== "ok" && w.streak >= 2; };
+  const RTF = new Intl.RelativeTimeFormat(LANG, { numeric: "auto" });
+  const ago = iso => { const m = Math.max(1, Math.round((Date.now() - Date.parse(iso)) / 60e3)); return m < 60 ? RTF.format(-m, "minute") : RTF.format(-Math.round(m / 60), "hour"); };
   // the services whose answer waits for the others: the country they see (guess) and Netflix's list to try
   const LATE = s => !!(s.probe.netflix || s.probe.hops || (!s.probe.api && !s.probe.trace && !s.probe.jsonp));
   // a mainland-China-only service that can't be read is in mainland China when one that can be (Mango TV, Tencent
@@ -160,7 +172,7 @@
 
   /* ---------- state and rendering ---------- */
   // shared: a result from a link being shown (no addresses; nothing is tested until the visitor asks)
-  const S = { r: {}, v: {}, done: false, gen: 0, shared: null, broken: false, guess: null, cnOk: false, me: null };
+  const S = { r: {}, v: {}, done: false, gen: 0, shared: null, broken: false, guess: null, cnOk: false, me: null, w: null };
   const masked = () => store.get(K.mask) === "1";
   const ipTxt = ip => masked() ? maskIp(ip) : ip;
   const IPQS = (document.querySelector('meta[name="ipqs"]') || {}).content || "";
@@ -203,6 +215,10 @@
     const out = [t(sk("why_" + k), { name: n, c })];
     if (id === "netflix" && v.v === "ok") out.push(t("note_netflix"));
     if (id === "gemini") out.push(t("note_google"));
+    // the hourly check: broken (this verdict is a guess because of it), or when it last found this check working
+    const w = !S.shared && S.w && S.w.services[id];
+    if (w && (S.r[id] || {}).watch) out.unshift(t("watch_bad", { t: ago(S.w.at) }));
+    else if (w && w.s === "ok" && w.ok_at) out.push(t("watch_ok", { t: ago(w.ok_at) }));
     return out.join(" ");
   }
   function renderGroups() {
@@ -237,6 +253,7 @@
   // Who this connection is, from the shell (GET /_ms/me, 1ms-shell tool contract §4): Cloudflare's answer, no third
   // party, not cached. Self-hosted without the shell it is a 404, and the services' own answers are all there is.
   let meP = null;
+  watch();
   const me = () => meP || (meP = fetch("/_ms/me", { cache: "no-store", credentials: "omit", signal: AbortSignal.timeout(TIMEOUT) })
     .then(r => r.ok ? r.json() : {}).catch(() => ({})).then(x => (S.me = x && typeof x === "object" ? x : {})));
   // the country the services agree on, or else the connection's own
@@ -296,10 +313,13 @@
     $("#run").disabled = true; $("#run").classList.add("busy"); $("#run span").textContent = t("running"); $("#share").disabled = true;
     renderAll();
     let d = 0, failed = 0, err = false; setProg(0, N);
+    const watched = Promise.race([watch(), new Promise(r => setTimeout(r, 3000, null))]).then(w => { S.w = w; });
     const settle = (s, r) => {
       if (gen !== S.gen) return;
       if (s.only === "CN" && LATE(s) && S.cnOk) r.cn = true;   // judged by Mango TV's or Tencent Video's route (whyOf)
       S.r[s.id] = r; S.v[s.id] = judge(s, r, guessFor(s));
+      // a check the server found broken: the published list for the country the others see, marked as a guess
+      if (watchBad(s.id) && S.v[s.id].how !== "guess" && S.v[s.id].v !== "fail") { r.watch = true; S.v[s.id] = judge({ ...s, probe: { reach: s.site } }, { reach: true }, guessFor(s)); }
       renderRow(s.id); renderGroups(); renderSum(); renderFocus(); setProg(++d, N);
       if (err) return;
       // The first dozen services all failing to open is a blocker (an ad blocker drops the whole batch at once, a
@@ -316,7 +336,7 @@
     // page, say) asks those two as well, for the route that site takes: not shown, not shared, only that answer
     const cnHelp = SERVICES.some(s => s.only === "CN" && LATE(s)) ? ALL_SERVICES.filter(s => s.only === "CN" && !LATE(s) && !SERVICES.includes(s)) : [];
     const helped = Promise.all(cnHelp.map(s => ask(s).then(r => judge(s, r, null).v === "ok")));
-    await Promise.all(early.map(async s => settle(s, await ask(s))));
+    await Promise.all(early.map(async s => { const r = await ask(s); await watched; settle(s, r); }));
     if (gen !== S.gen) return;
     // the country to assume where a service's own answer can't be read, and the order Netflix's countries are tried in
     const seen = early.map(s => S.v[s.id]).filter(v => v && v.cc && v.how !== "guess").map(v => v.cc);
@@ -326,7 +346,10 @@
     const prefer = [...new Set([...seen, who.country].filter(Boolean))];
     // a trace the browser blocked, now with that country
     for (const s of early) if (s.probe.trace && S.r[s.id].err && S.r[s.id].reach) { S.v[s.id] = judge(s, S.r[s.id], S.guess); renderRow(s.id); }
+    // a check the server found broken, now with that country
+    for (const s of early) if (S.r[s.id] && S.r[s.id].watch) { S.v[s.id] = judge({ ...s, probe: { reach: s.site } }, { reach: true }, guessFor(s)); renderRow(s.id); }
     renderGroups(); renderSum(); renderFocus();
+    await watched;
     await Promise.all(late.map(async s => {
       const r = await reach[s.id];
       if (r.reach) {

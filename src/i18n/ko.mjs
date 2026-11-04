@@ -60,6 +60,8 @@ export default {
   why_reach_nolist: "{name} 서버가 판단한 위치: {c}. 지원 국가를 공개하지 않아서 위치만 보여 드려요.",
   why_guess_nolist: "{name} 서비스는 다른 사이트가 응답을 읽지 못하게 해서, 열리는지만 확인할 수 있어요. 다른 서비스 대부분이 판단한 위치: {c}. 하지만 지원 국가를 공개하지 않아서 이용 가능 여부는 판단할 수 없어요.",
   why_cn_ok: "{name} 서비스는 다른 사이트가 응답을 읽지 못하게 해서, 열리는지만 확인할 수 있어요. 이 경로에서 Mango TV나 Tencent Video로 중국 본토 콘텐츠를 볼 수 있으므로 쓸 수 있을 것으로 보여요.",
+  watch_ok: "도쿄 서버에서 매시간 점검해요. {t} 점검에서 이 검사는 정상으로 작동했어요.",
+  watch_bad: "{t} 도쿄 서버 점검에서 이 검사에 쓰는 응답이 평소와 달랐어요(서비스가 바꿨을 수 있어요). 그래서 이 항목은 추정으로 바꿨어요.",
   why_reach_nocc: "{name} 서비스는 열리지만 어느 나라로 판단했는지 알 수 없어서, 이용 가능 여부를 판단할 수 없어요.",
   // the site opens but the browser stopped its location check (an ad blocker, tracking protection)
   why_blocked_ok: "{name} 서비스는 열리지만, 어느 나라로 판단했는지 읽는 요청을 브라우저가 막았어요(광고 차단기나 추적 방지 기능 때문일 수 있어요). 다른 서비스 대부분이 판단한 위치: {c}. 그 나라에서는 이용할 수 있으므로 쓸 수 있을 것으로 보여요.",
