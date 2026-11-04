@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { READERS, judge, offered, guessCountry, exitsByCountry, encodeShare, parseShare, maskIp, parseTrace, regionName, flagCode } from "../src/lib.mjs";
+import { READERS, judge, offered, guessCountry, exitsByCountry, encodeShare, parseShare, maskIp, parseTrace, regionName, flagCode, dnsNote } from "../src/lib.mjs";
 import { SERVICES, CATS, SLUG, CAT_SLUG } from "../src/services.mjs";
 
 const S = Object.fromEntries(SERVICES.map(s => [s.id, s]));
@@ -108,4 +108,18 @@ test("Taiwan: its own name in every language and the cn flag (1ms-shell tool con
   assert.equal(flagCode("TW"), "cn");
   assert.equal(flagCode("HK"), "hk");
   assert.equal(flagCode("MO"), "mo");
+});
+
+test("dnsNote: where the DNS lookups come from against the exit", () => {
+  assert.equal(dnsNote([], "JP"), null);
+  assert.equal(dnsNote([{ cc: "JP", org: "x" }], null), null);
+  assert.deepEqual(dnsNote([{ cc: "JP", org: "Google" }], "JP"), { k: "dns_same", r: "JP", e: "JP", org: "Google", ecs: null });
+  assert.deepEqual(dnsNote([{ cc: "HK", org: "HKT" }], "JP"), { k: "dns_split", r: "HK", e: "JP", org: "HKT", ecs: null });
+  // a mainland resolver among others is the one named
+  assert.deepEqual(dnsNote([{ cc: "JP", org: "a" }, { cc: "CN", org: "China Unicom" }], "JP"), { k: "dns_cn", r: "CN", e: "JP", org: "China Unicom", ecs: null });
+  // in mainland China with a mainland resolver: nothing leaks
+  assert.equal(dnsNote([{ cc: "CN", org: "x" }], "CN").k, "dns_same");
+  // a subnet passed on from another country than the resolver's
+  assert.deepEqual(dnsNote([{ cc: "US", org: "Google", ecs: { net: "114.254.79.0/24", cc: "CN" } }], "JP").ecs, { net: "114.254.79.0/24", cc: "CN" });
+  assert.equal(dnsNote([{ cc: "JP", org: "Google", ecs: { net: "16.76.79.0/24", cc: "JP" } }], "JP").ecs, null);
 });

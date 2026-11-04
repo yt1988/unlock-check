@@ -62,6 +62,10 @@ export default {
   why_cn_ok: "{name} lässt andere Seiten seine Antworten nicht lesen, daher ist nur bekannt, dass es lädt. Über diese Route spielen Mango TV oder Tencent Video Titel aus Festlandchina ab, also sollte auch {name} gehen.",
   watch_ok: "Unser Server in Tokio prüft stündlich: {t} lief dieser Test einwandfrei.",
   watch_bad: "Bei der stündlichen Prüfung unseres Servers in Tokio ({t}) hat der Dienst auf diesen Test anders als sonst geantwortet (vielleicht wurde er geändert), daher ist dieses Ergebnis geschätzt.",
+  dns_cn: "Deine DNS-Anfragen laufen über einen Resolver in Festlandchina ({org}), dein Verkehr geht aber hier hinaus: {e}. Namen ausländischer Seiten, die dort aufgelöst werden, können verfälscht zurückkommen oder auf Server in China zeigen. Proxy-Apps umgehen das meist (Fake-IP oder Erkennen des Seitennamens), aber wenn ein Dienst nicht lädt, prüfe zuerst, wie dein DNS geroutet wird.",
+  dns_split: "Deine DNS-Anfragen kommen von hier: {r} ({org}), dein Verkehr geht aber hier hinaus: {e}. Manche Dienste wählen Server oder Region nach dem Standort deines DNS-Resolvers und sehen es deshalb vielleicht anders als diese Seite. Eine „DNS-Unlock“-Route sieht genau so aus.",
+  dns_same: "Dein DNS-Resolver steht im selben Land, aus dem dein Verkehr hinausgeht ({e}, {org}): DNS schickt dich nicht zu Servern anderswo.",
+  dns_ecs: "Der Resolver hat außerdem dein Subnetz ({net}, {c}) an die Nameserver der Seiten weitergegeben, die dich danach verorten können.",
   why_reach_nocc: "{name} lädt, hat aber nicht verraten, welches Land es erkennt. Ob du es nutzen kannst, bleibt offen.",
   // the site opens but the browser stopped its location check (an ad blocker, tracking protection)
   why_blocked_ok: "{name} lädt, aber der Browser hat verhindert, dass die Seite liest, welches Land {name} erkennt (das kann ein Werbeblocker oder der Tracking-Schutz sein). Land laut den meisten anderen Diensten: {c}. Dort ist {name} verfügbar, also sollte es gehen.",

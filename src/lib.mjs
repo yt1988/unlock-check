@@ -128,6 +128,25 @@ export function exitsByCountry(verdicts) {
   return [...m].map(([cc, ids]) => ({ cc, ids })).sort((a, b) => b.ids.length - a.ids.length);
 }
 
+// Where this connection's DNS lookups come from, against where its traffic leaves (the country most services see):
+// the resolvers 1ms.dog's own name server saw for a name only this page looked up (the dns tool's API,
+// api.l.1ms.dog), each { cc, org, ecs: { net, cc } | null } (ecs: the visitor's subnet a resolver passed on, EDNS Client
+// Subnet). Returns the note's key and its values, or null with nothing to say:
+//   dns_cn     the lookups go through a mainland China resolver while traffic leaves elsewhere (split routing that
+//              leaks DNS: foreign names may get polluted or mainland answers)
+//   dns_split  the resolver is in another country than the exit (the "DNS in Hong Kong, exit in Japan" case: a service
+//              that places you by your resolver, or a DNS unlock, gives a different answer than this page measured)
+//   dns_same   the resolver is where the traffic leaves
+// plus ecs: a subnet a resolver passed on, when it is in another country than that resolver
+export function dnsNote(resolvers, exit) {
+  const rs = (resolvers || []).filter(r => r && r.cc);
+  if (!rs.length || !exit) return null;
+  const cn = exit !== "CN" ? rs.find(x => x.cc === "CN") : null, other = rs.find(x => x.cc !== exit);
+  const k = cn ? "dns_cn" : other ? "dns_split" : "dns_same", r = cn || other || rs[0];
+  const x = rs.find(y => y.ecs && y.ecs.cc && y.ecs.net && y.ecs.cc !== y.cc);
+  return { k, r: r.cc, e: exit, org: r.org || "", ecs: x ? { net: x.ecs.net, cc: x.ecs.cc } : null };
+}
+
 // An IP with its middle hidden: 203.0.•.• / 2001:db8:•
 export function maskIp(ip) {
   if (!ip) return "";

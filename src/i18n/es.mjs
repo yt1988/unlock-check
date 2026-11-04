@@ -60,6 +60,10 @@ export default {
   why_cn_ok: "{name} no deja que otros sitios lean sus respuestas, así que solo se sabe que abre. Mango TV o Tencent Video reproducen títulos de China continental por esta ruta, así que {name} también debería funcionar.",
   watch_ok: "Nuestro servidor de Tokio revisa cada hora: {t}, esta comprobación funcionaba bien.",
   watch_bad: "En la revisión horaria de nuestro servidor de Tokio ({t}), el servicio no respondió a esta comprobación como de costumbre (puede que la haya cambiado), así que este resultado es una estimación.",
+  dns_cn: "Tus consultas DNS pasan por un resolvedor de China continental ({org}), mientras que tu tráfico sale desde {e}. Los nombres de sitios extranjeros resueltos ahí pueden volver alterados o apuntar a servidores de China continental. Las apps de proxy suelen evitarlo (fake-IP o detectando el nombre del sitio), pero si un servicio no abre, revisa primero cómo se enruta tu DNS.",
+  dns_split: "Tus consultas DNS salen desde {r} ({org}), mientras que tu tráfico sale desde {e}. Algunos servicios eligen servidor o región según dónde está tu resolvedor DNS, así que pueden no coincidir con lo que midió esta página. Una ruta de «desbloqueo por DNS» se ve justo así.",
+  dns_same: "Tu resolvedor DNS también está en {e} ({org}), donde sale tu tráfico: el DNS no te mandará a servidores de otro lugar.",
+  dns_ecs: "El resolvedor también pasó tu subred ({net}, en {c}) a los servidores de nombres de los sitios, que pueden ubicarte con ella.",
   why_reach_nocc: "{name} abre, pero no indicó en qué país te ubica, así que no se puede saber si puedes usarlo.",
   // the site opens but the browser stopped its location check (an ad blocker, tracking protection)
   why_blocked_ok: "{name} abre, pero el navegador impidió leer en qué país te ubica (puede pasar con un bloqueador de anuncios o la protección contra el rastreo). La mayoría de los demás servicios te ubican en {c}, donde {name} está disponible, así que debería funcionar.",
