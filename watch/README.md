@@ -46,13 +46,15 @@ The output is `/srv/1ms-data/unlock/status.json`. It is written atomically (to a
                              "streak": 12, "since": "…", "ok_at": "…" }, … } }
 ```
 
-The file holds no history apart from what it carries over from the previous run:
+Besides the week of runs below, each service carries over from the previous run:
 
 - `streak`: how many runs in a row have had the current state;
 - `since`: when the current state began;
 - `ok_at`: the last run in which the check was `ok`.
 
 The page only acts on a `drift` or `bad` state that has lasted at least 2 runs.
+
+`runs` lists the last week of runs (168 at most), and each service's `h` has one letter per run, oldest first: `o` ok, `d` drift, `b` bad, `-` not checked yet (a service added since). The status page (`/status/`, `src/status.js`) shows them: each check now, its last 24 runs, its share of ok runs over 24 hours and over the week, and every stretch of runs that wasn't ok.
 
 The page ignores a status file that is more than 3 hours old.
 

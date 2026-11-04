@@ -11,7 +11,8 @@
   const PR = new Intl.PluralRules(LANG), tn = (k, n, v) => t(L[k + "_" + PR.select(n)] != null ? k + "_" + PR.select(n) : k + "_other", v);
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
   const store = { get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
-  const K = { theme: "unlock:theme", lang: "unlock:lang", mask: "unlock:mask", hist: "unlock:hist", dex: "unlock:dex" };
+  const AUTO = document.querySelector("#auto");                 // the main page's "start by itself" option (only there)
+  const K = { theme: "unlock:theme", lang: "unlock:lang", mask: "unlock:mask", hist: "unlock:hist", dex: "unlock:dex", auto: "unlock:auto" };
   const country = cc => { try { return regionName(cc, LANG); } catch (e) { return cc; } };
   const flag = cc => /^[A-Z]{2}$/.test(cc || "") && cc !== "XK" ? `<img class="flag" src="/flags/${flagCode(cc)}.svg" alt="" width="20" height="15">` : "";
   for (const s of ALL_SERVICES) if (s.names && s.names[LANG]) s.name = s.names[LANG];   // the name this language uses
@@ -255,7 +256,7 @@
     for (const k of ["ok", "no", "reach", "fail"]) $(`#sum .t-${k} b`).textContent = S.gen || S.shared ? n[k] : "–";
     // the result in one line, with the share button beside it
     const has = S.done && Object.keys(S.v).length > 0;
-    $("#vh").textContent = has ? (ONE ? "" : headline()) : S.gen && !ONE ? t("v_wait") : "";   // one service: its panel says it
+    $("#vh").textContent = has ? (ONE ? "" : headline()) : S.gen && !ONE ? t("v_wait") : !S.gen && !S.shared && !S.broken && AUTO ? t("idle", { n: SERVICES.length }) : "";   // one service: its panel says it
     $("#vline").classList.toggle("wait", !has);
   }
   // Notes under the totals, once everything is in: which countries the services see (several: split routing), and
@@ -287,6 +288,7 @@
   function renderNotes() {
     const ul = $("#notes");
     // while running, each line says what it is waiting for, in the space its result will take
+    if (!S.gen && !S.shared && AUTO) { ul.innerHTML = ""; return; }   // the main page before its first run: nothing yet
     if (!S.done) { ul.innerHTML = (ONE ? ["wait_ip", "wait_tz"] : ["wait_ex", "wait_ip", "wait_tz"]).map(k => `<li class="nt wait"><i></i><span>${esc(t(k))}</span></li>`).join(""); return; }
     // one line each: what it is about and the values, the explanation folded under it
     //   [kind ok|warn|info, label key, summary HTML, explanation HTML]
@@ -686,5 +688,12 @@
   const shared = parseShare(location.hash, SERVICES.map(s => s.id));
   if (shared) showShared(shared);
   else if (/^#r=/.test(location.hash) || /\/r\/[a-z]+\/$/.test(location.pathname)) showBroken();
-  else { document.documentElement.removeAttribute("data-shared"); run(); }
+  else {
+    document.documentElement.removeAttribute("data-shared");
+    // The main page asks every service at once (over 150 requests), so it waits for the button unless the visitor
+    // turned on starting by itself (kept in this browser); a category's or a service's page starts at once
+    if (!AUTO || store.get(K.auto) === "1") run();
+    else { $("#run span").textContent = t("start"); $("#run").disabled = false; renderAll(); }
+  }
+  if (AUTO) { AUTO.checked = store.get(K.auto) === "1"; AUTO.onchange = () => store.set(K.auto, AUTO.checked ? "1" : "0"); }
 })();

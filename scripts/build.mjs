@@ -84,9 +84,12 @@ export async function build({ check = false } = {}) {
   const js = (await transform(appFull, { loader: "js", minify: true, target: "es2020", legalComments: "none" })).code;
   const css = (await transform(cssFull, { loader: "css", minify: true, legalComments: "none" })).code;
   const jsName = `app.${hash(js)}.js`, cssName = `app.${hash(css)}.css`;
+  const stSrc = await readFile(new URL("status.js", src), "utf8");
+  new Function(stSrc);
+  const stJs = (await transform(stSrc, { loader: "js", minify: true, target: "es2020", legalComments: "none" })).code, stName = `status.${hash(stJs)}.js`;
 
   // the strings the browser needs; the page's own text is already in the HTML
-  const RUNTIME = /^(name|fd_\w+|v_\w+|how_\w+|why_\w+|note_\w+|watch_\w+|dns_\w+|pl_\w+|id_\w+|ln_\w+|pr_\w+|fo_\w+|ex_\w+|tz_\w+|wait_\w+|ip_\w+|ipq_title|vh_\w+|th_\w+|egress_link|ck_link|progress|done|rerun|running|hide|show|share|share_text|test_mine|share_bad|err_blocked|join)$/;
+  const RUNTIME = /^(name|fd_\w+|v_\w+|how_\w+|why_\w+|note_\w+|watch_\w+|dns_\w+|pl_\w+|id_\w+|ln_\w+|pr_\w+|sp_\w+|start|idle|fo_\w+|ex_\w+|tz_\w+|wait_\w+|ip_\w+|ipq_title|vh_\w+|th_\w+|egress_link|ck_link|progress|done|rerun|running|hide|show|share|share_text|test_mine|share_bad|err_blocked|join)$/;
   const path = slug => "/" + (slug ? slug + "/" : "");
   const N = SERVICES.length;
   const pages = [], files = {};
@@ -109,18 +112,20 @@ export async function build({ check = false } = {}) {
     // A page tests only what it is about (1ms-shell tool contract, "a sub-page tests only its own item"): the main
     // page every service, a category page that category, a service page that service, with its category's other
     // pages linked below (names only, not tested). Both lead to the main page to test everything.
-    const listOf = p => !p ? `    <section class="list card">\n${groupsOf(CATS)}\n    </section>` : p.cat ? `    <section class="list card">\n${groupsOf([p.cat])}\n    </section>`
+    // "Are these services really up?": the status page, at the top of the list
+    const stLink = `<p class="st-link"><a href="${home}status/">${esc(T("sp_link"))}</a></p>`;
+    const listOf = p => p && p.status ? "" : !p ? `    <section class="list card">\n${stLink}\n${groupsOf(CATS)}\n    </section>` : p.cat ? `    <section class="list card">\n${stLink}\n${groupsOf([p.cat])}\n    </section>`
       : `    <nav class="peers card"><h2><a href="${href({ cat: SV(p.svc).cat })}">${esc(T("cat_" + SV(p.svc).cat).nav)}</a></h2><p>` +
         SERVICES.filter(s => s.cat === SV(p.svc).cat && s.id !== p.svc).map(s => `<a href="${href({ svc: s.id })}">${esc(s.name)}</a>`).join("") + `</p></nav>`;
     const scopeOf = p => !p ? null : p.cat ? SERVICES.filter(s => s.cat === p.cat).map(s => s.id) : [p.svc];
-    const allLink = p => !p ? "" : `      <p class="all"><a class="btn" href="${home}">${esc(fill(T("all_link"), { n: N }))}</a></p>\n`;
+    const allLink = p => !p || p.status ? "" : `      <p class="all"><a class="btn" href="${home}">${esc(fill(T("all_link"), { n: N }))}</a></p>\n`;
     const groupsOf = cats => cats.map(c =>
       `<div class="grp" data-c="${c}"><h2><a href="${href({ cat: c })}">${esc(T("cat_" + c).nav)}</a><b class="g-n"></b></h2><ul>${SERVICES.filter(s => s.cat === c).map(row).join("")}</ul></div>`).join("\n");
     const focusOf = id => !id ? "" : `<div class="focus wait" id="focus" data-s="${id}"><div class="fo-h"><i class="st"></i>${ICONS[id] ? `<img class="fi" src="/assets/svc/${ICONS[id]}" width="22" height="22" alt="">` : ""}<b class="fo-t">${esc(SV(id).name)}</b></div><p class="fo-d"><span class="bar"></span></p></div>`;
     const SV = id => SERVICES.find(s => s.id === id);
     const langOpts = langs.map(([l, , , nm]) => `<option value="${l}"${l === lang ? " selected" : ""}>${esc(nm)}</option>`).join("");
     // the footer links every page of the language: categories, then services
-    const nav = [`<a href="${home}">${esc(T("nav_all"))}</a>`, ...CATS.map(c => `<a href="${href({ cat: c })}">${esc(T("cat_" + c).nav)}</a>`)].join("") +
+    const nav = [`<a href="${home}">${esc(T("nav_all"))}</a>`, ...CATS.map(c => `<a href="${href({ cat: c })}">${esc(T("cat_" + c).nav)}</a>`), `<a href="${home}status/">${esc(T("sp_nav"))}</a>`].join("") +
       `</nav><nav class="foot-nav svcs">` + SERVICES.map(s => `<a href="${href({ svc: s.id })}">${esc(s.name)}</a>`).join("");
 
     // A service's own questions: where it is offered (its published list, by name in this language), how this page
@@ -177,6 +182,38 @@ export async function build({ check = false } = {}) {
       ].join("\n");
       pages.push({ file: (slug ? slug + "/" : "") + sub + "index.html", url: purl, sub, html: page(head, paths, !slug && !p, p, v) });
     }
+    // The status page: every check, what the hourly check found (src/status.js fills the cells)
+    {
+      const sub = "status/", purl = SITE + home + sub, paths = Object.fromEntries(langs.map(([l, sl]) => [l, path(sl) + sub]));
+      const og = `${SITE}/og/${lang.toLowerCase()}.png`, title = T("sp_title");
+      const HOW = s => T(s.probe.api || s.probe.jsonp ? "how_api" : s.probe.trace ? "how_edge" : s.probe.netflix || s.probe.hops ? "how_hops" : "how_guess");
+      const head = [`<title>${esc(title)}</title>`, `<meta name="description" content="${esc(T("sp_desc"))}">`, `<meta name="robots" content="index, follow">`,
+        `<meta name="theme-color" content="#f6f6f7" media="(prefers-color-scheme: light)">`, `<meta name="theme-color" content="#1c1c1c" media="(prefers-color-scheme: dark)">`,
+        `<link rel="canonical" href="${purl}">`,
+        langs.map(([l, sl]) => `<link rel="alternate" hreflang="${l}" href="${SITE + path(sl) + sub}">`).join("\n") + `\n<link rel="alternate" hreflang="x-default" href="${SITE}/${sub}">`,
+        `<link rel="icon" href="/favicon.ico" sizes="any">`, `<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">`,
+        `<meta property="og:type" content="website">`, `<meta property="og:site_name" content="1ms.dog">`, `<meta property="og:title" content="${esc(title)}">`, `<meta property="og:description" content="${esc(T("sp_desc"))}">`,
+        `<meta property="og:url" content="${purl}">`, `<meta property="og:locale" content="${locale}">`,
+        `<meta property="og:image" content="${og}">`, `<meta property="og:image:width" content="1200">`, `<meta property="og:image:height" content="630">`,
+        `<meta name="twitter:card" content="summary_large_image">`, `<meta name="twitter:image" content="${og}">`].join("\n");
+      const th = `<thead><tr><th>${esc(T("sp_c_svc"))}</th><th class="how">${esc(T("sp_c_how"))}</th><th>${esc(T("sp_c_now"))}</th><th class="bar24">${esc(T("sp_c_24"))}</th><th class="u24">${esc(T("sp_c_up24"))}</th><th class="u7">${esc(T("sp_c_up7"))}</th></tr></thead>`;
+      const tr = s => `<tr data-id="${s.id}" data-name="${esc(s.name)}"><td class="sn">` +
+        (ICONS[s.id] ? `<img class="fi" src="/assets/svc/${ICONS[s.id]}" width="16" height="16" alt="" decoding="async">` : `<span class="fi"></span>`) +
+        `<a href="${href({ svc: s.id })}">${esc(s.name)}</a></td><td class="how">${esc(HOW(s))}</td><td class="now">–</td><td class="bar24"></td><td class="u24">–</td><td class="u7">–</td></tr>`;
+      const main = `
+    <section class="hero card stp-h">
+      <div class="hero-h"><h1>${esc(T("sp_h1"))}</h1><p class="intro">${esc(T("sp_intro"))}</p></div>
+      <div class="st-top"><p class="st-sum" id="stSum"></p><p class="st-meta m" id="stMeta">${esc(T("sp_wait"))}</p></div>
+      <p class="st-key m">${esc(T("sp_key"))}</p>
+    </section>
+    <section class="card stp" id="stTable">
+${CATS.map(c => `      <h2><a href="${href({ cat: c })}">${esc(T("cat_" + c).nav)}</a></h2>\n      <table class="stt">${th}<tbody>${SERVICES.filter(s => s.cat === c).map(tr).join("")}</tbody></table>`).join("\n")}
+    </section>
+    <section class="card stp"><h2>${esc(T("sp_out_h"))}</h2><ul class="st-out" id="stOut"><li class="m">${esc(T("sp_wait"))}</li></ul>
+      <p class="all"><a class="btn" href="${home}">${esc(fill(T("all_link"), { n: N }))}</a></p></section>
+`;
+      pages.push({ file: (slug ? slug + "/" : "") + sub + "index.html", url: purl, sub, html: page(head, paths, false, { status: true }, { h1: T("sp_h1"), intro: "", faq: general, main }) });
+    }
     // A shared result opens /<lang>/r/<verdict>/#r=…: the main page, with a preview card that states the headline.
     // Not for search engines (noindex, canonical to the main page); visitors are sent to their own language's copy.
     for (const vd of VERDICTS) {
@@ -199,11 +236,12 @@ export async function build({ check = false } = {}) {
     function page(head, paths, root, p, v) {
       const helpNav = v.faq.map(([q], i) => `<button type="button" role="tab" data-hq="${i}" aria-selected="${i === 0}">${esc(q)}</button>`).join("");
       const helpC = v.faq.map(([q, a], i) => `<article data-hqb="${i}"${i ? " hidden" : ""}><h3>${esc(q)}</h3><p>${a}</p></article>`).join("");
-      const html = tpl
+      const html = (v.main ? tpl.replace(/<main>[\s\S]*<\/main>/, () => "<main>" + v.main + "  </main>").replace("{{js}}", stName) : tpl)
         .replace(/(<(\w+)\b[^>]*\sdata-i="(\w+)"[^>]*>)([^<]*)(<\/\2>)/g, (m, open, tag, k, inner, close) => open + esc(T(k)) + close)
         .replace("{{lang}}", lang).replace("{{pathsAttr}}", esc(JSON.stringify(paths))).replace("{{rootAttr}}", root ? " data-root" : "")
         .replace("{{prepaint}}", PREPAINT).replace("{{head}}", head).replace("{{css}}", cssName).replace("{{js}}", jsName).replace("{{strings}}", sName)
         .replace("{{homeHref}}", home).replace("{{langOpts}}", langOpts).replace("{{h1}}", esc(v.h1)).replace("{{intro}}", esc(v.intro))
+        .replace("{{autoOpt}}", p ? "" : `          <label class="auto"><input type="checkbox" id="auto"><span>${esc(T("auto_label"))}</span></label>\n`)
         .replace("{{play}}", p ? "" : `    <section class="play card" id="play" hidden><div class="pl"></div></section>\n`)
         .replace("{{notesWait}}", (p && p.svc ? ["wait_ip", "wait_tz"] : ["wait_ex", "wait_ip", "wait_tz"]).map(k => `<li class="nt wait"><i></i><span>${esc(T(k))}</span></li>`).join(""))
         .replace("{{focus}}", focusOf(p && p.svc)).replace("{{list}}", listOf(p)).replace("{{allLink}}", allLink(p)).replace("{{nav}}", nav)
@@ -211,7 +249,7 @@ export async function build({ check = false } = {}) {
         .replace("{{helpNav}}", helpNav).replace("{{helpC}}", helpC).replaceAll("{{repo}}", REPO)
         .replace("{{themeLabel}}", esc(T("th_system"))).replaceAll("{{closeLabel}}", esc(T("close")))
         .replace("{{prevLabel}}", esc(T("prev"))).replace("{{nextLabel}}", esc(T("next")))
-        .replace("{{data}}", JSON.stringify({ lang, paths, home: Object.fromEntries(langs.map(([l, sl]) => [l, path(sl)])), egressPath: home, scope: scopeOf(p), one: p && p.svc || null }).replace(/</g, "\\u003c"));
+        .replace("{{data}}", JSON.stringify({ lang, paths, home: Object.fromEntries(langs.map(([l, sl]) => [l, path(sl)])), egressPath: home, scope: p && p.status ? null : scopeOf(p), one: p && p.svc || null }).replace(/</g, "\\u003c"));
       if (/\{\{\w+\}\}/.test(html)) throw new Error("unfilled placeholder: " + /\{\{\w+\}\}/.exec(html)[0]);
       return html;
     }
@@ -265,6 +303,9 @@ ${SERVICES.map(s => `- ${s.name}: ${SITE}/${SLUG[s.id]}/`).join("\n")}
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
 /assets/*
   Cache-Control: public, max-age=604800
+/assets/status.*
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable
 /assets/app.*
   ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable
@@ -294,7 +335,7 @@ ${SERVICES.map(s => `- ${s.name}: ${SITE}/${SLUG[s.id]}/`).join("\n")}
   Content-Type: text/plain; charset=utf-8
 `;
 
-  Object.assign(files, { ["assets/" + jsName]: js, ["assets/" + cssName]: css, "sitemap.xml": sitemap, "robots.txt": robots, "llms.txt": llms,
+  Object.assign(files, { ["assets/" + jsName]: js, ["assets/" + stName]: stJs, ["assets/" + cssName]: css, "sitemap.xml": sitemap, "robots.txt": robots, "llms.txt": llms,
     "_headers": headers, "_redirects": redirects, "hop.txt": "ok\n", "assets/jsonp.html": jsonpHtml });
   for (const p of pages) files[p.file] = p.html;
 
@@ -309,7 +350,7 @@ ${SERVICES.map(s => `- ${s.name}: ${SITE}/${SLUG[s.id]}/`).join("\n")}
   }
   // old bundles
   await mkdir(new URL("assets/", pub), { recursive: true });
-  const old = (await readdir(new URL("assets/", pub))).filter(f => /^(app|l\.[a-z-]+)\.[0-9a-f]+\.(js|css)$/.test(f) && !files["assets/" + f]);
+  const old = (await readdir(new URL("assets/", pub))).filter(f => /^(app|status|l\.[a-z-]+)\.[0-9a-f]+\.(js|css)$/.test(f) && !files["assets/" + f]);
   if (check && old.length) stale.push(...old.map(f => f + " (old)"));
   else for (const f of old) await rm(new URL("assets/" + f, pub));
   return { stale, pages: pages.filter(p => !p.shared).length, sizes: { html: Math.max(...pages.map(p => p.html.length)), js: js.length, css: css.length } };

@@ -13,7 +13,10 @@
 //           "bad"    it doesn't read: no answer, an answer the reader doesn't know, a redirect test that can't count
 //   streak  runs in a row in this state; since: when it began; ok_at: the last run it was "ok"
 //   how, v, cc, n, hops, err   what judge() made of it, the HTTP status, the redirects counted, the error
-// The page treats a check as broken when s isn't "ok" for 2 runs in a row (src/app.js, watchBad).
+//   h       the last week of runs, oldest first, one letter each: o ok, d drift, b bad, - not checked (a service added
+//           since); its times are the file's runs
+// The page treats a check as broken when s isn't "ok" for 2 runs in a row (src/app.js, watchBad); the status page
+// (/status/, src/status.js) shows h.
 import { readFile, writeFile, rename, mkdir } from "node:fs/promises";
 import { randomUUID } from "node:crypto";
 import { SERVICES } from "../src/services.mjs";
@@ -121,18 +124,21 @@ async function check(s) {
 
 async function main() {
   const t0 = Date.now(), at = new Date().toISOString();
-  let prev = {};
-  try { prev = JSON.parse(await readFile(`${OUT}/status.json`, "utf8")).services || {}; } catch (e) {}
+  let prev = {}, runs = [];
+  try { const p = JSON.parse(await readFile(`${OUT}/status.json`, "utf8")); prev = p.services || {}; runs = Array.isArray(p.runs) ? p.runs : []; } catch (e) {}
+  // a week of hourly runs; each service's letters line up with these
+  const KEEP = 168, keep = Math.min(runs.length, KEEP - 1), at0 = runs.slice(runs.length - keep);
   const out = {}, queue = [...SERVICES];
   await Promise.all(Array.from({ length: PARALLEL }, async () => {
     for (let s; (s = queue.shift());) {
       const c = await check(s).catch(e => ({ s: "bad", how: null, v: "fail", cc: null, n: null, hops: null, err: "crash", ms: 0 }));
       const p = prev[s.id] || {}, same = p.s === c.s;
-      out[s.id] = { ...c, streak: same ? (p.streak || 0) + 1 : 1, since: same && p.since ? p.since : at, ok_at: c.s === "ok" ? at : p.ok_at || null };
+      const h = (typeof p.h === "string" ? p.h : "").padStart(runs.length, "-").slice(runs.length - keep) + { ok: "o", drift: "d", bad: "b" }[c.s];
+      out[s.id] = { ...c, streak: same ? (p.streak || 0) + 1 : 1, since: same && p.since ? p.since : at, ok_at: c.s === "ok" ? at : p.ok_at || null, h };
     }
   }));
   const services = Object.fromEntries(SERVICES.map(s => [s.id, out[s.id]]));
-  const status = { v: 1, at, from: HERE, took_ms: Date.now() - t0, count: SERVICES.length,
+  const status = { v: 1, at, from: HERE, every: 3600, took_ms: Date.now() - t0, count: SERVICES.length, runs: [...at0, at],
     bad: SERVICES.filter(s => services[s.id].s !== "ok").map(s => s.id), services };
   await mkdir(OUT, { recursive: true });
   const tmp = `${OUT}/.status.json.${process.pid}`;

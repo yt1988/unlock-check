@@ -70,6 +70,8 @@ Pages whose resource policy refuses other sites (`Cross-Origin-Resource-Policy: 
 - **Route advice:** for a service that isn't available over the route it took, another of your exits where it is (send its domain there), or none (it needs a node elsewhere); for one that doesn't open, its domain to check in your rules.
 - **IP identity:** whether Wikipedia blocks the address from editing as an open proxy or hosting range (its API answers any site, with the host it names), and whether Sling TV refused it as a proxy.
 - **Since your last run** and **your collection** (Netflix regions, exit countries, regional TV places seen): kept in this browser only (`localStorage`, the last 10 runs, verdicts and countries, no address).
+- **Check status** ([/status/](https://unlock.1ms.dog/status/)): whether each check still works, from the hourly run on 1ms.dog's Tokyo server (watch/README.md): now, the last 24 runs, the share of runs that worked over a day and a week, and every outage. Linked from the top of the list as "Are these checks really working?".
+- The main page waits for its button (over 150 requests at once); the box beside it starts it on opening, kept in this browser. A category's or a service's page starts at once.
 
 Every check in the command-line scripts, and why each is or isn't here: [docs/coverage.md](docs/coverage.md).
 
