@@ -27,7 +27,7 @@ export default {
   svc_title: "Teste de desbloqueio {name}: {name} funciona no meu IP, e em qual região?",
   svc_desc: "Veja de graça se {name} está disponível no seu IP atual e qual país ele detecta. Roda no seu navegador, pela rota real do seu proxy. Seus resultados nunca chegam a este site.",
   svc_h1: "{name} funciona no seu IP?",
-  svc_intro: "Seu navegador testa {name} pela rota que você usa normalmente, e os outros serviços também.",
+  svc_intro: "Seu navegador testa {name} pela rota que você usa normalmente.",
   svc_kw: "{name} desbloqueio, {name} região, {name} indisponível no seu país, {name} vpn",
   alias: {},
 
@@ -116,6 +116,8 @@ export default {
   vh_all: "ChatGPT, Claude, Gemini, Netflix e Disney+ estão disponíveis",
   vh_part: "IA sem bloqueio; alguns serviços falham ou estão incertos",
   vh_noai: "Alguns serviços de IA não funcionam neste IP",
+  vh_n: "{d} de {n} funcionam",
+  all_link: "Testar todos os {n} serviços",
 
   th_system: "Tema: do sistema",
   th_light: "Tema: claro",

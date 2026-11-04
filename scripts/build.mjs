@@ -78,7 +78,7 @@ export async function build({ check = false } = {}) {
   const appSrc = await readFile(new URL("app.js", src), "utf8");
   if (!appSrc.includes("/* @lib */")) throw new Error("src/app.js has no /* @lib */ marker");
   const svcs = SERVICES.map(({ src: _, ...s }) => s);
-  const appFull = `const SERVICES = ${JSON.stringify(svcs)}, CATS = ${JSON.stringify(CATS)}, NETFLIX_TRY = ${JSON.stringify(NETFLIX_TRY)};\n` + appSrc.replace("/* @lib */", () => lib);
+  const appFull = `const ALL_SERVICES = ${JSON.stringify(svcs)}, ALL_CATS = ${JSON.stringify(CATS)}, NETFLIX_TRY = ${JSON.stringify(NETFLIX_TRY)};\n` + appSrc.replace("/* @lib */", () => lib);
   new Function(appFull);                                                // must parse
   const cssFull = (await Promise.all(["fonts.css", "style.css", "tool.css"].map(f => readFile(new URL(f, src), "utf8")))).join("\n");
   const js = (await transform(appFull, { loader: "js", minify: true, target: "es2020", legalComments: "none" })).code;
@@ -105,9 +105,17 @@ export async function build({ check = false } = {}) {
     const row = s => `<li class="sv" id="s-${s.id}"><span class="vd sr"></span>` +
       (ICONS[s.id] ? `<img class="fi" src="/assets/svc/${ICONS[s.id]}" width="16" height="16" alt="" decoding="async">` : `<span class="fi"></span>`) + `<a class="sn" href="${href({ svc: s.id })}">${esc(s.name)}</a>` +
       `<span class="rg"></span></li>`;
-    const groupsOf = first => [first, ...CATS.filter(c => c !== first)].filter(Boolean).map(c =>
+    // A page tests only what it is about (1ms-shell tool contract, "a sub-page tests only its own item"): the main
+    // page every service, a category page that category, a service page that service, with its category's other
+    // pages linked below (names only, not tested). Both lead to the main page to test everything.
+    const listOf = p => !p ? `    <section class="list card">\n${groupsOf(CATS)}\n    </section>` : p.cat ? `    <section class="list card">\n${groupsOf([p.cat])}\n    </section>`
+      : `    <nav class="peers card"><h2><a href="${href({ cat: SV(p.svc).cat })}">${esc(T("cat_" + SV(p.svc).cat).nav)}</a></h2><p>` +
+        SERVICES.filter(s => s.cat === SV(p.svc).cat && s.id !== p.svc).map(s => `<a href="${href({ svc: s.id })}">${esc(s.name)}</a>`).join("") + `</p></nav>`;
+    const scopeOf = p => !p ? null : p.cat ? SERVICES.filter(s => s.cat === p.cat).map(s => s.id) : [p.svc];
+    const allLink = p => !p ? "" : `      <p class="all"><a class="btn" href="${home}">${esc(fill(T("all_link"), { n: N }))}</a></p>\n`;
+    const groupsOf = cats => cats.map(c =>
       `<div class="grp" data-c="${c}"><h2><a href="${href({ cat: c })}">${esc(T("cat_" + c).nav)}</a><b class="g-n"></b></h2><ul>${SERVICES.filter(s => s.cat === c).map(row).join("")}</ul></div>`).join("\n");
-    const focusOf = id => !id ? "" : `<div class="focus wait" id="focus" data-s="${id}"><div class="fo-h"><i class="st"></i><b class="fo-t">${esc(SV(id).name)}</b></div><p class="fo-d"><span class="bar"></span></p></div>`;
+    const focusOf = id => !id ? "" : `<div class="focus wait" id="focus" data-s="${id}"><div class="fo-h"><i class="st"></i>${ICONS[id] ? `<img class="fi" src="/assets/svc/${ICONS[id]}" width="22" height="22" alt="">` : ""}<b class="fo-t">${esc(SV(id).name)}</b></div><p class="fo-d"><span class="bar"></span></p></div>`;
     const SV = id => SERVICES.find(s => s.id === id);
     const langOpts = langs.map(([l, , , nm]) => `<option value="${l}"${l === lang ? " selected" : ""}>${esc(nm)}</option>`).join("");
     // the footer links every page of the language: categories, then services
@@ -190,18 +198,18 @@ export async function build({ check = false } = {}) {
     function page(head, paths, root, p, v) {
       const helpNav = v.faq.map(([q], i) => `<button type="button" role="tab" data-hq="${i}" aria-selected="${i === 0}">${esc(q)}</button>`).join("");
       const helpC = v.faq.map(([q, a], i) => `<article data-hqb="${i}"${i ? " hidden" : ""}><h3>${esc(q)}</h3><p>${a}</p></article>`).join("");
-      const cat = p ? (p.cat || SV(p.svc).cat) : null;
       const html = tpl
         .replace(/(<(\w+)\b[^>]*\sdata-i="(\w+)"[^>]*>)([^<]*)(<\/\2>)/g, (m, open, tag, k, inner, close) => open + esc(T(k)) + close)
         .replace("{{lang}}", lang).replace("{{pathsAttr}}", esc(JSON.stringify(paths))).replace("{{rootAttr}}", root ? " data-root" : "")
         .replace("{{prepaint}}", PREPAINT).replace("{{head}}", head).replace("{{css}}", cssName).replace("{{js}}", jsName).replace("{{strings}}", sName)
         .replace("{{homeHref}}", home).replace("{{langOpts}}", langOpts).replace("{{h1}}", esc(v.h1)).replace("{{intro}}", esc(v.intro))
-        .replace("{{notesWait}}", ["wait_ex", "wait_ip", "wait_tz"].map(k => `<li class="nt wait"><i></i><span>${esc(T(k))}</span></li>`).join(""))
-        .replace("{{focus}}", focusOf(p && p.svc)).replace("{{groups}}", groupsOf(cat)).replace("{{nav}}", nav)
+        .replace("{{notesWait}}", (p && p.svc ? ["wait_ip", "wait_tz"] : ["wait_ex", "wait_ip", "wait_tz"]).map(k => `<li class="nt wait"><i></i><span>${esc(T(k))}</span></li>`).join(""))
+        .replace("{{focus}}", focusOf(p && p.svc)).replace("{{list}}", listOf(p)).replace("{{allLink}}", allLink(p)).replace("{{nav}}", nav)
+        .replace("{{heroAttr}}", p && p.svc ? " data-one" : "")
         .replace("{{helpNav}}", helpNav).replace("{{helpC}}", helpC).replaceAll("{{repo}}", REPO)
         .replace("{{themeLabel}}", esc(T("th_system"))).replaceAll("{{closeLabel}}", esc(T("close")))
         .replace("{{prevLabel}}", esc(T("prev"))).replace("{{nextLabel}}", esc(T("next")))
-        .replace("{{data}}", JSON.stringify({ lang, paths, home: Object.fromEntries(langs.map(([l, sl]) => [l, path(sl)])), egressPath: home }).replace(/</g, "\\u003c"));
+        .replace("{{data}}", JSON.stringify({ lang, paths, home: Object.fromEntries(langs.map(([l, sl]) => [l, path(sl)])), egressPath: home, scope: scopeOf(p), one: p && p.svc || null }).replace(/</g, "\\u003c"));
       if (/\{\{\w+\}\}/.test(html)) throw new Error("unfilled placeholder: " + /\{\{\w+\}\}/.exec(html)[0]);
       return html;
     }

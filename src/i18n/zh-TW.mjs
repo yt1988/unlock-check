@@ -27,7 +27,7 @@ export default {
   svc_title: "{name} 解鎖檢測：你的 IP 能不能用 {name}、被判定在哪個地區",
   svc_desc: "免費檢測 {name} 在你目前的 IP 上能不能用、認為你在哪個地區。在你的瀏覽器裡檢測，走代理實際的路徑，結果不會經過本站。",
   svc_h1: "你的 IP 能用 {name} 嗎？",
-  svc_intro: "你的瀏覽器會用平常開啟 {name} 的路徑測試它，也順便測其他服務。",
+  svc_intro: "你的瀏覽器會用平常開啟 {name} 的路徑測試它。",
   svc_kw: "{name} 解鎖檢測, {name} 地區檢測, {name} 不支援地區, {name} 節點",
   alias: { netflix: "網飛", disney: "迪士尼+", gemini: "Google Gemini", chatgpt: "OpenAI", claude: "Anthropic", x: "推特, Twitter", dazn: "體育直播" },
 
@@ -129,6 +129,8 @@ export default {
   vh_all: "ChatGPT、Claude、Gemini、Netflix、Disney+ 全部可用",
   vh_part: "AI 沒被擋，部分服務不能用或無法確認",
   vh_noai: "這個 IP 上有 AI 服務無法使用",
+  vh_n: "{n} 個服務中有 {d} 個能用",
+  all_link: "測一下全部 {n} 個服務",
 
   th_system: "主題：跟隨系統",
   th_light: "主題：淺色",

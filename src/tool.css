@@ -34,6 +34,16 @@
 /* a service page's lead panel: its verdict, big, and what it rests on; it keeps its height while running */
 .focus { border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; }
 .fo-h { display: flex; align-items: center; gap: 10px; min-height: 30px; }
+.fo-h .fi { width: 22px; height: 22px; }
+/* one service's page: no totals (its panel is the result); the way to every service; its category's other pages */
+.hero[data-one] .sum { display: none; }
+.all { margin-top: -4px; }
+.all .btn { text-decoration: none; color: inherit; }
+.peers { padding: 14px 22px 16px; }
+.peers h2 { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 6px; }
+.peers h2 a { color: inherit; text-decoration: none; }
+.peers p { display: flex; flex-wrap: wrap; gap: 4px 14px; }
+.peers p a { color: inherit; min-height: 32px; display: inline-flex; align-items: center; }
 .st { width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; flex: none; font: 700 13px/1 var(--f-ui); font-style: normal; color: #fff; background: var(--line); }
 .fo-t { font-size: 19px; font-weight: 700; letter-spacing: -.01em; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .fo-c { display: inline-flex; align-items: center; gap: 6px; font-size: 15px; font-weight: 600; color: var(--fg); }

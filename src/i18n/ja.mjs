@@ -27,7 +27,7 @@ export default {
   svc_title: "{name} 地域チェック：今の IP で {name} は使える？どの地域と判定される？",
   svc_desc: "{name} が今の IP で使えるか、どの国と判定されているかを無料で確認できます。ブラウザから、プロキシが実際に使う経路で確認し、結果はこのサイトに送られません。",
   svc_h1: "今の IP で {name} は使える？",
-  svc_intro: "ふだん {name} を開くのと同じ経路で、ブラウザから確認します。ほかのサービスもまとめて確認します。",
+  svc_intro: "ふだん {name} を開くのと同じ経路で、ブラウザから確認します。",
   svc_kw: "{name} 判定, {name} リージョン 確認, {name} この国では利用できません, {name} VPN",
   alias: { netflix: "ネットフリックス", disney: "ディズニープラス", tiktok: "ティックトック", gemini: "Google Gemini", fod: "フジテレビ オンデマンド", x: "ツイッター", youtube: "ユーチューブ" },
 
@@ -111,6 +111,8 @@ export default {
   vh_all: "ChatGPT・Claude・Gemini・Netflix・Disney+ すべて利用可能",
   vh_part: "AI は利用可能、一部のサービスは使えないか不明",
   vh_noai: "この IP では一部の AI が利用不可",
+  vh_n: "{n} サービス中 {d} 個が利用可能",
+  all_link: "全 {n} サービスをまとめてチェック",
 
   th_system: "テーマ：システムに合わせる",
   th_light: "テーマ：ライト",

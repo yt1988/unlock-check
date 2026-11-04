@@ -29,7 +29,7 @@ export default {
   svc_title: "{name} 지역 확인: 지금 IP로 이용 가능? 어느 지역으로 잡힐까?",
   svc_desc: "지금 IP로 {name} 서비스를 쓸 수 있는지, 어느 나라로 판단하는지 무료로 확인하세요. 브라우저에서 프록시의 실제 경로로 확인하며, 결과는 이 사이트로 전송되지 않아요.",
   svc_h1: "{name}, 지금 IP로 쓸 수 있을까요?",
-  svc_intro: "평소 {name} 서비스를 열 때와 같은 경로로 브라우저에서 확인해요. 다른 서비스도 함께 확인해요.",
+  svc_intro: "평소 {name} 서비스를 열 때와 같은 경로로 브라우저에서 확인해요.",
   svc_kw: "{name} 우회, {name} 지역 확인, {name} 지원 국가, {name} VPN",
   alias: { netflix: "넷플릭스", disney: "디즈니플러스", tiktok: "틱톡", gemini: "구글 제미나이", chatgpt: "챗GPT", claude: "클로드", youtube: "유튜브", x: "트위터" },
 
@@ -113,6 +113,8 @@ export default {
   vh_all: "ChatGPT·Claude·Gemini·Netflix·Disney+ 모두 이용 가능",
   vh_part: "AI는 막히지 않음, 일부 서비스는 이용 불가 또는 확인 불가",
   vh_noai: "이 IP에서 이용할 수 없는 AI 서비스 있음",
+  vh_n: "서비스 {n}개 중 {d}개 이용 가능",
+  all_link: "서비스 {n}개 전체 확인하기",
 
   th_system: "테마: 시스템 설정",
   th_light: "테마: 라이트",

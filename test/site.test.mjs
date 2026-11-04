@@ -32,7 +32,9 @@ test("pages: charset first, standard lang, no inline styles, every service liste
     assert.equal(h.match(/<html lang="([^"]+)"/)[1], l);
     assert.match(h, /<head>\n<meta charset="utf-8">\n<script>/);
     assert.ok(!/\sstyle="/.test(h), f + ": inline style attribute");
-    for (const s of SERVICES) assert.ok(h.includes(`id="s-${s.id}"`), `${f}: row ${s.id}`);
+    // a page lists only what it tests: every service, its category's, or none besides its own panel
+    for (const s of SERVICES) assert.equal(h.includes(`id="s-${s.id}"`), !p || (!!p.cat && s.cat === p.cat), `${f}: row ${s.id}`);
+    if (p) assert.ok(h.includes(`<p class="all"><a class="btn" href="/${slug ? slug + "/" : ""}">`), f + ": test-all link");
     assert.equal((h.match(/<h1>/g) || []).length, 1, f + ": one h1");
     assert.ok(h.length < 60_000, f + ": page too big");
     if (p && p.svc) assert.ok(h.includes(`data-s="${p.svc}"`), f + ": lead panel");

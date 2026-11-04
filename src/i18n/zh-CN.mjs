@@ -27,7 +27,7 @@ export default {
   svc_title: "{name} 解锁检测：当前 IP 能不能用 {name}，被认成哪个地区",
   svc_desc: "免费检测 {name} 在你当前的 IP 上能不能用、认为你在哪个地区。检测在你的浏览器里进行，走代理的真实线路，结果不经过本站。",
   svc_h1: "你的 IP 能用 {name} 吗？",
-  svc_intro: "你的浏览器会用平时打开 {name} 的线路去测它，顺带把其他服务也测一遍。",
+  svc_intro: "你的浏览器会用平时打开 {name} 的线路去测它。",
   svc_kw: "{name} 解锁检测, {name} 地区检测, {name} 不支持地区, {name} 节点",
   alias: { netflix: "奈飞, 网飞", disney: "迪士尼+, 迪士尼", tiktok: "抖音国际版", gemini: "Gemini 送中", chatgpt: "OpenAI", claude: "Anthropic", x: "推特, Twitter", youtube: "油管", dazn: "体育直播" },
 
@@ -129,6 +129,8 @@ export default {
   vh_all: "ChatGPT、Claude、Gemini、Netflix、Disney+ 全都能用",
   vh_part: "AI 没被拦，部分服务用不了或无法确认",
   vh_noai: "这个 IP 上有 AI 服务用不了",
+  vh_n: "{n} 个服务里有 {d} 个能用",
+  all_link: "测一下全部 {n} 个服务",
 
   th_system: "主题：跟随系统",
   th_light: "主题：浅色",

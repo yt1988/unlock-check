@@ -30,7 +30,7 @@ export default {
   svc_title: "{name} unlock test: does {name} work on my IP, and in which region?",
   svc_desc: "Free check: does {name} work on your current IP, and which country does it think you're in? Runs in your browser over your proxy's real route. Your results never reach this site.",
   svc_h1: "Does {name} work on your IP?",
-  svc_intro: "Your browser tests {name} over the route you normally use for it, and the other services too.",
+  svc_intro: "Your browser tests {name} over the route you normally use for it.",
   svc_kw: "{name} unlock test, {name} region check, {name} not available in your country, {name} vpn",
   alias: {},
 
@@ -133,6 +133,8 @@ export default {
   vh_all: "ChatGPT, Claude, Gemini, Netflix and Disney+ all work",
   vh_part: "AI isn't blocked; some services don't work or are unclear",
   vh_noai: "Some AI services don't work on this IP",
+  vh_n: "{d} of {n} work",
+  all_link: "Test all {n} services",
 
   th_system: "Theme: system",
   th_light: "Theme: light",

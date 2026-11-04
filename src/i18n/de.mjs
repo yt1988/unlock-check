@@ -29,7 +29,7 @@ export default {
   svc_title: "{name}-Unlock-Test: Geht {name} mit meiner IP, und in welcher Region?",
   svc_desc: "Kostenlos prüfen, ob {name} mit deiner aktuellen IP verfügbar ist und welches Land {name} erkennt. Läuft in deinem Browser, über die echte Route deines Proxys. Deine Ergebnisse erreichen diese Seite nie.",
   svc_h1: "Geht {name} mit deiner IP?",
-  svc_intro: "Dein Browser testet {name} über die Route, die du sonst dafür nutzt, und die anderen Dienste gleich mit.",
+  svc_intro: "Dein Browser testet {name} über die Route, die du sonst dafür nutzt.",
   svc_kw: "{name} unlock, {name} region, {name} in deinem land nicht verfügbar, {name} vpn",
   alias: {},
 
@@ -119,6 +119,8 @@ export default {
   vh_all: "ChatGPT, Claude, Gemini, Netflix und Disney+ sind verfügbar",
   vh_part: "KI nicht gesperrt; einige Dienste gehen nicht oder sind unklar",
   vh_noai: "Einige KI-Dienste gehen mit dieser IP nicht",
+  vh_n: "{d} von {n} funktionieren",
+  all_link: "Alle {n} Dienste prüfen",
 
   th_system: "Design: System",
   th_light: "Design: hell",
