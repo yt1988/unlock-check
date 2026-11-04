@@ -358,39 +358,60 @@
     encodeShare({ ts: S.shared ? S.shared.ts : Date.now(), tz: S.shared ? S.shared.tz : tzCc(), verdicts: S.v });
   // The card's middle. It is also the link's preview in chat apps, fitted into 1200×630 (about two thirds the size),
   // so the top holds what still reads there: the headline, the totals, and the five services people ask about, big.
-  // Then every other service in three columns, with its own icon and the country it sees (green) or what went wrong.
-  const KEY = ["chatgpt", "claude", "gemini", "netflix", "disney"], RH = 38, COLS = 3;
+  // Then every other service in columns, with its own icon and the country it sees (green) or what went wrong.
+  // Nothing is cut short (1ms-shell tool contract, "Share card"): the headline gets smaller type, then a second line;
+  // a long answer among the five a second or third line; the list fewer columns. The card grows to fit.
+  const KEY = ["chatgpt", "claude", "gemini", "netflix", "disney"], RH = 38;
   const cardRows = () => SERVICES.filter(s => S.v[s.id]), restRows = () => cardRows().filter(s => !KEY.includes(s.id));
+  const res = v => v.v === "ok" ? (v.cc ? country(v.cc) : t("v_ok")) : t("v_" + v.v);
+  // where everything goes, measured: the same for height() and drawCard()
+  function cardLayout(x, k) {
+    const hw = k.W - k.P * 2, head = t("vh_" + verdict());
+    let hs = k.fit(x, head, hw, 50, 40), hl = [head];
+    if (x.measureText(head).width > hw) { hs = 40; x.font = `700 ${hs}px ${k.F}`; hl = k.wrap(x, head, hw, 2); }
+    const sTop = k.top + 50 + (hl.length - 1) * hs * 1.2;                    // the totals' baseline is sTop + 62
+    const keys = KEY.filter(id => S.v[id]), kw = hw / Math.max(keys.length, 1);
+    const ans = keys.map(id => {
+      const s = res(S.v[id]), z = k.fit(x, s, kw - 16, 26, 20);
+      return x.measureText(s).width <= kw - 16 ? { z, lines: [s] } : { z: 20, lines: (x.font = `700 20px ${k.F}`, k.wrap(x, s, kw - 16, 3)) };
+    });
+    const kLines = Math.max(1, ...ans.map(a => a.lines.length)), y0 = sTop + 260 + (kLines - 1) * 26;
+    // the most columns (3 at most) in which every service's name and answer fit side by side
+    const rows = restRows(), gap = 36, need = rows.map(s => {
+      x.font = `500 20px ${k.F}`; const a = x.measureText(s.name).width;
+      x.font = `${S.v[s.id].v === "ok" ? 400 : 600} 19px ${k.F}`; return 32 + a + 18 + x.measureText(res(S.v[s.id])).width;
+    });
+    let cols = 3;
+    while (cols > 1 && need.some(w => w > (hw - gap * (cols - 1)) / cols)) cols--;
+    return { hs, hl, sTop, keys, kw, ans, y0, rows, cols, gap, colW: (hw - gap * (cols - 1)) / cols, per: Math.ceil(rows.length / cols) };
+  }
   async function drawCard(x, k) {
     const C = { fg: k.v("fg"), muted: k.v("muted"), line: k.v("line"), ok: k.v("ok"), no: k.v("bad"), fail: k.v("warn"), reach: k.v("muted") };
-    const res = v => v.v === "ok" ? (v.cc ? country(v.cc) : t("v_ok")) : t("v_" + v.v);
     const icon = async (id, cx, cy, n) => { const el = document.querySelector(`#s-${id} img.fi`); if (el) { try { x.drawImage(await k.img(el.src), cx, cy, n, n); } catch (e) {} } };
-    // the headline in one line: smaller type before it is cut
-    const head = t("vh_" + verdict()), hw = k.W - k.P * 2;
-    let fs = 50; do { x.font = `700 ${fs}px ${k.F}`; } while (x.measureText(head).width > hw && (fs -= 2) >= 34);
-    x.fillStyle = C.fg; x.fillText(k.clip(x, head, hw), k.P, k.top + 50);
+    const L = cardLayout(x, k);
+    x.fillStyle = C.fg; x.font = `700 ${L.hs}px ${k.F}`;
+    L.hl.forEach((s, i) => x.fillText(s, k.P, k.top + 50 + i * L.hs * 1.2));
     const n = tally(Object.values(S.v));
     let xx = k.P;
     for (const key of ["ok", "no", "reach", "fail"]) {
-      x.fillStyle = C[key]; x.font = `700 36px ${k.M}`; x.fillText(String(n[key]), xx, k.top + 112); xx += x.measureText(String(n[key])).width + 10;
-      x.fillStyle = C.muted; x.font = `400 24px ${k.F}`; const lb = t("v_" + key); x.fillText(lb, xx, k.top + 110); xx += x.measureText(lb).width + 36;
+      x.fillStyle = C[key]; x.font = `700 36px ${k.M}`; x.fillText(String(n[key]), xx, L.sTop + 62); xx += x.measureText(String(n[key])).width + 10;
+      x.fillStyle = C.muted; x.font = `400 24px ${k.F}`; const lb = t("v_" + key); x.fillText(lb, xx, L.sTop + 60); xx += x.measureText(lb).width + 36;
     }
     // the five, each an icon, its name, and what it says
-    const keys = KEY.filter(id => S.v[id]), kw = (k.W - k.P * 2) / Math.max(keys.length, 1);
-    for (let i = 0; i < keys.length; i++) {
-      const id = keys[i], v = S.v[id], cx = k.P + i * kw;
-      await icon(id, cx, k.top + 156, 36);
-      x.fillStyle = C.fg; x.font = `600 26px ${k.F}`; x.fillText(k.clip(x, SV[id].name, kw - 56), cx + 46, k.top + 184);
-      x.fillStyle = C[v.v]; x.font = `700 26px ${k.F}`; x.fillText(k.clip(x, res(v), kw - 16), cx, k.top + 234);
+    for (let i = 0; i < L.keys.length; i++) {
+      const id = L.keys[i], v = S.v[id], cx = k.P + i * L.kw, a = L.ans[i];
+      await icon(id, cx, L.sTop + 106, 36);
+      x.fillStyle = C.fg; x.font = `600 ${k.fit(x, SV[id].name, L.kw - 56, 26, 18, 600)}px ${k.F}`; x.fillText(SV[id].name, cx + 46, L.sTop + 134);
+      x.fillStyle = C[v.v]; x.font = `700 ${a.z}px ${k.F}`;
+      a.lines.forEach((s, j) => x.fillText(s, cx, L.sTop + 184 + j * 26));
     }
-    const rows = restRows(), per = Math.ceil(rows.length / COLS), gap = 36, colW = (k.W - k.P * 2 - gap * (COLS - 1)) / COLS, y0 = k.top + 310;
-    x.fillStyle = C.line; x.fillRect(k.P, y0 - 46, k.W - k.P * 2, 1);
-    for (let i = 0; i < rows.length; i++) {
-      const s = rows[i], v = S.v[s.id], c = Math.floor(i / per), cx = k.P + c * (colW + gap), cy = y0 + (i % per) * RH;
+    x.fillStyle = C.line; x.fillRect(k.P, L.y0 - 46, k.W - k.P * 2, 1);
+    for (let i = 0; i < L.rows.length; i++) {
+      const s = L.rows[i], v = S.v[s.id], c = Math.floor(i / L.per), cx = k.P + c * (L.colW + L.gap), cy = L.y0 + (i % L.per) * RH;
       await icon(s.id, cx, cy - 18, 22);
-      x.fillStyle = C.fg; x.font = `500 20px ${k.F}`; x.fillText(k.clip(x, s.name, colW * .58), cx + 32, cy);
+      x.fillStyle = C.fg; x.font = `500 20px ${k.F}`; x.fillText(s.name, cx + 32, cy);
       x.textAlign = "right"; x.fillStyle = C[v.v]; x.font = `${v.v === "ok" ? 400 : 600} 19px ${k.F}`;
-      x.fillText(k.clip(x, res(v), colW * .38), cx + colW, cy); x.textAlign = "left";
+      x.fillText(res(v), cx + L.colW, cy); x.textAlign = "left";
     }
   }
   let dialog = null;
@@ -401,7 +422,7 @@
       lang: LANG, name: t("name"), file: "unlock-check", never: ["ip"],
       link: shareLink, home: location.origin + D.home[LANG],
       text: () => t("share_text", { v: t("vh_" + verdict()) }),
-      height: (x, k) => k.top + 310 + Math.ceil(restRows().length / COLS) * RH + 50,
+      height: (x, k) => { const L = cardLayout(x, k); return L.y0 + L.per * RH + 50; },
       draw: drawCard,
       foot: () => [t("done", { n: cardRows().length })],
       ts: S.shared ? S.shared.ts : Date.now(),
