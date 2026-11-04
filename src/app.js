@@ -73,7 +73,7 @@
   // id, a client and the time
   const tk2 = () => btoa(`did=${crypto.randomUUID()}|pno=1030|ver=0.3.0301|clit=${Math.floor(Date.now() / 1000)}`)
     .replace(/\+/g, "-").replace(/\//g, "_").split("").reverse().join("");
-  // An answer only given as a script (JSONP): run in /jsonp.html, in a sandboxed frame with no origin of its own (no
+  // An answer only given as a script (JSONP): run in /assets/jsonp.html, in a sandboxed frame with no origin of its own (no
   // access to this page or this site) whose policy lets only those services' scripts run. It posts back the
   // callback's argument as JSON: { text } or a thrown-like { why }.
   function jsonp(src, cb) {
@@ -83,7 +83,7 @@
       const on = e => { if (e.source === f.contentWindow && e.data && e.data.id === id) done(e.data.text != null ? { text: e.data.text } : { why: "net" }); };
       const tm = setTimeout(() => done({ why: "timeout" }), TIMEOUT);
       addEventListener("message", on);
-      f.sandbox = "allow-scripts"; f.hidden = true; f.src = "/jsonp.html";
+      f.sandbox = "allow-scripts"; f.hidden = true; f.src = "/assets/jsonp.html";
       f.onload = () => f.contentWindow.postMessage({ id, src, cb }, "*");
       document.body.appendChild(f);
     });

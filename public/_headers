@@ -26,9 +26,10 @@
   Cache-Control: public, max-age=604800
 /hop.txt
   Cache-Control: no-store
-/jsonp.html
+/assets/jsonp*
   ! Content-Security-Policy
   ! X-Frame-Options
+  ! Cache-Control
   Content-Security-Policy: default-src 'none'; script-src 'sha256-HF3elkRSJGVNrLHXhazlXeqgerT2kEhPELKaG4CAhfk=' https://open.live.bbc.co.uk https://vv.video.qq.com; base-uri 'none'; form-action 'none'; frame-ancestors 'self'
   Cache-Control: public, max-age=3600
 /llms.txt

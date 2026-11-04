@@ -22,7 +22,7 @@
 //          { hops: url, zero }                 zero: the service is available when url adds no redirect
 //          { netflix: true }                   Netflix's country paths (hops)
 //          { reach: url }                      reachability only (guess)
-//          { jsonp: url, cb, read }            an answer only given as a script (JSONP), run in public/jsonp.html, a
+//          { jsonp: url, cb, read }            an answer only given as a script (JSONP), run in /assets/jsonp.html, a
 //                                              sandboxed frame of its own that only those hosts' scripts may run in;
 //                                              read with READERS[read] like an api answer
 //        an api url may hold {tk2}: Mango TV's request token, made in the browser (src/app.js)

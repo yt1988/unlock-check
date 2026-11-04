@@ -245,7 +245,7 @@ ${SERVICES.map(s => `- ${s.name}: ${SITE}/${SLUG[s.id]}/`).join("\n")}
   const csp = ["default-src 'self'", `script-src 'self' 'sha256-${sha(PREPAINT)}'`, "style-src 'self'",
     "font-src 'self'", "img-src 'self' data: blob:", "connect-src 'self' https:", "manifest-src 'self'",
     "object-src 'none'", "base-uri 'none'", "form-action 'none'", "frame-ancestors 'none'"].join("; ");
-  // The JSONP frame (src/app.js jsonp()): opened sandboxed, so it has no origin of its own and nothing of this site to
+  // The JSONP frame (src/app.js jsonp()), under /assets/ so the shell passes it through untouched: opened sandboxed, so it has no origin of its own and nothing of this site to
   // reach. It runs one script, from the hosts the services' JSONP probes name and nowhere else, and posts back what
   // the callback got. Its own policy replaces the site's; it may be framed by this site's pages.
   const JSONP_JS = `addEventListener("message",function(e){var m=e.data,w=e.source;if(!m||typeof m.src!=="string"||!/^[A-Za-z_$][\\w$]*$/.test(m.cb))return;` +
@@ -282,9 +282,10 @@ ${SERVICES.map(s => `- ${s.name}: ${SITE}/${SLUG[s.id]}/`).join("\n")}
   Cache-Control: public, max-age=604800
 /hop.txt
   Cache-Control: no-store
-/jsonp.html
+/assets/jsonp*
   ! Content-Security-Policy
   ! X-Frame-Options
+  ! Cache-Control
   Content-Security-Policy: ${jsonpCsp}
   Cache-Control: public, max-age=3600
 /llms.txt
@@ -293,7 +294,7 @@ ${SERVICES.map(s => `- ${s.name}: ${SITE}/${SLUG[s.id]}/`).join("\n")}
 `;
 
   Object.assign(files, { ["assets/" + jsName]: js, ["assets/" + cssName]: css, "sitemap.xml": sitemap, "robots.txt": robots, "llms.txt": llms,
-    "_headers": headers, "_redirects": redirects, "hop.txt": "ok\n", "jsonp.html": jsonpHtml });
+    "_headers": headers, "_redirects": redirects, "hop.txt": "ok\n", "assets/jsonp.html": jsonpHtml });
   for (const p of pages) files[p.file] = p.html;
 
   const stale = [];
