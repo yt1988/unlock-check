@@ -89,15 +89,18 @@ export const SERVICES = [
   { id: "max", cat: "video", name: "HBO Max", site: "https://www.hbomax.com/", probe: { reach: "https://www.hbomax.com/robots.txt" } },
   // Hulu sends visitors outside the US to Disney+, but its US front page redirects too: inferred from the country
   { id: "hulu", cat: "video", name: "Hulu", site: "https://www.hulu.com/", only: "US", probe: { reach: "https://www.hulu.com/robots.txt" } },
-  // These send visitors where they aren't offered to a page that says so (/intl/, /no-service/). Outside their
-  // regions that page stays put (measured: no redirect of its own); inside them it is expected to send you home.
+  // These send visitors where they aren't offered to a page that says so (/intl/, /no-service/), which stays put
+  // there and sends everyone else home (measured 2026-11-04: Paramount+ from Japan and the US, Viu from Japan, Hong
+  // Kong and the US).
   { id: "paramount", cat: "video", name: "Paramount+", site: "https://www.paramountplus.com/", probe: { hops: "https://www.paramountplus.com/intl/", reach: "https://www.paramountplus.com/robots.txt" } },
-  { id: "pluto", cat: "video", name: "Pluto TV", site: "https://pluto.tv/", probe: { hops: "https://pluto.tv/intl/", reach: "https://pluto.tv/robots.txt" } },
-  // And these redirect from their front page (to /restricted, /denied, /unavailable/, gdpr.tubi.tv): one redirect
-  // measured outside their regions, none expected inside.
+  // And these redirect from their front page outside their regions (to /restricted, gdpr.tubi.tv), and not inside
+  // them (measured from Japan and the US).
   { id: "tubi", cat: "video", name: "Tubi", site: "https://tubitv.com/", probe: { hops: "https://tubitv.com/", zero: true, reach: "https://tubitv.com/robots.txt" } },
-  { id: "espn", cat: "video", name: "ESPN+", site: "https://plus.espn.com/", only: "US", probe: { hops: "https://plus.espn.com/", zero: true, reach: "https://plus.espn.com/robots.txt" } },
-  { id: "fubo", cat: "video", name: "Fubo", site: "https://www.fubo.tv/", probe: { hops: "https://www.fubo.tv/", zero: true, reach: "https://www.fubo.tv/robots.txt" } },
+  // Pluto TV, ESPN+ and Fubo redirect inside their regions too (ESPN+ to /denied from a US proxy, Fubo to
+  // /welcome; Pluto TV's /intl/ stays put in the US), so a redirect tells nothing: inferred from the country
+  { id: "pluto", cat: "video", name: "Pluto TV", site: "https://pluto.tv/", probe: { reach: "https://pluto.tv/robots.txt" } },
+  { id: "espn", cat: "video", name: "ESPN+", site: "https://plus.espn.com/", only: "US", probe: { reach: "https://plus.espn.com/robots.txt" } },
+  { id: "fubo", cat: "video", name: "Fubo", site: "https://www.fubo.tv/", allow: "US CA", probe: { reach: "https://www.fubo.tv/robots.txt" } },
   { id: "viu", cat: "video", name: "Viu", site: "https://www.viu.com/", probe: { hops: "https://www.viu.com/ott/no-service/", reach: "https://www.viu.com/robots.txt" } },
   { id: "viki", cat: "video", name: "Viki", site: "https://www.viki.com/", deny: BLOCK.viki, probe: { reach: "https://www.viki.com/robots.txt" } },
   { id: "bilibilitv", cat: "video", name: "Bilibili TV", site: "https://www.bilibili.tv/", deny: BLOCK.bilibilitv, probe: { reach: "https://www.bilibili.tv/robots.txt" } },

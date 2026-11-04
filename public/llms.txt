@@ -1,7 +1,7 @@
 # Streaming & AI Unlock Check
 
 > Free browser tool that checks, over the visitor's own connection and route, whether streaming and AI services are
-> available and which country each one sees: ChatGPT, Claude, Gemini, Copilot, Grok, Perplexity, Le Chat, Poe, Character.AI, Meta AI, Netflix, Disney+, DAZN, Crunchyroll, Peacock, Philo, NBC, Shudder, beIN CONNECT, Twitch, Prime Video, Apple TV+, HBO Max, Hulu, Paramount+, Pluto TV, Tubi, ESPN+, Fubo, Viu, Viki, Bilibili TV, Spotify, Pandora, Deezer, SoundCloud, TikTok, YouTube, X, Instagram, Telegram, WhatsApp, Discord, Reddit, Facebook, Messenger, Threads, Signal, LINE, Snapchat, Pinterest, Google, Wikipedia, Roblox, KKTV, TVB Anywhere+, SBS On Demand, FOD, DMM TV, ZDF, BBC iPlayer, Mango TV, Tencent Video, Bilibili, iQIYI, Youku, NetEase Cloud Music. It uses each service's own
+> available and which country each one sees: ChatGPT, Claude, Gemini, Copilot, Grok, Perplexity, Le Chat, Poe, Character.AI, Meta AI, Netflix, Disney+, DAZN, Crunchyroll, Peacock, Philo, NBC, Shudder, beIN CONNECT, Twitch, Prime Video, Apple TV+, HBO Max, Hulu, Paramount+, Tubi, Pluto TV, ESPN+, Fubo, Viu, Viki, Bilibili TV, Spotify, Pandora, Deezer, SoundCloud, TikTok, YouTube, X, Instagram, Telegram, WhatsApp, Discord, Reddit, Facebook, Messenger, Threads, Signal, LINE, Snapchat, Pinterest, Google, Wikipedia, Roblox, KKTV, TVB Anywhere+, SBS On Demand, FOD, DMM TV, ZDF, BBC iPlayer, Mango TV, Tencent Video, Bilibili, iQIYI, Youku, NetEase Cloud Music. It uses each service's own
 > region API where a page can read it, the service's own Cloudflare edge (/cdn-cgi/trace) against its published
 > country list, redirect counting (Netflix's country pages, "unavailable" redirects), and marks inferred results.
 > Everything runs client-side; no results are sent to the site.
@@ -36,8 +36,8 @@
 - HBO Max: https://unlock.1ms.dog/hbo-max/
 - Hulu: https://unlock.1ms.dog/hulu/
 - Paramount+: https://unlock.1ms.dog/paramount-plus/
-- Pluto TV: https://unlock.1ms.dog/pluto-tv/
 - Tubi: https://unlock.1ms.dog/tubi/
+- Pluto TV: https://unlock.1ms.dog/pluto-tv/
 - ESPN+: https://unlock.1ms.dog/espn-plus/
 - Fubo: https://unlock.1ms.dog/fubo/
 - Viu: https://unlock.1ms.dog/viu/
