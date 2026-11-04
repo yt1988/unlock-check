@@ -202,9 +202,10 @@ export async function build({ check = false } = {}) {
         `<a href="${href({ svc: s.id })}">${esc(s.name)}</a></td><td class="how">${esc(HOW(s))}</td><td class="now">–</td><td class="bar24"></td><td class="u24">–</td><td class="u7">–</td></tr>`;
       const main = `
     <section class="hero card stp-h">
-      <div class="hero-h"><h1>${esc(T("sp_h1"))}</h1><p class="intro">${esc(T("sp_intro"))}</p></div>
-      <div class="st-top"><p class="st-sum" id="stSum"></p><p class="st-meta m" id="stMeta">${esc(T("sp_wait"))}</p></div>
-      <p class="st-key m">${esc(T("sp_key"))}</p>
+      <div class="st-hd"><div class="hero-h"><h1>${esc(T("sp_h1"))}</h1><p class="intro">${esc(T("sp_intro"))}</p></div>
+        <div class="st-top"><p class="st-sum" id="stSum"></p><p class="st-meta m" id="stMeta">${esc(T("sp_wait"))}</p></div></div>
+      <ul class="st-key">${[["o", "sp_ok", "sp_k_ok"], ["d", "sp_drift", "sp_k_drift"], ["b", "sp_bad", "sp_k_bad"], ["", "sp_dc", "sp_k_dc"]].map(([c, a, b]) =>
+        `<li><span class="now s-${c}">${c ? "<i></i>" : ""}${esc(T(a))}</span><span class="m">${esc(T(b))}</span></li>`).join("")}</ul>
     </section>
     <section class="card stp" id="stTable">
 ${CATS.map(c => `      <h2><a href="${href({ cat: c })}">${esc(T("cat_" + c).nav)}</a></h2>\n      <table class="stt">${th}<tbody>${SERVICES.filter(s => s.cat === c).map(tr).join("")}</tbody></table>`).join("\n")}

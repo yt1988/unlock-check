@@ -230,11 +230,19 @@ body.dlg-open { overflow: hidden; }
 
 /* the status page (src/status.js) */
 .stp-h { padding-bottom: 18px; }
-.st-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; }
-.st-sum { font-size: 17px; font-weight: 650; color: var(--ok); }
+.st-hd { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px 40px; }
+.st-hd .hero-h { flex: 1; min-width: 0; }
+.st-top { flex: none; }
+.stt + h2 + .stt thead tr { visibility: collapse; }   /* the column names once, above the first table; the widths stay */
+.stp-h .intro { max-width: none; }
+.st-top { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; text-align: right; }
+.st-sum { font-size: 20px; font-weight: 700; color: var(--ok); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .st-sum.warn { color: var(--warn); }
 .st-meta { font-size: 13px; } .st-meta.warn { color: var(--warn); }
-.st-key { font-size: 12.5px; line-height: 20px; max-width: 880px; }
+.st-key { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: 13px; line-height: 20px; }
+.st-key li { display: inline-flex; align-items: baseline; gap: 6px; }
+.st-key .now { font-weight: 600; }
+.st-key .s- { color: var(--muted); }
 .stp { padding: 14px 22px 18px; margin-top: 12px; }
 .stp h2 { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin: 14px 0 6px; }
 .stp h2:first-child { margin-top: 2px; }
@@ -245,9 +253,9 @@ body.dlg-open { overflow: hidden; }
 .stt tr:last-child td { border-bottom: 0; }
 .stt th:nth-child(1) { width: 26%; } .stt th.how { width: 14%; } .stt th:nth-child(3) { width: 22%; } .stt th.bar24 { width: 18%; } .stt th.u24, .stt th.u7 { width: 10%; text-align: right; }
 .stt td.u24, .stt td.u7 { text-align: right; font-variant-numeric: tabular-nums; }
-.stt .sn { display: flex; align-items: center; gap: 8px; }
+.stt .fi { vertical-align: -3px; margin-right: 8px; display: inline-block; }
 .stt .sn a { color: inherit; text-decoration: none; overflow: hidden; text-overflow: ellipsis; } .stt .sn a:hover { text-decoration: underline; }
-.stt .fi { width: 16px; height: 16px; flex: none; }
+.stt .fi { width: 16px; height: 16px; }
 .stt .how { color: var(--muted); font-size: 12.5px; }
 .now { display: inline-flex; align-items: center; gap: 6px; }
 td.now { display: table-cell; }
@@ -265,8 +273,12 @@ td.now { display: table-cell; }
 @media (max-width: 720px) {
   .stp { padding: 12px 14px 14px; }
   .stt .how, .stt .bar24 { display: none; }
-  .stt th:nth-child(1) { width: 40%; } .stt th:nth-child(3) { width: 30%; } .stt th.u24, .stt th.u7 { width: 15%; }
+  .stt th:nth-child(1) { width: 38%; } .stt th:nth-child(3) { width: 26%; } .stt th.u24, .stt th.u7 { width: 18%; }
+  .stt th, .stt td { padding-left: 4px; padding-right: 4px; }
+  .stt th { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .now small { display: block; margin: 0; }
+  .st-hd { flex-direction: column; align-items: stretch; }
+  .st-top { align-items: flex-start; text-align: left; }
 }
 
 /* the main page's "start by itself" option, beside the buttons */
