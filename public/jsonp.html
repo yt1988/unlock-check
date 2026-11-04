@@ -1,0 +1,4 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>jsonp</title>
+<script>addEventListener("message",function(e){var m=e.data,w=e.source;if(!m||typeof m.src!=="string"||!/^[A-Za-z_$][\w$]*$/.test(m.cb))return;window[m.cb]=function(d){w.postMessage({id:m.id,text:JSON.stringify(d)},"*")};var s=document.createElement("script");s.src=m.src;s.onerror=function(){w.postMessage({id:m.id},"*")};document.head.appendChild(s)});</script>

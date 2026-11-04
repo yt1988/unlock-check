@@ -32,7 +32,7 @@ export default {
   svc_h1: "Does {name} work on your IP?",
   svc_intro: "Your browser tests {name} over the route you normally use for it.",
   svc_kw: "{name} unlock test, {name} region check, {name} not available in your country, {name} vpn",
-  alias: {},
+  alias: { mgtv: "MGTV", tencent: "WeTV, v.qq.com", bilibili: "BiliBili", netease: "NetEase Music", max: "Max, HBO", pluto: "PlutoTV", espn: "ESPN Plus", appletv: "Apple TV" },
 
   v_ok: "Works",
   v_no: "Blocked",

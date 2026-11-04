@@ -31,7 +31,7 @@ export default {
   svc_h1: "Работает ли {name} с вашим IP?",
   svc_intro: "Браузер проверяет {name} по тому маршруту, которым вы обычно его открываете.",
   svc_kw: "{name} разблокировка, {name} регион, {name} недоступен в вашей стране, {name} vpn",
-  alias: { netflix: "нетфликс", youtube: "ютуб", telegram: "телеграм" },
+  alias: { netflix: "нетфликс", youtube: "ютуб", telegram: "телеграм", spotify: "спотифай", google: "гугл", wikipedia: "википедия" },
 
   v_ok: "Доступен",
   v_no: "Недоступен",

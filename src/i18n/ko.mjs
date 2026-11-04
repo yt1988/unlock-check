@@ -31,7 +31,7 @@ export default {
   svc_h1: "{name}, 지금 IP로 쓸 수 있을까요?",
   svc_intro: "평소 {name} 서비스를 열 때와 같은 경로로 브라우저에서 확인해요.",
   svc_kw: "{name} 우회, {name} 지역 확인, {name} 지원 국가, {name} VPN",
-  alias: { netflix: "넷플릭스", disney: "디즈니플러스", tiktok: "틱톡", gemini: "구글 제미나이", chatgpt: "챗GPT", claude: "클로드", youtube: "유튜브", x: "트위터" },
+  alias: { netflix: "넷플릭스", disney: "디즈니플러스", tiktok: "틱톡", gemini: "구글 제미나이", chatgpt: "챗GPT", claude: "클로드", youtube: "유튜브", x: "트위터", primevideo: "프라임 비디오", spotify: "스포티파이", facebook: "페이스북", google: "구글" },
 
   v_ok: "이용 가능",
   v_no: "이용 불가",

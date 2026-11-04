@@ -2,7 +2,7 @@
 
 **English** · [简体中文](README.zh-CN.md)
 
-Which streaming and AI services work on your IP, and which country does each one see? [Streaming & AI Unlock Check](https://unlock.1ms.dog) asks 33 services from your browser — Netflix, Disney+, TikTok, ChatGPT, Claude, Gemini and more — over the route your proxy picks for each one, and says how sure each verdict is.
+Which streaming and AI services work on your IP, and which country does each one see? [Streaming & AI Unlock Check](https://unlock.1ms.dog) asks 67 services from your browser — Netflix, Disney+, TikTok, ChatGPT, Claude, Gemini and more — over the route your proxy picks for each one, and says how sure each verdict is.
 
 **Live:** https://unlock.1ms.dog
 
@@ -24,10 +24,11 @@ The well-known unlock scripts (RegionRestrictionCheck and its forks) run `curl` 
 
 | Label | How | Services |
 |---|---|---|
-| **Official API** | The service's own region API, readable from any page (CORS). The same endpoint the command-line scripts read. | ChatGPT (`api.openai.com/compliance/cookie_requirements` + its trace), DAZN, Philo, NBC, Shudder, beIN CONNECT, KKTV, TVB Anywhere+, SBS On Demand, FOD, DMM TV, ZDF |
+| **Official API** | The service's own region API, readable from any page (CORS). The same endpoint the command-line scripts read. | ChatGPT (`api.openai.com/compliance/cookie_requirements` + its trace), DAZN, Philo, NBC, Shudder, beIN CONNECT, KKTV, TVB Anywhere+, SBS On Demand, FOD, DMM TV, ZDF, Mango TV (its player, with a token made in the browser) |
+| **Official API (script)** | An answer only given as a script (JSONP): run in `/jsonp.html`, a sandboxed frame with no origin of its own whose policy only lets those services’ scripts run, and posted back. | BBC iPlayer (media selector: `geolocation` outside the UK), Tencent Video (`getinfo`: `em` 0 plays) |
 | **Its location** | Cloudflare's `/cdn-cgi/trace` on the service's own domain (`Access-Control-Allow-Origin: *`) gives the country that edge sees, checked against the service's published list. | Claude, Copilot, Grok, Perplexity, Le Chat, Poe, Character.AI, Crunchyroll, X |
-| **Redirect test** | Redirect counting, below. | Netflix (region), Disney+, Peacock |
-| **Guess** | Nothing of the service's own is readable: it is reachable over your route, and the country most services see is checked against its published list. | Gemini, TikTok, YouTube, Instagram, Telegram, WhatsApp, Discord, Reddit, Twitch |
+| **Redirect test** | Redirect counting, below. | Netflix (region), Disney+, Peacock, Pandora, ESPN+, Fubo, Tubi (a redirect from the front page outside their regions), Paramount+, Pluto TV, Viu (their own “not available here” page stays put outside their regions) |
+| **Guess** | Nothing of the service's own is readable: it is reachable over your route, and the country most services see is checked against its published list. | Gemini, TikTok, YouTube, Instagram, Telegram, WhatsApp, Discord, Reddit, Twitch, Facebook, Messenger, Threads, Signal, LINE, Snapchat, Pinterest, Google, Wikipedia, Roblox, Meta AI, Prime Video, Apple TV+, HBO Max, Hulu, Viki, Bilibili TV, Spotify, Deezer, SoundCloud; Bilibili, iQIYI, Youku and NetEase Cloud Music (mainland China when Mango TV or Tencent Video play) |
 
 Country lists come from the services: [OpenAI](https://developers.openai.com/api/docs/supported-countries), [Anthropic](https://www.anthropic.com/supported-countries), [Gemini app](https://support.google.com/gemini/answer/13575153) (it includes Hong Kong and Macau; the Gemini API list doesn't), [Netflix](https://help.netflix.com/en/node/14164).
 
@@ -51,7 +52,8 @@ So Netflix answers only its own country's path directly: trying the countries ot
 
 - **Netflix catalog:** a region is found, but whether licensed (non-Netflix) titles play isn't visible; Netflix limits many proxy and datacenter IPs to its own shows. The scripts read this from the title page's body, which a browser can't.
 - **Gemini:** Google locates IPs with its own database (the "sent to China" problem), and no Google endpoint a page can read reveals it. Gemini is marked inferred.
-- **Not included on purpose:** checks that need a third party's embedded API keys or that submit sign-up forms (Spotify, Catchplay, Tving and others in the scripts). YouTube Premium: no readable signal yet.
+- **New redirect tests:** for Pandora, ESPN+, Fubo, Tubi, Paramount+, Pluto TV and Viu the redirect was measured outside their regions (2026-11-04, from Japan and Hong Kong); the count inside them is still to be measured from there.
+- **Not included on purpose:** Sora (the app closed in 2026), PlayStation Store (not region-locked: nothing to tell), Midjourney (its pages refuse other sites). Checks that need a third party's embedded API keys or that submit sign-up forms (Spotify, Catchplay, Tving and others in the scripts). YouTube Premium: no readable signal yet.
 
 Pages whose resource policy refuses other sites (`Cross-Origin-Resource-Policy: same-origin`/`same-site`: claude.ai/login, gemini.google.com, aistudio.google.com) can't be counted either: the browser fails them whatever the status.
 

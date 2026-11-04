@@ -1,7 +1,7 @@
 # Streaming & AI Unlock Check
 
 > Free browser tool that checks, over the visitor's own connection and route, whether streaming and AI services are
-> available and which country each one sees: ChatGPT, Claude, Gemini, Copilot, Grok, Perplexity, Le Chat, Poe, Character.AI, Netflix, Disney+, DAZN, Crunchyroll, Peacock, Philo, NBC, Shudder, beIN CONNECT, Twitch, TikTok, YouTube, X, Instagram, Telegram, WhatsApp, Discord, Reddit, KKTV, TVB Anywhere+, SBS On Demand, FOD, DMM TV, ZDF. It uses each service's own
+> available and which country each one sees: ChatGPT, Claude, Gemini, Copilot, Grok, Perplexity, Le Chat, Poe, Character.AI, Meta AI, Netflix, Disney+, DAZN, Crunchyroll, Peacock, Philo, NBC, Shudder, beIN CONNECT, Twitch, Prime Video, Apple TV+, HBO Max, Hulu, Paramount+, Pluto TV, Tubi, ESPN+, Fubo, Viu, Viki, Bilibili TV, Spotify, Pandora, Deezer, SoundCloud, TikTok, YouTube, X, Instagram, Telegram, WhatsApp, Discord, Reddit, Facebook, Messenger, Threads, Signal, LINE, Snapchat, Pinterest, Google, Wikipedia, Roblox, KKTV, TVB Anywhere+, SBS On Demand, FOD, DMM TV, ZDF, BBC iPlayer, Mango TV, Tencent Video, Bilibili, iQIYI, Youku, NetEase Cloud Music. It uses each service's own
 > region API where a page can read it, the service's own Cloudflare edge (/cdn-cgi/trace) against its published
 > country list, redirect counting (Netflix's country pages, "unavailable" redirects), and marks inferred results.
 > Everything runs client-side; no results are sent to the site.
@@ -20,6 +20,7 @@
 - Le Chat: https://unlock.1ms.dog/le-chat/
 - Poe: https://unlock.1ms.dog/poe/
 - Character.AI: https://unlock.1ms.dog/character-ai/
+- Meta AI: https://unlock.1ms.dog/meta-ai/
 - Netflix: https://unlock.1ms.dog/netflix/
 - Disney+: https://unlock.1ms.dog/disney-plus/
 - DAZN: https://unlock.1ms.dog/dazn/
@@ -30,6 +31,22 @@
 - Shudder: https://unlock.1ms.dog/shudder/
 - beIN CONNECT: https://unlock.1ms.dog/bein-connect/
 - Twitch: https://unlock.1ms.dog/twitch/
+- Prime Video: https://unlock.1ms.dog/prime-video/
+- Apple TV+: https://unlock.1ms.dog/apple-tv-plus/
+- HBO Max: https://unlock.1ms.dog/hbo-max/
+- Hulu: https://unlock.1ms.dog/hulu/
+- Paramount+: https://unlock.1ms.dog/paramount-plus/
+- Pluto TV: https://unlock.1ms.dog/pluto-tv/
+- Tubi: https://unlock.1ms.dog/tubi/
+- ESPN+: https://unlock.1ms.dog/espn-plus/
+- Fubo: https://unlock.1ms.dog/fubo/
+- Viu: https://unlock.1ms.dog/viu/
+- Viki: https://unlock.1ms.dog/viki/
+- Bilibili TV: https://unlock.1ms.dog/bilibili-tv/
+- Spotify: https://unlock.1ms.dog/spotify/
+- Pandora: https://unlock.1ms.dog/pandora/
+- Deezer: https://unlock.1ms.dog/deezer/
+- SoundCloud: https://unlock.1ms.dog/soundcloud/
 - TikTok: https://unlock.1ms.dog/tiktok/
 - YouTube: https://unlock.1ms.dog/youtube/
 - X: https://unlock.1ms.dog/x-twitter/
@@ -38,10 +55,27 @@
 - WhatsApp: https://unlock.1ms.dog/whatsapp/
 - Discord: https://unlock.1ms.dog/discord/
 - Reddit: https://unlock.1ms.dog/reddit/
+- Facebook: https://unlock.1ms.dog/facebook/
+- Messenger: https://unlock.1ms.dog/messenger/
+- Threads: https://unlock.1ms.dog/threads/
+- Signal: https://unlock.1ms.dog/signal/
+- LINE: https://unlock.1ms.dog/line/
+- Snapchat: https://unlock.1ms.dog/snapchat/
+- Pinterest: https://unlock.1ms.dog/pinterest/
+- Google: https://unlock.1ms.dog/google/
+- Wikipedia: https://unlock.1ms.dog/wikipedia/
+- Roblox: https://unlock.1ms.dog/roblox/
 - KKTV: https://unlock.1ms.dog/kktv/
 - TVB Anywhere+: https://unlock.1ms.dog/tvb-anywhere/
 - SBS On Demand: https://unlock.1ms.dog/sbs-on-demand/
 - FOD: https://unlock.1ms.dog/fod/
 - DMM TV: https://unlock.1ms.dog/dmm-tv/
 - ZDF: https://unlock.1ms.dog/zdf/
+- BBC iPlayer: https://unlock.1ms.dog/bbc-iplayer/
+- Mango TV: https://unlock.1ms.dog/mango-tv/
+- Tencent Video: https://unlock.1ms.dog/tencent-video/
+- Bilibili: https://unlock.1ms.dog/bilibili/
+- iQIYI: https://unlock.1ms.dog/iqiyi/
+- Youku: https://unlock.1ms.dog/youku/
+- NetEase Cloud Music: https://unlock.1ms.dog/netease-cloud-music/
 - Source: https://github.com/yt1988/unlock-check

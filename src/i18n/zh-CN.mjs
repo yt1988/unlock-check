@@ -29,7 +29,7 @@ export default {
   svc_h1: "你的 IP 能用 {name} 吗？",
   svc_intro: "你的浏览器会用平时打开 {name} 的线路去测它。",
   svc_kw: "{name} 解锁检测, {name} 地区检测, {name} 不支持地区, {name} 节点",
-  alias: { netflix: "奈飞, 网飞", disney: "迪士尼+, 迪士尼", tiktok: "抖音国际版", gemini: "Gemini 送中", chatgpt: "OpenAI", claude: "Anthropic", x: "推特, Twitter", youtube: "油管", dazn: "体育直播" },
+  alias: { netflix: "奈飞, 网飞", disney: "迪士尼+, 迪士尼", tiktok: "抖音国际版", gemini: "Gemini 送中", chatgpt: "OpenAI", claude: "Anthropic", x: "推特, Twitter", youtube: "油管", dazn: "体育直播", bilibili: "B站, bilibili, B站港澳台", mgtv: "Mango TV, 芒果TV海外", tencent: "Tencent Video, 腾讯视频海外", iqiyi: "iQIYI, 爱奇艺海外", youku: "Youku, 优酷海外", netease: "网易云, 网易云海外", primevideo: "亚马逊 Prime Video", appletv: "Apple TV", max: "HBO, Max", spotify: "声破天", google: "谷歌", wikipedia: "维基百科", facebook: "脸书", bbc: "BBC", metaai: "Meta 人工智能" },
 
   v_ok: "可用",
   v_no: "不可用",

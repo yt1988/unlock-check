@@ -9,7 +9,7 @@
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { Resvg } from "@resvg/resvg-js";
 import { LANGS, VERDICTS, loadI18n } from "./build.mjs";
-import { SERVICES, CATS, SLUG, CAT_SLUG } from "../src/services.mjs";
+import { SERVICES as ALL, CATS, SLUG, CAT_SLUG, named } from "../src/services.mjs";
 
 const pub = new URL("../public/", import.meta.url);
 const HOST = new URL(process.env.SITE_URL || "https://unlock.1ms.dog").host;
@@ -62,11 +62,11 @@ function card(lang, name, title, sub, rows) {
 }
 
 const fill = (s, v) => { for (const k in v) s = s.split("{" + k + "}").join(v[k]); return s; };
-const pick = ids => ids.map(id => SERVICES.find(s => s.id === id).name);
+const pick = ids => ids.map(id => ALL.find(s => s.id === id).name);
 const MAIN = pick(["netflix", "chatgpt", "claude", "gemini", "disney", "tiktok"]);
 const I = await loadI18n();
 for (const [lang] of LANGS) {
-  const d = I[lang], file = lang.toLowerCase(), sub = CATS.map(c => d["cat_" + c].nav).join(" · ");
+  const SERVICES = named(lang), d = I[lang], file = lang.toLowerCase(), sub = CATS.map(c => d["cat_" + c].nav).join(" · ");
   await mkdir(new URL(`og/${file}/`, pub), { recursive: true });
   await writeFile(new URL(`og/${file}.png`, pub), render(card(lang, d.name, d.h1, sub, MAIN.map(n => [n, "ok"]))));
   for (const c of CATS) {
@@ -80,5 +80,5 @@ for (const [lang] of LANGS) {
   }
   const V = { all: MAIN.map(n => [n, "ok"]), part: MAIN.map((n, i) => [n, i < 4 ? "ok" : "no"]), noai: MAIN.map((n, i) => [n, i >= 1 && i <= 3 ? "no" : "ok"]) };
   for (const v of VERDICTS) await writeFile(new URL(`og/${file}/r-${v}.png`, pub), render(card(lang, d.name, d["vh_" + v], sub, V[v])));
-  console.log(`wrote og/${file}.png and ${CATS.length + SERVICES.length + VERDICTS.length} more`);
+  console.log(`wrote og/${file}.png and ${CATS.length + ALL.length + VERDICTS.length} more`);
 }

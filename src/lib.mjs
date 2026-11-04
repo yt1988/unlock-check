@@ -44,6 +44,13 @@ export const READERS = {
   // ZDF: 403 outside Germany, 404 inside
   zdf(st) { return st === 403 ? { ok: false } : st === 404 ? { ok: true, cc: "DE" } : null; },
   fod(st, text) { const m = /<FLAG\s+TYPE="(true|false)"/i.exec(text); return m ? { ok: m[1] === "true", cc: m[1] === "true" ? "JP" : null } : null; },
+  // Mango TV's player: code 200 with the title's data where it plays; a refusal naming the region or copyright
+  // where it doesn't (any other code, a title gone offline say, isn't an answer)
+  mgtv(st, text) { const j = json(text); return !j ? null : j.code === 200 && j.data ? { ok: true, cc: "CN" } : /地区|区域|海外|版权|region|country/i.test(j.msg || "") ? { ok: false } : null; },
+  // Tencent Video's getinfo (JSONP): em 0 plays, with the address it sees; 80 is its region refusal
+  qq(st, text) { const j = json(text); return !j || typeof j.em !== "number" ? null : j.em === 0 ? { ok: true, cc: "CN", ip: j.ip || "" } : j.em === 80 ? { ok: false, ip: j.ip || "" } : null; },
+  // BBC iPlayer's media selector (JSONP): "geolocation" outside the UK, the streams inside it
+  bbc(st, text) { return /"result"\s*:\s*"geolocation"/.test(text) ? { ok: false } : /"media"\s*:\s*\[/.test(text) ? { ok: true, cc: "GB" } : null; },
 };
 
 const has = (list, cc) => !!cc && (" " + list + " ").includes(" " + cc + " ");
@@ -78,7 +85,7 @@ export function judge(s, r, guess) {
   const p = s.probe;
   const fail = () => ({ v: "fail", cc: null, ip: "", how: null, why: r.err || "net", n: r.n });
   const byList = (cc, how, ip = "") => { const o = offered(s, cc); return { v: o == null ? "reach" : o ? "ok" : "no", cc, ip, how, why: o == null ? (cc ? "unknown" : "nocc") : null }; };
-  if (p.api) {
+  if (p.api || p.jsonp) {
     if (r.err) return fail();
     const cc = (r.edge && r.edge.cc) || r.cc || null;
     return { v: r.ok ? "ok" : "no", cc, ip: (r.edge && r.edge.ip) || r.ip || "", how: "api", why: null };

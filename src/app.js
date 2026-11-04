@@ -14,6 +14,7 @@
   const K = { theme: "unlock:theme", lang: "unlock:lang", mask: "unlock:mask" };
   const country = cc => { try { return regionName(cc, LANG); } catch (e) { return cc; } };
   const flag = cc => /^[A-Z]{2}$/.test(cc || "") && cc !== "XK" ? `<img class="flag" src="/flags/${flagCode(cc)}.svg" alt="" width="20" height="15">` : "";
+  for (const s of ALL_SERVICES) if (s.names && s.names[LANG]) s.name = s.names[LANG];   // the name this language uses
   const SV = Object.fromEntries(ALL_SERVICES.map(s => [s.id, s]));
   // what this page tests (the build's D.scope): every service on the main page, a category on its page, one service
   // on a service's page (ONE). Nothing outside it is asked, listed or shared.
@@ -68,6 +69,26 @@
     finally { clearTimeout(tm); c.abort(); }
   }
 
+  // Mango TV's request token, as its own player makes it (yt-dlp, MGTVIE): the reversed URL-safe Base64 of a device
+  // id, a client and the time
+  const tk2 = () => btoa(`did=${crypto.randomUUID()}|pno=1030|ver=0.3.0301|clit=${Math.floor(Date.now() / 1000)}`)
+    .replace(/\+/g, "-").replace(/\//g, "_").split("").reverse().join("");
+  // An answer only given as a script (JSONP): run in /jsonp.html, in a sandboxed frame with no origin of its own (no
+  // access to this page or this site) whose policy lets only those services' scripts run. It posts back the
+  // callback's argument as JSON: { text } or a thrown-like { why }.
+  function jsonp(src, cb) {
+    return new Promise(res => {
+      const f = document.createElement("iframe"), id = Math.random().toString(36).slice(2);
+      const done = v => { clearTimeout(tm); removeEventListener("message", on); f.remove(); res(v); };
+      const on = e => { if (e.source === f.contentWindow && e.data && e.data.id === id) done(e.data.text != null ? { text: e.data.text } : { why: "net" }); };
+      const tm = setTimeout(() => done({ why: "timeout" }), TIMEOUT);
+      addEventListener("message", on);
+      f.sandbox = "allow-scripts"; f.hidden = true; f.src = "/jsonp.html";
+      f.onload = () => f.contentWindow.postMessage({ id, src, cb }, "*");
+      document.body.appendChild(f);
+    });
+  }
+
   // Redirect counting. /h/<n>/<host>/<path> on this site redirects n times, the last time to https://<host>/<path>
   // (public/_redirects). A browser follows at most MAX redirects (20 in Chrome and Firefox), so a request sent through
   // MAX - k of ours loads only when the service adds at most k of its own.
@@ -106,8 +127,14 @@
   // One service: what its probe got, as judge() (src/lib.mjs) takes it
   async function ask(s) {
     const p = s.probe, r = { err: null, reach: null };
+    if (p.jsonp) {
+      const a = await jsonp(p.jsonp, p.cb);
+      if (a.why) r.err = a.why;
+      else { const x = READERS[p.read](200, a.text); if (x) Object.assign(r, x); else r.err = "http"; }
+      return r;
+    }
     if (p.api) {
-      const [a, e] = await Promise.all([read(p.api, p.init).catch(x => x), p.edge ? read(p.edge).catch(() => null) : null]);
+      const [a, e] = await Promise.all([read(p.api.replace("{tk2}", tk2), p.init).catch(x => x), p.edge ? read(p.edge).catch(() => null) : null]);
       if (a.why) r.err = a.why;
       else { const x = READERS[p.read](a.st, a.text); if (x) Object.assign(r, x); else { r.err = "http"; r.n = a.st; } }
       if (e) { const x = READERS.trace(e.st, e.text); if (x) r.edge = x; }
@@ -126,11 +153,14 @@
     return r;
   }
   // the services whose answer waits for the others: the country they see (guess) and Netflix's list to try
-  const LATE = s => !!(s.probe.netflix || s.probe.hops || (!s.probe.api && !s.probe.trace));
+  const LATE = s => !!(s.probe.netflix || s.probe.hops || (!s.probe.api && !s.probe.trace && !s.probe.jsonp));
+  // a mainland-China-only service that can't be read is in mainland China when one that can be (Mango TV, Tencent
+  // Video) plays: those sites take the same route, which is often not the one the other services take
+  const guessFor = s => s.only === "CN" && S.cnOk ? "CN" : S.guess;
 
   /* ---------- state and rendering ---------- */
   // shared: a result from a link being shown (no addresses; nothing is tested until the visitor asks)
-  const S = { r: {}, v: {}, done: false, gen: 0, shared: null, broken: false, guess: null, me: null };
+  const S = { r: {}, v: {}, done: false, gen: 0, shared: null, broken: false, guess: null, cnOk: false, me: null };
   const masked = () => store.get(K.mask) === "1";
   const ipTxt = ip => masked() ? maskIp(ip) : ip;
   const IPQS = (document.querySelector('meta[name="ipqs"]') || {}).content || "";
@@ -259,14 +289,14 @@
   async function run() {
     leaveShared();
     const gen = ++S.gen, N = SERVICES.length;
-    Object.assign(S, { r: {}, v: {}, done: false, guess: null });
+    Object.assign(S, { r: {}, v: {}, done: false, guess: null, cnOk: false });
     maxP = null; meP = null;
     $("#run").disabled = true; $("#run").classList.add("busy"); $("#run span").textContent = t("running"); $("#share").disabled = true;
     renderAll();
     let d = 0, failed = 0, err = false; setProg(0, N);
     const settle = (s, r) => {
       if (gen !== S.gen) return;
-      S.r[s.id] = r; S.v[s.id] = judge(s, r, S.guess);
+      S.r[s.id] = r; S.v[s.id] = judge(s, r, guessFor(s));
       renderRow(s.id); renderGroups(); renderSum(); renderFocus(); setProg(++d, N);
       if (err) return;
       // The first dozen services all failing to open is a blocker (an ad blocker drops the whole batch at once, a
@@ -285,6 +315,7 @@
     const seen = early.map(s => S.v[s.id]).filter(v => v && v.cc && v.how !== "guess").map(v => v.cc);
     const who = await me();
     S.guess = guessCountry(seen) || who.country || null;
+    S.cnOk = early.some(s => s.only === "CN" && (S.v[s.id] || {}).v === "ok");
     const prefer = [...new Set([...seen, who.country].filter(Boolean))];
     // a trace the browser blocked, now with that country
     for (const s of early) if (s.probe.trace && S.r[s.id].err && S.r[s.id].reach) { S.v[s.id] = judge(s, S.r[s.id], S.guess); renderRow(s.id); }

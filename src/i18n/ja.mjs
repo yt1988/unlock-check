@@ -29,7 +29,7 @@ export default {
   svc_h1: "今の IP で {name} は使える？",
   svc_intro: "ふだん {name} を開くのと同じ経路で、ブラウザから確認します。",
   svc_kw: "{name} 判定, {name} リージョン 確認, {name} この国では利用できません, {name} VPN",
-  alias: { netflix: "ネットフリックス", disney: "ディズニープラス", tiktok: "ティックトック", gemini: "Google Gemini", fod: "フジテレビ オンデマンド", x: "ツイッター", youtube: "ユーチューブ" },
+  alias: { netflix: "ネットフリックス", disney: "ディズニープラス", tiktok: "ティックトック", gemini: "Google Gemini", fod: "フジテレビ オンデマンド", x: "ツイッター", youtube: "ユーチューブ", primevideo: "プライムビデオ", spotify: "スポティファイ", line: "ライン", facebook: "フェイスブック", hulu: "フールー" },
 
   v_ok: "利用可能",
   v_no: "利用不可",

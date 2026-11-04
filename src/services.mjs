@@ -22,10 +22,15 @@
 //          { hops: url, zero }                 zero: the service is available when url adds no redirect
 //          { netflix: true }                   Netflix's country paths (hops)
 //          { reach: url }                      reachability only (guess)
+//          { jsonp: url, cb, read }            an answer only given as a script (JSONP), run in public/jsonp.html, a
+//                                              sandboxed frame of its own that only those hosts' scripts may run in;
+//                                              read with READERS[read] like an api answer
+//        an api url may hold {tk2}: Mango TV's request token, made in the browser (src/app.js)
 //        plus `reach` on any of them: a URL to tell "blocked" from "not available"
 // allow  ISO 3166 codes where it is available (a published list; `src` is the page it comes from), or
 // deny   codes where it is not (when the service is available almost everywhere)
 // only   the one country it serves (regional services)
+// names  its name where a language calls it something else ({ "zh-CN": … }); name is used everywhere else
 
 export const CATS = ["ai", "video", "social", "local"];
 
@@ -40,7 +45,11 @@ const NETFLIX_NO = "CN KP RU SY";
 // TikTok is banned or not offered: India (2020), Afghanistan (2022), mainland China (Douyin instead), North Korea, Iran
 const TIKTOK_NO = "IN AF CN KP IR";
 // Social apps: where governments block them (they are offered almost everywhere else)
-const BLOCK = { youtube: "CN KP IR TM", x: "CN KP IR RU TM MM", instagram: "CN KP IR RU TM", telegram: "CN IR KP", whatsapp: "CN KP", discord: "CN RU TR", reddit: "CN", twitch: "CN" };
+const BLOCK = { youtube: "CN KP IR TM", x: "CN KP IR RU TM MM", instagram: "CN KP IR RU TM", telegram: "CN IR KP", whatsapp: "CN KP", discord: "CN RU TR", reddit: "CN", twitch: "CN",
+  facebook: "CN KP IR RU TM MM", threads: "CN KP IR RU TM", signal: "CN IR RU", line: "CN", snapchat: "CN KP IR", pinterest: "CN", google: "CN KP", wikipedia: "CN",
+  roblox: "CN TR QA KW JO OM", soundcloud: "CN", viki: "CN", bilibilitv: "CN" };
+// services that left Russia and Belarus in 2022, and aren't offered in mainland China or under sanctions
+const GONE_RU = "CN RU BY CU IR KP SY";
 // Sanctioned places most US services turn away (used where a service publishes no list)
 const SANCTIONED = "CU IR KP SY";
 
@@ -58,6 +67,8 @@ export const SERVICES = [
   { id: "mistral", cat: "ai", name: "Le Chat", site: "https://chat.mistral.ai/", deny: SANCTIONED, probe: { trace: "https://chat.mistral.ai/cdn-cgi/trace" } },
   { id: "poe", cat: "ai", name: "Poe", site: "https://poe.com/", deny: "CN " + SANCTIONED, probe: { trace: "https://poe.com/cdn-cgi/trace" } },
   { id: "characterai", cat: "ai", name: "Character.AI", site: "https://character.ai/", deny: SANCTIONED, probe: { trace: "https://character.ai/cdn-cgi/trace" } },
+  // Meta AI publishes no list of countries: whether it opens is all there is
+  { id: "metaai", cat: "ai", name: "Meta AI", site: "https://www.meta.ai/", probe: { reach: "https://www.meta.ai/robots.txt" } },
 
   // international streaming
   { id: "netflix", cat: "video", name: "Netflix", site: "https://www.netflix.com/", deny: NETFLIX_NO, src: "https://help.netflix.com/en/node/14164",
@@ -73,6 +84,28 @@ export const SERVICES = [
   { id: "shudder", cat: "video", name: "Shudder", site: "https://www.shudder.com/", probe: { api: "https://www.shudder.com/", read: "shudder" } },
   { id: "bein", cat: "video", name: "beIN CONNECT", site: "https://connect.beinsports.com/", probe: { api: "https://proxies.bein-mena-production.eu-west-2.tuc.red/proxy/availableOffers", read: "bein" } },
   { id: "twitch", cat: "video", name: "Twitch", site: "https://www.twitch.tv/", deny: BLOCK.twitch, probe: { reach: "https://www.twitch.tv/robots.txt" } },
+  { id: "primevideo", cat: "video", name: "Prime Video", site: "https://www.primevideo.com/", deny: GONE_RU, probe: { reach: "https://www.primevideo.com/robots.txt" } },
+  { id: "appletv", cat: "video", name: "Apple TV+", site: "https://tv.apple.com/", deny: GONE_RU, probe: { reach: "https://tv.apple.com/robots.txt" } },
+  { id: "max", cat: "video", name: "HBO Max", site: "https://www.hbomax.com/", probe: { reach: "https://www.hbomax.com/robots.txt" } },
+  // Hulu sends visitors outside the US to Disney+, but its US front page redirects too: inferred from the country
+  { id: "hulu", cat: "video", name: "Hulu", site: "https://www.hulu.com/", only: "US", probe: { reach: "https://www.hulu.com/robots.txt" } },
+  // These send visitors where they aren't offered to a page that says so (/intl/, /no-service/). Outside their
+  // regions that page stays put (measured: no redirect of its own); inside them it is expected to send you home.
+  { id: "paramount", cat: "video", name: "Paramount+", site: "https://www.paramountplus.com/", probe: { hops: "https://www.paramountplus.com/intl/", reach: "https://www.paramountplus.com/robots.txt" } },
+  { id: "pluto", cat: "video", name: "Pluto TV", site: "https://pluto.tv/", probe: { hops: "https://pluto.tv/intl/", reach: "https://pluto.tv/robots.txt" } },
+  // And these redirect from their front page (to /restricted, /denied, /unavailable/, gdpr.tubi.tv): one redirect
+  // measured outside their regions, none expected inside.
+  { id: "tubi", cat: "video", name: "Tubi", site: "https://tubitv.com/", probe: { hops: "https://tubitv.com/", zero: true, reach: "https://tubitv.com/robots.txt" } },
+  { id: "espn", cat: "video", name: "ESPN+", site: "https://plus.espn.com/", only: "US", probe: { hops: "https://plus.espn.com/", zero: true, reach: "https://plus.espn.com/robots.txt" } },
+  { id: "fubo", cat: "video", name: "Fubo", site: "https://www.fubo.tv/", probe: { hops: "https://www.fubo.tv/", zero: true, reach: "https://www.fubo.tv/robots.txt" } },
+  { id: "viu", cat: "video", name: "Viu", site: "https://www.viu.com/", probe: { hops: "https://www.viu.com/ott/no-service/", reach: "https://www.viu.com/robots.txt" } },
+  { id: "viki", cat: "video", name: "Viki", site: "https://www.viki.com/", deny: BLOCK.viki, probe: { reach: "https://www.viki.com/robots.txt" } },
+  { id: "bilibilitv", cat: "video", name: "Bilibili TV", site: "https://www.bilibili.tv/", deny: BLOCK.bilibilitv, probe: { reach: "https://www.bilibili.tv/robots.txt" } },
+  // music
+  { id: "spotify", cat: "video", name: "Spotify", site: "https://open.spotify.com/", deny: GONE_RU, probe: { reach: "https://open.spotify.com/robots.txt" } },
+  { id: "pandora", cat: "video", name: "Pandora", site: "https://www.pandora.com/", only: "US", probe: { hops: "https://www.pandora.com/", zero: true, reach: "https://www.pandora.com/robots.txt" } },
+  { id: "deezer", cat: "video", name: "Deezer", site: "https://www.deezer.com/", probe: { reach: "https://www.deezer.com/robots.txt" } },
+  { id: "soundcloud", cat: "video", name: "SoundCloud", site: "https://soundcloud.com/", deny: BLOCK.soundcloud, probe: { reach: "https://soundcloud.com/robots.txt" } },
 
   // social apps: mostly whether they open at all over this route
   { id: "tiktok", cat: "social", name: "TikTok", site: "https://www.tiktok.com/", deny: TIKTOK_NO, probe: { reach: "https://www.tiktok.com/robots.txt" } },
@@ -83,6 +116,16 @@ export const SERVICES = [
   { id: "whatsapp", cat: "social", name: "WhatsApp", site: "https://web.whatsapp.com/", deny: BLOCK.whatsapp, probe: { reach: "https://web.whatsapp.com/robots.txt" } },
   { id: "discord", cat: "social", name: "Discord", site: "https://discord.com/", deny: BLOCK.discord, probe: { reach: "https://discord.com/robots.txt" } },
   { id: "reddit", cat: "social", name: "Reddit", site: "https://www.reddit.com/", deny: BLOCK.reddit, probe: { reach: "https://www.reddit.com/robots.txt" } },
+  { id: "facebook", cat: "social", name: "Facebook", site: "https://www.facebook.com/", deny: BLOCK.facebook, probe: { reach: "https://www.facebook.com/" } },
+  { id: "messenger", cat: "social", name: "Messenger", site: "https://www.messenger.com/", deny: BLOCK.facebook, probe: { reach: "https://www.messenger.com/robots.txt" } },
+  { id: "threads", cat: "social", name: "Threads", site: "https://www.threads.com/", deny: BLOCK.threads, probe: { reach: "https://www.threads.com/robots.txt" } },
+  { id: "signal", cat: "social", name: "Signal", site: "https://signal.org/", deny: BLOCK.signal, probe: { reach: "https://signal.org/robots.txt" } },
+  { id: "line", cat: "social", name: "LINE", site: "https://line.me/", deny: BLOCK.line, probe: { reach: "https://line.me/robots.txt" } },
+  { id: "snapchat", cat: "social", name: "Snapchat", site: "https://www.snapchat.com/", deny: BLOCK.snapchat, probe: { reach: "https://www.snapchat.com/robots.txt" } },
+  { id: "pinterest", cat: "social", name: "Pinterest", site: "https://www.pinterest.com/", deny: BLOCK.pinterest, probe: { reach: "https://www.pinterest.com/robots.txt" } },
+  { id: "google", cat: "social", name: "Google", site: "https://www.google.com/", deny: BLOCK.google, probe: { reach: "https://www.google.com/generate_204" } },
+  { id: "wikipedia", cat: "social", name: "Wikipedia", site: "https://www.wikipedia.org/", deny: BLOCK.wikipedia, probe: { reach: "https://www.wikipedia.org/robots.txt" } },
+  { id: "roblox", cat: "social", name: "Roblox", site: "https://www.roblox.com/", deny: BLOCK.roblox, probe: { reach: "https://www.roblox.com/robots.txt" } },
 
   // services for one country or region
   { id: "kktv", cat: "local", name: "KKTV", site: "https://www.kktv.me/", only: "TW", probe: { api: "https://api.kktv.me/v3/ipcheck", read: "kktv" } },
@@ -92,6 +135,20 @@ export const SERVICES = [
   { id: "dmm", cat: "local", name: "DMM TV", site: "https://tv.dmm.com/", only: "JP", probe: { api: "https://api.beacon.dmm.com/v1/streaming/start", read: "dmm",
     init: { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ player_name: "dmmtv_browser", player_version: "0.0.0", content_type_detail: "VOD_SVOD", content_id: "11uvjcm4fw2wdu7drtd1epnvz", purchase_product_id: null }) } } },
   { id: "zdf", cat: "local", name: "ZDF", site: "https://www.zdf.de/", only: "DE", probe: { api: "https://ssl.zdf.de/geo/de/geo.txt/", read: "zdf" } },
+  // BBC iPlayer's media selector answers as a script: "geolocation" outside the UK
+  { id: "bbc", cat: "local", name: "BBC iPlayer", site: "https://www.bbc.co.uk/iplayer", only: "GB",
+    probe: { jsonp: "https://open.live.bbc.co.uk/mediaselector/6/select/version/2.0/mediaset/pc/vpid/bbc_one_london/format/json/jsfunc/JS_unlock_bbc", cb: "JS_unlock_bbc", read: "bbc" } },
+  // Mainland China. Mango TV's player and Tencent Video's say whether a mainland title plays here (titles that
+  // play in mainland China; replace them when they go offline). The others can't be read from another site:
+  // whether they open, and mainland China when Mango TV or Tencent Video play (src/app.js).
+  { id: "mgtv", cat: "local", name: "Mango TV", names: { "zh-CN": "芒果TV", "zh-TW": "芒果TV" }, site: "https://www.mgtv.com/", only: "CN",
+    probe: { api: "https://pcweb.api.mgtv.com/player/video?video_id=22028443&type=pch5&tk2={tk2}", read: "mgtv" } },
+  { id: "tencent", cat: "local", name: "Tencent Video", names: { "zh-CN": "腾讯视频", "zh-TW": "騰訊視頻" }, site: "https://v.qq.com/", only: "CN",
+    probe: { jsonp: "https://vv.video.qq.com/getinfo?vids=j4102i5tqu0&otype=json&platform=11&defn=shd&callback=unlockQQ", cb: "unlockQQ", read: "qq" } },
+  { id: "bilibili", cat: "local", name: "Bilibili", names: { "zh-CN": "哔哩哔哩", "zh-TW": "嗶哩嗶哩" }, site: "https://www.bilibili.com/", only: "CN", probe: { reach: "https://www.bilibili.com/robots.txt" } },
+  { id: "iqiyi", cat: "local", name: "iQIYI", names: { "zh-CN": "爱奇艺", "zh-TW": "愛奇藝" }, site: "https://www.iqiyi.com/", only: "CN", probe: { reach: "https://www.iqiyi.com/robots.txt" } },
+  { id: "youku", cat: "local", name: "Youku", names: { "zh-CN": "优酷", "zh-TW": "優酷" }, site: "https://www.youku.com/", only: "CN", probe: { reach: "https://www.youku.com/robots.txt" } },
+  { id: "netease", cat: "local", name: "NetEase Cloud Music", names: { "zh-CN": "网易云音乐", "zh-TW": "網易雲音樂" }, site: "https://music.163.com/", only: "CN", probe: { reach: "https://music.163.com/robots.txt" } },
 ];
 
 // Netflix countries tried in this order after the ones the other services see (most visitors' exits are among them)
@@ -102,5 +159,12 @@ export const SLUG = { chatgpt: "chatgpt", claude: "claude", gemini: "gemini", co
   mistral: "le-chat", poe: "poe", characterai: "character-ai", netflix: "netflix", disney: "disney-plus", tiktok: "tiktok", dazn: "dazn",
   crunchyroll: "crunchyroll", peacock: "peacock", philo: "philo", kktv: "kktv", tvb: "tvb-anywhere", sbs: "sbs-on-demand", fod: "fod",
   nbc: "nbc", shudder: "shudder", bein: "bein-connect", twitch: "twitch", youtube: "youtube", x: "x-twitter", instagram: "instagram", telegram: "telegram",
-  whatsapp: "whatsapp", discord: "discord", reddit: "reddit", dmm: "dmm-tv", zdf: "zdf" };
+  whatsapp: "whatsapp", discord: "discord", reddit: "reddit", dmm: "dmm-tv", zdf: "zdf",
+  metaai: "meta-ai", primevideo: "prime-video", appletv: "apple-tv-plus", max: "hbo-max", hulu: "hulu", paramount: "paramount-plus", pluto: "pluto-tv",
+  tubi: "tubi", espn: "espn-plus", fubo: "fubo", viu: "viu", viki: "viki", bilibilitv: "bilibili-tv", spotify: "spotify", pandora: "pandora",
+  deezer: "deezer", soundcloud: "soundcloud", facebook: "facebook", messenger: "messenger", threads: "threads", signal: "signal", line: "line",
+  snapchat: "snapchat", pinterest: "pinterest", google: "google", wikipedia: "wikipedia", roblox: "roblox", bbc: "bbc-iplayer", mgtv: "mango-tv",
+  tencent: "tencent-video", bilibili: "bilibili", iqiyi: "iqiyi", youku: "youku", netease: "netease-cloud-music" };
+// a language's copy of the list, each service under the name that language uses
+export const named = lang => SERVICES.map(s => s.names && s.names[lang] ? { ...s, name: s.names[lang] } : s);
 export const CAT_SLUG = { ai: "ai", video: "streaming", social: "social", local: "regional" };

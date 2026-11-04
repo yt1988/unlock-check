@@ -13,7 +13,7 @@ test("catalog: ids, categories, slugs and country codes are well formed", () => 
     assert.match(SLUG[s.id] || "", /^[a-z0-9-]+$/, s.id + " slug");
     for (const k of ["allow", "deny"]) if (s[k]) for (const cc of s[k].split(" ")) assert.match(cc, /^[A-Z]{2}$/, `${s.id} ${k} ${cc}`);
     const p = s.probe;
-    assert.ok(p.api || p.trace || p.hops || p.netflix || p.reach, s.id + " probe");
+    assert.ok(p.api || p.jsonp || p.trace || p.hops || p.netflix || p.reach, s.id + " probe");
     if (p.api) assert.ok(READERS[p.read], s.id + " reader");
   }
   assert.equal(new Set(Object.values(SLUG)).size, SERVICES.length);
