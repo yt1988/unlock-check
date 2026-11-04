@@ -329,7 +329,7 @@
     eye.hidden = true;
     renderAll();
     $("#run span").textContent = t("test_mine"); $("#run").disabled = false; $("#share").disabled = false;
-    import("/assets/share/share.js?v=5").then(({ received }) => received({ lang: LANG, ts: R.ts, at: $(".hero"), test: () => $("#run").onclick() })).catch(() => {});
+    import("/assets/share/share.js?v=6").then(({ received }) => received({ lang: LANG, ts: R.ts, at: $(".hero"), test: () => $("#run").onclick() })).catch(() => {});
   }
   // a result link that can't be read (cut short, mistyped, a format this page doesn't know) says so, and waits
   function showBroken() {
@@ -396,7 +396,7 @@
   let dialog = null;
   $("#share").onclick = async () => {
     if (!S.done) return;
-    const { share } = await import("/assets/share/share.js?v=5");
+    const { share } = await import("/assets/share/share.js?v=6");
     dialog = share({
       lang: LANG, name: t("name"), file: "unlock-check", never: ["ip"],
       link: shareLink, home: location.origin + D.home[LANG],
