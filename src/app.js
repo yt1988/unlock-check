@@ -493,7 +493,8 @@
     if (EMBED && !err) post(report());
   }
   // a shared result's page (or one whose link can't be read) opens the language's own page to test
-  $("#run").onclick = () => { if ((S.shared || S.broken) && location.pathname !== D.home[LANG]) location.href = D.paths[LANG].replace(/r\/[a-z]+\/$/, ""); else run(); };
+  // (with ?run=1: the page opened starts at once, whether or not it starts by itself)
+  $("#run").onclick = () => { if ((S.shared || S.broken) && location.pathname !== D.home[LANG]) location.href = D.paths[LANG].replace(/r\/[a-z]+\/$/, "") + "?run=1"; else run(); };
 
   /* ---------- questions: a dialog behind the ? button (as on 1ms.dog) ---------- */
   const scrims = { help: $("#help") };
@@ -522,7 +523,7 @@
   // the shared 1ms.dog banner above it says whose result this is and offers the visitor's own test
   function showShared(R) {
     Object.assign(S, { r: {}, v: R.verdicts, shared: R, done: true, gen: 0 });
-    eye.hidden = true;
+    eye.hidden = true; $("#share").hidden = true;                 // someone else's result isn't shared again from here
     renderAll();
     $("#run span").textContent = t("test_mine"); $("#run").disabled = false; $("#share").disabled = false;
     import("/assets/share/share.js?v=8").then(({ received }) => received({ lang: LANG, ts: R.ts, at: $(".hero"), test: () => $("#run").onclick() })).catch(() => {});
@@ -537,7 +538,7 @@
   }
   function leaveShared() {
     if (!S.shared && !S.broken) return;
-    S.shared = null; S.broken = false; eye.hidden = false; document.documentElement.removeAttribute("data-shared");
+    S.shared = null; S.broken = false; eye.hidden = false; $("#share").hidden = false; document.documentElement.removeAttribute("data-shared");
     history.replaceState(null, "", location.pathname.replace(/r\/[a-z]+\/$/, ""));
   }
 
@@ -706,7 +707,10 @@
     document.documentElement.removeAttribute("data-shared");
     // The main page asks every service at once (over 150 requests), so it waits for the button unless the visitor
     // turned on starting by itself (kept in this browser); a category's or a service's page starts at once
-    if (!AUTO || store.get(K.auto) === "1") run();
+    // "Test mine" on a shared result lands here with ?run=1: start now, and take it off the address
+    const now = new URLSearchParams(location.search).get("run") === "1";
+    if (now) history.replaceState(null, "", location.pathname + location.hash);
+    if (!AUTO || now || store.get(K.auto) === "1") run();
     else { $("#run span").textContent = t("start"); $("#run").disabled = false; renderAll(); }
   }
   if (AUTO) { AUTO.checked = store.get(K.auto) === "1"; AUTO.onchange = () => store.set(K.auto, AUTO.checked ? "1" : "0"); }
