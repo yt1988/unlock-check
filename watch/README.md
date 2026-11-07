@@ -38,7 +38,7 @@ Every check that isn't `ok` gets one retry, as the page does.
 
 ## Output
 
-The output is `/srv/1ms-data/unlock/status.json`. It is written atomically (to a temporary file, then renamed), and Caddy publishes it read-only at https://data.1ms.dog:2083/unlock/status.json.
+The output is `status.json` in the directory given as the first argument. It is written atomically (to a temporary file, then renamed); a web server publishes it read-only, with `Access-Control-Allow-Origin: *`, at the address in `WATCH` (`src/app.js`, `src/status.js`).
 
 ```json
 { "v": 1, "at": "2026-11-04T05:13:02.512Z", "from": "JP", "took_ms": 9000, "count": 67, "bad": ["dazn"],
@@ -58,7 +58,7 @@ The page only acts on a `drift` or `bad` state that has lasted at least 2 runs.
 
 The page ignores a status file that is more than 3 hours old.
 
-Each failing check is listed in `bad`. Look at that list during the daily review. The server holds no GitHub or Cloudflare tokens, so it doesn't open issues itself.
+Each failing check is listed in `bad`: that list is the thing to look at. The script holds no GitHub or Cloudflare tokens, so it doesn't open issues itself.
 
 The check stores no visitor data: it never sees a visitor.
 
@@ -72,33 +72,13 @@ node scripts/watch.mjs out
 
 On a machine whose traffic doesn't leave through Japan, set `WATCH_CC` to the country it does leave through, for example `WATCH_CC=US`. Otherwise the run compares the services' lists against Japan.
 
-On the server, it runs as a systemd timer:
+On a server it runs as a systemd timer: `1ms-unlock-watch.service` and `1ms-unlock-watch.timer`, in this folder, at minute 13 of every hour. They are written for one particular machine (its user and paths); the steps to install them on yours, with placeholders, are in [AGENTS.md](../AGENTS.md) under "The hourly check, from nothing".
 
 | | |
 |---|---|
-| Unit files | `1ms-unlock-watch.service` and `1ms-unlock-watch.timer`, in this folder |
-| Schedule | minute 13 of every hour |
-| User | system user `1ms-unlock` |
-| Code | `/opt/1ms/unlock/`, laid out like this repository: `scripts/watch.mjs`, `src/lib.mjs`, `src/services.mjs` |
-| Node | `/usr/bin/node`, Debian's `nodejs` package |
-| Memory | `MemoryMax=128M`; a run uses about 60 MB and exits when done |
+| Code | `scripts/watch.mjs`, `src/lib.mjs`, `src/services.mjs`, laid out as in this repository; no packages |
+| Memory | a run uses about 60 MB and exits when done (the unit caps it at 128 MB) |
+| Time | about 10 seconds for 154 services |
 | Traffic | about 1 MB per run |
 
-The ports, directories and user are allocated in 1ms-shell `docs/processes.md`, under 专用服务器.
-
-To deploy, copy the three files into `/opt/1ms/unlock/` (owned by root, readable by `1ms-unlock`), then run:
-
-```sh
-systemctl daemon-reload
-systemctl enable --now 1ms-unlock-watch.timer
-```
-
-When `src/services.mjs` or `src/lib.mjs` changes, copy them again.
-
-To verify:
-
-```sh
-systemctl start 1ms-unlock-watch
-systemctl status 1ms-unlock-watch
-curl https://data.1ms.dog:2083/unlock/status.json
-```
+When `src/services.mjs` or `src/lib.mjs` changes, copy them to the server again.
