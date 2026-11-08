@@ -81,12 +81,12 @@ export async function build({ check = false } = {}) {
   const appFull = `const ALL_SERVICES = ${JSON.stringify(svcs)}, ALL_CATS = ${JSON.stringify(CATS)}, NETFLIX_TRY = ${JSON.stringify(NETFLIX_TRY)};\n` + appSrc.replace("/* @lib */", () => lib);
   new Function(appFull);                                                // must parse
   const cssFull = (await Promise.all(["fonts.css", "style.css", "tool.css"].map(f => readFile(new URL(f, src), "utf8")))).join("\n");
-  const js = (await transform(appFull, { loader: "js", minify: true, target: "es2020", legalComments: "none" })).code;
+  const js = (await transform(appFull, { loader: "js", minify: true, target: "es2019", legalComments: "none" })).code;
   const css = (await transform(cssFull, { loader: "css", minify: true, legalComments: "none" })).code;
   const jsName = `app.${hash(js)}.js`, cssName = `app.${hash(css)}.css`;
   const stSrc = await readFile(new URL("status.js", src), "utf8");
   new Function(stSrc);
-  const stJs = (await transform(stSrc, { loader: "js", minify: true, target: "es2020", legalComments: "none" })).code, stName = `status.${hash(stJs)}.js`;
+  const stJs = (await transform(stSrc, { loader: "js", minify: true, target: "es2019", legalComments: "none" })).code, stName = `status.${hash(stJs)}.js`;
 
   // the strings the browser needs; the page's own text is already in the HTML
   const RUNTIME = /^(name|fd_\w+|v_\w+|how_\w+|why_\w+|note_\w+|watch_\w+|dns_\w+|pl_\w+|id_\w+|ln_\w+|pr_\w+|sp_\w+|start|idle|fo_\w+|ex_\w+|tz_\w+|wait_\w+|ip_\w+|ipq_title|vh_\w+|th_\w+|egress_link|ck_link|progress|done|rerun|running|hide|show|share|share_text|test_mine|share_bad|err_blocked|join)$/;
