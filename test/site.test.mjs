@@ -12,6 +12,16 @@ const page = async f => readFile(new URL(`../public/${f}index.html`, import.meta
 const has = f => access(new URL("../public/" + f, import.meta.url)).then(() => true, () => false);
 const holes = s => [...new Set(String(s).match(/\{\w+\}/g) || [])].sort();
 
+test("the JSONP helper may be framed inside the checkup", async () => {
+  const headers = await readFile(new URL("../public/_headers", import.meta.url), "utf8");
+  const rule = /\/assets\/jsonp\*([^\n]*(?:\n\s+[^\n]*)*)/.exec(headers);
+  assert.ok(rule, "/assets/jsonp* rule");
+  const fa = /frame-ancestors([^;\n]*)/.exec(rule[1]);
+  assert.ok(fa, "the frame's own frame-ancestors");
+  assert.ok(fa[1].includes("'self'"), "framed by this site's pages");
+  assert.ok(fa[1].includes("https://check.1ms.dog"), "and by the checkup around them");
+});
+
 test("every language has every string, with the same placeholders", () => {
   for (const [l] of LANGS) {
     assert.ok(I[l], "missing language " + l);

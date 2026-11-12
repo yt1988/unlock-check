@@ -58,7 +58,10 @@ if(e.data.type==="size")f.style.height=e.data.height+"px";log.textContent+=JSON.
     headers["Cache-Control"] = "no-cache";
     if (CHECK && extname(file) === ".html") {
       delete headers["X-Frame-Options"];
-      headers["Content-Security-Policy"] = headers["Content-Security-Policy"].replace("frame-ancestors 'none'", "frame-ancestors " + CHECK);
+      // as the shell does: add the checkup to frame-ancestors ('none' can't stand beside another source), including
+      // the inner JSONP frame, whose ancestors are the checkup → page → frame
+      headers["Content-Security-Policy"] = headers["Content-Security-Policy"].replace(/frame-ancestors([^;]*)/,
+        (m, list) => "frame-ancestors " + [...list.trim().split(/\s+/).filter(s => s && s !== "'none'"), CHECK].join(" "));
       let html = body.toString().replace("</head>", `<meta name="check" content="${CHECK}">
 </head>`);
       if (new URL(req.url, "http://x").searchParams.get("embed") === "checkup") html = html.replace("<html ", '<html data-ms-embed="checkup" ');

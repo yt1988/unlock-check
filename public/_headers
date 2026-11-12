@@ -33,7 +33,7 @@
   ! Content-Security-Policy
   ! X-Frame-Options
   ! Cache-Control
-  Content-Security-Policy: default-src 'none'; script-src 'sha256-HF3elkRSJGVNrLHXhazlXeqgerT2kEhPELKaG4CAhfk=' https://open.live.bbc.co.uk https://vv.video.qq.com; base-uri 'none'; form-action 'none'; frame-ancestors 'self'
+  Content-Security-Policy: default-src 'none'; script-src 'sha256-HF3elkRSJGVNrLHXhazlXeqgerT2kEhPELKaG4CAhfk=' https://open.live.bbc.co.uk https://vv.video.qq.com; base-uri 'none'; form-action 'none'; frame-ancestors 'self' https://check.1ms.dog https://web.telegram.org
   Cache-Control: public, max-age=3600
 /llms.txt
   Access-Control-Allow-Origin: *

@@ -85,3 +85,12 @@ additions go at the end of each section.
   doesn't shrink. (2026-11-06)
 - **The status table** hides its header row with `visibility: collapse`, not `display: none`, so the columns of the
   later tables keep the widths of the first. (2026-11-04)
+
+## Embedded in the checkup
+
+- **The JSONP frame allows the checkup as an ancestor.** `frame-ancestors 'self'` on `/assets/jsonp` is checked
+  against every ancestor, and inside the checkup the chain is `check.1ms.dog → unlock.1ms.dog → /assets/jsonp`:
+  'self' matched the page but not the checkup, so both JSONP probes (BBC iPlayer, Tencent Video) failed in embed mode
+  and the checkup marked the tool stopped. The frame now uses the list the shell gives the page, plus 'self':
+  `'self' https://check.1ms.dog https://web.telegram.org`. It is opened with `sandbox="allow-scripts"` (opaque
+  origin), so those ancestors gain no access by being allowed to frame it. (2026-11-12)
