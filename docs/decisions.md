@@ -42,6 +42,10 @@ additions go at the end of each section.
 - One retry when nothing loaded: among sixty requests at once, Viu's page once missed the time limit. (2026-11-04)
 - Paramount+, Tubi, Pandora and Viu tell both sides (measured from Japan, Hong Kong and the US). Pluto TV, ESPN+ and
   Fubo redirect inside their regions too (ESPN+ to `/denied` from a US proxy), so they are guesses. (2026-11-04)
+- **The ceiling is probed at 20, not 21.** Chrome and Firefox follow 20 redirects, so the old `at(21)` calibration
+  probe could never load: it put an `ERR_TOO_MANY_REDIRECTS` in every run's network log and console, for nothing.
+  `/h/20/…` that loads now answers 20 directly; only below 20 (Safari's 16) is the largest n that loads searched for,
+  between 19 and 0. (2026-11-12)
 - A page whose resource policy refuses other sites (`Cross-Origin-Resource-Policy: same-origin` or `same-site`) fails
   in the browser whatever its status, so it can't be counted (claude.ai/login, gemini.google.com,
   aistudio.google.com). Such a service is checked another way or guessed. (2026-11-01)

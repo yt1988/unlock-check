@@ -97,10 +97,10 @@
   let maxP = null;
   const maxHops = () => maxP || (maxP = (async () => {
     const self = location.origin + "/hop.txt", at = n => loads(hop(n, self));
-    const [a, b] = await Promise.all([at(20), at(21)]);
-    if (a && !b) return 20;
-    // another browser: the largest n that still loads
-    let lo = 0, hi = 24;
+    // Chrome and Firefox follow 20 redirects, so a probe at 21 is a guaranteed failure in every run's network log
+    // and console; 20 that loads is the answer, and only below 20 (Safari: 16) is the largest n that loads searched for
+    if (await at(20)) return 20;
+    let lo = 0, hi = 19;
     while (lo < hi) { const mid = (lo + hi + 1) >> 1; if (await at(mid)) lo = mid; else hi = mid - 1; }
     return lo >= 4 ? lo : 0;
   })());
