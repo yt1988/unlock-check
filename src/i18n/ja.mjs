@@ -182,7 +182,7 @@ export default {
   // embedded in the connection checkup: the first dozen services all failed to open
   err_blocked: "確認のリクエストがすべて失敗しました。広告ブロッカー（uBlock、AdGuard など）に止められている可能性があります。一時的に止めてからお試しください",
   r_desc: "共有された地域制限チェックの結果です。どの動画配信と AI が使えたか、それぞれどの国と判定されたかがわかります。開くと自分の環境も確認できます。",
-  vh_all: "ChatGPT・Claude・Gemini・Netflix・Disney+ すべて利用可能",
+  vh_all: "一部のサービスが利用可能：ChatGPT・Claude・Gemini・Netflix・Disney+ は使えます",
   vh_part: "AI は利用可能、一部のサービスは使えないか不明",
   vh_noai: "この IP では一部の AI が利用不可",
   vh_n_other: "{n} サービス中 {d} 個が利用可能",

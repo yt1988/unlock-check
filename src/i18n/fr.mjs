@@ -188,7 +188,7 @@ export default {
   // embedded in the connection checkup: the first dozen services all failed to open
   err_blocked: "Aucune vérification n'a pu démarrer. Un bloqueur de publicité (uBlock, AdGuard…) les bloque peut-être ; mettez-le en pause et réessayez",
   r_desc: "Un résultat partagé : quels services de streaming et d'IA sont accessibles pour cette personne, et quel pays chacun a détecté. Ouvrez-le pour tester le vôtre.",
-  vh_all: "ChatGPT, Claude, Gemini, Netflix et Disney+ sont accessibles",
+  vh_all: "Certains services fonctionnent : ChatGPT, Claude, Gemini, Netflix et Disney+",
   vh_part: "IA non bloquée ; d'autres services échouent ou sont incertains",
   vh_noai: "Certains services d'IA sont inaccessibles avec cette IP",
   vh_n_one: "{d} sur {n} fonctionne",

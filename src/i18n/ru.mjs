@@ -186,7 +186,7 @@ export default {
   // embedded in the connection checkup: the first dozen services all failed to open
   err_blocked: "Ни одна проверка не запустилась. Возможно, их блокирует блокировщик рекламы (uBlock, AdGuard и т. п.) — приостановите его и попробуйте снова",
   r_desc: "Чужой результат проверки: какие стриминги и ИИ-сервисы у человека работают и какую страну видит каждый. Откройте, чтобы проверить свой.",
-  vh_all: "ChatGPT, Claude, Gemini, Netflix и Disney+ доступны",
+  vh_all: "Часть сервисов доступна: ChatGPT, Claude, Gemini, Netflix и Disney+",
   vh_part: "ИИ не заблокирован; часть сервисов недоступна или неясна",
   vh_noai: "Часть ИИ-сервисов на этом IP не работает",
   vh_n_other: "Работают: {d} из {n}",

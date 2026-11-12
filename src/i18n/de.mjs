@@ -190,7 +190,7 @@ export default {
   // embedded in the connection checkup: the first dozen services all failed to open
   err_blocked: "Keine Prüfung konnte starten. Vielleicht blockiert ein Werbeblocker (uBlock, AdGuard …) sie; pausiere ihn und versuch es erneut",
   r_desc: "Ein geteiltes Ergebnis: welche Streaming- und KI-Dienste bei dieser Person gehen und welches Land jeder Dienst erkannt hat. Öffne es, um deine eigene Verbindung zu prüfen.",
-  vh_all: "ChatGPT, Claude, Gemini, Netflix und Disney+ sind verfügbar",
+  vh_all: "Einige Dienste funktionieren: ChatGPT, Claude, Gemini, Netflix und Disney+",
   vh_part: "KI nicht gesperrt; einige Dienste gehen nicht oder sind unklar",
   vh_noai: "Einige KI-Dienste gehen mit dieser IP nicht",
   vh_n_one: "{d} von {n} funktioniert",

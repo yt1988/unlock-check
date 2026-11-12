@@ -202,7 +202,7 @@ export default {
   // embedded in the connection checkup: the first dozen services all failed to open
   err_blocked: "所有检测请求都没发出去，可能被广告拦截插件（uBlock、AdGuard 等）挡住了，先关掉它再测",
   r_desc: "别人分享的解锁检测结果：哪些流媒体和 AI 能用，各服务认为对方在哪个地区。打开就能测你自己的。",
-  vh_all: "ChatGPT、Claude、Gemini、Netflix、Disney+ 全都能用",
+  vh_all: "部分服务可用：ChatGPT、Claude、Gemini、Netflix、Disney+ 能用",
   vh_part: "AI 没被拦，部分服务用不了或无法确认",
   vh_noai: "这个 IP 上有 AI 服务用不了",
   vh_n_other: "{n} 个服务里有 {d} 个能用",

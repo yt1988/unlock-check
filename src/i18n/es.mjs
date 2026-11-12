@@ -203,7 +203,7 @@ export default {
   // embedded in the connection checkup: the first dozen services all failed to open
   err_blocked: "Ninguna comprobación pudo empezar. Puede que un bloqueador de anuncios (uBlock, AdGuard…) las esté frenando; páusalo y vuelve a intentarlo",
   r_desc: "Un resultado compartido: qué servicios de streaming e IA le funcionan a otra persona y en qué país la ubica cada uno. Ábrelo para comprobar el tuyo.",
-  vh_all: "ChatGPT, Claude, Gemini, Netflix y Disney+ funcionan",
+  vh_all: "Algunos servicios funcionan: ChatGPT, Claude, Gemini, Netflix y Disney+",
   vh_part: "IA sin bloqueo; algunos servicios fallan o son dudosos",
   vh_noai: "Algunos servicios de IA no funcionan con esta IP",
   vh_n_one: "Funciona {d} de {n}",

@@ -184,7 +184,7 @@ export default {
   // embedded in the connection checkup: the first dozen services all failed to open
   err_blocked: "모든 확인 요청이 실패했어요. 광고 차단 확장(uBlock, AdGuard 등)이 막고 있을 수 있으니 잠시 끄고 다시 시도해 주세요",
   r_desc: "공유된 확인 결과예요. 어떤 스트리밍과 AI를 쓸 수 있었는지, 서비스마다 어느 나라로 판단했는지 보여 줘요. 열면 내 결과도 확인할 수 있어요.",
-  vh_all: "ChatGPT·Claude·Gemini·Netflix·Disney+ 모두 이용 가능",
+  vh_all: "일부 서비스 이용 가능: ChatGPT·Claude·Gemini·Netflix·Disney+ 사용 가능",
   vh_part: "AI는 막히지 않음, 일부 서비스는 이용 불가 또는 확인 불가",
   vh_noai: "이 IP에서 이용할 수 없는 AI 서비스 있음",
   vh_n_other: "서비스 {n}개 중 {d}개 이용 가능",

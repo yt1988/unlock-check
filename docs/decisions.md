@@ -25,6 +25,10 @@ additions go at the end of each section.
   removed from the address once read. (2026-11-04, 2026-11-05)
 - **A shared result asks no service.** The share link (`#r=1.<time>.<tz>.<id>~<verdict><method><country>_…`)
   carries each service's verdict, method and country, never an address; the receiving page only renders it. (2026-11-02)
+- **The good-news headline says "some services work", not "everything works".** It used to read "ChatGPT, Claude,
+  Gemini, Netflix and Disney+ all work"; beside a run of 60 of 154 (and the checkup's F) that read as if only those
+  five had been checked, which is the one thing a conclusion must not do. The five are still named, after "some
+  services work", so the sentence says exactly what was measured. The "part" headline is unchanged. (2026-11-12)
 
 ## Redirect tests
 

@@ -202,7 +202,7 @@ export default {
   // embedded in the connection checkup: the first dozen services all failed to open
   err_blocked: "所有檢測請求都失敗了，可能被廣告封鎖工具（uBlock、AdGuard 等）擋下，請先暫停它再測一次",
   r_desc: "別人分享的解鎖檢測結果：哪些串流和 AI 可以用，各服務認為對方在哪個地區。打開就能測你自己的。",
-  vh_all: "ChatGPT、Claude、Gemini、Netflix、Disney+ 全部可用",
+  vh_all: "部分服務可用：ChatGPT、Claude、Gemini、Netflix、Disney+ 能用",
   vh_part: "AI 沒被擋，部分服務不能用或無法確認",
   vh_noai: "這個 IP 上有 AI 服務無法使用",
   vh_n_other: "{n} 個服務中有 {d} 個能用",

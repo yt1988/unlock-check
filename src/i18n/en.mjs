@@ -206,7 +206,7 @@ export default {
   // embedded in the connection checkup: the first dozen services all failed to open
   err_blocked: "None of the checks could start. An ad blocker (uBlock, AdGuard…) may be stopping them; pause it and try again",
   r_desc: "Someone shared their unlock check: which streaming and AI services work for them, and which country each one thinks they're in. Open it to check your own.",
-  vh_all: "ChatGPT, Claude, Gemini, Netflix and Disney+ all work",
+  vh_all: "Some services work: ChatGPT, Claude, Gemini, Netflix and Disney+",
   vh_part: "AI isn't blocked; some services don't work or are unclear",
   vh_noai: "Some AI services don't work on this IP",
   vh_n_one: "{d} of {n} works",
