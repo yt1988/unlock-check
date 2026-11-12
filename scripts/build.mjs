@@ -84,7 +84,7 @@ export async function build({ check = false } = {}) {
   const svcs = SERVICES.map(({ src: _, ...s }) => s);
   const appFull = `const ALL_SERVICES = ${JSON.stringify(svcs)}, ALL_CATS = ${JSON.stringify(CATS)}, NETFLIX_TRY = ${JSON.stringify(NETFLIX_TRY)};\n` + appSrc.replace("/* @lib */", () => lib);
   new Function(appFull);                                                // must parse
-  const cssFull = (await Promise.all(["fonts.css", "style.css", "tool.css"].map(f => readFile(new URL(f, src), "utf8")))).join("\n");
+  const cssFull = (await Promise.all(["fonts.css", "base.css", "style.css", "tool.css"].map(f => readFile(new URL(f, src), "utf8")))).join("\n");
   const js = (await transform(appFull, { loader: "js", minify: true, target: "es2019", legalComments: "none" })).code;
   const css = (await transform(cssFull, { loader: "css", minify: true, legalComments: "none" })).code;
   const jsName = `app.${hash(js)}.js`, cssName = `app.${hash(css)}.css`;
