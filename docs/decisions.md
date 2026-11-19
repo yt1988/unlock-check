@@ -29,6 +29,13 @@ additions go at the end of each section.
   Gemini, Netflix and Disney+ all work"; beside a run of 60 of 154 (and the checkup's F) that read as if only those
   five had been checked, which is the one thing a conclusion must not do. The five are still named, after "some
   services work", so the sentence says exactly what was measured. The "part" headline is unchanged. (2026-11-12)
+- **One service gets 10 seconds; after that it is a timeout.** A trace probe can spend 8 seconds reading its answer
+  and then 24 seconds testing reachability (three loads), so one unreachable service (Bahamut Anime Crazy, measured
+  2026-11-19) held a run at 153 of 154 for 32 seconds while the share button stayed disabled. Every service is now
+  settled 10 seconds after the run starts, as "couldn't connect" with the number of seconds in its explanation; an
+  answer that arrives later cannot replace it. The totals, report card and share button therefore arrive within
+  10 seconds whether or not one service is slow or blocked (an ad blocker that refuses the JSONP frame is covered by
+  the same limit). (2026-11-19)
 
 ## Redirect tests
 
@@ -93,6 +100,22 @@ additions go at the end of each section.
   doesn't shrink. (2026-11-06)
 - **The status table** hides its header row with `visibility: collapse`, not `display: none`, so the columns of the
   later tables keep the widths of the first. (2026-11-04)
+
+## What the console shows
+
+- **The CSP error on `/assets/jsonp` is Cloudflare's beacon, not the check.** Cloudflare Web Analytics injects
+  `static.cloudflareinsights.com/beacon.min.js` into every HTML response, including the sandboxed JSONP helper. The
+  helper's policy lets only the services' scripts run, so the beacon is blocked and the browser logs a CSP error in
+  the page's console. The helper itself runs: in clean Chromium from the same network, BBC iPlayer answered "not
+  available" and Tencent Video "available" on the production page. The policy is not widened to silence it.
+  (2026-11-19)
+- **Fonts load under `font-src 'self'`.** Geist and Geist Mono come from `/assets/fonts/` on this origin, and a run
+  showed no font request failure or CSP message; the JSONP frame's `default-src 'none'` has no fonts to block.
+  (2026-11-19)
+- **`/hop.txt` and every reach probe end in `net::ERR_ABORTED` by design.** `loads()` aborts as soon as the response
+  headers arrive: only whether it loads matters, and the body would otherwise be downloaded over 150 times. The fetch
+  has already resolved when the abort happens, so the check reads it normally; the console entry is noise.
+  (2026-11-19)
 
 ## Embedded in the checkup
 

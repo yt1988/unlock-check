@@ -93,7 +93,7 @@ export default {
   why_blocked_no_s: "{name} abrió, pero el navegador impidió leer en qué país ubicó a quien lo compartió (puede pasar con un bloqueador de anuncios o la protección contra el rastreo). La mayoría de los demás servicios ubicaron a quien lo compartió en {c}, donde {name} no está disponible, así que probablemente no funcione.",
   why_blocked_nocc_s: "{name} abrió, pero el navegador impidió leer en qué país ubicó a quien lo compartió (puede pasar con un bloqueador de anuncios o la protección contra el rastreo), así que no se puede saber si puede usarlo.",
   why_fail_net: "{name} no abre desde esta página. Puede que lo esté bloqueando tu red, una regla del proxy, un bloqueador de anuncios o la protección contra el rastreo del navegador; si {name} abre bien por sí solo, son estos dos últimos los que bloquean la comprobación. Prueba otro servidor, o páusalos y vuelve a comprobar.",
-  why_fail_timeout: "{name} no respondió en 8 segundos. La ruta puede ser lenta o estar bloqueada; vuelve a comprobar.",
+  why_fail_timeout: "{name} no respondió en {s} segundos. La ruta puede ser lenta o estar bloqueada; vuelve a comprobar.",
   why_fail_http: "{name} devolvió un error (HTTP {n}), así que esta vez no se puede saber. Inténtalo más tarde.",
   note_netflix: "Nota: Netflix limita muchas IP de proxy y de centro de datos a sus producciones originales, y el navegador no puede detectarlo.",
   note_google: "Nota: Google ubica las IP con su propia base de datos, que puede no coincidir con la de otros servicios (por ejemplo, ubicar un proxy en China continental). En ese caso, Gemini tampoco funciona.",

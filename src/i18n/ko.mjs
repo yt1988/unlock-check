@@ -74,7 +74,7 @@ export default {
   // someone else's shared result: the lines above that speak of "you", about the person who shared it
   why_api_no_s: "{name} 공식 지역 API의 답: 공유자의 지역에서는 이용할 수 없어요.",
   why_fail_net: "{name} 서비스가 열리지 않아요. 네트워크, 프록시 규칙, 광고 차단기 또는 브라우저의 추적 방지 기능이 막고 있을 수 있어요. 직접 열면 문제없다면 광고 차단기나 추적 방지 기능이 이 확인을 막은 거예요. 다른 서버로 바꾸거나 그 기능을 잠시 끄고 다시 확인해 보세요.",
-  why_fail_timeout: "{name} 서비스가 8초 안에 응답하지 않았어요. 경로가 느리거나 막혔을 수 있어요. 다시 확인해 보세요.",
+  why_fail_timeout: "{name} 서비스가 {s}초 안에 응답하지 않았어요. 경로가 느리거나 막혔을 수 있어요. 다시 확인해 보세요.",
   why_fail_http: "{name} 서비스가 오류(HTTP {n})를 돌려줘서 이번에는 판단할 수 없어요. 잠시 후 다시 확인해 보세요.",
   note_netflix: "참고: Netflix는 많은 프록시와 데이터센터 IP에서 넷플릭스 오리지널만 볼 수 있게 제한해요. 이건 브라우저에서 확인할 수 없어요.",
   note_google: "참고: Google은 자체 데이터베이스로 IP 위치를 판단해서 다른 서비스와 다를 수 있어요(예: 프록시를 중국 본토로 판단). 그러면 Gemini도 쓸 수 없어요.",

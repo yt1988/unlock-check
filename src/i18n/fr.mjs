@@ -78,7 +78,7 @@ export default {
   why_nf_none_s: "Netflix s'est ouvert, mais impossible de savoir quel catalogue national il a proposé à cette personne.",
   why_reach_nocc_s: "{name} s'est ouvert, mais n'a pas indiqué quel pays il détecte : impossible de savoir si cette personne peut l'utiliser.",
   why_fail_net: "{name} ne s'ouvre pas depuis cette page. Votre réseau, une règle du proxy, un bloqueur de publicité ou la protection contre le pistage du navigateur l'en empêche peut-être ; si {name} s'ouvre normalement en direct, ce sont ces deux derniers qui bloquent le test. Essayez un autre serveur, ou mettez-les en pause et relancez le test.",
-  why_fail_timeout: "{name} n'a pas répondu en 8 secondes. Le chemin est peut-être lent ou bloqué ; relancez le test.",
+  why_fail_timeout: "{name} n'a pas répondu en {s} secondes. Le chemin est peut-être lent ou bloqué ; relancez le test.",
   why_fail_http: "{name} a renvoyé une erreur (HTTP {n}) : impossible de conclure cette fois. Réessayez plus tard.",
   note_netflix: "À noter : Netflix limite de nombreuses IP de proxy et de datacenter à ses seules productions originales, et un navigateur ne peut pas le détecter.",
   note_google: "À noter : Google localise les IP avec sa propre base de données, qui peut différer de celle des autres services (par exemple en plaçant un proxy en Chine continentale). Dans ce cas, Gemini ne marche pas non plus.",

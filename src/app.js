@@ -52,7 +52,8 @@
   $("#lang").onchange = e => { const l = e.target.value; store.set(K.lang, l); location.href = D.paths[l] + location.hash; };
 
   /* ---------- asking the services ---------- */
-  const TIMEOUT = 8000;
+  const TIMEOUT = 8000;                                        // one request
+  const ITEM_TIMEOUT = 10000;                                  // one service, all its requests: past this it is a timeout
   const bust = u => u + (u.includes("?") ? "&" : "?") + "_u=" + Math.random().toString(36).slice(2, 10);
   // a readable answer: { st, text } or a thrown { why: "timeout" | "net" }
   async function read(url, init) {
@@ -85,7 +86,10 @@
       const tm = setTimeout(() => done({ why: "timeout" }), TIMEOUT);
       addEventListener("message", on);
       f.sandbox = "allow-scripts"; f.hidden = true; f.src = "/assets/jsonp.html";
-      f.onload = () => f.contentWindow.postMessage({ id, src, cb }, "*");
+      // a browser or an ad blocker that refuses the frame (ERR_BLOCKED_BY_CLIENT) is an answer too: don't wait out the
+      // time limit for it
+      f.onerror = () => done({ why: "net" });
+      f.onload = () => { try { f.contentWindow.postMessage({ id, src, cb }, "*"); } catch (e) { done({ why: "net" }); } };
       document.body.appendChild(f);
     });
   }
@@ -226,7 +230,7 @@
   // with "list" when the service publishes where it is offered and "block" when only where it is blocked; then notes.
   function whyOf(id, v) {
     const s = SV[id], n = s.name, c = v.cc ? country(v.cc) : "";
-    if (v.v === "fail") return t("why_fail_" + (v.why === "timeout" ? "timeout" : v.why === "http" ? "http" : "net"), { name: n, n: v.n || "" });
+    if (v.v === "fail") return t("why_fail_" + (v.why === "timeout" ? "timeout" : v.why === "http" ? "http" : "net"), { name: n, n: v.n || "", s: ITEM_TIMEOUT / 1000 });
     let k;
     if (id === "netflix") k = v.cc ? "nf_" + v.v : "nf_none";
     else if (s.probe.trace && v.how === "guess") k = "blocked_" + (v.cc ? v.v : "nocc");   // the browser stopped its trace
@@ -419,13 +423,22 @@
     const prog = () => { if (gen !== S.gen || S.done) return; setProg(Math.min(d, N - 1), N);
       if (left.size && left.size <= 5 && !ONE) $("#progTxt").textContent += " · " + t("pr_wait", { list: [...left].map(id => SV[id].name).join(t("join")) }); };
     const watched = Promise.race([watch(), new Promise(r => setTimeout(r, 3000, null))]).then(w => { S.w = w; });
+    // One service can't hold the run: whatever it is still doing after ITEM_TIMEOUT is settled as a timeout (its route
+    // was too slow or blocked), so the totals, the report card and the share button arrive on time.
+    const t0 = Date.now();
+    const within = p => {
+      let tm;
+      const stop = new Promise(res => { tm = setTimeout(() => res({ err: "timeout", reach: false }), Math.max(0, ITEM_TIMEOUT - (Date.now() - t0))); });
+      return Promise.race([p, stop]).finally(() => clearTimeout(tm));
+    };
     const settle = (s, r) => {
-      if (gen !== S.gen) return;
+      if (gen !== S.gen || !left.has(s.id)) return;            // a service settles once: a late answer can't replace its timeout
+      left.delete(s.id);
       if (s.only === "CN" && LATE(s) && S.cnOk) r.cn = true;   // judged by Mango TV's or Tencent Video's route (whyOf)
       S.r[s.id] = r; S.v[s.id] = judge(s, r, guessFor(s));
       // a check the server found broken: the published list for the country the others see, marked as a guess
       if (watchBad(s.id) && S.v[s.id].how !== "guess" && S.v[s.id].v !== "fail") { r.watch = true; S.v[s.id] = judge({ ...s, probe: { reach: s.site } }, { reach: true }, guessFor(s)); }
-      left.delete(s.id); renderRow(s.id); renderGroups(); renderSum(); renderFocus(); ++d; prog();
+      renderRow(s.id); renderGroups(); renderSum(); renderFocus(); ++d; prog();
       if (err) return;
       // The first dozen services all failing to open is a blocker (an ad blocker drops the whole batch at once, a
       // missing connection times out): the checkup hears so now, and gets no result from this run.
@@ -441,13 +454,13 @@
     // a page with a mainland-China-only service that can't be read but without Mango TV and Tencent Video (its own
     // page, say) asks those two as well, for the route that site takes: not shown, not shared, only that answer
     const cnHelp = SERVICES.some(s => s.only === "CN" && LATE(s)) ? ALL_SERVICES.filter(s => s.only === "CN" && !LATE(s) && !SERVICES.includes(s)) : [];
-    const helped = Promise.all(cnHelp.map(s => ask(s).then(r => judge(s, r, null).v === "ok")));
+    const helped = Promise.all(cnHelp.map(s => within(ask(s)).then(r => judge(s, r, null).v === "ok")));
     // The services that can be read come in first; the rest are judged by the country most of them see. That country
     // is taken once most have answered (or after 4 seconds), not after the slowest (a blocked one waits out its time
     // limit), and checked again once all are in.
     let answered = 0, ready;
     const enough = new Promise(r => { ready = r; setTimeout(r, 4000); }), need = Math.ceil(early.length * 0.8);
-    const earlyAll = Promise.all(early.map(async s => { const r = await ask(s); if (++answered >= need) ready(); await watched; settle(s, r); }));
+    const earlyAll = Promise.all(early.map(async s => { const r = await within(ask(s)); if (++answered >= need) ready(); await watched; settle(s, r); }));
     const who = await me();
     // the country to assume where a service's own answer can't be read, from the answers in so far; true when it changed
     const fixGuess = async () => {
@@ -470,13 +483,16 @@
     // the order Netflix's countries are tried in: the ones the others see first
     const prefer = [...new Set([...early.map(s => S.v[s.id]).filter(v => v && v.cc && v.how !== "guess").map(v => v.cc), who.country].filter(Boolean))];
     await Promise.all([...late.map(async s => {
-      const r = await reach[s.id];
-      if (r.reach) {
-        if (s.probe.netflix) Object.assign(r, await netflixCountry(prefer));
-        // up to 3 either way (a "not here" page sends those it serves home: one redirect or more); once more when
-        // nothing loaded, as a slow page among sixty requests misses the time limit now and then
-        else if (s.probe.hops) r.hops = await addedHops(s.probe.hops, 3) ?? await addedHops(s.probe.hops, 3);
-      }
+      const r = await within((async () => {
+        const x = await reach[s.id];
+        if (x.reach) {
+          if (s.probe.netflix) Object.assign(x, await netflixCountry(prefer));
+          // up to 3 either way (a "not here" page sends those it serves home: one redirect or more); once more when
+          // nothing loaded, as a slow page among sixty requests misses the time limit now and then
+          else if (s.probe.hops) x.hops = await addedHops(s.probe.hops, 3) ?? await addedHops(s.probe.hops, 3);
+        }
+        return x;
+      })());
       settle(s, r);
     }), earlyAll.then(async () => {
       // every readable answer is in: if the country most of them see changed, the services judged by it follow

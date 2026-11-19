@@ -80,7 +80,7 @@ export default {
   why_nf_none_s: "Netflix lud, aber es ließ sich nicht feststellen, welchen Länderkatalog die teilende Person bekam.",
   why_reach_nocc_s: "{name} lud, hat aber nicht verraten, welches Land es erkennt. Ob die teilende Person es nutzen kann, bleibt offen.",
   why_fail_net: "{name} lädt von dieser Seite aus nicht. Dein Netz, eine Proxy-Regel, ein Werbeblocker oder der Tracking-Schutz des Browsers hält es vielleicht auf; lädt {name} direkt aufgerufen normal, blockieren die letzten beiden den Test. Probier einen anderen Server oder pausiere sie und teste erneut.",
-  why_fail_timeout: "{name} hat innerhalb von 8 Sekunden nicht geantwortet. Die Route ist vielleicht langsam oder gesperrt; teste erneut.",
+  why_fail_timeout: "{name} hat innerhalb von {s} Sekunden nicht geantwortet. Die Route ist vielleicht langsam oder gesperrt; teste erneut.",
   why_fail_http: "{name} hat einen Fehler gemeldet (HTTP {n}), daher lässt sich diesmal nichts sagen. Versuch es später noch einmal.",
   note_netflix: "Hinweis: Netflix beschränkt viele Proxy- und Rechenzentrums-IPs auf Netflix-Eigenproduktionen, und das kann ein Browser nicht erkennen.",
   note_google: "Hinweis: Google ortet IPs mit einer eigenen Datenbank, die von anderen Diensten abweichen kann (etwa wenn ein Proxy in Festlandchina verortet wird). Dann geht auch Gemini nicht.",
