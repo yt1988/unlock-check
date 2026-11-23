@@ -153,6 +153,7 @@ export default {
   fo_no_s: "{name} est bloqué là où se trouve cette personne",
   fo_reach: "{name} s'ouvre, mais l'accès reste incertain",
   fo_fail: "{name} ne s'ouvre pas",
+  fo_why: "Pourquoi ce résultat",
   ex_none: "Aucun service n'a indiqué votre localisation.",
   ex_one: "Tous les services détectent le même pays : {c}.",
   ex_split: "Les services détectent des pays différents, peut-être à cause du routage séparé de votre proxy : {c}",

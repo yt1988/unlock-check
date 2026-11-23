@@ -168,6 +168,7 @@ export default {
   fo_no_s: "{name} está bloqueado donde está quien lo compartió",
   fo_reach: "{name} abre, pero no está claro si funciona",
   fo_fail: "{name} no abre",
+  fo_why: "Por qué este resultado",
   ex_none: "Ningún servicio indicó dónde estás.",
   ex_one: "Todos los servicios te ubican en {c}.",
   ex_split: "Los servicios te ubican en países distintos, quizá por enrutamiento dividido en tu proxy: {c}",

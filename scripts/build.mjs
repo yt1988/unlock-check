@@ -125,7 +125,7 @@ export async function build({ check = false } = {}) {
     const allLink = p => !p || p.status ? "" : `      <p class="all"><a class="btn" href="${home}">${esc(fill(T("all_link"), { n: N }))}</a></p>\n`;
     const groupsOf = cats => cats.map((c, i) =>
       `<div class="grp" data-c="${c}"><h2><a href="${href({ cat: c })}">${esc(T("cat_" + c).nav)}</a>${i ? "" : stLink}<b class="g-n"></b></h2><ul>${SERVICES.filter(s => s.cat === c).map(row).join("")}</ul></div>`).join("\n");
-    const focusOf = id => !id ? "" : `<div class="focus wait" id="focus" data-s="${id}"><div class="fo-h"><i class="st"></i>${ICONS[id] ? `<img class="fi" src="/assets/svc/${ICONS[id]}" width="22" height="22" alt="">` : ""}<b class="fo-t">${esc(SV(id).name)}</b></div><p class="fo-d"><span class="bar"></span></p></div>`;
+    const focusOf = id => !id ? "" : `<div class="focus wait" id="focus" data-s="${id}"><div class="fo-h"><i class="st"></i>${ICONS[id] ? `<img class="fi" src="/assets/svc/${ICONS[id]}" width="22" height="22" alt="">` : ""}<b class="fo-n">${esc(SV(id).name)}</b></div><p class="fo-t"><span class="bar"></span></p><details class="fo-d"><summary>${esc(T("fo_why"))}</summary><p class="fo-w"></p></details></div>`;
     const SV = id => SERVICES.find(s => s.id === id);
     const langOpts = langs.map(([l, , , nm]) => `<option value="${l}"${l === lang ? " selected" : ""}>${esc(nm)}</option>`).join("");
     // the footer links every page of the language: categories, then services

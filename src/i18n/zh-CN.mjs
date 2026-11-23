@@ -167,6 +167,7 @@ export default {
   fo_no_s: "{name} 在分享者的地区用不了",
   fo_reach: "{name} 打得开，但不确定能不能用",
   fo_fail: "{name} 打不开",
+  fo_why: "判断依据",
   ex_none: "没有服务告诉我们你在哪个地区。",
   ex_one: "所有服务都认为你在{c}。",
   ex_split: "各服务认为你在不同地区，可能是代理分流了：{c}",

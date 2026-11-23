@@ -155,6 +155,7 @@ export default {
   fo_no_s: "{name} ist am Standort der teilenden Person gesperrt",
   fo_reach: "{name} lädt, aber ob es geht, ist unklar",
   fo_fail: "{name} lädt nicht",
+  fo_why: "Warum dieses Ergebnis",
   ex_none: "Kein Dienst hat deinen Standort gemeldet.",
   ex_one: "Alle Dienste erkennen dasselbe Land: {c}.",
   ex_split: "Die Dienste erkennen unterschiedliche Länder, vielleicht wegen Split-Routing in deinem Proxy: {c}",

@@ -100,6 +100,14 @@ additions go at the end of each section.
   doesn't shrink. (2026-11-06)
 - **The status table** hides its header row with `visibility: collapse`, not `display: none`, so the columns of the
   later tables keep the widths of the first. (2026-11-04)
+- **A service page's verdict is one short line; the basis is a disclosure.** Cloudflare's LCP element table found
+  `#focus>p.fo-d` as the LCP on 26% of unlock's desktop loads, p75 8,877 ms (2026-11-23): the explanation
+  was filled after the probe and was the largest text on the page. The panel now names the service in its header,
+  shows the verdict as the short word the totals use (`可用`, `不可用`, `无法确认`, `打不开`) with the country, and puts
+  the explanation behind a "判断依据" disclosure. The verdict row and the disclosure row have fixed heights and a
+  skeleton, so the result does not move the page (CLS ≈ 0 in Chromium), and the connection-wide notes (IP, DNS, time
+  zone) stay on the main page, where they belong. Measured in Chromium at 375×667 and 1440×900 in zh-CN, en, de, ru
+  and ja: LCP is now the h1 or the intro at 100–130 ms instead of the late result. (2026-11-23)
 
 ## What the console shows
 

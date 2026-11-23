@@ -171,6 +171,7 @@ export default {
   fo_no_s: "{name} is blocked where the sharer is",
   fo_reach: "{name} opens, but it's unclear if it works",
   fo_fail: "{name} won't open",
+  fo_why: "Why this result",
   ex_none: "No service told us where you are.",
   ex_one: "Every service thinks you're in {c}.",
   ex_split: "Services think you're in different countries, possibly because of split routing: {c}",

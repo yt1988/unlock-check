@@ -393,12 +393,15 @@
   const fo = $("#focus");
   function renderFocus() {
     if (!fo) return;
-    const id = fo.dataset.s, v = S.v[id], h = fo.querySelector(".fo-t"), d = fo.querySelector(".fo-d"), st = fo.querySelector(".st");
+    const id = fo.dataset.s, v = S.v[id], h = fo.querySelector(".fo-t"), d = fo.querySelector(".fo-d"), w = fo.querySelector(".fo-w"), st = fo.querySelector(".st");
     fo.className = "focus" + (v ? " v-" + v.v : " wait");
-    if (!v) { h.textContent = S.gen ? t("v_wait") : SV[id].name; st.textContent = ""; d.innerHTML = `<span class="bar"></span>`; return; }
+    if (!v) { h.innerHTML = S.gen ? `<span class="bar"></span>` : ""; st.textContent = ""; w.textContent = ""; d.open = false; return; }
     st.textContent = MARK[v.v];
-    h.innerHTML = esc(t(v.v === "no" ? sk("fo_no") : "fo_" + v.v, { name: SV[id].name })) + (v.cc ? ` <span class="fo-c">${place(v.cc)}</span>` : "");
-    d.textContent = whyOf(id, v);
+    // the panel's header names the service; its own result is the short verdict (or the shared-result sentence)
+    const label = S.shared ? t(v.v === "no" ? sk("fo_no") : "fo_" + v.v, { name: SV[id].name }) : t("v_" + v.v);
+    h.innerHTML = esc(label) + (v.cc ? ` <span class="fo-c">${place(v.cc)}</span>` : "");
+    w.textContent = whyOf(id, v);
+    d.open = false;                                          // closed: the late explanation must not be the page's largest paint
   }
   function setProg(d, n) { $("#prog").classList.toggle("end", S.done); $("#prog i").style.transform = `scaleX(${n ? d / n : 0})`; $("#progTxt").textContent = !S.gen ? "" : S.done ? (ONE ? "" : t("done", { n })) : t("progress", { d, n }); }
   function renderAll() { for (const s of SERVICES) renderRow(s.id); renderGroups(); renderSum(); renderNotes(); renderFocus(); renderPlay(); }
