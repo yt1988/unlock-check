@@ -114,7 +114,7 @@ npm run og         # redraw the link-preview images in public/og/ after changing
 ```
 src/services.mjs     the services: category, probe, published country list
 src/lib.mjs          pure logic (answer readers, verdicts, share links), unit-tested
-src/egress.js        the site-wide exit core (vendored, VERSION 4): groups the addresses services report
+src/egress.js        the site-wide exit core (vendored, VERSION 6): groups the addresses services report
 src/app.js           browser code: asks the services, counts redirects, renders, shares
 src/i18n/*.mjs       strings for 10 languages
 scripts/build.mjs    builds public/: every page, _redirects, _headers, sitemap

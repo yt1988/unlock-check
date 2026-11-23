@@ -40,12 +40,12 @@ additions go at the end of each section.
 ## Exits
 
 - **Exit grouping comes from the site-wide core; unlock merges by country.** (2026-11-23) Services that report an
-  address are grouped by `src/egress.js` (vendored from the 1ms.dog shell, VERSION 4), one exit per /16 or /64; the
+  address are grouped by `src/egress.js` (vendored from the 1ms.dog shell, VERSION 6), one exit per /16 or /64; the
   page then merges a country's exits into one, because what it compares is the country each service reports, and an
   ISP's IPv4 and IPv6 are one place to it. A service that reports only a country joins that country's group. The
   time-zone → country table moved to the core's `tzCountry()`; the local copy is gone. The core's table is the full
-  IANA list (552 zones), and the shell's `/_ms/me` timezone stays as the fallback for a browser zone it doesn't know.
-  (2026-11-23)
+  IANA list (552 zones), with backward-link aliases mapped to the place's own country, and the shell's `/_ms/me`
+  timezone stays as the fallback for a browser zone it doesn't know. (2026-11-23)
 
 ## Redirect tests
 
