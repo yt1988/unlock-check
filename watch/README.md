@@ -76,9 +76,9 @@ On a server it runs as a systemd timer: `1ms-unlock-watch.service` and `1ms-unlo
 
 | | |
 |---|---|
-| Code | `scripts/watch.mjs`, `src/lib.mjs`, `src/services.mjs`, laid out as in this repository; no packages |
+| Code | `scripts/watch.mjs`, `src/lib.mjs`, `src/egress.js`, `src/services.mjs`, laid out as in this repository; no packages |
 | Memory | a run uses about 60 MB and exits when done (the unit caps it at 128 MB) |
 | Time | about 10 seconds for 154 services |
 | Traffic | about 1 MB per run |
 
-When `src/services.mjs` or `src/lib.mjs` changes, copy them to the server again.
+When `src/services.mjs`, `src/lib.mjs` or `src/egress.js` changes, copy them to the server again.

@@ -29,7 +29,7 @@ src/app.js           browser code for the main, category and service pages
 src/status.js        browser code for /status/
 src/i18n/*.mjs       strings in 10 languages; English (en.mjs) is the reference
 scripts/build.mjs    builds public/: every page in every language, _redirects, _headers, sitemap, bundles
-scripts/watch.mjs    the hourly check; imports src/services.mjs and src/lib.mjs, no dependencies
+scripts/watch.mjs    the hourly check; imports src/services.mjs, src/lib.mjs and src/egress.js, no dependencies
 watch/               its README and systemd units
 ```
 
@@ -94,9 +94,9 @@ packages), and something that serves one directory read-only over HTTPS with `Ac
    mkdir -p /opt/<app>/scripts /opt/<app>/src /srv/<data>/unlock
    chown <user>:<user> /srv/<data>/unlock
    ```
-2. **The code**: copy `scripts/watch.mjs`, `src/lib.mjs` and `src/services.mjs` into `/opt/<app>/`, at the same
-   paths as in this repository, owned by root, mode 644. Copy `src/services.mjs` and `src/lib.mjs` again whenever they
-   change, so the server checks what the page checks.
+2. **The code**: copy `scripts/watch.mjs`, `src/lib.mjs`, `src/egress.js` and `src/services.mjs` into `/opt/<app>/`, at
+   the same paths as in this repository, owned by root, mode 644. Copy `src/services.mjs`, `src/lib.mjs` and
+   `src/egress.js` again whenever they change, so the server checks what the page checks.
 3. **The units**: [watch/1ms-unlock-watch.service](watch/1ms-unlock-watch.service) and
    [.timer](watch/1ms-unlock-watch.timer) are written for one particular machine. Change `User=`, `Group=`,
    `WorkingDirectory=`, the paths in `ExecStart=` and `ReadWritePaths=`, and, if the machine's traffic doesn't leave
