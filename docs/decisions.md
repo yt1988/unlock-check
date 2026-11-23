@@ -37,6 +37,16 @@ additions go at the end of each section.
   10 seconds whether or not one service is slow or blocked (an ad blocker that refuses the JSONP frame is covered by
   the same limit). (2026-11-19)
 
+## Exits
+
+- **Exit grouping comes from the site-wide core; unlock merges by country.** (2026-11-23) Services that report an
+  address are grouped by `src/egress.js` (vendored from the 1ms.dog shell, VERSION 1), one exit per /16 or /64; the
+  page then merges a country's exits into one, because what it compares is the country each service reports, and an
+  ISP's IPv4 and IPv6 are one place to it. A service that reports only a country joins that country's group. The
+  time-zone → country table moved to the core's `tzCountry()`; the local copy is gone. The core's table is smaller
+  than the old one: a zone it lacks falls back to the shell's `/_ms/me` timezone on 1ms.dog and shows "—" when
+  self-hosted. (2026-11-23)
+
 ## Redirect tests
 
 - Measured in Chrome 141 from Japan and from a server in Los Angeles; the tables are in the README. Netflix answers

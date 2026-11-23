@@ -79,6 +79,14 @@ test("guess and exits", () => {
   assert.equal(guessCountry([]), null);
   const v = { a: { cc: "JP", how: "edge" }, b: { cc: "HK", how: "api" }, c: { cc: "JP", how: "hops" }, d: { cc: "US", how: "guess" } };
   assert.deepEqual(exitsByCountry(v), [{ cc: "JP", ids: ["a", "c"] }, { cc: "HK", ids: ["b"] }]);
+  // with addresses, the egress core groups by network (/16 or /64), then the page merges by country: an ISP's IPv4
+  // and IPv6 are one place, and an answer with only a country joins that country's group
+  const w = {
+    a: { cc: "JP", how: "edge", ip: "3.115.99.91" }, b: { cc: "HK", how: "api", ip: "203.0.113.7" },
+    c: { cc: "JP", how: "edge", ip: "3.115.100.1" }, d: { cc: "JP", how: "edge", ip: "2406:da14:3c2:6400::1" },
+    e: { cc: "JP", how: "api" },
+  };
+  assert.deepEqual(exitsByCountry(w), [{ cc: "JP", ids: ["a", "c", "d", "e"] }, { cc: "HK", ids: ["b"] }]);
 });
 
 test("share links round-trip and ignore what they don't know", () => {

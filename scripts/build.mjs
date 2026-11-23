@@ -77,12 +77,15 @@ export async function build({ check = false } = {}) {
   const langs = LANGS.filter(([l]) => I[l]);
   const tpl = await readFile(new URL("page.html", src), "utf8");
 
-  // src/lib.mjs (the pure logic the tests import) goes inside the app's scope, at its /* @lib */ marker
-  const lib = (await readFile(new URL("lib.mjs", src), "utf8")).replace(/^export /gm, "");
+  // src/lib.mjs and its vendored egress core (src/egress.js) go inside the app's scope, at the /* @lib */ marker;
+  // the core's `export` keywords and the one import between them come off so the result is one script
+  const core = (await readFile(new URL("egress.js", src), "utf8")).replace(/^export /gm, "");
+  const lib = (await readFile(new URL("lib.mjs", src), "utf8"))
+    .replace(/^import .*from "\.\/egress\.js";\n/m, "").replace(/^export /gm, "");
   const appSrc = await readFile(new URL("app.js", src), "utf8");
   if (!appSrc.includes("/* @lib */")) throw new Error("src/app.js has no /* @lib */ marker");
   const svcs = SERVICES.map(({ src: _, ...s }) => s);
-  const appFull = `const ALL_SERVICES = ${JSON.stringify(svcs)}, ALL_CATS = ${JSON.stringify(CATS)}, NETFLIX_TRY = ${JSON.stringify(NETFLIX_TRY)};\n` + appSrc.replace("/* @lib */", () => lib);
+  const appFull = `const ALL_SERVICES = ${JSON.stringify(svcs)}, ALL_CATS = ${JSON.stringify(CATS)}, NETFLIX_TRY = ${JSON.stringify(NETFLIX_TRY)};\n` + appSrc.replace("/* @lib */", () => core + "\n" + lib);
   new Function(appFull);                                                // must parse
   const cssFull = (await Promise.all(["fonts.css", "base.css", "style.css", "tool.css"].map(f => readFile(new URL(f, src), "utf8")))).join("\n");
   const js = (await transform(appFull, { loader: "js", minify: true, target: "es2019", legalComments: "none" })).code;

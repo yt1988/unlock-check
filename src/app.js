@@ -265,19 +265,8 @@
   }
   // Notes under the totals, once everything is in: which countries the services see (several: split routing), and
   // whether the browser's time zone fits. While running, two placeholder lines hold their space.
-  const TZ_CC = Object.fromEntries(("Asia/Shanghai:CN Asia/Chongqing:CN Asia/Harbin:CN Asia/Urumqi:CN Asia/Hong_Kong:HK Asia/Macau:MO Asia/Taipei:TW Asia/Tokyo:JP " +
-    "Asia/Seoul:KR Asia/Singapore:SG Asia/Kuala_Lumpur:MY Asia/Bangkok:TH Asia/Jakarta:ID Asia/Manila:PH Asia/Ho_Chi_Minh:VN Asia/Saigon:VN " +
-    "Asia/Kolkata:IN Asia/Calcutta:IN Asia/Dubai:AE Asia/Riyadh:SA Asia/Qatar:QA Asia/Jerusalem:IL Asia/Karachi:PK Asia/Tehran:IR " +
-    "Europe/London:GB Europe/Dublin:IE Europe/Paris:FR Europe/Berlin:DE Europe/Amsterdam:NL Europe/Brussels:BE Europe/Zurich:CH Europe/Rome:IT " +
-    "Europe/Madrid:ES Europe/Lisbon:PT Europe/Stockholm:SE Europe/Oslo:NO Europe/Helsinki:FI Europe/Copenhagen:DK Europe/Warsaw:PL Europe/Vienna:AT " +
-    "Europe/Prague:CZ Europe/Moscow:RU Europe/Istanbul:TR Europe/Kiev:UA Europe/Kyiv:UA Europe/Athens:GR Europe/Bucharest:RO Europe/Budapest:HU " +
-    "Australia/Sydney:AU Australia/Melbourne:AU Australia/Brisbane:AU Australia/Perth:AU Australia/Adelaide:AU Pacific/Auckland:NZ " +
-    "America/New_York:US America/Chicago:US America/Denver:US America/Los_Angeles:US America/Phoenix:US America/Anchorage:US Pacific/Honolulu:US " +
-    "America/Toronto:CA America/Vancouver:CA America/Montreal:CA America/Edmonton:CA America/Mexico_City:MX America/Sao_Paulo:BR America/Santiago:CL " +
-    "America/Bogota:CO America/Lima:PE America/Argentina/Buenos_Aires:AR Africa/Johannesburg:ZA Africa/Cairo:EG Africa/Lagos:NG Africa/Nairobi:KE")
-    .split(" ").map(p => p.split(":")));
-  // a zone the table doesn't have counts for the connection's own country when the shell places it in that zone
-  const tzCc = () => { try { const z = Intl.DateTimeFormat().resolvedOptions().timeZone; return TZ_CC[z] || (S.me && S.me.timezone === z && S.me.country) || ""; } catch (e) { return ""; } };
+  // a zone the egress core's table doesn't have counts for the connection's own country when the shell places it there
+  const tzCc = () => { try { const z = Intl.DateTimeFormat().resolvedOptions().timeZone; return tzCountry(z) || (S.me && S.me.timezone === z && S.me.country) || ""; } catch (e) { return ""; } };
   // Who this connection is, from the shell (GET /_ms/me, 1ms-shell tool contract §4): Cloudflare's answer, no third
   // party, not cached. Self-hosted without the shell it is a 404, and the services' own answers are all there is.
   let meP = null;

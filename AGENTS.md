@@ -24,6 +24,7 @@ that verdict is. It has two parts:
 ```
 src/services.mjs     the services: category, method, endpoint, published country list
 src/lib.mjs          pure logic: answer readers, judge(), report card, route advice, share links (unit-tested)
+src/egress.js        the site-wide exit core (vendored, VERSION 1): groups the addresses services report
 src/app.js           browser code for the main, category and service pages
 src/status.js        browser code for /status/
 src/i18n/*.mjs       strings in 10 languages; English (en.mjs) is the reference

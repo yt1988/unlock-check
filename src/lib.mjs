@@ -1,5 +1,6 @@
 // Pure logic, shared by the browser code (the build inlines this file into src/app.js) and the tests:
 // reading each probe's answer, judging a service from it, the share link format.
+import { groupExits } from "./egress.js";
 
 // Country names are the system's (Intl.DisplayNames) in the page's language, flags /flags/<code>.svg; Taiwan (TW) is
 // the one exception, with its own name and the cn flag (1ms-shell docs/tool-contract.md §5)
@@ -147,14 +148,27 @@ export function tally(verdicts) {
   return o;
 }
 
-// Countries the services see, most common first: [{ cc, ids }]. More than one means traffic leaves by different routes.
+// Countries the services see, most common first: [{ cc, ids }]. The services that report an address are grouped by the
+// site-wide egress core (src/egress.js: one exit per network), then merged by country: unlock compares the country a
+// service reports, and an ISP's IPv4 and IPv6 are one place to it. A service that reports only a country has no
+// address to compare, so it joins that country's group. More than one group means services land on different exits.
 export function exitsByCountry(verdicts) {
-  const m = new Map();
-  for (const [id, v] of Object.entries(verdicts)) if (v && v.cc && (v.how === "api" || v.how === "edge" || v.how === "hops")) {
-    if (!m.has(v.cc)) m.set(v.cc, []);
-    m.get(v.cc).push(id);
+  const vs = Object.entries(verdicts).filter(([, v]) => v && v.cc && (v.how === "api" || v.how === "edge" || v.how === "hops"));
+  const groups = new Map(), seen = new Set();
+  const add = (cc, ids) => {
+    let g = groups.get(cc); if (!g) groups.set(cc, g = { cc, ids: [] });
+    for (const id of ids) if (!g.ids.includes(id)) g.ids.push(id);
+  };
+  for (const e of groupExits(vs.filter(([, v]) => v.ip).map(([id, v]) => ({ id, group: "web", ip: v.ip })))) {
+    const ids = e.seenBy.filter(id => verdicts[id] && verdicts[id].cc);
+    if (!ids.length) continue;
+    add(guessCountry(ids.map(id => verdicts[id].cc)), ids);
+    for (const id of ids) seen.add(id);
   }
-  return [...m].map(([cc, ids]) => ({ cc, ids })).sort((a, b) => b.ids.length - a.ids.length);
+  const byCc = new Map();
+  for (const [id, v] of vs) if (!seen.has(id)) { if (!byCc.has(v.cc)) byCc.set(v.cc, []); byCc.get(v.cc).push(id); }
+  for (const [cc, ids] of byCc) add(cc, ids);
+  return [...groups.values()].sort((a, b) => b.ids.length - a.ids.length || a.cc.localeCompare(b.cc));
 }
 
 // Where this connection's DNS lookups come from, against where its traffic leaves (the country most services see):
