@@ -135,6 +135,14 @@ additions go at the end of each section.
   has already resolved when the abort happens, so the check reads it normally; the console entry is noise.
   (2026-11-19)
 
+## Visitor-facing text
+
+- **Roles, not internal hosts.** (2026-11-24) The privacy answer named the status host and the name server by domain.
+  The site rule is that internal measurement and helper hosts never appear where a visitor can see them, so the
+  answer now says "our server in Tokyo" and "this site's name server" in all ten languages. `test/hosts.test.mjs`
+  scans the i18n files, every built page, the README and llms.txt for them; the code that builds those requests
+  keeps the real addresses.
+
 ## Embedded in the checkup
 
 - **The JSONP frame allows the checkup as an ancestor.** `frame-ancestors 'self'` on `/assets/jsonp` is checked
