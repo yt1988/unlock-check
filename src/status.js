@@ -1,7 +1,7 @@
 // The status page (/status/, /<lang>/status/): fills the table the build wrote (scripts/build.mjs) with the hourly
 // check from 1ms.dog's Tokyo server (scripts/watch.mjs, watch/README.md): whether each check still works, now, over the
-// last 24 runs and the last week, and the runs where one didn't. Only on 1ms.dog itself and localhost, as on the main
-// page (a copy hosted elsewhere doesn't ask our server).
+// last 24 runs and the last week, and the runs where one didn't. Only where the shell injects
+// <meta name="ms-data"> (1ms.dog itself), as on the main page: a copy hosted elsewhere asks nothing.
 (function () {
   "use strict";
   const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
@@ -42,7 +42,11 @@
   /* ---------- the table ---------- */
   const meta = $("#stMeta");
   const fail = k => { meta.textContent = t(k); meta.classList.add("warn"); };
-  const WATCH = /(^|\.)1ms\.dog$|^localhost$/.test(location.hostname) ? "https://data.1ms.dog:2083/unlock/status.json" : "";
+  // The VPS's results directory travels as <meta name="ms-data" content="base=…"> (injected by the shell only): the
+  // status page reads <base>/unlock/status.json, and a copy without the meta shows the same "off" line as before.
+  const DATA_META = (document.querySelector('meta[name="ms-data"]') || {}).content || "";
+  const DATA_BASE = ((/(?:^|;)base=([^;]*)/.exec(DATA_META) || [])[1] || "").replace(/\/+$/, "");
+  const WATCH = DATA_BASE ? DATA_BASE + "/unlock/status.json" : "";
   if (!WATCH) { fail("sp_off"); return; }
   const when = s => new Intl.DateTimeFormat(LANG, { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" }).format(new Date(s));
   const clock = s => new Intl.DateTimeFormat(LANG, { hour: "2-digit", minute: "2-digit" }).format(new Date(s));

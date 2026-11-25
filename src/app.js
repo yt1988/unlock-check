@@ -163,9 +163,10 @@
   // The hourly check from 1ms.dog's Tokyo server (scripts/watch.mjs, watch/README.md): whether each check's endpoint
   // still answers the way it's read here. A check found not working for two runs in a row is judged as a guess (the
   // country the others see, against the published list) instead of trusting an answer that may have changed meaning.
-  // Only on 1ms.dog itself and localhost (a copy hosted elsewhere doesn't ask our server); no status, or one over 3 hours
-  // old: no change.
-  const WATCH = /(^|\.)1ms\.dog$|^localhost$/.test(location.hostname) ? "https://data.1ms.dog:2083/unlock/status.json" : "";
+  // Only where the shell injects <meta name="ms-data"> (1ms.dog itself; a copy hosted elsewhere asks nothing); no status,
+  // or one over 3 hours old: no change.
+  const DATA_BASE = (endpoints("ms-data").base || "").replace(/\/+$/, "");
+  const WATCH = DATA_BASE ? DATA_BASE + "/unlock/status.json" : "";
   let watchP = null;
   const watch = () => watchP || (watchP = !WATCH ? Promise.resolve(null) : fetch(WATCH, { credentials: "omit", referrerPolicy: "no-referrer", signal: AbortSignal.timeout(4000) })
     .then(r => r.ok ? r.json() : null).then(j => j && j.v === 1 && j.services && Date.now() - Date.parse(j.at) < 3 * 3600e3 ? j : null).catch(() => null));
@@ -174,13 +175,22 @@
   const RTF = new Intl.RelativeTimeFormat(LANG, { numeric: "auto" });
   const ago = iso => { const m = Math.max(1, Math.round((Date.now() - Date.parse(iso)) / 60e3)); return m < 60 ? RTF.format(-m, "minute") : RTF.format(-Math.round(m / 60), "hour"); };
   // Which resolver this connection's DNS lookups go through: the browser looks up a name nobody else has
-  // (<token>-u.l.1ms.dog), and the dns tool's name server (api.l.1ms.dog, github.com/yt1988/dns-test) answers it on
+  // (<token>-u.<zone>), and the dns tool's name server (github.com/yt1988/dns-test) answers it on
   // port 2053 with the resolvers it saw for that token. The resolver addresses stay on this page: share links and the
   // checkup's facts carry the country only. Same hosts as the hourly check; nothing when it can't be reached.
+  // The zone comes from the shell: ms-servers' `dns` is the DNS API's URL, https://api.<zone>:<port>, so the zone is
+  // that host without its first label. No meta, or a host that isn't of that shape: no resolver reading.
+  const DNS_API = endpoints("ms-servers").dns || "";
+  const DNS_ZONE = (() => {
+    try {
+      const u = new URL(DNS_API), z = u.hostname.split(".").slice(1).join(".");
+      return z ? z + (u.port ? ":" + u.port : "") : "";
+    } catch (e) { return ""; }
+  })();
   const dnsAsk = () => {
-    if (!WATCH) return Promise.resolve(null);
+    if (!WATCH || !DNS_ZONE) return Promise.resolve(null);
     const tok = [...crypto.getRandomValues(new Uint8Array(20))].map(b => "abcdefghijklmnopqrstuvwxyz0123456789"[b % 36]).join("");
-    return fetch(`https://${tok}-u.l.1ms.dog:2053/`, { cache: "no-store", credentials: "omit", referrerPolicy: "no-referrer", signal: AbortSignal.timeout(6000) })
+    return fetch(`https://${tok}-u.${DNS_ZONE}/`, { cache: "no-store", credentials: "omit", referrerPolicy: "no-referrer", signal: AbortSignal.timeout(6000) })
       .then(r => r.ok ? r.json() : null).then(j => {
         if (!j || !Array.isArray(j.hits)) return null;
         const seen = new Set(), rs = [];

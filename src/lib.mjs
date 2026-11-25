@@ -177,7 +177,7 @@ export function exitsByCountry(verdicts) {
 
 // Where this connection's DNS lookups come from, against where its traffic leaves (the country most services see):
 // the resolvers 1ms.dog's own name server saw for a name only this page looked up (the dns tool's API,
-// api.l.1ms.dog), each { cc, org, ecs: { net, cc } | null } (ecs: the visitor's subnet a resolver passed on, EDNS Client
+// github.com/yt1988/dns-test), each { cc, org, ecs: { net, cc } | null } (ecs: the visitor's subnet a resolver passed on, EDNS Client
 // Subnet). Returns the note's key and its values, or null with nothing to say:
 //   dns_cn     the lookups go through a mainland China resolver while traffic leaves elsewhere (split routing that
 //              leaks DNS: foreign names may get polluted or mainland answers)
