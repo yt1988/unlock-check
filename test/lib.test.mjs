@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { READERS, judge, offered, guessCountry, exitsByCountry, encodeShare, parseShare, maskIp, parseTrace, regionName, flagCode, dnsNote, scoreCard, routeAdvice, packRun, diffRuns } from "../src/lib.mjs";
+import { READERS, judge, offered, guessCountry, exitsByCountry, splitHint, encodeShare, parseShare, maskIp, parseTrace, regionName, flagCode, dnsNote, scoreCard, routeAdvice, packRun, diffRuns } from "../src/lib.mjs";
 import { SERVICES, CATS, SLUG, CAT_SLUG } from "../src/services.mjs";
 
 const S = Object.fromEntries(SERVICES.map(s => [s.id, s]));
@@ -87,6 +87,9 @@ test("guess and exits", () => {
     e: { cc: "JP", how: "api" },
   };
   assert.deepEqual(exitsByCountry(w), [{ cc: "JP", ids: ["a", "c", "d", "e"] }, { cc: "HK", ids: ["b"] }]);
+  // no anchors injected (a self-hosted copy): the split hint is off
+  assert.equal(splitHint({ cn: "", intl: "" }), false);
+  assert.equal(splitHint({ cn: "https://probe", intl: "" }), true);
 });
 
 test("share links round-trip and ignore what they don't know", () => {

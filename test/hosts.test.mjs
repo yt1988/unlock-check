@@ -31,7 +31,7 @@ async function publicPages(dir = "public/") {
 }
 
 test("no internal host in visitor-visible text", async () => {
-  for (const f of ["README.md", "public/llms.txt"]) fail(f, await read(f));
+  for (const f of ["README.md", "README.zh-CN.md", "public/llms.txt"]) fail(f, await read(f));
   for (const f of (await readdir(new URL("src/i18n/", root))).filter(f => f.endsWith(".mjs"))) fail("src/i18n/" + f, await read("src/i18n/" + f));
   for (const f of await publicPages()) fail(f, await read(f));
 });

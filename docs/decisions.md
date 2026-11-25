@@ -40,12 +40,18 @@ additions go at the end of each section.
 ## Exits
 
 - **Exit grouping comes from the site-wide core; unlock merges by country.** (2026-11-23) Services that report an
-  address are grouped by `src/egress.js` (vendored from the 1ms.dog shell, VERSION 6), one exit per /16 or /64; the
+  address are grouped by `src/egress.js` (vendored from the 1ms.dog shell, VERSION 7), one exit per /16 or /64; the
   page then merges a country's exits into one, because what it compares is the country each service reports, and an
   ISP's IPv4 and IPv6 are one place to it. A service that reports only a country joins that country's group. The
   time-zone → country table moved to the core's `tzCountry()`; the local copy is gone. The core's table is the full
   IANA list (552 zones), with backward-link aliases mapped to the place's own country, and the shell's `/_ms/me`
   timezone stays as the fallback for a browser zone it doesn't know. (2026-11-23)
+- **Measurement endpoints are deployment data.** (2026-11-25) The page no longer carries our own probe hosts.
+  `src/worker.js` runs first for HTML pages (assets go straight to the assets layer) and adds
+  `<meta name="ms-anchors">` and `<meta name="ms-egress">` from `MS_ANCHORS`/`MS_EGRESS`; `src/egress.js` VERSION 7
+  reads them with `readAnchors()`. Nothing set means no meta, and the exit note's split hint is hidden: a self-hosted
+  copy doesn't claim split routing it can't measure. The countries, IP, time-zone and DNS notes stay. The DNS lookup's
+  name server and the hourly status source are outside this batch.
 
 ## Redirect tests
 

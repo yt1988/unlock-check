@@ -22,6 +22,9 @@
   const ONE = D.one || null, SERVICES = D.scope ? ALL_SERVICES.filter(s => D.scope.includes(s.id)) : ALL_SERVICES;
   const CATS = ALL_CATS.filter(c => SERVICES.some(s => s.cat === c));
   /* @lib */
+  // Our own measurement endpoints are deploy-time data (src/worker.js, tool-contract §2): without ms-anchors there is
+  // no split hint, because this copy has no probes to confirm split routing with.
+  const SPLIT = splitHint(readAnchors());
 
   /* ---------- embedded in the connection checkup (check.1ms.dog, 1ms-shell docs/checkup.md) ---------- */
   // ?embed=checkup counts only inside a frame whose page is on the checkup's own origin, as the shell's
@@ -291,8 +294,9 @@
     if (ONE) {}                                                  // its country is in its own panel
     else if (!ex.length) out.push(["info", "ln_ex", "–", esc(t(sk("ex_none")))]);
     else if (ex.length === 1) out.push(["ok", "ln_ex", place(ex[0].cc), t(sk("ex_one"), { c: place(ex[0].cc) })]);
-    // the most common country by count, the others with the services that see them
-    else out.push(["warn", "ln_ex", ex.map(e => `${place(e.cc)} <span class="m">×${e.ids.length}</span>`).join(" · "),
+    // the most common country by count, the others with the services that see them; without our own anchors a
+    // self-hosted copy says nothing about split routing
+    else if (SPLIT) out.push(["warn", "ln_ex", ex.map(e => `${place(e.cc)} <span class="m">×${e.ids.length}</span>`).join(" · "),
       t(sk("ex_split"), { c: ex.map((e, i) => `${place(e.cc)} <span class="m">${i ? names(e.ids) : "×" + e.ids.length}</span>`).join(" · ") }) + egress]);
     // the addresses the services saw, most common first, each linked to the IP quality check when the host has one
     const ips = new Map();
@@ -668,7 +672,7 @@
     no.sort((a, b) => (b[0].cat === "ai") - (a[0].cat === "ai"));
     const ex = exitsByCountry(S.v), tz = tzCc(), findings = [];
     if (no.length) findings.push({ level: "bad", text: t("fd_no", { list: names(no) }) });
-    if (ex.length > 1) findings.push({ level: "warn", text: t("ex_split", { c: ex.map((e, i) => country(e.cc) + " " + (i ? e.ids.map(id => SV[id].name).join(t("join")) : "×" + e.ids.length)).join(" · ") }) });
+    if (ex.length > 1 && SPLIT) findings.push({ level: "warn", text: t("ex_split", { c: ex.map((e, i) => country(e.cc) + " " + (i ? e.ids.map(id => SV[id].name).join(t("join")) : "×" + e.ids.length)).join(" · ") }) });
     const main = mainCc(ex);
     if (main && tz && tz !== main) findings.push({ level: "warn", text: t("tz_bad", { a: country(tz), b: country(main) }) });
     if (fail.length) findings.push({ level: "warn", text: t("fd_fail", { list: names(fail) }) });

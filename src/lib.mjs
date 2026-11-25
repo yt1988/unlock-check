@@ -148,6 +148,10 @@ export function tally(verdicts) {
   return o;
 }
 
+// Whether this page has its own anchors (`ms-anchors`): the split hint needs them, so a self-hosted copy (no
+// injection) hides it instead of claiming split routing it cannot measure (tool-contract §2).
+export function splitHint(anchors) { return !!(anchors && (anchors.cn || anchors.intl)); }
+
 // Countries the services see, most common first: [{ cc, ids }]. The services that report an address are grouped by the
 // site-wide egress core (src/egress.js: one exit per network), then merged by country: unlock compares the country a
 // service reports, and an ISP's IPv4 and IPv6 are one place to it. A service that reports only a country has no
