@@ -62,7 +62,7 @@ Pages whose resource policy refuses other sites (`Cross-Origin-Resource-Policy: 
 - Services see different countries when rules split traffic: in testing, SBS On Demand saw Hong Kong while 15 others saw Japan. The page lists which services see which country, and links to EgressLens on 1ms.dog.
 - Browser time zone vs. the services' country: AI services use it as a proxy signal.
 
-**Private by design:** every check runs in your browser; no result is sent to the site. A small Worker only adds the deployment's endpoint `<meta>` tags to the HTML. Share links carry each service's verdict and country, never an IP.
+**Private by design:** static files only. Your browser talks to each service directly; no result is sent to the site. Share links carry each service's verdict and country, never an IP.
 
 ### After a run
 
@@ -87,10 +87,10 @@ Every language (`/`, `/zh-cn/`, `/zh-tw/`, `/ja/`, `/ko/`, `/es/`, `/fr/`, `/de/
 git clone https://github.com/yt1988/unlock-check
 cd unlock-check
 npx wrangler login
-npx wrangler deploy        # a Worker with static assets; it only adds endpoint metas from env
+npx wrangler deploy        # a static-assets Worker: no script, free and unmetered
 ```
 
-`wrangler.toml` turns off `*.workers.dev` and preview URLs; bind your own domain under **Workers & Pages → unlock → Settings → Domains & Routes**, or set `workers_dev = true` for a quick test. Set `MS_ANCHORS` and `MS_EGRESS` as Worker secrets to add the deployment's endpoint `<meta>` tags; without them the page hides the split hint. Another static host works if it supports Cloudflare-style `_headers` and `_redirects` (Cloudflare Pages, Netlify); without `_redirects`, Netflix, Disney+ and Peacock show as reachable only.
+`wrangler.toml` turns off `*.workers.dev` and preview URLs; bind your own domain under **Workers & Pages → unlock → Settings → Domains & Routes**, or set `workers_dev = true` for a quick test. The split hint needs the site's own endpoint metas, which the 1ms.dog shell injects; a self-hosted copy has none and hides it. Another static host works if it supports Cloudflare-style `_headers` and `_redirects` (Cloudflare Pages, Netlify); without `_redirects`, Netflix, Disney+ and Peacock show as reachable only.
 
 To put your own domain into canonical links and the sitemap:
 
@@ -116,7 +116,6 @@ src/services.mjs     the services: category, probe, published country list
 src/lib.mjs          pure logic (answer readers, verdicts, share links), unit-tested
 src/egress.js        the site-wide exit core (vendored, VERSION 7): groups the addresses services report
 src/app.js           browser code: asks the services, counts redirects, renders, shares
-src/worker.js        the Worker: serves the assets and adds MS_ANCHORS / MS_EGRESS metas to HTML
 src/i18n/*.mjs       strings for 10 languages
 scripts/build.mjs    builds public/: every page, _redirects, _headers, sitemap
 ```

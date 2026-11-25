@@ -12,10 +12,11 @@ Streaming & AI Unlock Check asks about 150 streaming, AI and regional services f
 route their proxy picks for each one, and says for each whether it is available, which country it sees, and how sure
 that verdict is. It has two parts:
 
-- **The page** (`src/`, built into `public/`): static files on a Cloudflare Workers static-assets deployment, with a
-  small Worker (`src/worker.js`) that only adds the deployment's endpoint `<meta>` tags to HTML (`MS_ANCHORS`,
-  `MS_EGRESS`; none set means no tag). Every check runs in the visitor's browser; nothing is sent to the site. The
-  redirect chain the Netflix, Disney+ and Peacock checks count is static rules in `public/_redirects`.
+- **The page** (`src/`, built into `public/`): static files on a Cloudflare Workers static-assets deployment, with
+  no Worker script. Every check runs in the visitor's browser; nothing is sent to the site. The redirect chain the
+  Netflix, Disney+ and Peacock checks count is static rules in `public/_redirects`. On 1ms.dog the shell's Worker
+  adds the deployment's endpoint metas (`ms-anchors`, `ms-egress`) to the page head; without them the page hides the
+  split hint.
 - **The hourly check** (`scripts/watch.mjs`, `watch/`): optional. A Node script on a server asks every service the
   way the page does and writes `status.json`, saying whether each check's endpoint still answers the way the page
   reads it. The page reads that file (`WATCH` in `src/app.js` and `src/status.js`) and stops trusting a check that
@@ -28,7 +29,6 @@ src/lib.mjs          pure logic: answer readers, judge(), report card, route adv
 src/egress.js        the site-wide exit core (vendored, VERSION 7): groups the addresses services report
 src/app.js           browser code for the main, category and service pages
 src/status.js        browser code for /status/
-src/worker.js        the Worker: serves the assets and adds MS_ANCHORS / MS_EGRESS metas to HTML
 src/i18n/*.mjs       strings in 10 languages; English (en.mjs) is the reference
 scripts/build.mjs    builds public/: every page in every language, _redirects, _headers, sitemap, bundles
 scripts/watch.mjs    the hourly check; imports src/services.mjs, src/lib.mjs and src/egress.js, no dependencies
@@ -82,8 +82,8 @@ WATCH_CC=US node scripts/watch.mjs out   # when the machine's traffic leaves thr
   then bind your domain to the Worker in the Cloudflare dashboard (`wrangler.toml` turns off `*.workers.dev`).
   `SITE_URL=https://<your-domain> npm run build` puts your domain into canonical links and the sitemap. Another static
   host works if it reads Cloudflare-style `_headers` and `_redirects`; without `_redirects` the redirect-counting checks
-  show as reachable only. The Worker adds `<meta name="ms-anchors">` and `<meta name="ms-egress">` from
-  `MS_ANCHORS`/`MS_EGRESS`; set them as Worker secrets to enable the split hint, unset to leave it off.
+  show as reachable only. On 1ms.dog the shell adds the page's endpoint metas from its own Worker variables; a
+  self-hosted copy has none, so the split hint stays hidden.
 - **The hourly check**: by hand, as below. A push doesn't deploy it.
 
 ## The hourly check, from nothing

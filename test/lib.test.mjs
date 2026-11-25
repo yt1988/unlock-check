@@ -1,6 +1,13 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { READERS, judge, offered, guessCountry, exitsByCountry, splitHint, encodeShare, parseShare, maskIp, parseTrace, regionName, flagCode, dnsNote, scoreCard, routeAdvice, packRun, diffRuns } from "../src/lib.mjs";
+import { readAnchors } from "../src/egress.js";
+
+test("readAnchors is empty without the meta (the self-hosted fallback)", () => {
+  const doc = content => ({ querySelector: () => content == null ? null : { getAttribute: () => content } });
+  assert.deepEqual(readAnchors(doc(null)), { cn: "", intl: "" });
+  assert.deepEqual(readAnchors(doc("cn=https://a;intl=https://b")), { cn: "https://a", intl: "https://b" });
+});
 import { SERVICES, CATS, SLUG, CAT_SLUG } from "../src/services.mjs";
 
 const S = Object.fromEntries(SERVICES.map(s => [s.id, s]));

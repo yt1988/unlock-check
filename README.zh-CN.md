@@ -60,7 +60,7 @@
 - 规则分流时，不同服务看到的国家不一样：测试时 SBS On Demand 看到香港，另外 15 个看到日本。页面会列出哪些服务看到哪个国家，并链到 1ms.dog 的出口照妖镜。
 - 浏览器时区和服务看到的国家：AI 服务会把它当成代理特征。
 
-**隐私：** 每项检测都在你的浏览器里跑，结果不会发送到本站。只有一个小小的 Worker 给 HTML 加部署时的端点 meta。分享链接只带每个服务的结论和国家，不带 IP。
+**隐私：** 只有静态文件。你的浏览器直接询问每个服务，结果不会发送到本站。分享链接只带每个服务的结论和国家，不带 IP。
 
 ### 测完之后
 
@@ -85,10 +85,10 @@
 git clone https://github.com/yt1988/unlock-check
 cd unlock-check
 npx wrangler login
-npx wrangler deploy        # 带静态资源的 Worker；只用环境变量给 HTML 加端点 meta
+npx wrangler deploy        # 纯静态资源 Worker：没有脚本，免费、不计请求数
 ```
 
-`wrangler.toml` 关掉了 `*.workers.dev` 和预览地址；在 **Workers & Pages → unlock → Settings → Domains & Routes** 绑定自己的域名，或者临时设 `workers_dev = true` 测试。把 `MS_ANCHORS`、`MS_EGRESS` 设成 Worker secret 才会加部署时的端点 meta；不设时页面隐藏分流提示。其他静态托管只要支持 Cloudflare 格式的 `_headers` 和 `_redirects`（Cloudflare Pages、Netlify）也能用；没有 `_redirects` 时，Netflix、Disney+、Peacock 只显示能否访问。
+`wrangler.toml` 关掉了 `*.workers.dev` 和预览地址；在 **Workers & Pages → unlock → Settings → Domains & Routes** 绑定自己的域名，或者临时设 `workers_dev = true` 测试。分流提示需要 1ms.dog 的 shell 注入端点 meta；自己部署的副本没有，会隐藏分流提示。其他静态托管只要支持 Cloudflare 格式的 `_headers` 和 `_redirects`（Cloudflare Pages、Netlify）也能用；没有 `_redirects` 时，Netflix、Disney+、Peacock 只显示能否访问。
 
 把自己的域名写进 canonical 链接和 sitemap：
 

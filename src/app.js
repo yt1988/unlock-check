@@ -22,8 +22,8 @@
   const ONE = D.one || null, SERVICES = D.scope ? ALL_SERVICES.filter(s => D.scope.includes(s.id)) : ALL_SERVICES;
   const CATS = ALL_CATS.filter(c => SERVICES.some(s => s.cat === c));
   /* @lib */
-  // Our own measurement endpoints are deploy-time data (src/worker.js, tool-contract §2): without ms-anchors there is
-  // no split hint, because this copy has no probes to confirm split routing with.
+  // Our own measurement endpoints are deploy-time data (the shell injects the metas, tool-contract §2): without
+  // ms-anchors there is no split hint, because this copy has no probes to confirm split routing with.
   const SPLIT = splitHint(readAnchors());
 
   /* ---------- embedded in the connection checkup (check.1ms.dog, 1ms-shell docs/checkup.md) ---------- */
