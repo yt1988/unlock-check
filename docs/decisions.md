@@ -136,6 +136,14 @@ additions go at the end of each section.
 - **Fonts load under `font-src 'self'`.** Geist and Geist Mono come from `/assets/fonts/` on this origin, and a run
   showed no font request failure or CSP message; the JSONP frame's `default-src 'none'` has no fonts to block.
   (2026-11-19)
+- **Every icon the page builds in JavaScript carries `xmlns`.** Safari's Dark Reader serialises each `<svg>` with
+  `outerHTML` and loads the copy as a `data:image/svg+xml` image; the namespace is not an attribute, so `outerHTML`
+  drops it and the standalone copy fails to decode ("Unable to load image data:image/svg+xml…"). Markup icons are
+  covered by the shell's rewrite on the way through (`src/index.js`, `.on("svg")`), but it does not reach content a
+  script inserts, so the two strings in `src/app.js` — the external-link icon `EXT` and the note list's chevron —
+  write it themselves (#146 一.3). Measured in the preview: the same element decodes with the attribute (150×150)
+  and fails without it. The share dialog's close button is the shell's vendored file and waits for its next version.
+  (2026-11-26)
 - **`/hop.txt` and every reach probe end in `net::ERR_ABORTED` by design.** `loads()` aborts as soon as the response
   headers arrive: only whether it loads matters, and the body would otherwise be downloaded over 150 times. The fetch
   has already resolved when the abort happens, so the check reads it normally; the console entry is noise.

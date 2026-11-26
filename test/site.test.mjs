@@ -35,6 +35,16 @@ test("every language has every string, with the same placeholders", () => {
   }
 });
 
+test("every icon the page builds in JavaScript says it is SVG (#146 一.3)", async () => {
+  // the shell rewrites the markup's <svg> on the way through, but not what a script inserts: these need the attribute
+  // at the source, or Safari's Dark Reader can't decode the outerHTML copy (docs/decisions.md, "What the console shows")
+  for (const f of ["src/app.js", "src/status.js"]) {
+    const src = (await readFile(new URL("../" + f, import.meta.url), "utf8")).replace(/^\s*\/\/.*$/gm, "");
+    const bare = [...src.matchAll(/<svg\b[^>]*>/g)].map(m => m[0]).filter(t => !t.includes('xmlns="http://www.w3.org/2000/svg"'));
+    assert.deepEqual(bare, [], `${f}: <svg> without xmlns — ${bare.slice(0, 3).join("  ")}`);
+  }
+});
+
 test("pages: charset first, standard lang, no inline styles, every service listed, small", async () => {
   for (const [l, slug] of LANGS) for (const p of pageIds()) {
     const f = at(slug, subOf(p)), h = await page(f);

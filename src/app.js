@@ -218,7 +218,9 @@
   const IPQS = (document.querySelector('meta[name="ipqs"]') || {}).content || "";
   const EGRESS = (document.querySelector('meta[name="egress"]') || {}).content || "";
   // a link to another 1ms.dog tool ends in the external-link icon (the same on every tool, see the shell tool contract)
-  const EXT = `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2.5h4.5V7M13.5 2.5 7.5 8.5M12 10v3.5H2.5V4H6"/></svg>`;
+  // every icon a script builds carries xmlns: Safari's Dark Reader serialises each one with outerHTML into a data:
+  // URL, and the namespace is not an attribute, so without it the standalone copy fails to decode (#146 一.3)
+  const EXT = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2.5h4.5V7M13.5 2.5 7.5 8.5M12 10v3.5H2.5V4H6"/></svg>`;
   const MARK = { ok: "✓", no: "✕", reach: "•", fail: "!" };
   // the connection checkup runs this and the other tools in one go: linked beside the totals when the host has it
   // (the shell's <meta name="check">), never inside it
@@ -336,7 +338,7 @@
     else if (wk) out.push(["ok", "ln_id", esc(t("id_short_ok")), esc(t("id_clean"))]);
     const open = new Set($$("#notes details[open]").map(d => d.dataset.k));   // a re-render (hiding addresses) keeps what was open
     ul.innerHTML = out.map(([k, l, sum, more]) => `<li class="nt n-${k}"><details data-k="${l}"${open.has(l) ? " open" : ""}><summary><i>${k === "ok" ? "✓" : k === "warn" ? "!" : "•"}</i>` +
-      `<b class="nl">${esc(t(l))}</b><span class="ns">${sum}</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg></summary><p class="nd">${more}</p></details></li>`).join("");
+      `<b class="nl">${esc(t(l))}</b><span class="ns">${sum}</span><svg xmlns="http://www.w3.org/2000/svg" class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg></summary><p class="nd">${more}</p></details></li>`).join("");
   }
   /* ---------- the main page's extras, once a run is in: report card, route advice, the last run, the collection ---------- */
   // Kept on this device only (localStorage): the last 10 runs of the main page (each service's verdict and country,
